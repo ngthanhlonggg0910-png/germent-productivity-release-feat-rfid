@@ -1,0 +1,83 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="proIssue">
+            <h2><span jhiTranslate="ctApp.proIssue.detail.title">Pro Issue</span> {{proIssue.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="ctApp.proIssue.maHang">Ma Hang</span></dt>
+                <dd>
+                    <span>{{proIssue.maHang}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proIssue.pono">Pono</span></dt>
+                <dd>
+                    <span>{{proIssue.pono}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proIssue.tenChuyen">Ten Chuyen</span></dt>
+                <dd>
+                    <span>{{proIssue.tenChuyen}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proIssue.ngayGioBatDau">Ngay Gio Bat Dau</span></dt>
+                <dd>
+                    <span>{{proIssue.ngayGioBatDau}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proIssue.ngayGioKetThuc">Ngay Gio Ket Thuc</span></dt>
+                <dd>
+                    <span>{{proIssue.ngayGioKetThuc}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proIssue.maLoi">Ma Loi</span></dt>
+                <dd>
+                    <span>{{proIssue.maLoi}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proIssue.moTaLoi">Mo Ta Loi</span></dt>
+                <dd>
+                    <span>{{proIssue.moTaLoi}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proIssue.maMay">Ma May</span></dt>
+                <dd>
+                    <span>{{proIssue.maMay}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proIssue.soTram">So Tram</span></dt>
+                <dd>
+                    <span>{{proIssue.soTram}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proIssue.proChuyenId">Pro Chuyen Id</span></dt>
+                <dd>
+                    <span>{{proIssue.proChuyenId}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proIssue.proSanPhamId">Pro San Pham Id</span></dt>
+                <dd>
+                    <span>{{proIssue.proSanPhamId}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proIssue.nguoiTao">Nguoi Tao</span></dt>
+                <dd>
+                    <span>{{proIssue.nguoiTao}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proIssue.checkPointType">Check Point Type</span></dt>
+                <dd>
+                    <span>{{proIssue.checkPointType}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proIssue.checkPointId">Check Point Id</span></dt>
+                <dd>
+                    <span>{{proIssue.checkPointId}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proIssue.checkPointName">Check Point Name</span></dt>
+                <dd>
+                    <span>{{proIssue.checkPointName}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/sys/pro-issue', proIssue.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

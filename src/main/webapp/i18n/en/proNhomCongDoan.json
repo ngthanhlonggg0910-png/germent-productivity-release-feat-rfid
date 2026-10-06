@@ -1,0 +1,23 @@
+{
+  "ctApp": {
+    "proNhomCongDoan": {
+      "home": {
+        "title": "Pro Nhom Cong Doans",
+        "createLabel": "Create a new Pro Nhom Cong Doan",
+        "createOrEditLabel": "Create or edit a Pro Nhom Cong Doan",
+        "notFound": "No Pro Nhom Cong Doans found"
+      },
+      "created": "A new Pro Nhom Cong Doan is created with identifier {{ param }}",
+      "updated": "A Pro Nhom Cong Doan is updated with identifier {{ param }}",
+      "deleted": "A Pro Nhom Cong Doan is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Pro Nhom Cong Doan {{ id }}?"
+      },
+      "detail": {
+        "title": "Pro Nhom Cong Doan"
+      },
+      "ten": "Ten",
+      "checkNangSuat": "Check Nang Suat"
+    }
+  }
+}

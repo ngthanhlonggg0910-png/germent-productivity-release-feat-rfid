@@ -1,0 +1,42 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="cauHinhZalo">
+            <h2><span jhiTranslate="ctApp.cauHinhZalo.detail.title">Cau Hinh Zalo</span> {{cauHinhZalo.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="ctApp.cauHinhZalo.accessToken">Access Token</span></dt>
+                <dd>
+                    <span>{{cauHinhZalo.accessToken}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.cauHinhZalo.refreshToken">Refresh Token</span></dt>
+                <dd>
+                    <span>{{cauHinhZalo.refreshToken}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.cauHinhZalo.zaloOA">Zalo OA</span></dt>
+                <dd>
+                    <span>{{cauHinhZalo.zaloOA}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.cauHinhZalo.secretKey">Secret Key</span></dt>
+                <dd>
+                    <span>{{cauHinhZalo.secretKey}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.cauHinhZalo.appId">App Id</span></dt>
+                <dd>
+                    <span>{{cauHinhZalo.appId}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.cauHinhZalo.expireTime">Expire Time</span></dt>
+                <dd>
+                    <span>{{cauHinhZalo.expireTime}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+        </div>
+    </div>
+</div>

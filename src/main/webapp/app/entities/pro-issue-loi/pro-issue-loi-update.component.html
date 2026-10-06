@@ -1,0 +1,71 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-pro-issue-loi-heading" jhiTranslate="ctApp.proIssueLoi.home.createOrEditLabel">Create or edit a Pro Issue Loi</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id').value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proIssueLoi.maLoi" for="field_maLoi">Ma Loi</label>
+                    <input type="text" class="form-control" name="maLoi" id="field_maLoi"
+                           formControlName="maLoi"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proIssueLoi.cusCode" for="field_cusCode">Cus Code</label>
+                    <input type="text" class="form-control" name="cusCode" id="field_cusCode"
+                           formControlName="cusCode"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proIssueLoi.tenLoi" for="field_tenLoi">Ten Loi</label>
+                    <input type="text" class="form-control" name="tenLoi" id="field_tenLoi"
+                           formControlName="tenLoi"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proIssueLoi.tenTiengAnh" for="field_tenTiengAnh">Ten Tieng Anh</label>
+                    <input type="text" class="form-control" name="tenTiengAnh" id="field_tenTiengAnh"
+                           formControlName="tenTiengAnh"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proIssueLoi.label" for="field_label">Label</label>
+                    <input type="text" class="form-control" name="label" id="field_label"
+                           formControlName="label"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proIssueLoi.stt" for="field_stt">Stt</label>
+                    <input type="number" class="form-control" name="stt" id="field_stt"
+                           formControlName="stt"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proIssueLoi.mauSac" for="field_mauSac">Mau Sac</label>
+                    <input type="text" class="form-control" name="mauSac" id="field_mauSac"
+                           formControlName="mauSac"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proIssueLoi.ghiChu" for="field_ghiChu">Ghi Chu</label>
+                    <input type="text" class="form-control" name="ghiChu" id="field_ghiChu"
+                           formControlName="ghiChu"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proIssueLoi.proIssueCumLoi" for="field_proIssueCumLoi">Pro Issue Cum Loi</label>
+                    <select class="form-control" id="field_proIssueCumLoi" name="proIssueCumLoi" formControlName="proIssueCumLoiId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="proIssueCumLoiOption.id" *ngFor="let proIssueCumLoiOption of proissuecumlois; trackBy: trackProIssueCumLoiById">{{proIssueCumLoiOption.ten}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

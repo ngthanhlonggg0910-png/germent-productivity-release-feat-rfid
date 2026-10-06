@@ -1,0 +1,80 @@
+{
+    "name": "ProRefinalCC",
+    "fields": [
+        {
+            "fieldName": "khxhId",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "maHang",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "poNo",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "ngayKiemFinal",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "tenChuyen",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "ngayGioKiem",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "soLuongKiemAql",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "soLuong",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "doAm",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "tongSoLoi",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "soThuTuThung",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "doKimMd",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "aql",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "maxLoiChoPhep",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "completed",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "nguoiKiem",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20210328095743",
+    "entityTableName": "pro_refinal_cc",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

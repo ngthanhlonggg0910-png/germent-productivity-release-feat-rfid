@@ -1,0 +1,105 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="nVButton">
+            <h2><span jhiTranslate="ctApp.nVButton.detail.title">NV Button</span> {{nVButton.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="ctApp.nVButton.name">Name</span></dt>
+                <dd>
+                    <span>{{nVButton.name}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.nVButton.discoveredOnTopic">Discovered On Topic</span></dt>
+                <dd>
+                    <span>{{nVButton.discoveredOnTopic}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.nVButton.cmndTopic">Cmnd Topic</span></dt>
+                <dd>
+                    <span>{{nVButton.cmndTopic}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.nVButton.plOff">Pl Off</span></dt>
+                <dd>
+                    <span>{{nVButton.plOff}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.nVButton.plOn">Pl On</span></dt>
+                <dd>
+                    <span>{{nVButton.plOn}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.nVButton.uniqId">Uniq Id</span></dt>
+                <dd>
+                    <span>{{nVButton.uniqId}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.nVButton.devIds">Dev Ids</span></dt>
+                <dd>
+                    <span>{{nVButton.devIds}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.nVButton.teleTopic">Tele Topic</span></dt>
+                <dd>
+                    <span>{{nVButton.teleTopic}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.nVButton.statTopic">Stat Topic</span></dt>
+                <dd>
+                    <span>{{nVButton.statTopic}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.nVButton.avtyTopic">Avty Topic</span></dt>
+                <dd>
+                    <span>{{nVButton.avtyTopic}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.nVButton.plAvail">Pl Avail</span></dt>
+                <dd>
+                    <span>{{nVButton.plAvail}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.nVButton.plNotAvail">Pl Not Avail</span></dt>
+                <dd>
+                    <span>{{nVButton.plNotAvail}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.nVButton.state">State</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'ctApp.NVButtonState.' + nVButton.state}}">{{nVButton.state}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.nVButton.lwt">Lwt</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'ctApp.LWT.' + nVButton.lwt}}">{{nVButton.lwt}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.nVButton.lastUpdateState">Last Update State</span></dt>
+                <dd>
+                    <span>{{nVButton.lastUpdateState}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.nVButton.groupType">Group Type</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'ctApp.GroupButtonType.' + nVButton.groupType}}">{{nVButton.groupType}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.nVButton.buttonTracking">Button Tracking</span></dt>
+                <dd>
+                    <div *ngIf="nVButton.buttonTrackingId">
+                        <a [routerLink]="['/sys/button-tracking', nVButton.buttonTrackingId, 'view']">{{nVButton.buttonTrackingId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="ctApp.nVButton.device">Device</span></dt>
+                <dd>
+                    <div *ngIf="nVButton.deviceId">
+                        <a [routerLink]="['/sys/device', nVButton.deviceId, 'view']">{{nVButton.deviceName}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="ctApp.nVButton.trackingType">Tracking Type</span></dt>
+                <dd>
+                    <div *ngIf="nVButton.trackingTypeId">
+                        <a [routerLink]="['/sys/nv-button-tracking-type', nVButton.trackingTypeId, 'view']">{{nVButton.trackingTypeName}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/sys/nv-button', nVButton.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

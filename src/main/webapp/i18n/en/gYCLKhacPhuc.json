@@ -1,0 +1,31 @@
+{
+  "ctApp": {
+    "gYCLKhacPhuc": {
+      "home": {
+        "title": "GYCL Khac Phucs",
+        "createLabel": "Create a new GYCL Khac Phuc",
+        "createOrEditLabel": "Create or edit a GYCL Khac Phuc",
+        "notFound": "No GYCL Khac Phucs found"
+      },
+      "created": "A new GYCL Khac Phuc is created with identifier {{ param }}",
+      "updated": "A GYCL Khac Phuc is updated with identifier {{ param }}",
+      "deleted": "A GYCL Khac Phuc is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete GYCL Khac Phuc {{ id }}?"
+      },
+      "detail": {
+        "title": "GYCL Khac Phuc"
+      },
+      "cumId": "Cum Id",
+      "tenCum": "Ten Cum",
+      "gopY": "Gop Y",
+      "ketQua": "Ket Qua",
+      "nguoiTao": "Nguoi Tao",
+      "userId": "User Id",
+      "ngayTao": "Ngay Tao",
+      "proGopYChatLuong": "Pro Gop Y Chat Luong",
+      "thuVienLoi": "Thu Vien Loi",
+      "khacPhucLoi": "Khac Phuc Loi"
+    }
+  }
+}

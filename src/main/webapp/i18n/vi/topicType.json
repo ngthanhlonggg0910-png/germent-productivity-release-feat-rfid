@@ -1,0 +1,11 @@
+{
+  "ctApp": {
+    "TopicType": {
+      "null": "",
+      "CMND": "CMND",
+      "TELE": "TELE",
+      "STAT": "STAT",
+      "DISCOVERY": "DISCOVERY"
+    }
+  }
+}

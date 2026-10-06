@@ -1,0 +1,20 @@
+{
+    "name": "ProTenMua",
+    "fields": [
+        {
+            "fieldName": "tenMua",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20200212162850",
+    "entityTableName": "pro_ten_mua",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

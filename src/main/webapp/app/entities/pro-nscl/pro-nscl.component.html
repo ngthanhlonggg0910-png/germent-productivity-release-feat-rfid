@@ -1,0 +1,211 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="ctApp.proNSCL.home.title">Pro NSCLS</span>
+
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-pro-nscl" [routerLink]="['/sys/pro-nscl/new']">
+            <fa-icon icon="plus"></fa-icon>
+            <span  jhiTranslate="ctApp.proNSCL.home.createLabel">
+            Create a new Pro NSCL
+            </span>
+        </button>
+    </h2>
+
+    <jhi-alert-error></jhi-alert-error>
+
+    <jhi-alert></jhi-alert>
+
+    <div class="alert alert-warning" id="no-result" *ngIf="proNSCLS?.length === 0">
+        <span jhiTranslate="ctApp.proNSCL.home.notFound">No proNSCLS found</span>
+    </div>
+
+    <div class="table-responsive" id="entities" *ngIf="proNSCLS?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+                <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="loadPage.bind(this)">
+                    <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="taiKhoan"><span jhiTranslate="ctApp.proNSCL.taiKhoan">Tai Khoan</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="ngaySanXuat"><span jhiTranslate="ctApp.proNSCL.ngaySanXuat">Ngay San Xuat</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="stt"><span jhiTranslate="ctApp.proNSCL.stt">Stt</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="mucTieuNgay"><span jhiTranslate="ctApp.proNSCL.mucTieuNgay">Muc Tieu Ngay</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="thucHienNgay"><span jhiTranslate="ctApp.proNSCL.thucHienNgay">Thuc Hien Ngay</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="loiNgay"><span jhiTranslate="ctApp.proNSCL.loiNgay">Loi Ngay</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="suaNgay"><span jhiTranslate="ctApp.proNSCL.suaNgay">Sua Ngay</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="btpCap"><span jhiTranslate="ctApp.proNSCL.btpCap">Btp Cap</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="qty1h"><span jhiTranslate="ctApp.proNSCL.qty1h">Qty 1 H</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="qty2h"><span jhiTranslate="ctApp.proNSCL.qty2h">Qty 2 H</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="qty3h"><span jhiTranslate="ctApp.proNSCL.qty3h">Qty 3 H</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="qty4h"><span jhiTranslate="ctApp.proNSCL.qty4h">Qty 4 H</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="qty5h"><span jhiTranslate="ctApp.proNSCL.qty5h">Qty 5 H</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="qty6h"><span jhiTranslate="ctApp.proNSCL.qty6h">Qty 6 H</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="qty7h"><span jhiTranslate="ctApp.proNSCL.qty7h">Qty 7 H</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="qty8h"><span jhiTranslate="ctApp.proNSCL.qty8h">Qty 8 H</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="qty9h"><span jhiTranslate="ctApp.proNSCL.qty9h">Qty 9 H</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="qty10h"><span jhiTranslate="ctApp.proNSCL.qty10h">Qty 10 H</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="qty11h"><span jhiTranslate="ctApp.proNSCL.qty11h">Qty 11 H</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="qty12h"><span jhiTranslate="ctApp.proNSCL.qty12h">Qty 12 H</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="qty13h"><span jhiTranslate="ctApp.proNSCL.qty13h">Qty 13 H</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="qty14h"><span jhiTranslate="ctApp.proNSCL.qty14h">Qty 14 H</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="reject1h"><span jhiTranslate="ctApp.proNSCL.reject1h">Reject 1 H</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="reject2h"><span jhiTranslate="ctApp.proNSCL.reject2h">Reject 2 H</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="reject3h"><span jhiTranslate="ctApp.proNSCL.reject3h">Reject 3 H</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="reject4h"><span jhiTranslate="ctApp.proNSCL.reject4h">Reject 4 H</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="reject5h"><span jhiTranslate="ctApp.proNSCL.reject5h">Reject 5 H</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="reject6h"><span jhiTranslate="ctApp.proNSCL.reject6h">Reject 6 H</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="reject7h"><span jhiTranslate="ctApp.proNSCL.reject7h">Reject 7 H</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="reject8h"><span jhiTranslate="ctApp.proNSCL.reject8h">Reject 8 H</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="reject9h"><span jhiTranslate="ctApp.proNSCL.reject9h">Reject 9 H</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="reject10h"><span jhiTranslate="ctApp.proNSCL.reject10h">Reject 10 H</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="reject11h"><span jhiTranslate="ctApp.proNSCL.reject11h">Reject 11 H</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="reject12h"><span jhiTranslate="ctApp.proNSCL.reject12h">Reject 12 H</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="reject13h"><span jhiTranslate="ctApp.proNSCL.reject13h">Reject 13 H</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="reject14h"><span jhiTranslate="ctApp.proNSCL.reject14h">Reject 14 H</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="man1h"><span jhiTranslate="ctApp.proNSCL.man1h">Man 1 H</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="man2h"><span jhiTranslate="ctApp.proNSCL.man2h">Man 2 H</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="man3h"><span jhiTranslate="ctApp.proNSCL.man3h">Man 3 H</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="man4h"><span jhiTranslate="ctApp.proNSCL.man4h">Man 4 H</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="man5h"><span jhiTranslate="ctApp.proNSCL.man5h">Man 5 H</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="man6h"><span jhiTranslate="ctApp.proNSCL.man6h">Man 6 H</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="man7h"><span jhiTranslate="ctApp.proNSCL.man7h">Man 7 H</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="man8h"><span jhiTranslate="ctApp.proNSCL.man8h">Man 8 H</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="man9h"><span jhiTranslate="ctApp.proNSCL.man9h">Man 9 H</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="man10h"><span jhiTranslate="ctApp.proNSCL.man10h">Man 10 H</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="man11h"><span jhiTranslate="ctApp.proNSCL.man11h">Man 11 H</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="man12h"><span jhiTranslate="ctApp.proNSCL.man12h">Man 12 H</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="man13h"><span jhiTranslate="ctApp.proNSCL.man13h">Man 13 H</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="man14h"><span jhiTranslate="ctApp.proNSCL.man14h">Man 14 H</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="manOnly7Hours"><span jhiTranslate="ctApp.proNSCL.manOnly7Hours">Man Only 7 Hours</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="fix1h"><span jhiTranslate="ctApp.proNSCL.fix1h">Fix 1 H</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="fix2h"><span jhiTranslate="ctApp.proNSCL.fix2h">Fix 2 H</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="fix3h"><span jhiTranslate="ctApp.proNSCL.fix3h">Fix 3 H</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="fix4h"><span jhiTranslate="ctApp.proNSCL.fix4h">Fix 4 H</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="fix5h"><span jhiTranslate="ctApp.proNSCL.fix5h">Fix 5 H</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="fix6h"><span jhiTranslate="ctApp.proNSCL.fix6h">Fix 6 H</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="fix7h"><span jhiTranslate="ctApp.proNSCL.fix7h">Fix 7 H</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="fix8h"><span jhiTranslate="ctApp.proNSCL.fix8h">Fix 8 H</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="fix9h"><span jhiTranslate="ctApp.proNSCL.fix9h">Fix 9 H</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="fix10h"><span jhiTranslate="ctApp.proNSCL.fix10h">Fix 10 H</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="fix11h"><span jhiTranslate="ctApp.proNSCL.fix11h">Fix 11 H</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="fix12h"><span jhiTranslate="ctApp.proNSCL.fix12h">Fix 12 H</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="fix13h"><span jhiTranslate="ctApp.proNSCL.fix13h">Fix 13 H</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="fix14h"><span jhiTranslate="ctApp.proNSCL.fix14h">Fix 14 H</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="proKeHoachSanXuatId"><span jhiTranslate="ctApp.proNSCL.proKeHoachSanXuat">Pro Ke Hoach San Xuat</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="proCheckPointTen"><span jhiTranslate="ctApp.proNSCL.proCheckPoint">Pro Check Point</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let proNSCL of proNSCLS ;trackBy: trackId">
+                    <td><a [routerLink]="['/sys/pro-nscl', proNSCL.id, 'view']">{{ proNSCL.id }}</a></td>
+                    <td>{{ proNSCL.taiKhoan }}</td>
+                    <td>{{ proNSCL.ngaySanXuat | date:'medium' }}</td>
+                    <td>{{ proNSCL.stt }}</td>
+                    <td>{{ proNSCL.mucTieuNgay }}</td>
+                    <td>{{ proNSCL.thucHienNgay }}</td>
+                    <td>{{ proNSCL.loiNgay }}</td>
+                    <td>{{ proNSCL.suaNgay }}</td>
+                    <td>{{ proNSCL.btpCap }}</td>
+                    <td>{{ proNSCL.qty1h }}</td>
+                    <td>{{ proNSCL.qty2h }}</td>
+                    <td>{{ proNSCL.qty3h }}</td>
+                    <td>{{ proNSCL.qty4h }}</td>
+                    <td>{{ proNSCL.qty5h }}</td>
+                    <td>{{ proNSCL.qty6h }}</td>
+                    <td>{{ proNSCL.qty7h }}</td>
+                    <td>{{ proNSCL.qty8h }}</td>
+                    <td>{{ proNSCL.qty9h }}</td>
+                    <td>{{ proNSCL.qty10h }}</td>
+                    <td>{{ proNSCL.qty11h }}</td>
+                    <td>{{ proNSCL.qty12h }}</td>
+                    <td>{{ proNSCL.qty13h }}</td>
+                    <td>{{ proNSCL.qty14h }}</td>
+                    <td>{{ proNSCL.reject1h }}</td>
+                    <td>{{ proNSCL.reject2h }}</td>
+                    <td>{{ proNSCL.reject3h }}</td>
+                    <td>{{ proNSCL.reject4h }}</td>
+                    <td>{{ proNSCL.reject5h }}</td>
+                    <td>{{ proNSCL.reject6h }}</td>
+                    <td>{{ proNSCL.reject7h }}</td>
+                    <td>{{ proNSCL.reject8h }}</td>
+                    <td>{{ proNSCL.reject9h }}</td>
+                    <td>{{ proNSCL.reject10h }}</td>
+                    <td>{{ proNSCL.reject11h }}</td>
+                    <td>{{ proNSCL.reject12h }}</td>
+                    <td>{{ proNSCL.reject13h }}</td>
+                    <td>{{ proNSCL.reject14h }}</td>
+                    <td>{{ proNSCL.man1h }}</td>
+                    <td>{{ proNSCL.man2h }}</td>
+                    <td>{{ proNSCL.man3h }}</td>
+                    <td>{{ proNSCL.man4h }}</td>
+                    <td>{{ proNSCL.man5h }}</td>
+                    <td>{{ proNSCL.man6h }}</td>
+                    <td>{{ proNSCL.man7h }}</td>
+                    <td>{{ proNSCL.man8h }}</td>
+                    <td>{{ proNSCL.man9h }}</td>
+                    <td>{{ proNSCL.man10h }}</td>
+                    <td>{{ proNSCL.man11h }}</td>
+                    <td>{{ proNSCL.man12h }}</td>
+                    <td>{{ proNSCL.man13h }}</td>
+                    <td>{{ proNSCL.man14h }}</td>
+                    <td>{{ proNSCL.manOnly7Hours }}</td>
+                    <td>{{ proNSCL.fix1h }}</td>
+                    <td>{{ proNSCL.fix2h }}</td>
+                    <td>{{ proNSCL.fix3h }}</td>
+                    <td>{{ proNSCL.fix4h }}</td>
+                    <td>{{ proNSCL.fix5h }}</td>
+                    <td>{{ proNSCL.fix6h }}</td>
+                    <td>{{ proNSCL.fix7h }}</td>
+                    <td>{{ proNSCL.fix8h }}</td>
+                    <td>{{ proNSCL.fix9h }}</td>
+                    <td>{{ proNSCL.fix10h }}</td>
+                    <td>{{ proNSCL.fix11h }}</td>
+                    <td>{{ proNSCL.fix12h }}</td>
+                    <td>{{ proNSCL.fix13h }}</td>
+                    <td>{{ proNSCL.fix14h }}</td>
+                    <td>
+                        <div *ngIf="proNSCL.proKeHoachSanXuatId">
+                            <a [routerLink]="['/sys/pro-ke-hoach-san-xuat', proNSCL.proKeHoachSanXuatId , 'view']" >{{ proNSCL.proKeHoachSanXuatId }}</a>
+                        </div>
+                    </td>
+                    <td>
+                        <div *ngIf="proNSCL.proCheckPointId">
+                            <a [routerLink]="['/sys/pro-check-point', proNSCL.proCheckPointId , 'view']" >{{ proNSCL.proCheckPointTen }}</a>
+                        </div>
+                    </td>
+                    <td class="text-right">
+                        <div class="btn-group">
+                            <button type="submit"
+                                    [routerLink]="['/sys/pro-nscl', proNSCL.id, 'view']"
+                                    class="btn btn-info btn-sm">
+                                <fa-icon icon="eye"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                            </button>
+
+                            <button type="submit"
+                                    [routerLink]="['/sys/pro-nscl', proNSCL.id, 'edit']"
+                                    class="btn btn-primary btn-sm">
+                                <fa-icon icon="pencil-alt"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                            </button>
+
+                            <button type="submit" (click)="delete(proNSCL)"
+                                    class="btn btn-danger btn-sm">
+                                <fa-icon icon="times"></fa-icon>
+                                <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                            </button>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div *ngIf="proNSCLS?.length > 0">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="totalItems" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="ngbPaginationPage" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage($event)"></ngb-pagination>
+        </div>
+    </div>
+</div>

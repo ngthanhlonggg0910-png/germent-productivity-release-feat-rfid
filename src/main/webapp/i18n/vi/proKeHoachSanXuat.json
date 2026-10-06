@@ -1,0 +1,29 @@
+{
+  "ctApp": {
+    "proKeHoachSanXuat": {
+      "home": {
+        "title": "Pro Ke Hoach San Xuats",
+        "createLabel": "Thêm mới một Pro Ke Hoach San Xuat",
+        "createOrEditLabel": "Thêm mới hoặc cập nhật Pro Ke Hoach San Xuat",
+        "notFound": "No Pro Ke Hoach San Xuats found"
+      },
+      "created": "Một Pro Ke Hoach San Xuat mới được tạo với định danh {{ param }}",
+      "updated": "Một Pro Ke Hoach San Xuat cập nhật với định danh {{ param }}",
+      "deleted": "Một Pro Ke Hoach San Xuat đã xóa với định danh {{ param }}",
+      "delete": {
+        "question": "Bạn có chắc là muốn xóa Pro Ke Hoach San Xuat {{ id }}?"
+      },
+      "detail": {
+        "title": "Pro Ke Hoach San Xuat"
+      },
+      "ngaySanXuat": "Ngay San Xuat",
+      "soLuongYeuCau": "So Luong Yeu Cau",
+      "tinhTrang": "Tinh Trang",
+      "ghiChu": "Ghi Chu",
+      "sam": "Sam",
+      "lotNo": "Lot No",
+      "proChuyen": "Pro Chuyen",
+      "proSanPham": "Pro San Pham"
+    }
+  }
+}

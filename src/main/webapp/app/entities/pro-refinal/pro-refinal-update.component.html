@@ -1,0 +1,60 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-pro-refinal-heading" jhiTranslate="ctApp.proRefinal.home.createOrEditLabel">Create or edit a Pro Refinal</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id').value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proRefinal.proKHSXId" for="field_proKHSXId">Pro KHSX Id</label>
+                    <input type="number" class="form-control" name="proKHSXId" id="field_proKHSXId"
+                           formControlName="proKHSXId"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proRefinal.checkPointID" for="field_checkPointID">Check Point ID</label>
+                    <input type="number" class="form-control" name="checkPointID" id="field_checkPointID"
+                           formControlName="checkPointID"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proRefinal.proNSCLId" for="field_proNSCLId">Pro NSCL Id</label>
+                    <input type="number" class="form-control" name="proNSCLId" id="field_proNSCLId"
+                           formControlName="proNSCLId"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proRefinal.ngayGioKiem" for="field_ngayGioKiem">Ngay Gio Kiem</label>
+                    <div class="d-flex">
+                        <input id="field_ngayGioKiem" type="datetime-local" class="form-control" name="ngayGioKiem" formControlName="ngayGioKiem" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proRefinal.soLuongKiem" for="field_soLuongKiem">So Luong Kiem</label>
+                    <input type="number" class="form-control" name="soLuongKiem" id="field_soLuongKiem"
+                           formControlName="soLuongKiem"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proRefinal.hangDatHienTai" for="field_hangDatHienTai">Hang Dat Hien Tai</label>
+                    <input type="number" class="form-control" name="hangDatHienTai" id="field_hangDatHienTai"
+                           formControlName="hangDatHienTai"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proRefinal.doAm" for="field_doAm">Do Am</label>
+                    <input type="number" class="form-control" name="doAm" id="field_doAm"
+                           formControlName="doAm"/>
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

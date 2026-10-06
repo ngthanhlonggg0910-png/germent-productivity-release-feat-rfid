@@ -1,0 +1,53 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="gYCLQuyCachNPL">
+            <h2><span jhiTranslate="ctApp.gYCLQuyCachNPL.detail.title">GYCL Quy Cach NPL</span> {{gYCLQuyCachNPL.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="ctApp.gYCLQuyCachNPL.tenNPL">Ten NPL</span></dt>
+                <dd>
+                    <span>{{gYCLQuyCachNPL.tenNPL}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.gYCLQuyCachNPL.nguoiTao">Nguoi Tao</span></dt>
+                <dd>
+                    <span>{{gYCLQuyCachNPL.nguoiTao}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.gYCLQuyCachNPL.ngayTao">Ngay Tao</span></dt>
+                <dd>
+                    <span>{{gYCLQuyCachNPL.ngayTao}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.gYCLQuyCachNPL.userId">User Id</span></dt>
+                <dd>
+                    <span>{{gYCLQuyCachNPL.userId}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.gYCLQuyCachNPL.yesNo">Yes No</span></dt>
+                <dd>
+                    <span>{{gYCLQuyCachNPL.yesNo}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.gYCLQuyCachNPL.nA">N A</span></dt>
+                <dd>
+                    <span>{{gYCLQuyCachNPL.nA}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.gYCLQuyCachNPL.proGopYChatLuong">Pro Gop Y Chat Luong</span></dt>
+                <dd>
+                    <div *ngIf="gYCLQuyCachNPL.proGopYChatLuongId">
+                        <a [routerLink]="['/sys/gop-y-chat-luong', gYCLQuyCachNPL.proGopYChatLuongId, 'view']">{{gYCLQuyCachNPL.proGopYChatLuongId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/sys/gycl-quy-cach-npl', gYCLQuyCachNPL.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

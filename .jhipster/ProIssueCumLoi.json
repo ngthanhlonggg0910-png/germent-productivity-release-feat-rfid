@@ -1,0 +1,36 @@
+{
+    "name": "ProIssueCumLoi",
+    "fields": [
+        {
+            "fieldName": "ten",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "mau",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "toTruong",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "kyThuat",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "qa",
+            "fieldType": "Boolean"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20210328095743",
+    "entityTableName": "pro_issue_cum_loi",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

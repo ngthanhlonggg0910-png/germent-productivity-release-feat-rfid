@@ -1,0 +1,82 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="ctApp.proChuyen.home.title">Pro Chuyens</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-pro-chuyen" [routerLink]="['/sys/pro-chuyen/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="ctApp.proChuyen.home.createLabel">
+            Create a new Pro Chuyen
+            </span>
+        </button>
+    </h2>
+    <jhi-alert-error></jhi-alert-error>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="proChuyens?.length === 0">
+        <span jhiTranslate="ctApp.proChuyen.home.notFound">No proChuyens found</span>
+    </div>
+    <div class="table-responsive" *ngIf="proChuyens?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="ten"><span jhiTranslate="ctApp.proChuyen.ten">Ten</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="stt"><span jhiTranslate="ctApp.proChuyen.stt">Stt</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="tenLoaiChuyen"><span jhiTranslate="ctApp.proChuyen.tenLoaiChuyen">Ten Loai Chuyen</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="proLoaiChuyenTen"><span jhiTranslate="ctApp.proChuyen.proLoaiChuyen">Pro Loai Chuyen</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="proNhaMayTen"><span jhiTranslate="ctApp.proChuyen.proNhaMay">Pro Nha May</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let proChuyen of proChuyens ;trackBy: trackId">
+                <td><a [routerLink]="['/sys/pro-chuyen', proChuyen.id, 'view' ]">{{proChuyen.id}}</a></td>
+                <td>{{proChuyen.ten}}</td>
+                <td>{{proChuyen.stt}}</td>
+                <td>{{proChuyen.tenLoaiChuyen}}</td>
+                <td>
+                    <div *ngIf="proChuyen.proLoaiChuyenId">
+                        <a [routerLink]="['/sys/pro-loai-chuyen', proChuyen.proLoaiChuyenId , 'view' ]" >{{proChuyen.proLoaiChuyenTen}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="proChuyen.proNhaMayId">
+                        <a [routerLink]="['/sys/pro-nha-may', proChuyen.proNhaMayId , 'view' ]" >{{proChuyen.proNhaMayTen}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/sys/pro-chuyen', proChuyen.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/sys/pro-chuyen', proChuyen.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/sys/pro-chuyen', { outlets: { popup: proChuyen.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div [hidden]="proChuyens?.length === 0">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="totalItems" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

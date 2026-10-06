@@ -1,0 +1,20 @@
+{
+    "name": "ProChungLoaiSanPham",
+    "fields": [
+        {
+            "fieldName": "tenChungLoai",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20200212162849",
+    "entityTableName": "pro_chung_loai_san_pham",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

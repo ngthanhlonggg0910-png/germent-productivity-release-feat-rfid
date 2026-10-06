@@ -1,0 +1,74 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="ctApp.quyCachNPL.home.title">Quy Cach NPLS</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-quy-cach-npl" [routerLink]="['/sys/quy-cach-npl/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="ctApp.quyCachNPL.home.createLabel">
+            Create a new Quy Cach NPL
+            </span>
+        </button>
+    </h2>
+    <jhi-alert-error></jhi-alert-error>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="quyCachNPLS?.length === 0">
+        <span jhiTranslate="ctApp.quyCachNPL.home.notFound">No quyCachNPLS found</span>
+    </div>
+    <div class="table-responsive" *ngIf="quyCachNPLS?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="tenNPL"><span jhiTranslate="ctApp.quyCachNPL.tenNPL">Ten NPL</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="maNPL"><span jhiTranslate="ctApp.quyCachNPL.maNPL">Ma NPL</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="nguoiTao"><span jhiTranslate="ctApp.quyCachNPL.nguoiTao">Nguoi Tao</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="ngayTao"><span jhiTranslate="ctApp.quyCachNPL.ngayTao">Ngay Tao</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="userId"><span jhiTranslate="ctApp.quyCachNPL.userId">User Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let quyCachNPL of quyCachNPLS ;trackBy: trackId">
+                <td><a [routerLink]="['/sys/quy-cach-npl', quyCachNPL.id, 'view' ]">{{quyCachNPL.id}}</a></td>
+                <td>{{quyCachNPL.tenNPL}}</td>
+                <td>{{quyCachNPL.maNPL}}</td>
+                <td>{{quyCachNPL.nguoiTao}}</td>
+                <td>{{quyCachNPL.ngayTao}}</td>
+                <td>{{quyCachNPL.userId}}</td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/sys/quy-cach-npl', quyCachNPL.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/sys/quy-cach-npl', quyCachNPL.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/sys/quy-cach-npl', { outlets: { popup: quyCachNPL.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div [hidden]="quyCachNPLS?.length === 0">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="totalItems" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

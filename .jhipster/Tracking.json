@@ -1,0 +1,52 @@
+{
+    "name": "Tracking",
+    "fields": [
+        {
+            "fieldName": "nvButtonId",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "state1Time",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "state2Time",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "state3Time",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "state4Time",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "state5Time",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "state6Time",
+            "fieldType": "Instant"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "nVButtonTrackingType",
+            "otherEntityRelationshipName": "tracking",
+            "relationshipName": "trackingType",
+            "otherEntityField": "name"
+        }
+    ],
+    "changelogDate": "20200822033710",
+    "entityTableName": "tracking",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

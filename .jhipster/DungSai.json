@@ -1,0 +1,39 @@
+{
+    "name": "DungSai",
+    "fields": [
+        {
+            "fieldName": "cmLabel",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "inchLabel",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "cmValue",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "inchValue",
+            "fieldType": "Float"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "thongSoThucThi",
+            "otherEntityRelationshipName": "dungSai",
+            "relationshipName": "thongSoThucThi"
+        }
+    ],
+    "changelogDate": "20200425101316",
+    "entityTableName": "dung_sai",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

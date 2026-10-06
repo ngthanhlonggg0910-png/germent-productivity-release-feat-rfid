@@ -1,0 +1,61 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="proIssueLoi">
+            <h2><span jhiTranslate="ctApp.proIssueLoi.detail.title">Pro Issue Loi</span> {{proIssueLoi.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="ctApp.proIssueLoi.maLoi">Ma Loi</span></dt>
+                <dd>
+                    <span>{{proIssueLoi.maLoi}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proIssueLoi.cusCode">Cus Code</span></dt>
+                <dd>
+                    <span>{{proIssueLoi.cusCode}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proIssueLoi.tenLoi">Ten Loi</span></dt>
+                <dd>
+                    <span>{{proIssueLoi.tenLoi}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proIssueLoi.tenTiengAnh">Ten Tieng Anh</span></dt>
+                <dd>
+                    <span>{{proIssueLoi.tenTiengAnh}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proIssueLoi.label">Label</span></dt>
+                <dd>
+                    <span>{{proIssueLoi.label}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proIssueLoi.stt">Stt</span></dt>
+                <dd>
+                    <span>{{proIssueLoi.stt}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proIssueLoi.mauSac">Mau Sac</span></dt>
+                <dd>
+                    <span>{{proIssueLoi.mauSac}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proIssueLoi.ghiChu">Ghi Chu</span></dt>
+                <dd>
+                    <span>{{proIssueLoi.ghiChu}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proIssueLoi.proIssueCumLoi">Pro Issue Cum Loi</span></dt>
+                <dd>
+                    <div *ngIf="proIssueLoi.proIssueCumLoiId">
+                        <a [routerLink]="['/sys/pro-issue-cum-loi', proIssueLoi.proIssueCumLoiId, 'view']">{{proIssueLoi.proIssueCumLoiTen}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/sys/pro-issue-loi', proIssueLoi.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

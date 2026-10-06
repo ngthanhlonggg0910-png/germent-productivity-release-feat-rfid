@@ -1,0 +1,23 @@
+{
+  "ctApp": {
+    "nVButtonTrackingType": {
+      "home": {
+        "title": "NV Button Tracking Types",
+        "createLabel": "Create a new NV Button Tracking Type",
+        "createOrEditLabel": "Create or edit a NV Button Tracking Type",
+        "notFound": "No NV Button Tracking Types found"
+      },
+      "created": "A new NV Button Tracking Type is created with identifier {{ param }}",
+      "updated": "A NV Button Tracking Type is updated with identifier {{ param }}",
+      "deleted": "A NV Button Tracking Type is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete NV Button Tracking Type {{ id }}?"
+      },
+      "detail": {
+        "title": "NV Button Tracking Type"
+      },
+      "name": "Name",
+      "numberOfState": "Number Of State"
+    }
+  }
+}

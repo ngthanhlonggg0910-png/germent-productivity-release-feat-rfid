@@ -1,0 +1,82 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="ctApp.gYCLQuyCachNPL.home.title">GYCL Quy Cach NPLS</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-gycl-quy-cach-npl" [routerLink]="['/sys/gycl-quy-cach-npl/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="ctApp.gYCLQuyCachNPL.home.createLabel">
+            Create a new GYCL Quy Cach NPL
+            </span>
+        </button>
+    </h2>
+    <jhi-alert-error></jhi-alert-error>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="gYCLQuyCachNPLS?.length === 0">
+        <span jhiTranslate="ctApp.gYCLQuyCachNPL.home.notFound">No gYCLQuyCachNPLS found</span>
+    </div>
+    <div class="table-responsive" *ngIf="gYCLQuyCachNPLS?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="tenNPL"><span jhiTranslate="ctApp.gYCLQuyCachNPL.tenNPL">Ten NPL</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="nguoiTao"><span jhiTranslate="ctApp.gYCLQuyCachNPL.nguoiTao">Nguoi Tao</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="ngayTao"><span jhiTranslate="ctApp.gYCLQuyCachNPL.ngayTao">Ngay Tao</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="userId"><span jhiTranslate="ctApp.gYCLQuyCachNPL.userId">User Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="yesNo"><span jhiTranslate="ctApp.gYCLQuyCachNPL.yesNo">Yes No</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="nA"><span jhiTranslate="ctApp.gYCLQuyCachNPL.nA">N A</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="proGopYChatLuongId"><span jhiTranslate="ctApp.gYCLQuyCachNPL.proGopYChatLuong">Pro Gop Y Chat Luong</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let gYCLQuyCachNPL of gYCLQuyCachNPLS ;trackBy: trackId">
+                <td><a [routerLink]="['/sys/gycl-quy-cach-npl', gYCLQuyCachNPL.id, 'view' ]">{{gYCLQuyCachNPL.id}}</a></td>
+                <td>{{gYCLQuyCachNPL.tenNPL}}</td>
+                <td>{{gYCLQuyCachNPL.nguoiTao}}</td>
+                <td>{{gYCLQuyCachNPL.ngayTao | date:'medium'}}</td>
+                <td>{{gYCLQuyCachNPL.userId}}</td>
+                <td>{{gYCLQuyCachNPL.yesNo}}</td>
+                <td>{{gYCLQuyCachNPL.nA}}</td>
+                <td>
+                    <div *ngIf="gYCLQuyCachNPL.proGopYChatLuongId">
+                        <a [routerLink]="['/sys/gop-y-chat-luong', gYCLQuyCachNPL.proGopYChatLuongId , 'view' ]" >{{gYCLQuyCachNPL.proGopYChatLuongId}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/sys/gycl-quy-cach-npl', gYCLQuyCachNPL.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/sys/gycl-quy-cach-npl', gYCLQuyCachNPL.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/sys/gycl-quy-cach-npl', { outlets: { popup: gYCLQuyCachNPL.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div [hidden]="gYCLQuyCachNPLS?.length === 0">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="totalItems" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

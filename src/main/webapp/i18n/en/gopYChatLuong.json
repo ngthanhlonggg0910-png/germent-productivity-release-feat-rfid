@@ -1,0 +1,41 @@
+{
+  "ctApp": {
+    "gopYChatLuong": {
+      "home": {
+        "title": "Gop Y Chat Luongs",
+        "createLabel": "Create a new Gop Y Chat Luong",
+        "createOrEditLabel": "Create or edit a Gop Y Chat Luong",
+        "notFound": "No Gop Y Chat Luongs found"
+      },
+      "created": "A new Gop Y Chat Luong is created with identifier {{ param }}",
+      "updated": "A Gop Y Chat Luong is updated with identifier {{ param }}",
+      "deleted": "A Gop Y Chat Luong is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Gop Y Chat Luong {{ id }}?"
+      },
+      "detail": {
+        "title": "Gop Y Chat Luong"
+      },
+      "cusId": "Cus Id",
+      "cusName": "Cus Name",
+      "chuyenId": "Chuyen Id",
+      "chuyenName": "Chuyen Name",
+      "maHang": "Ma Hang",
+      "po": "Po",
+      "poId": "Po Id",
+      "color": "Color",
+      "size": "Size",
+      "firstCut": "First Cut",
+      "inline": "Inline",
+      "lanBanHanh": "Lan Ban Hanh",
+      "ngayBaoCao": "Ngay Bao Cao",
+      "nguoiTao": "Nguoi Tao",
+      "userId": "User Id",
+      "ngayTao": "Ngay Tao",
+      "tenQuanLyXuong": "Ten Quan Ly Xuong",
+      "tenKiThuat": "Ten Ki Thuat",
+      "tenQanLyCat": "Ten Qan Ly Cat",
+      "tenQA": "Ten QA"
+    }
+  }
+}

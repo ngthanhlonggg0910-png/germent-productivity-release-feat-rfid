@@ -1,0 +1,23 @@
+{
+  "ctApp": {
+    "doAm": {
+      "home": {
+        "title": "Do Ams",
+        "createLabel": "Create a new Do Am",
+        "createOrEditLabel": "Create or edit a Do Am",
+        "notFound": "No Do Ams found"
+      },
+      "created": "A new Do Am is created with identifier {{ param }}",
+      "updated": "A Do Am is updated with identifier {{ param }}",
+      "deleted": "A Do Am is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Do Am {{ id }}?"
+      },
+      "detail": {
+        "title": "Do Am"
+      },
+      "value": "Value",
+      "display": "Display"
+    }
+  }
+}

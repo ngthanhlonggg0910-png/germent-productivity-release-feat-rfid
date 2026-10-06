@@ -1,0 +1,8 @@
+package vn.nvsoft.domain.enumeration;
+
+/**
+ * The GioLam enumeration.
+ */
+public enum GioLam {
+    C_1H, C_2H, C_3H, C_4H, C_5H, C_6H, C_7H, C_8H, C_9H, C_10H, C_11H, C_12H, C_13H, C_14H
+}

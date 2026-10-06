@@ -1,0 +1,26 @@
+{
+  "ctApp": {
+    "proIssueCumLoi": {
+      "home": {
+        "title": "Pro Issue Cum Lois",
+        "createLabel": "Create a new Pro Issue Cum Loi",
+        "createOrEditLabel": "Create or edit a Pro Issue Cum Loi",
+        "notFound": "No Pro Issue Cum Lois found"
+      },
+      "created": "A new Pro Issue Cum Loi is created with identifier {{ param }}",
+      "updated": "A Pro Issue Cum Loi is updated with identifier {{ param }}",
+      "deleted": "A Pro Issue Cum Loi is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Pro Issue Cum Loi {{ id }}?"
+      },
+      "detail": {
+        "title": "Pro Issue Cum Loi"
+      },
+      "ten": "Ten",
+      "mau": "Mau",
+      "toTruong": "To Truong",
+      "kyThuat": "Ky Thuat",
+      "qa": "Qa"
+    }
+  }
+}

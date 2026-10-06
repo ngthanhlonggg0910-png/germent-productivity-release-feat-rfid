@@ -1,0 +1,37 @@
+{
+    "name": "SysRoleHasFunction",
+    "fields": [
+        {
+            "fieldName": "activated",
+            "fieldType": "Boolean"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "sysFunction",
+            "otherEntityRelationshipName": "sysRoleHasFunction",
+            "relationshipName": "sysFunction",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "authority",
+            "otherEntityName": "authority",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "name",
+            "otherEntityRelationshipName": "sysRoleHasFunction"
+        }
+    ],
+    "changelogDate": "20191112105554",
+    "entityTableName": "sys_role_has_function",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*",
+    "searchEngine": false,
+    "databaseType": "sql"
+}

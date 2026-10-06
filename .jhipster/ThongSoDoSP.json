@@ -1,0 +1,50 @@
+{
+    "name": "ThongSoDoSP",
+    "fields": [
+        {
+            "fieldName": "note",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "thongSoDoSPSize",
+            "otherEntityRelationshipName": "thongSoDoSP",
+            "relationshipName": "thongSoDoSPSize"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "thongSoDo",
+            "otherEntityRelationshipName": "thongSoDoSP",
+            "relationshipName": "thongSoDo",
+            "otherEntityField": "code"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "dungSai",
+            "otherEntityRelationshipName": "thongSoDoSP",
+            "relationshipName": "dungSai",
+            "otherEntityField": "inchLabel"
+        },
+        {
+            "relationshipName": "proSanPham",
+            "otherEntityName": "proSanPham",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "maSanPham",
+            "otherEntityRelationshipName": "thongSoDoSP"
+        }
+    ],
+    "changelogDate": "20200425101318",
+    "entityTableName": "thong_so_do_sp",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*",
+    "searchEngine": false,
+    "databaseType": "sql"
+}

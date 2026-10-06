@@ -1,0 +1,24 @@
+{
+  "ctApp": {
+    "proCongTy": {
+      "home": {
+        "title": "Pro Cong Ties",
+        "createLabel": "Thêm mới một Pro Cong Ty",
+        "createOrEditLabel": "Thêm mới hoặc cập nhật Pro Cong Ty",
+        "notFound": "No Pro Cong Ties found"
+      },
+      "created": "Một Pro Cong Ty mới được tạo với định danh {{ param }}",
+      "updated": "Một Pro Cong Ty cập nhật với định danh {{ param }}",
+      "deleted": "Một Pro Cong Ty đã xóa với định danh {{ param }}",
+      "delete": {
+        "question": "Bạn có chắc là muốn xóa Pro Cong Ty {{ id }}?"
+      },
+      "detail": {
+        "title": "Pro Cong Ty"
+      },
+      "ten": "Ten",
+      "diaChi": "Dia Chi",
+      "mst": "Mst"
+    }
+  }
+}

@@ -1,0 +1,317 @@
+<div class="card">
+    <div class="container-fluid p-0">
+        <div *ngIf="isShowVideoPlayer"class="w-100 h-100 middle">
+            <ng-image-slider [images]="imageObject"
+                [infinite]="true"
+                [autoSlide]=2
+                slideImage="1"
+                [imageSize]="{width: '100%', height: '100%'}"
+                [videoAutoPlay]="true"
+                #nav></ng-image-slider>
+            <!--video style="vertical-align: middle" id="myVideo" width="90%" height="95%" controls muted loop autoplay oncanplay="this.play()" onloadedmetadata="this.muted = true">
+                <source src="{{sourceVideo}}" type="video/mp4">
+                Your browser does not support HTML5 video.
+              </video-->
+        </div>
+        <div *ngIf="!isShowVideoPlayer" id="carouselExampleControls" class="carousel slide chart" data-ride="carousel" style="margin: 0 auto;">
+            <div class="carousel-inner">
+                <div class="carousel-item item-1 active" data-interval="450000">
+                    <div class="item-wrapper">
+                        <div class="row header">
+                            <div class="col-caption col-line text-3rem">
+                                LINE<br><span class="text-bold-red text-6rem">{{dataKeHoachThucHien.tenChuyen}}</span>
+                            </div>
+                            <div class="col-content">
+                                <div class="col-content-row1">
+                                    <div class="col-group-mahang">
+                                        <div class="row mahang-caption border-bottom-black" >
+                                            <span (click)="openCloseFullScreen()" id="toggle" class="text-bold-black text-15rem">MÃ HÀNG (Job No)</span>
+                                        </div>
+                                        <div class="row mahang-content">
+                                            <span class="text-bold-green text-25rem">{{dataKeHoachThucHien.mahang}}</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-date">
+                                        <div class="row mahang-caption border-bottom-black" >
+                                            <span class="text-bold-black text-15rem">NGÀY (Date)</span>
+                                        </div>
+                                        <div class="row mahang-content">
+                                            <span class="text-bold-green text-25rem">{{dayNow}}/{{monthNowNum}}</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-time">
+                                        <div class="row mahang-caption border-bottom-black" >
+                                            <span class="text-bold-black text-15rem">THỜI GIAN (Time)</span>
+                                        </div>
+                                        <div class="row mahang-content">
+                                            <span class="text-bold-green text-25rem">{{currentTime}}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-content-row2">
+                                    <div class="col-group-mahang">
+                                        <div class="col-kehoach-plan">
+                                            <div class="text-bold-black text-2rem">
+                                                KẾ HOẠCH <span class="text-15rem">(Plan)</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-thuchien-actual">
+                                            <div class="text-bold-black text-2rem">
+                                                THỰC HIỆN <span class="text-15rem">(Actual)</span>
+                                            </div>
+                                        </div>
+                                        <div class="col-percent">
+                                            <span class="text-bold-black text-2rem">%</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-nhapkho">
+                                        <div class="text-bold-black text-2rem">
+                                            NHẬP KHO <span class="text-15rem">(Del to WH)</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row dinhmuc_ndsx">
+                            <div class="col-caption">
+                                <div class="text-bold-black text-2rem">
+                                    ĐỊNH MỨC<span class="text-15rem"> Daily target</span>
+                                </div>
+                                <div style="background-color: #08113A;border-top:solid 1px white;" class="text-bold-black text-2rem">
+                                    NĐSX<span class="text-15rem"> Tatk time</span>
+                                </div>
+                            </div>
+                            <div class="col-content">
+                                <div class="col-group-mahang">
+                                    <div class="col-content-row1">
+                                        <div class="col-kehoach-plan">
+                                            <span class="text-bold-black text-6rem">{{dataKeHoachThucHien.kehoach}}</span>
+                                        </div>
+                                        <div class="col-thuchien-actual">
+                                            <span class="text-bold-black text-6rem">{{dataKeHoachThucHien.thuchien}}</span>
+                                        </div>
+                                        <div class="col-percent">
+                                            <span class="text-bold-black text-6rem">{{percentActual | number: '1.0-0'}}</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-content-row1">
+                                        <div class="col-kehoach-plan">
+                                            <span class="text-bold-black text-6rem">{{dataKeHoachThucHien.talktime_kehoach}}</span>
+                                        </div>
+                                        <div class="col-thuchien-actual">
+                                            <span class="text-bold-black text-6rem">{{dataKeHoachThucHien.talktime_thuchien}}</span>
+                                        </div>
+                                        <div class="col-percent">
+                                            <span class="text-bold-black text-6rem">{{percentTakt | number: '1.0-0'}}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-nhapkho-number">
+                                    <div class="text-bold-black text-8rem">
+                                        {{dataKeHoachThucHien.nhapkho}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row time">
+                            <div class="col-caption">
+                                <div class="text-bold-black text-2rem">
+                                    THỜI GIAN<span class="text-15rem"> Time</span>
+                                </div>
+                            </div>
+                            <div class="col-content">
+                                <div *ngFor="let d of categories" class="item-gio text-bold-black">
+                                    <span class="text-3rem">{{d}}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row dinhmucbottom">
+                            <div class="col-caption">
+                                <div class="text-bold-black text-2rem">
+                                    ĐỊNH MỨC<span class="text-15rem"> Hourly target</span>
+                                </div>
+                            </div>
+                            <div class="col-content">
+                                <div *ngFor="let d of dat" class="item-dat text-bold-black">
+                                    <span class="text-4rem">{{d}}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row thuchien">
+                            <div class="col-caption">
+                                <div class="text-bold-black text-2rem">
+                                    THỰC HIỆN<span class="text-15rem"> Actual</span>
+                                </div>
+                            </div>
+                            <div class="col-content">
+                                <div *ngFor="let d of mucTieu" class="{{d.color}} item-value text-bold-black">
+                                    <span class="text-4rem">{{d.value}}</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item item-2" data-interval="450000">
+                    <div class="item-wrapper">
+                        <div class="row header">
+                            <div class="col-caption col-line text-3rem">
+                                LINE<br><span class="text-bold-red text-6rem">{{dataKeHoachThucHien.tenChuyen}}</span>
+                            </div>
+                            <div class="col-content">
+                                <div class="col-content-row1">
+                                    <div class="col-group-mahang">
+                                        <div class="row mahang-caption border-bottom-black" >
+                                            <span (click)="openCloseFullScreen()" id="toggle" class="text-bold-black text-15rem">MÃ HÀNG (Job No)</span>
+                                        </div>
+                                        <div class="row mahang-content">
+                                            <span class="text-bold-green text-25rem">{{dataKeHoachThucHien.mahang}}</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-date">
+                                        <div class="row mahang-caption border-bottom-black" >
+                                            <span class="text-bold-black text-15rem">NGÀY (Date)</span>
+                                        </div>
+                                        <div class="row mahang-content">
+                                            <span class="text-bold-green text-25rem">{{dayNow}}/{{monthNowNum}}</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-time">
+                                        <div class="row mahang-caption border-bottom-black" >
+                                            <span class="text-bold-black text-15rem">THỜI GIAN (Time)</span>
+                                        </div>
+                                        <div class="row mahang-content">
+                                            <span class="text-bold-green text-25rem">{{currentTime}}</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-content-row2">
+                                    <div class="item-caption">
+                                        <span class="text-bold-black text-15rem">KẾ HOẠCH (Plan)</span>
+                                    </div>
+                                    <div class="item-caption">
+                                        <span class="text-bold-black text-15rem">THỰC HIỆN (Actual)</span>
+                                    </div>
+                                    <div class="item-caption">
+                                        <span class="text-bold-black text-15rem">NHẬP KHO (Del to WH)</span>
+                                    </div>
+                                    <div class="item-caption line-height-15rem text-bold-black text-15rem">
+                                        NGÀY SẢN XUẤT <span class="text-bold-black text-1rem">Production day</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row-order">
+                            <div class="col-caption col-line text-bold-black text-15rem">
+                                ĐƠN HÀNG<br><span class="text-1rem">Order</span>
+                            </div>
+                            <div class="col-content">
+                                <div class="item-value">
+                                    <span class="text-bold-black text-4rem">{{dataKeHoachThucHien.soLuongPhanBo}}</span>
+                                </div>
+                                <div *ngIf="colorThucHienRed!=''" class="item-value" >
+                                    <span class="text-bold-red text-4rem">{{dataKeHoachThucHien.soLuongMayRa}}</span>
+                                </div>
+                                <div *ngIf="colorThucHienGreen!=''" class="item-value" >
+                                    <span class="text-bold-green text-4rem">{{dataKeHoachThucHien.soLuongMayRa}}</span>
+                                </div>
+                                <div class="item-value">
+                                    <span class="text-bold-black text-4rem">{{nsLdNgay.nsldNgayThucHien}}</span>
+                                </div>
+                                <div class="item-value ">
+                                    <span class="calendar calendar_start" style="margin-right: 15px;" id="toggle">
+                                        <em>{{monthNgayXuatDau}}</em> {{dayNgayXuatDau}}
+                                    </span>
+                                    <span class="calendar calendar_start" id="toggle">
+                                        <em>{{monthNow}}</em> {{dayNow}}
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row-ftt">
+                            <div class="col-caption col-line text-bold-black text-15rem">
+                                % HÀNG ĐẠT<br><span class="text-1rem">% FTT</span>
+                            </div>
+                            <div class="col-content">
+                                <div class="chart-top3-caption text-bold-black text-15rem">
+                                    3 DẠNG LỖI CAO NHẤT <br> <span class="text-15rem">Top 3 defects</span>
+                                </div>
+                                <div class="chart-image-caption text-bold-black text-15rem">
+                                    HÌNH ẢNH VỊ TRÍ LỖI <br>  <span class="text-15rem">Defect location</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row-chart">
+                            <div class="col-caption col-line text-bold-black text-6rem" >
+                                {{percentFTT | number: '1.0-0'}}
+                            </div>
+                            <div class="col-content">
+                                <div class="chart-top3-value">
+                                    <jhi-tab3-chart [dataChiTietLoi]="dataChiTietLoi"></jhi-tab3-chart>
+                                </div>
+                                <div class="chart-image-value">
+                                    <jhi-chart-image></jhi-chart-image>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row-time">
+                            <div class="col-caption">
+                                <div class="text-bold-black text-15rem">
+                                    THỜI GIAN (Time)
+                                </div>
+                            </div>
+                            <div class="col-content">
+                                <div *ngFor="let d of categories" class="item-gio text-bold-black">
+                                    <span class="text-2rem">{{d}}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row-actual">
+                            <div class="col-caption">
+                                <div class="text-bold-black text-15rem">
+                                    THỰC HIỆN<span class="text-1rem"> Actual</span>
+                                </div>
+                            </div>
+                            <div class="col-content">
+                                <div *ngFor="let d of mucTieu" class="{{d.color}} item-value text-bold-black">
+                                    <span class="text-3rem">{{d.value}}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row-defect">
+                            <div class="col-caption">
+                                <div class="text-bold-black text-15rem">
+                                    SP LỖI<span class="text-1rem"> Defect</span>
+                                </div>
+                            </div>
+                            <div class="col-content">
+                                <div *ngFor="let d of chuaDat" class="{{d.color}} item-value text-bold-black">
+                                    <span class="text-3rem">{{d.value}}</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row-refinal">
+                            <div class="col-caption">
+                                <div class="text-bold-black text-15rem">
+                                    PRE-FINAL<span class="text-1rem"> Firewall Audit</span>
+                                </div>
+                            </div>
+                            <div class="col-content">
+                                <div *ngFor="let d of refinalTheoGio" class="refinalTheoGio _{{d.color}}">
+                                    <div class="{{d.color}}"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+</div>

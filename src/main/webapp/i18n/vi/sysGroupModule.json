@@ -1,0 +1,25 @@
+{
+  "ctApp": {
+    "sysGroupModule": {
+      "home": {
+        "title": "Sys Group Modules",
+        "createLabel": "Thêm mới một Sys Group Module",
+        "createOrEditLabel": "Thêm mới hoặc cập nhật Sys Group Module",
+        "notFound": "No Sys Group Modules found"
+      },
+      "created": "Một Sys Group Module mới được tạo với định danh {{ param }}",
+      "updated": "Một Sys Group Module cập nhật với định danh {{ param }}",
+      "deleted": "Một Sys Group Module đã xóa với định danh {{ param }}",
+      "delete": {
+        "question": "Bạn có chắc là muốn xóa Sys Group Module {{ id }}?"
+      },
+      "detail": {
+        "title": "Sys Group Module"
+      },
+      "name": "Name",
+      "caption": "Caption",
+      "primaryImageUri": "Primary Image Uri",
+      "secondaryImageUri": "Secondary Image Uri"
+    }
+  }
+}

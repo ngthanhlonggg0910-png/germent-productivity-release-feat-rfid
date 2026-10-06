@@ -1,0 +1,82 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-gycl-khac-phuc-heading" jhiTranslate="ctApp.gYCLKhacPhuc.home.createOrEditLabel">Create or edit a GYCL Khac Phuc</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id').value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.gYCLKhacPhuc.cumId" for="field_cumId">Cum Id</label>
+                    <input type="number" class="form-control" name="cumId" id="field_cumId"
+                           formControlName="cumId"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.gYCLKhacPhuc.tenCum" for="field_tenCum">Ten Cum</label>
+                    <input type="text" class="form-control" name="tenCum" id="field_tenCum"
+                           formControlName="tenCum"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.gYCLKhacPhuc.gopY" for="field_gopY">Gop Y</label>
+                    <input type="text" class="form-control" name="gopY" id="field_gopY"
+                           formControlName="gopY"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.gYCLKhacPhuc.ketQua" for="field_ketQua">Ket Qua</label>
+                    <input type="text" class="form-control" name="ketQua" id="field_ketQua"
+                           formControlName="ketQua"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.gYCLKhacPhuc.nguoiTao" for="field_nguoiTao">Nguoi Tao</label>
+                    <input type="text" class="form-control" name="nguoiTao" id="field_nguoiTao"
+                           formControlName="nguoiTao"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.gYCLKhacPhuc.userId" for="field_userId">User Id</label>
+                    <div class="d-flex">
+                        <input id="field_userId" type="datetime-local" class="form-control" name="userId" formControlName="userId" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.gYCLKhacPhuc.ngayTao" for="field_ngayTao">Ngay Tao</label>
+                    <div class="d-flex">
+                        <input id="field_ngayTao" type="datetime-local" class="form-control" name="ngayTao" formControlName="ngayTao" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.gYCLKhacPhuc.proGopYChatLuong" for="field_proGopYChatLuong">Pro Gop Y Chat Luong</label>
+                    <select class="form-control" id="field_proGopYChatLuong" name="proGopYChatLuong" formControlName="proGopYChatLuongId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="gopYChatLuongOption.id" *ngFor="let gopYChatLuongOption of gopychatluongs; trackBy: trackGopYChatLuongById">{{gopYChatLuongOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.gYCLKhacPhuc.thuVienLoi" for="field_thuVienLoi">Thu Vien Loi</label>
+                    <select class="form-control" id="field_thuVienLoi" name="thuVienLoi" formControlName="thuVienLoiId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="thuVienLoiOption.id" *ngFor="let thuVienLoiOption of thuvienlois; trackBy: trackThuVienLoiById">{{thuVienLoiOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.gYCLKhacPhuc.khacPhucLoi" for="field_khacPhucLoi">Khac Phuc Loi</label>
+                    <select class="form-control" id="field_khacPhucLoi" name="khacPhucLoi" formControlName="khacPhucLoiId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="khacPhucLoiOption.id" *ngFor="let khacPhucLoiOption of khacphuclois; trackBy: trackKhacPhucLoiById">{{khacPhucLoiOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

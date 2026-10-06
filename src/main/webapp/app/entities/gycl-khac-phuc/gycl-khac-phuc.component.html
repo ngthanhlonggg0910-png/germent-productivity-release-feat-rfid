@@ -1,0 +1,96 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="ctApp.gYCLKhacPhuc.home.title">GYCL Khac Phucs</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-gycl-khac-phuc" [routerLink]="['/sys/gycl-khac-phuc/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="ctApp.gYCLKhacPhuc.home.createLabel">
+            Create a new GYCL Khac Phuc
+            </span>
+        </button>
+    </h2>
+    <jhi-alert-error></jhi-alert-error>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="gYCLKhacPhucs?.length === 0">
+        <span jhiTranslate="ctApp.gYCLKhacPhuc.home.notFound">No gYCLKhacPhucs found</span>
+    </div>
+    <div class="table-responsive" *ngIf="gYCLKhacPhucs?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="cumId"><span jhiTranslate="ctApp.gYCLKhacPhuc.cumId">Cum Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="tenCum"><span jhiTranslate="ctApp.gYCLKhacPhuc.tenCum">Ten Cum</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="gopY"><span jhiTranslate="ctApp.gYCLKhacPhuc.gopY">Gop Y</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="ketQua"><span jhiTranslate="ctApp.gYCLKhacPhuc.ketQua">Ket Qua</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="nguoiTao"><span jhiTranslate="ctApp.gYCLKhacPhuc.nguoiTao">Nguoi Tao</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="userId"><span jhiTranslate="ctApp.gYCLKhacPhuc.userId">User Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="ngayTao"><span jhiTranslate="ctApp.gYCLKhacPhuc.ngayTao">Ngay Tao</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="proGopYChatLuongId"><span jhiTranslate="ctApp.gYCLKhacPhuc.proGopYChatLuong">Pro Gop Y Chat Luong</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="thuVienLoiId"><span jhiTranslate="ctApp.gYCLKhacPhuc.thuVienLoi">Thu Vien Loi</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="khacPhucLoiId"><span jhiTranslate="ctApp.gYCLKhacPhuc.khacPhucLoi">Khac Phuc Loi</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let gYCLKhacPhuc of gYCLKhacPhucs ;trackBy: trackId">
+                <td><a [routerLink]="['/sys/gycl-khac-phuc', gYCLKhacPhuc.id, 'view' ]">{{gYCLKhacPhuc.id}}</a></td>
+                <td>{{gYCLKhacPhuc.cumId}}</td>
+                <td>{{gYCLKhacPhuc.tenCum}}</td>
+                <td>{{gYCLKhacPhuc.gopY}}</td>
+                <td>{{gYCLKhacPhuc.ketQua}}</td>
+                <td>{{gYCLKhacPhuc.nguoiTao}}</td>
+                <td>{{gYCLKhacPhuc.userId | date:'medium'}}</td>
+                <td>{{gYCLKhacPhuc.ngayTao | date:'medium'}}</td>
+                <td>
+                    <div *ngIf="gYCLKhacPhuc.proGopYChatLuongId">
+                        <a [routerLink]="['/sys/gop-y-chat-luong', gYCLKhacPhuc.proGopYChatLuongId , 'view' ]" >{{gYCLKhacPhuc.proGopYChatLuongId}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="gYCLKhacPhuc.thuVienLoiId">
+                        <a [routerLink]="['/sys/thu-vien-loi', gYCLKhacPhuc.thuVienLoiId , 'view' ]" >{{gYCLKhacPhuc.thuVienLoiId}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="gYCLKhacPhuc.khacPhucLoiId">
+                        <a [routerLink]="['/sys/khac-phuc-loi', gYCLKhacPhuc.khacPhucLoiId , 'view' ]" >{{gYCLKhacPhuc.khacPhucLoiId}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/sys/gycl-khac-phuc', gYCLKhacPhuc.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/sys/gycl-khac-phuc', gYCLKhacPhuc.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/sys/gycl-khac-phuc', { outlets: { popup: gYCLKhacPhuc.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div [hidden]="gYCLKhacPhucs?.length === 0">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="totalItems" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

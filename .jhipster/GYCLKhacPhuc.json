@@ -1,0 +1,66 @@
+{
+    "name": "GYCLKhacPhuc",
+    "fields": [
+        {
+            "fieldName": "cumId",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "tenCum",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "gopY",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "ketQua",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "nguoiTao",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "userId",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "ngayTao",
+            "fieldType": "Instant"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "gopYChatLuong",
+            "otherEntityRelationshipName": "gYCLKhacPhuc",
+            "relationshipName": "proGopYChatLuong",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "thuVienLoi",
+            "otherEntityRelationshipName": "gYCLKhacPhuc",
+            "relationshipName": "thuVienLoi",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "khacPhucLoi",
+            "otherEntityRelationshipName": "gYCLKhacPhuc",
+            "relationshipName": "khacPhucLoi",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20191120133004",
+    "entityTableName": "gycl_khac_phuc",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

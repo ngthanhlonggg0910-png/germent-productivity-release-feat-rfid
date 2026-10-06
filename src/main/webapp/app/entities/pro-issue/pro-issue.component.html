@@ -1,0 +1,86 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="ctApp.proIssue.home.title">Pro Issues</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-pro-issue" [routerLink]="['/sys/pro-issue/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="ctApp.proIssue.home.createLabel">
+            Create a new Pro Issue
+            </span>
+        </button>
+    </h2>
+    <jhi-alert-error></jhi-alert-error>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="proIssues?.length === 0">
+        <span jhiTranslate="ctApp.proIssue.home.notFound">No proIssues found</span>
+    </div>
+    <div class="table-responsive" *ngIf="proIssues?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+            <tr>
+            <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+            <th scope="col" ><span jhiTranslate="ctApp.proIssue.maHang">Ma Hang</span></th>
+            <th scope="col" ><span jhiTranslate="ctApp.proIssue.pono">Pono</span></th>
+            <th scope="col" ><span jhiTranslate="ctApp.proIssue.tenChuyen">Ten Chuyen</span></th>
+            <th scope="col" ><span jhiTranslate="ctApp.proIssue.ngayGioBatDau">Ngay Gio Bat Dau</span></th>
+            <th scope="col" ><span jhiTranslate="ctApp.proIssue.ngayGioKetThuc">Ngay Gio Ket Thuc</span></th>
+            <th scope="col" ><span jhiTranslate="ctApp.proIssue.maLoi">Ma Loi</span></th>
+            <th scope="col" ><span jhiTranslate="ctApp.proIssue.moTaLoi">Mo Ta Loi</span></th>
+            <th scope="col" ><span jhiTranslate="ctApp.proIssue.maMay">Ma May</span></th>
+            <th scope="col" ><span jhiTranslate="ctApp.proIssue.soTram">So Tram</span></th>
+            <th scope="col" ><span jhiTranslate="ctApp.proIssue.proChuyenId">Pro Chuyen Id</span></th>
+            <th scope="col" ><span jhiTranslate="ctApp.proIssue.proSanPhamId">Pro San Pham Id</span></th>
+            <th scope="col" ><span jhiTranslate="ctApp.proIssue.nguoiTao">Nguoi Tao</span></th>
+            <th scope="col" ><span jhiTranslate="ctApp.proIssue.checkPointType">Check Point Type</span></th>
+            <th scope="col" ><span jhiTranslate="ctApp.proIssue.checkPointId">Check Point Id</span></th>
+            <th scope="col" ><span jhiTranslate="ctApp.proIssue.checkPointName">Check Point Name</span></th>
+            <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let proIssue of proIssues ;trackBy: trackId">
+                <td><a [routerLink]="['/sys/pro-issue', proIssue.id, 'view' ]">{{proIssue.id}}</a></td>
+                <td>{{proIssue.maHang}}</td>
+                <td>{{proIssue.pono}}</td>
+                <td>{{proIssue.tenChuyen}}</td>
+                <td>{{proIssue.ngayGioBatDau | date:'medium'}}</td>
+                <td>{{proIssue.ngayGioKetThuc | date:'medium'}}</td>
+                <td>{{proIssue.maLoi}}</td>
+                <td>{{proIssue.moTaLoi}}</td>
+                <td>{{proIssue.maMay}}</td>
+                <td>{{proIssue.soTram}}</td>
+                <td>{{proIssue.proChuyenId}}</td>
+                <td>{{proIssue.proSanPhamId}}</td>
+                <td>{{proIssue.nguoiTao}}</td>
+                <td>{{proIssue.checkPointType}}</td>
+                <td>{{proIssue.checkPointId}}</td>
+                <td>{{proIssue.checkPointName}}</td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/sys/pro-issue', proIssue.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/sys/pro-issue', proIssue.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/sys/pro-issue', { outlets: { popup: proIssue.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

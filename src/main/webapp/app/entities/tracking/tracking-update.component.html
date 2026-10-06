@@ -1,0 +1,72 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-tracking-heading" jhiTranslate="ctApp.tracking.home.createOrEditLabel">Create or edit a Tracking</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id').value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.tracking.nvButtonId" for="field_nvButtonId">Nv Button Id</label>
+                    <input type="number" class="form-control" name="nvButtonId" id="field_nvButtonId"
+                           formControlName="nvButtonId"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.tracking.state1Time" for="field_state1Time">State 1 Time</label>
+                    <div class="d-flex">
+                        <input id="field_state1Time" type="datetime-local" class="form-control" name="state1Time" formControlName="state1Time" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.tracking.state2Time" for="field_state2Time">State 2 Time</label>
+                    <div class="d-flex">
+                        <input id="field_state2Time" type="datetime-local" class="form-control" name="state2Time" formControlName="state2Time" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.tracking.state3Time" for="field_state3Time">State 3 Time</label>
+                    <div class="d-flex">
+                        <input id="field_state3Time" type="datetime-local" class="form-control" name="state3Time" formControlName="state3Time" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.tracking.state4Time" for="field_state4Time">State 4 Time</label>
+                    <div class="d-flex">
+                        <input id="field_state4Time" type="datetime-local" class="form-control" name="state4Time" formControlName="state4Time" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.tracking.state5Time" for="field_state5Time">State 5 Time</label>
+                    <div class="d-flex">
+                        <input id="field_state5Time" type="datetime-local" class="form-control" name="state5Time" formControlName="state5Time" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.tracking.state6Time" for="field_state6Time">State 6 Time</label>
+                    <div class="d-flex">
+                        <input id="field_state6Time" type="datetime-local" class="form-control" name="state6Time" formControlName="state6Time" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.tracking.trackingType" for="field_trackingType">Tracking Type</label>
+                    <select class="form-control" id="field_trackingType" name="trackingType" formControlName="trackingTypeId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="nVButtonTrackingTypeOption.id" *ngFor="let nVButtonTrackingTypeOption of nvbuttontrackingtypes; trackBy: trackNVButtonTrackingTypeById">{{nVButtonTrackingTypeOption.name}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <!--
+        Added the constraints for entity ThongSoDoSP.
+    -->
+    <changeSet id="20200425101318-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="thong_so_do_id"
+                                 baseTableName="thong_so_do_sp"
+                                 constraintName="fk_thong_so_do_sp_thong_so_do_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="thong_so_do"/>
+
+        <addForeignKeyConstraint baseColumnNames="dung_sai_id"
+                                 baseTableName="thong_so_do_sp"
+                                 constraintName="fk_thong_so_do_sp_dung_sai_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="dung_sai"/>
+
+        <addForeignKeyConstraint baseColumnNames="pro_san_pham_id"
+                                 baseTableName="thong_so_do_sp"
+                                 constraintName="fk_thong_so_do_sp_pro_san_pham_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="pro_san_pham"/>
+
+    </changeSet>
+</databaseChangeLog>

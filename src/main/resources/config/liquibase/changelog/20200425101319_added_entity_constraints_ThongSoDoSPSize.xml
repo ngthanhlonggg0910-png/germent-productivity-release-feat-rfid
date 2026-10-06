@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <!--
+        Added the constraints for entity ThongSoDoSPSize.
+    -->
+    <changeSet id="20200425101319-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="thong_so_dosp_id"
+                                 baseTableName="thong_so_do_sp_size"
+                                 constraintName="fk_thong_so_do_sp_size_thong_so_dosp_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="thong_so_do_sp"/>
+
+    </changeSet>
+</databaseChangeLog>

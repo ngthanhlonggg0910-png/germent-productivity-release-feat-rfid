@@ -1,0 +1,59 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="sysFunction">
+            <h2><span jhiTranslate="ctApp.sysFunction.detail.title">Sys Function</span> {{sysFunction.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="ctApp.sysFunction.name">Name</span></dt>
+                <dd>
+                    <span>{{sysFunction.name}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.sysFunction.caption">Caption</span></dt>
+                <dd>
+                    <span>{{sysFunction.caption}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.sysFunction.level">Level</span></dt>
+                <dd>
+                    <span>{{sysFunction.level}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.sysFunction.imageUri">Image Uri</span></dt>
+                <dd>
+                    <span>{{sysFunction.imageUri}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.sysFunction.eventName">Event Name</span></dt>
+                <dd>
+                    <span>{{sysFunction.eventName}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.sysFunction.hotkey">Hotkey</span></dt>
+                <dd>
+                    <span>{{sysFunction.hotkey}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.sysFunction.sysPermission">Sys Permission</span></dt>
+                <dd>
+                    <div *ngIf="sysFunction.sysPermissionId">
+                        <a [routerLink]="['/sys/sys-permission', sysFunction.sysPermissionId, 'view']">{{sysFunction.sysPermissionId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="ctApp.sysFunction.sysModule">Sys Module</span></dt>
+                <dd>
+                    <div *ngIf="sysFunction.sysModuleId">
+                        <a [routerLink]="['/sys/sys-module', sysFunction.sysModuleId, 'view']">{{sysFunction.sysModuleId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/sys/sys-function', sysFunction.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

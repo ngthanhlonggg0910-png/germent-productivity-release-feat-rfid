@@ -1,0 +1,25 @@
+{
+  "ctApp": {
+    "thongSoThucThi": {
+      "home": {
+        "title": "Thong So Thuc This",
+        "createLabel": "Thêm mới một Thong So Thuc Thi",
+        "createOrEditLabel": "Thêm mới hoặc cập nhật Thong So Thuc Thi",
+        "notFound": "No Thong So Thuc This found"
+      },
+      "created": "Một Thong So Thuc Thi mới được tạo với định danh {{ param }}",
+      "updated": "Một Thong So Thuc Thi cập nhật với định danh {{ param }}",
+      "deleted": "Một Thong So Thuc Thi đã xóa với định danh {{ param }}",
+      "delete": {
+        "question": "Bạn có chắc là muốn xóa Thong So Thuc Thi {{ id }}?"
+      },
+      "detail": {
+        "title": "Thong So Thuc Thi"
+      },
+      "spIndex": "Sp Index",
+      "thongSoDoSPSize": "Thong So Do SP Size",
+      "dungSai": "Dung Sai",
+      "proKeHoachSanXuat": "Pro Ke Hoach San Xuat"
+    }
+  }
+}

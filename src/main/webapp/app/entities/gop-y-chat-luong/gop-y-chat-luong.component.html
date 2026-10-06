@@ -1,0 +1,104 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="ctApp.gopYChatLuong.home.title">Gop Y Chat Luongs</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-gop-y-chat-luong" [routerLink]="['/sys/gop-y-chat-luong/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="ctApp.gopYChatLuong.home.createLabel">
+            Create a new Gop Y Chat Luong
+            </span>
+        </button>
+    </h2>
+    <jhi-alert-error></jhi-alert-error>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="gopYChatLuongs?.length === 0">
+        <span jhiTranslate="ctApp.gopYChatLuong.home.notFound">No gopYChatLuongs found</span>
+    </div>
+    <div class="table-responsive" *ngIf="gopYChatLuongs?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="cusId"><span jhiTranslate="ctApp.gopYChatLuong.cusId">Cus Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="cusName"><span jhiTranslate="ctApp.gopYChatLuong.cusName">Cus Name</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="chuyenId"><span jhiTranslate="ctApp.gopYChatLuong.chuyenId">Chuyen Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="chuyenName"><span jhiTranslate="ctApp.gopYChatLuong.chuyenName">Chuyen Name</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="maHang"><span jhiTranslate="ctApp.gopYChatLuong.maHang">Ma Hang</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="po"><span jhiTranslate="ctApp.gopYChatLuong.po">Po</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="poId"><span jhiTranslate="ctApp.gopYChatLuong.poId">Po Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="color"><span jhiTranslate="ctApp.gopYChatLuong.color">Color</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="size"><span jhiTranslate="ctApp.gopYChatLuong.size">Size</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="firstCut"><span jhiTranslate="ctApp.gopYChatLuong.firstCut">First Cut</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="inline"><span jhiTranslate="ctApp.gopYChatLuong.inline">Inline</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="lanBanHanh"><span jhiTranslate="ctApp.gopYChatLuong.lanBanHanh">Lan Ban Hanh</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="ngayBaoCao"><span jhiTranslate="ctApp.gopYChatLuong.ngayBaoCao">Ngay Bao Cao</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="nguoiTao"><span jhiTranslate="ctApp.gopYChatLuong.nguoiTao">Nguoi Tao</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="userId"><span jhiTranslate="ctApp.gopYChatLuong.userId">User Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="ngayTao"><span jhiTranslate="ctApp.gopYChatLuong.ngayTao">Ngay Tao</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="tenQuanLyXuong"><span jhiTranslate="ctApp.gopYChatLuong.tenQuanLyXuong">Ten Quan Ly Xuong</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="tenKiThuat"><span jhiTranslate="ctApp.gopYChatLuong.tenKiThuat">Ten Ki Thuat</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="tenQanLyCat"><span jhiTranslate="ctApp.gopYChatLuong.tenQanLyCat">Ten Qan Ly Cat</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="tenQA"><span jhiTranslate="ctApp.gopYChatLuong.tenQA">Ten QA</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let gopYChatLuong of gopYChatLuongs ;trackBy: trackId">
+                <td><a [routerLink]="['/sys/gop-y-chat-luong', gopYChatLuong.id, 'view' ]">{{gopYChatLuong.id}}</a></td>
+                <td>{{gopYChatLuong.cusId}}</td>
+                <td>{{gopYChatLuong.cusName}}</td>
+                <td>{{gopYChatLuong.chuyenId}}</td>
+                <td>{{gopYChatLuong.chuyenName}}</td>
+                <td>{{gopYChatLuong.maHang}}</td>
+                <td>{{gopYChatLuong.po}}</td>
+                <td>{{gopYChatLuong.poId}}</td>
+                <td>{{gopYChatLuong.color}}</td>
+                <td>{{gopYChatLuong.size}}</td>
+                <td>{{gopYChatLuong.firstCut}}</td>
+                <td>{{gopYChatLuong.inline}}</td>
+                <td>{{gopYChatLuong.lanBanHanh}}</td>
+                <td>{{gopYChatLuong.ngayBaoCao | date:'medium'}}</td>
+                <td>{{gopYChatLuong.nguoiTao}}</td>
+                <td>{{gopYChatLuong.userId | date:'medium'}}</td>
+                <td>{{gopYChatLuong.ngayTao | date:'medium'}}</td>
+                <td>{{gopYChatLuong.tenQuanLyXuong}}</td>
+                <td>{{gopYChatLuong.tenKiThuat}}</td>
+                <td>{{gopYChatLuong.tenQanLyCat}}</td>
+                <td>{{gopYChatLuong.tenQA}}</td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/sys/gop-y-chat-luong', gopYChatLuong.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/sys/gop-y-chat-luong', gopYChatLuong.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/sys/gop-y-chat-luong', { outlets: { popup: gopYChatLuong.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div [hidden]="gopYChatLuongs?.length === 0">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="totalItems" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

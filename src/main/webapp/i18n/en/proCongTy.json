@@ -1,0 +1,24 @@
+{
+  "ctApp": {
+    "proCongTy": {
+      "home": {
+        "title": "Pro Cong Ties",
+        "createLabel": "Create a new Pro Cong Ty",
+        "createOrEditLabel": "Create or edit a Pro Cong Ty",
+        "notFound": "No Pro Cong Ties found"
+      },
+      "created": "A new Pro Cong Ty is created with identifier {{ param }}",
+      "updated": "A Pro Cong Ty is updated with identifier {{ param }}",
+      "deleted": "A Pro Cong Ty is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Pro Cong Ty {{ id }}?"
+      },
+      "detail": {
+        "title": "Pro Cong Ty"
+      },
+      "ten": "Ten",
+      "diaChi": "Dia Chi",
+      "mst": "Mst"
+    }
+  }
+}

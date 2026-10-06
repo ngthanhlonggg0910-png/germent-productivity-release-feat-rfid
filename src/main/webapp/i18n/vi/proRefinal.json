@@ -1,0 +1,28 @@
+{
+  "ctApp": {
+    "proRefinal": {
+      "home": {
+        "title": "Pro Refinals",
+        "createLabel": "Thêm mới một Pro Refinal",
+        "createOrEditLabel": "Thêm mới hoặc cập nhật Pro Refinal",
+        "notFound": "No Pro Refinals found"
+      },
+      "created": "Một Pro Refinal mới được tạo với định danh {{ param }}",
+      "updated": "Một Pro Refinal cập nhật với định danh {{ param }}",
+      "deleted": "Một Pro Refinal đã xóa với định danh {{ param }}",
+      "delete": {
+        "question": "Bạn có chắc là muốn xóa Pro Refinal {{ id }}?"
+      },
+      "detail": {
+        "title": "Pro Refinal"
+      },
+      "proKHSXId": "Pro KHSX Id",
+      "checkPointID": "Check Point ID",
+      "proNSCLId": "Pro NSCL Id",
+      "ngayGioKiem": "Ngay Gio Kiem",
+      "soLuongKiem": "So Luong Kiem",
+      "hangDatHienTai": "Hang Dat Hien Tai",
+      "doAm": "Do Am"
+    }
+  }
+}

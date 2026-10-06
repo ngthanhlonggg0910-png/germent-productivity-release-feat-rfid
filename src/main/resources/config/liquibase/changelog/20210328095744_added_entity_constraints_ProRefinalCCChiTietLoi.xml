@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <!--
+        Added the constraints for entity ProRefinalCCChiTietLoi.
+    -->
+    <changeSet id="20210328095744-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="pro_refinalcc_id"
+                                 baseTableName="pro_refinal_cc_chi_tiet_loi"
+                                 constraintName="fk_pro_refinal_cc_chi_tiet_loi_pro_refinalcc_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="pro_refinal_cc"/>
+
+        <addForeignKeyConstraint baseColumnNames="pro_loi_id"
+                                 baseTableName="pro_refinal_cc_chi_tiet_loi"
+                                 constraintName="fk_pro_refinal_cc_chi_tiet_loi_pro_loi_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="pro_loi"/>
+
+    </changeSet>
+</databaseChangeLog>

@@ -1,0 +1,45 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="thongSoThucThi">
+            <h2><span jhiTranslate="ctApp.thongSoThucThi.detail.title">Thong So Thuc Thi</span> {{thongSoThucThi.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="ctApp.thongSoThucThi.spIndex">Sp Index</span></dt>
+                <dd>
+                    <span>{{thongSoThucThi.spIndex}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.thongSoThucThi.thongSoDoSPSize">Thong So Do SP Size</span></dt>
+                <dd>
+                    <div *ngIf="thongSoThucThi.thongSoDoSPSizeId">
+                        <a [routerLink]="['/sys/thong-so-do-sp-size', thongSoThucThi.thongSoDoSPSizeId, 'view']">{{thongSoThucThi.thongSoDoSPSizeId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="ctApp.thongSoThucThi.dungSai">Dung Sai</span></dt>
+                <dd>
+                    <div *ngIf="thongSoThucThi.dungSaiId">
+                        <a [routerLink]="['/sys/dung-sai', thongSoThucThi.dungSaiId, 'view']">{{thongSoThucThi.dungSaiId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="ctApp.thongSoThucThi.proKeHoachSanXuat">Pro Ke Hoach San Xuat</span></dt>
+                <dd>
+                    <div *ngIf="thongSoThucThi.proKeHoachSanXuatId">
+                        <a [routerLink]="['/sys/pro-ke-hoach-san-xuat', thongSoThucThi.proKeHoachSanXuatId, 'view']">{{thongSoThucThi.proKeHoachSanXuatId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/sys/thong-so-thuc-thi', thongSoThucThi.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,88 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="ctApp.proKeHoachSanXuat.home.title">Pro Ke Hoach San Xuats</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-pro-ke-hoach-san-xuat" [routerLink]="['/sys/pro-ke-hoach-san-xuat/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="ctApp.proKeHoachSanXuat.home.createLabel">
+            Create a new Pro Ke Hoach San Xuat
+            </span>
+        </button>
+    </h2>
+    <jhi-alert-error></jhi-alert-error>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="proKeHoachSanXuats?.length === 0">
+        <span jhiTranslate="ctApp.proKeHoachSanXuat.home.notFound">No proKeHoachSanXuats found</span>
+    </div>
+    <div class="table-responsive" *ngIf="proKeHoachSanXuats?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="ngaySanXuat"><span jhiTranslate="ctApp.proKeHoachSanXuat.ngaySanXuat">Ngay San Xuat</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="soLuongYeuCau"><span jhiTranslate="ctApp.proKeHoachSanXuat.soLuongYeuCau">So Luong Yeu Cau</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="tinhTrang"><span jhiTranslate="ctApp.proKeHoachSanXuat.tinhTrang">Tinh Trang</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="ghiChu"><span jhiTranslate="ctApp.proKeHoachSanXuat.ghiChu">Ghi Chu</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="sam"><span jhiTranslate="ctApp.proKeHoachSanXuat.sam">Sam</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="lotNo"><span jhiTranslate="ctApp.proKeHoachSanXuat.lotNo">Lot No</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="proChuyenTen"><span jhiTranslate="ctApp.proKeHoachSanXuat.proChuyen">Pro Chuyen</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="proSanPhamMaSanPham"><span jhiTranslate="ctApp.proKeHoachSanXuat.proSanPham">Pro San Pham</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let proKeHoachSanXuat of proKeHoachSanXuats ;trackBy: trackId">
+                <td><a [routerLink]="['/sys/pro-ke-hoach-san-xuat', proKeHoachSanXuat.id, 'view' ]">{{proKeHoachSanXuat.id}}</a></td>
+                <td>{{proKeHoachSanXuat.ngaySanXuat | date:'medium'}}</td>
+                <td>{{proKeHoachSanXuat.soLuongYeuCau}}</td>
+                <td>{{proKeHoachSanXuat.tinhTrang}}</td>
+                <td>{{proKeHoachSanXuat.ghiChu}}</td>
+                <td>{{proKeHoachSanXuat.sam}}</td>
+                <td>{{proKeHoachSanXuat.lotNo}}</td>
+                <td>
+                    <div *ngIf="proKeHoachSanXuat.proChuyenId">
+                        <a [routerLink]="['/sys/pro-chuyen', proKeHoachSanXuat.proChuyenId , 'view' ]" >{{proKeHoachSanXuat.proChuyenTen}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="proKeHoachSanXuat.proSanPhamId">
+                        <a [routerLink]="['/sys/pro-san-pham', proKeHoachSanXuat.proSanPhamId , 'view' ]" >{{proKeHoachSanXuat.proSanPhamMaSanPham}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/sys/pro-ke-hoach-san-xuat', proKeHoachSanXuat.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/sys/pro-ke-hoach-san-xuat', proKeHoachSanXuat.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/sys/pro-ke-hoach-san-xuat', { outlets: { popup: proKeHoachSanXuat.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div [hidden]="proKeHoachSanXuats?.length === 0">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="totalItems" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,35 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="buttonTracking">
+            <h2><span jhiTranslate="ctApp.buttonTracking.detail.title">Button Tracking</span> {{buttonTracking.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="ctApp.buttonTracking.updateDate">Update Date</span></dt>
+                <dd>
+                    <span>{{buttonTracking.updateDate}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.buttonTracking.currentAliasState">Current Alias State</span></dt>
+                <dd>
+                    <span>{{buttonTracking.currentAliasState}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.buttonTracking.trackingId">Tracking Id</span></dt>
+                <dd>
+                    <span>{{buttonTracking.trackingId}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/sys/button-tracking', buttonTracking.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

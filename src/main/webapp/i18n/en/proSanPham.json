@@ -1,0 +1,61 @@
+{
+  "ctApp": {
+    "proSanPham": {
+      "home": {
+        "title": "Pro San Phams",
+        "createLabel": "Create a new Pro San Pham",
+        "createOrEditLabel": "Create or edit a Pro San Pham",
+        "notFound": "No Pro San Phams found"
+      },
+      "created": "A new Pro San Pham is created with identifier {{ param }}",
+      "updated": "A Pro San Pham is updated with identifier {{ param }}",
+      "deleted": "A Pro San Pham is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Pro San Pham {{ id }}?"
+      },
+      "detail": {
+        "title": "Pro San Pham"
+      },
+      "maSanPham": "Ma San Pham",
+      "maDonHang": "Ma Don Hang",
+      "po": "Po",
+      "soLuongSanXuat": "So Luong San Xuat",
+      "thongSoValue1": "Thong So Value 1",
+      "thongSoCaption1": "Thong So Caption 1",
+      "thongSoCheck1": "Thong So Check 1",
+      "thongSoValue2": "Thong So Value 2",
+      "thongSoCaption2": "Thong So Caption 2",
+      "thongSoCheck2": "Thong So Check 2",
+      "thongSoValue3": "Thong So Value 3",
+      "thongSoCaption3": "Thong So Caption 3",
+      "thongSoCheck3": "Thong So Check 3",
+      "thongSoValue4": "Thong So Value 4",
+      "thongSoCaption4": "Thong So Caption 4",
+      "thongSoCheck4": "Thong So Check 4",
+      "thongSoValue5": "Thong So Value 5",
+      "thongSoCaption5": "Thong So Caption 5",
+      "thongSoCheck5": "Thong So Check 5",
+      "thongSoValue6": "Thong So Value 6",
+      "thongSoCaption6": "Thong So Caption 6",
+      "thongSoCheck6": "Thong So Check 6",
+      "thongSoValue7": "Thong So Value 7",
+      "thongSoCaption7": "Thong So Caption 7",
+      "thongSoCheck7": "Thong So Check 7",
+      "thongSoValue8": "Thong So Value 8",
+      "thongSoCaption8": "Thong So Caption 8",
+      "thongSoCheck8": "Thong So Check 8",
+      "thongSoValue9": "Thong So Value 9",
+      "thongSoCaption9": "Thong So Caption 9",
+      "thongSoCheck9": "Thong So Check 9",
+      "thongSoValue10": "Thong So Value 10",
+      "thongSoCaption10": "Thong So Caption 10",
+      "thongSoCheck10": "Thong So Check 10",
+      "color": "Color",
+      "hinhMatTruocURL": "Hinh Mat Truoc URL",
+      "hinhMatSauURL": "Hinh Mat Sau URL",
+      "proKhachHang": "Pro Khach Hang",
+      "proChungLoaiSanPham": "Pro Chung Loai San Pham",
+      "proTenMua": "Pro Ten Mua"
+    }
+  }
+}

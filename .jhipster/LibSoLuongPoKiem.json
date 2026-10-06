@@ -1,0 +1,20 @@
+{
+    "name": "LibSoLuongPoKiem",
+    "fields": [
+        {
+            "fieldName": "value",
+            "fieldType": "Integer"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20210328095746",
+    "entityTableName": "lib_so_luong_po_kiem",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

@@ -1,0 +1,43 @@
+{
+    "name": "ProGioLamViec",
+    "fields": [
+        {
+            "fieldName": "gioBatDau",
+            "fieldType": "Instant",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "gioKetThuc",
+            "fieldType": "Instant",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "gioLam",
+            "fieldType": "GioLam",
+            "fieldValues": "C_1H,C_2H,C_3H,C_4H,C_5H,C_6H,C_7H,C_8H,C_9H,C_10H,C_11H,C_12H,C_13H,C_14H"
+        },
+        {
+            "fieldName": "thoiGian",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "captionTV",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20200410135657",
+    "entityTableName": "pro_gio_lam_viec",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

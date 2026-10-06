@@ -1,0 +1,23 @@
+{
+  "ctApp": {
+    "doKimMd": {
+      "home": {
+        "title": "Do Kim Mds",
+        "createLabel": "Thêm mới một Do Kim Md",
+        "createOrEditLabel": "Thêm mới hoặc cập nhật Do Kim Md",
+        "notFound": "No Do Kim Mds found"
+      },
+      "created": "Một Do Kim Md mới được tạo với định danh {{ param }}",
+      "updated": "Một Do Kim Md cập nhật với định danh {{ param }}",
+      "deleted": "Một Do Kim Md đã xóa với định danh {{ param }}",
+      "delete": {
+        "question": "Bạn có chắc là muốn xóa Do Kim Md {{ id }}?"
+      },
+      "detail": {
+        "title": "Do Kim Md"
+      },
+      "value": "Value",
+      "display": "Display"
+    }
+  }
+}

@@ -1,0 +1,57 @@
+{
+    "name": "ProKeHoachSanXuat",
+    "fields": [
+        {
+            "fieldName": "ngaySanXuat",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "soLuongYeuCau",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "tinhTrang",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "ghiChu",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "sam",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "lotNo",
+            "fieldType": "Integer"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "proChuyen",
+            "otherEntityRelationshipName": "proKeHoachSanXuat",
+            "relationshipName": "proChuyen",
+            "otherEntityField": "ten"
+        },
+        {
+            "relationshipName": "proSanPham",
+            "otherEntityName": "proSanPham",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "maSanPham",
+            "otherEntityRelationshipName": "proKeHoachSanXuat"
+        }
+    ],
+    "changelogDate": "20200212162851",
+    "entityTableName": "pro_ke_hoach_san_xuat",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": true,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*",
+    "searchEngine": false,
+    "databaseType": "sql"
+}

@@ -1,0 +1,114 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="ctApp.nVButton.home.title">NV Buttons</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-nv-button" [routerLink]="['/sys/nv-button/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="ctApp.nVButton.home.createLabel">
+            Create a new NV Button
+            </span>
+        </button>
+    </h2>
+    <jhi-alert-error></jhi-alert-error>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="nVButtons?.length === 0">
+        <span jhiTranslate="ctApp.nVButton.home.notFound">No nVButtons found</span>
+    </div>
+    <div class="table-responsive" *ngIf="nVButtons?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="name"><span jhiTranslate="ctApp.nVButton.name">Name</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="discoveredOnTopic"><span jhiTranslate="ctApp.nVButton.discoveredOnTopic">Discovered On Topic</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="cmndTopic"><span jhiTranslate="ctApp.nVButton.cmndTopic">Cmnd Topic</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="plOff"><span jhiTranslate="ctApp.nVButton.plOff">Pl Off</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="plOn"><span jhiTranslate="ctApp.nVButton.plOn">Pl On</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="uniqId"><span jhiTranslate="ctApp.nVButton.uniqId">Uniq Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="devIds"><span jhiTranslate="ctApp.nVButton.devIds">Dev Ids</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="teleTopic"><span jhiTranslate="ctApp.nVButton.teleTopic">Tele Topic</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="statTopic"><span jhiTranslate="ctApp.nVButton.statTopic">Stat Topic</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="avtyTopic"><span jhiTranslate="ctApp.nVButton.avtyTopic">Avty Topic</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="plAvail"><span jhiTranslate="ctApp.nVButton.plAvail">Pl Avail</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="plNotAvail"><span jhiTranslate="ctApp.nVButton.plNotAvail">Pl Not Avail</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="state"><span jhiTranslate="ctApp.nVButton.state">State</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="lwt"><span jhiTranslate="ctApp.nVButton.lwt">Lwt</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="lastUpdateState"><span jhiTranslate="ctApp.nVButton.lastUpdateState">Last Update State</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="groupType"><span jhiTranslate="ctApp.nVButton.groupType">Group Type</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="buttonTrackingId"><span jhiTranslate="ctApp.nVButton.buttonTracking">Button Tracking</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="deviceName"><span jhiTranslate="ctApp.nVButton.device">Device</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="trackingTypeName"><span jhiTranslate="ctApp.nVButton.trackingType">Tracking Type</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let nVButton of nVButtons ;trackBy: trackId">
+                <td><a [routerLink]="['/sys/nv-button', nVButton.id, 'view' ]">{{nVButton.id}}</a></td>
+                <td>{{nVButton.name}}</td>
+                <td>{{nVButton.discoveredOnTopic}}</td>
+                <td>{{nVButton.cmndTopic}}</td>
+                <td>{{nVButton.plOff}}</td>
+                <td>{{nVButton.plOn}}</td>
+                <td>{{nVButton.uniqId}}</td>
+                <td>{{nVButton.devIds}}</td>
+                <td>{{nVButton.teleTopic}}</td>
+                <td>{{nVButton.statTopic}}</td>
+                <td>{{nVButton.avtyTopic}}</td>
+                <td>{{nVButton.plAvail}}</td>
+                <td>{{nVButton.plNotAvail}}</td>
+                <td jhiTranslate="{{'ctApp.NVButtonState.' + nVButton.state}}">{{nVButton.state}}</td>
+                <td jhiTranslate="{{'ctApp.LWT.' + nVButton.lwt}}">{{nVButton.lwt}}</td>
+                <td>{{nVButton.lastUpdateState | date:'medium'}}</td>
+                <td jhiTranslate="{{'ctApp.GroupButtonType.' + nVButton.groupType}}">{{nVButton.groupType}}</td>
+                <td>
+                    <div *ngIf="nVButton.buttonTrackingId">
+                        <a [routerLink]="['/sys/button-tracking', nVButton.buttonTrackingId , 'view' ]" >{{nVButton.buttonTrackingId}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="nVButton.deviceId">
+                        <a [routerLink]="['/sys/device', nVButton.deviceId , 'view' ]" >{{nVButton.deviceName}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="nVButton.trackingTypeId">
+                        <a [routerLink]="['/sys/nv-button-tracking-type', nVButton.trackingTypeId , 'view' ]" >{{nVButton.trackingTypeName}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/sys/nv-button', nVButton.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/sys/nv-button', nVButton.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/sys/nv-button', { outlets: { popup: nVButton.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div [hidden]="nVButtons?.length === 0">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="totalItems" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

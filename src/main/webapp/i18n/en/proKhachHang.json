@@ -1,0 +1,24 @@
+{
+  "ctApp": {
+    "proKhachHang": {
+      "home": {
+        "title": "Pro Khach Hangs",
+        "createLabel": "Create a new Pro Khach Hang",
+        "createOrEditLabel": "Create or edit a Pro Khach Hang",
+        "notFound": "No Pro Khach Hangs found"
+      },
+      "created": "A new Pro Khach Hang is created with identifier {{ param }}",
+      "updated": "A Pro Khach Hang is updated with identifier {{ param }}",
+      "deleted": "A Pro Khach Hang is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Pro Khach Hang {{ id }}?"
+      },
+      "detail": {
+        "title": "Pro Khach Hang"
+      },
+      "ten": "Ten",
+      "nhom": "Nhom",
+      "diaChi": "Dia Chi"
+    }
+  }
+}

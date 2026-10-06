@@ -1,0 +1,48 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="ctApp.cauHinhZalo.home.title">Cau Hinh Zalos</span>
+    </h2>
+    <jhi-alert-error></jhi-alert-error>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="cauHinhZalos?.length === 0">
+        <span jhiTranslate="ctApp.cauHinhZalo.home.notFound">No cauHinhZalos found</span>
+    </div>
+    <div class="table-responsive" *ngIf="cauHinhZalos?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+            <tr>
+            <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+            <th scope="col" ><span jhiTranslate="ctApp.cauHinhZalo.accessToken">Access Token</span></th>
+            <th scope="col" ><span jhiTranslate="ctApp.cauHinhZalo.refreshToken">Refresh Token</span></th>
+            <th scope="col" ><span jhiTranslate="ctApp.cauHinhZalo.zaloOA">Zalo OA</span></th>
+            <th scope="col" ><span jhiTranslate="ctApp.cauHinhZalo.secretKey">Secret Key</span></th>
+            <th scope="col" ><span jhiTranslate="ctApp.cauHinhZalo.appId">App Id</span></th>
+            <th scope="col" ><span jhiTranslate="ctApp.cauHinhZalo.expireTime">Expire Time</span></th>
+            <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let cauHinhZalo of cauHinhZalos ;trackBy: trackId">
+                <td><a [routerLink]="['/sys/cau-hinh-zalo', cauHinhZalo.id, 'view' ]">{{cauHinhZalo.id}}</a></td>
+                <td>{{cauHinhZalo.accessToken}}</td>
+                <td>{{cauHinhZalo.refreshToken}}</td>
+                <td>{{cauHinhZalo.zaloOA}}</td>
+                <td>{{cauHinhZalo.secretKey}}</td>
+                <td>{{cauHinhZalo.appId}}</td>
+                <td>{{cauHinhZalo.expireTime | date:'mediumDate'}}</td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/sys/cau-hinh-zalo', cauHinhZalo.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

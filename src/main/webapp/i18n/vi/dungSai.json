@@ -1,0 +1,26 @@
+{
+  "ctApp": {
+    "dungSai": {
+      "home": {
+        "title": "Dung Sais",
+        "createLabel": "Thêm mới một Dung Sai",
+        "createOrEditLabel": "Thêm mới hoặc cập nhật Dung Sai",
+        "notFound": "No Dung Sais found"
+      },
+      "created": "Một Dung Sai mới được tạo với định danh {{ param }}",
+      "updated": "Một Dung Sai cập nhật với định danh {{ param }}",
+      "deleted": "Một Dung Sai đã xóa với định danh {{ param }}",
+      "delete": {
+        "question": "Bạn có chắc là muốn xóa Dung Sai {{ id }}?"
+      },
+      "detail": {
+        "title": "Dung Sai"
+      },
+      "cmLabel": "Cm Label",
+      "inchLabel": "Inch Label",
+      "cmValue": "Cm Value",
+      "inchValue": "Inch Value",
+      "thongSoThucThi": "Thong So Thuc Thi"
+    }
+  }
+}

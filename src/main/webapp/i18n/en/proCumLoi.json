@@ -1,0 +1,23 @@
+{
+  "ctApp": {
+    "proCumLoi": {
+      "home": {
+        "title": "Pro Cum Lois",
+        "createLabel": "Create a new Pro Cum Loi",
+        "createOrEditLabel": "Create or edit a Pro Cum Loi",
+        "notFound": "No Pro Cum Lois found"
+      },
+      "created": "A new Pro Cum Loi is created with identifier {{ param }}",
+      "updated": "A Pro Cum Loi is updated with identifier {{ param }}",
+      "deleted": "A Pro Cum Loi is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Pro Cum Loi {{ id }}?"
+      },
+      "detail": {
+        "title": "Pro Cum Loi"
+      },
+      "ten": "Ten",
+      "mau": "Mau"
+    }
+  }
+}

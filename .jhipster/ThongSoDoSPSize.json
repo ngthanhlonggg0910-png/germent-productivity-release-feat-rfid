@@ -1,0 +1,50 @@
+{
+    "name": "ThongSoDoSPSize",
+    "fields": [
+        {
+            "fieldName": "size",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "cmThongSoChuan",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "inchThongSoChuan",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "cmThongSoChuanValue",
+            "fieldType": "Float"
+        },
+        {
+            "fieldName": "inchThongSoChuanValue",
+            "fieldType": "Float"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "otherEntityName": "thongSoThucThi",
+            "otherEntityRelationshipName": "thongSoDoSPSize",
+            "relationshipName": "thongSoThucThi"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "thongSoDoSP",
+            "otherEntityRelationshipName": "thongSoDoSPSize",
+            "relationshipName": "thongSoDoSP",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20200425101319",
+    "entityTableName": "thong_so_do_sp_size",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

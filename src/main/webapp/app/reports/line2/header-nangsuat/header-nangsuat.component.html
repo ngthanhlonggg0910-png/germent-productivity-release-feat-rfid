@@ -1,0 +1,52 @@
+
+    <td>
+        <h2 ng-if="dataKeHoachThucHien" class="text-center align-middle pt-2"
+        style="font-weight: 600;">LINE <br>
+        <span style="color: #EE1C15;font-size: 2.5rem;font-weight: bold;">{{dataKeHoachThucHien.tenChuyen}}</span>
+        </h2>
+    </td>
+    <td colspan="7">
+        <table class="w-100 noborder" style="text-align: center;vertical-align: middle;height: 100%;">
+            <tbody>
+                <tr>
+                    <td colspan="5">
+                        <h4 ng-if="dataKeHoachThucHien" class="text-center align-middle pt-2"
+                        style="font-weight: 600;">MÃ HÀNG (Job No)
+                        </h4>
+                    </td>
+                    <td>
+                        <h4 ng-if="dataKeHoachThucHien" class="text-center align-middle pt-2"
+                            style="font-weight: 600;">NGÀY (Date)
+                        </h4>
+                    </td>
+                    <td>
+                        <h4 ng-if="dataKeHoachThucHien" class="text-center align-middle pt-2"
+                            style="font-weight: 600;">GIỜ (Time)
+                        </h4>
+                    </td>
+                </tr>
+                <tr style="color: #00A54D;font-size: 2.5rem;">
+                    <td colspan="5">
+                        <p ng-if="dataKeHoachThucHien" class="">{{dataKeHoachThucHien.mahang}}</p>
+                    </td>
+                    <td>{{dayNow}}/{{monthNowNum}}</td>
+                    <td>{{currentTime}}</td>
+                </tr>
+                <tr style="background-color: #08113A;color: white;font-size: 2rem;">
+                    <td colspan="7">
+                        <table class="w-100" style="color:white; text-align: center;vertical-align: middle;">
+                            <tbody>
+                                <tr>
+                                    <td style="font-size: 1.8rem;" colspan="2">KẾ HOẠCH (Plan)</td>
+                                    <td style="font-size: 1.8rem;" colspan="2">THỰC HIỆN (Actual)</td>
+                                    <td style="font-size: 1.8rem;">%</td>
+                                    <td style="font-size: 1.8rem;" colspan="2">NHẬP KHO <br> (Del to WH)</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </td>
+

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <changeSet id="20260706120000-1" author="nvsoft">
+        <createTable tableName="pro_kiemtrong_chi_tiet_loi">
+            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="pro_checkpoint_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="pro_ke_hoach_san_xuat_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="pro_loi_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ma_loi" type="nvarchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="thoi_gian" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="gio_lam" type="varchar(50)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="dx" type="double">
+                <constraints nullable="true"/>
+            </column>
+            <column name="dy" type="double">
+                <constraints nullable="true"/>
+            </column>
+            <column name="is_front" type="boolean">
+                <constraints nullable="true"/>
+            </column>
+            <column name="is_inside" type="boolean">
+                <constraints nullable="true"/>
+            </column>
+            <column name="barcode_tach_cay" type="nvarchar(255)">
+                <constraints nullable="true"/>
+            </column>
+        </createTable>
+        <createIndex tableName="pro_kiemtrong_chi_tiet_loi"
+            indexName="ix_kt_ctl_checkpoint_khsx">
+            <column name="pro_checkpoint_id"/>
+            <column name="pro_ke_hoach_san_xuat_id"/>
+        </createIndex>
+        <createTable tableName="pro_kiemtrong_sanpham">
+            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="pro_checkpoint_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="pro_khsx_id" type="bigint">
+                <constraints nullable="false"/>
+            </column>
+            <column name="nguoiquet" type="nvarchar(255)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="thoigianquet" type="datetime">
+                <constraints nullable="false"/>
+            </column>
+            <column name="checked_type" type="varchar(10)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="displayname" type="nvarchar(500)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="pro_kiemtrong_chi_tiet_loi_id" type="bigint">
+                <constraints nullable="true"/>
+            </column>
+            <column name="checked_time" type="varchar(50)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="isTracking" type="boolean">
+                <constraints nullable="true"/>
+            </column>
+            <column name="valueHEX" type="nvarchar(500)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="RFID_Barcode" type="nvarchar(500)">
+                <constraints nullable="true"/>
+            </column>
+        </createTable>
+        <createIndex tableName="pro_kiemtrong_sanpham"
+            indexName="ix_kt_sp_displayname_time">
+            <column name="displayname"/>
+            <column name="thoigianquet"/>
+        </createIndex>
+        <addForeignKeyConstraint baseTableName="pro_kiemtrong_sanpham"
+            baseColumnNames="pro_kiemtrong_chi_tiet_loi_id"
+            referencedTableName="pro_kiemtrong_chi_tiet_loi"
+            referencedColumnNames="id"
+            constraintName="fk_kt_sp_chi_tiet_loi"/>
+        <addForeignKeyConstraint baseTableName="pro_kiemtrong_chi_tiet_loi"
+            baseColumnNames="pro_loi_id"
+            referencedTableName="pro_loi"
+            referencedColumnNames="id"
+            constraintName="fk_kt_ctl_pro_loi"/>
+    </changeSet>
+</databaseChangeLog>

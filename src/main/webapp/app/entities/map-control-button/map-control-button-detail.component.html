@@ -1,0 +1,35 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="mapControlButton">
+            <h2><span jhiTranslate="ctApp.mapControlButton.detail.title">Map Control Button</span> {{mapControlButton.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="ctApp.mapControlButton.sourceButton">Source Button</span></dt>
+                <dd>
+                    <div *ngIf="mapControlButton.sourceButtonId">
+                        <a [routerLink]="['/sys/nv-button', mapControlButton.sourceButtonId, 'view']">{{mapControlButton.sourceButtonCmndTopic}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="ctApp.mapControlButton.targetButton">Target Button</span></dt>
+                <dd>
+                    <div *ngIf="mapControlButton.targetButtonId">
+                        <a [routerLink]="['/sys/nv-button', mapControlButton.targetButtonId, 'view']">{{mapControlButton.targetButtonCmndTopic}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/sys/map-control-button', mapControlButton.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

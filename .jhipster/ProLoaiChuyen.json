@@ -1,0 +1,20 @@
+{
+    "name": "ProLoaiChuyen",
+    "fields": [
+        {
+            "fieldName": "ten",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20200212162852",
+    "entityTableName": "pro_loai_chuyen",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

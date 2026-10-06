@@ -1,0 +1,40 @@
+{
+  "ctApp": {
+    "nVButton": {
+      "home": {
+        "title": "NV Buttons",
+        "createLabel": "Thêm mới một NV Button",
+        "createOrEditLabel": "Thêm mới hoặc cập nhật NV Button",
+        "notFound": "No NV Buttons found"
+      },
+      "created": "Một NV Button mới được tạo với định danh {{ param }}",
+      "updated": "Một NV Button cập nhật với định danh {{ param }}",
+      "deleted": "Một NV Button đã xóa với định danh {{ param }}",
+      "delete": {
+        "question": "Bạn có chắc là muốn xóa NV Button {{ id }}?"
+      },
+      "detail": {
+        "title": "NV Button"
+      },
+      "name": "Name",
+      "discoveredOnTopic": "Discovered On Topic",
+      "cmndTopic": "Cmnd Topic",
+      "plOff": "Pl Off",
+      "plOn": "Pl On",
+      "uniqId": "Uniq Id",
+      "devIds": "Dev Ids",
+      "teleTopic": "Tele Topic",
+      "statTopic": "Stat Topic",
+      "avtyTopic": "Avty Topic",
+      "plAvail": "Pl Avail",
+      "plNotAvail": "Pl Not Avail",
+      "state": "State",
+      "lwt": "Lwt",
+      "lastUpdateState": "Last Update State",
+      "groupType": "Group Type",
+      "buttonTracking": "Button Tracking",
+      "device": "Device",
+      "trackingType": "Tracking Type"
+    }
+  }
+}

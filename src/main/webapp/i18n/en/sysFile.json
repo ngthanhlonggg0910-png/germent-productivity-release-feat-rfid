@@ -1,0 +1,26 @@
+{
+  "ctApp": {
+    "sysFile": {
+      "home": {
+        "title": "Sys Files",
+        "createLabel": "Create a new Sys File",
+        "createOrEditLabel": "Create or edit a Sys File",
+        "notFound": "No Sys Files found"
+      },
+      "created": "A new Sys File is created with identifier {{ param }}",
+      "updated": "A Sys File is updated with identifier {{ param }}",
+      "deleted": "A Sys File is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Sys File {{ id }}?"
+      },
+      "detail": {
+        "title": "Sys File"
+      },
+      "fileName": "File Name",
+      "fileUri": "File Uri",
+      "fileExtension": "File Extension",
+      "size": "Size",
+      "uploadedAt": "Uploaded At"
+    }
+  }
+}

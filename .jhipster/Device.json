@@ -1,0 +1,71 @@
+{
+    "name": "Device",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "devIds",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "stateTopic",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "unique"
+            ]
+        },
+        {
+            "fieldName": "lwtTopic",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "unique"
+            ]
+        },
+        {
+            "fieldName": "sw",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "module",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "restartReason",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "time",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "uptime",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "hostName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "ipAddress",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "lwt",
+            "fieldType": "LWT",
+            "fieldValues": "ON_LINE,OFF_LINE"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20200822033708",
+    "entityTableName": "device",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

@@ -1,0 +1,31 @@
+{
+  "ctApp": {
+    "gYCLKhacPhuc": {
+      "home": {
+        "title": "GYCL Khac Phucs",
+        "createLabel": "Thêm mới một GYCL Khac Phuc",
+        "createOrEditLabel": "Thêm mới hoặc cập nhật GYCL Khac Phuc",
+        "notFound": "No GYCL Khac Phucs found"
+      },
+      "created": "Một GYCL Khac Phuc mới được tạo với định danh {{ param }}",
+      "updated": "Một GYCL Khac Phuc cập nhật với định danh {{ param }}",
+      "deleted": "Một GYCL Khac Phuc đã xóa với định danh {{ param }}",
+      "delete": {
+        "question": "Bạn có chắc là muốn xóa GYCL Khac Phuc {{ id }}?"
+      },
+      "detail": {
+        "title": "GYCL Khac Phuc"
+      },
+      "cumId": "Cum Id",
+      "tenCum": "Ten Cum",
+      "gopY": "Gop Y",
+      "ketQua": "Ket Qua",
+      "nguoiTao": "Nguoi Tao",
+      "userId": "User Id",
+      "ngayTao": "Ngay Tao",
+      "proGopYChatLuong": "Pro Gop Y Chat Luong",
+      "thuVienLoi": "Thu Vien Loi",
+      "khacPhucLoi": "Khac Phuc Loi"
+    }
+  }
+}

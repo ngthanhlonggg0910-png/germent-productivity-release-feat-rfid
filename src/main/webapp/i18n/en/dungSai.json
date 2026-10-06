@@ -1,0 +1,26 @@
+{
+  "ctApp": {
+    "dungSai": {
+      "home": {
+        "title": "Dung Sais",
+        "createLabel": "Create a new Dung Sai",
+        "createOrEditLabel": "Create or edit a Dung Sai",
+        "notFound": "No Dung Sais found"
+      },
+      "created": "A new Dung Sai is created with identifier {{ param }}",
+      "updated": "A Dung Sai is updated with identifier {{ param }}",
+      "deleted": "A Dung Sai is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Dung Sai {{ id }}?"
+      },
+      "detail": {
+        "title": "Dung Sai"
+      },
+      "cmLabel": "Cm Label",
+      "inchLabel": "Inch Label",
+      "cmValue": "Cm Value",
+      "inchValue": "Inch Value",
+      "thongSoThucThi": "Thong So Thuc Thi"
+    }
+  }
+}

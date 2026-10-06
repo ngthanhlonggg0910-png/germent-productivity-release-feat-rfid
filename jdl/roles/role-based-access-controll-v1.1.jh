@@ -1,0 +1,51 @@
+
+
+entity SysAuthority {
+	name String
+}
+entity SysRoleHasFunction {
+	activated Boolean
+}
+entity SysFunction {
+	name String required maxlength(100)
+    caption String maxlength(255)
+    level Integer
+    imageUri String
+    eventName String maxlength(50)
+    hotkey String maxlength(5)
+}
+entity SysModule {
+	name String required maxlength(100)
+    caption String maxlength(255)
+    imageUri String
+}
+entity SysPermission {
+	name String required maxlength(100)
+    caption String maxlength(255)
+    level Integer
+    imageUri String
+    eventName String maxlength(50)
+    hotkey String maxlength(5)
+}
+entity SysGroupModule {
+	name String required maxlength(100)
+    caption String maxlength(255)
+    primaryImageUri String
+    secondaryImageUri String
+}
+
+relationship ManyToOne {
+	SysRoleHasFunction to SysAuthority
+    SysRoleHasFunction to SysFunction
+}
+relationship ManyToOne {
+	SysFunction to SysPermission
+    SysFunction to SysModule
+}
+relationship ManyToOne {
+	SysModule to SysGroupModule
+}
+
+dto * with mapstruct
+service all with serviceImpl
+paginate all with pagination

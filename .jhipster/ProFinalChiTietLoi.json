@@ -1,0 +1,63 @@
+{
+    "name": "ProFinalChiTietLoi",
+    "fields": [
+        {
+            "fieldName": "maLoi",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "thoiGian",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "dx",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "dy",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "isFront",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "isInside",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "warning",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "nguoiKiem",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "proFinal",
+            "otherEntityRelationshipName": "proFinalChiTietLoi",
+            "relationshipName": "proFinal",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "proLoi",
+            "otherEntityRelationshipName": "proFinalChiTietLoi",
+            "relationshipName": "proLoi",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20210328095744",
+    "entityTableName": "pro_final_chi_tiet_loi",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

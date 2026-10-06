@@ -1,0 +1,10 @@
+{
+  "ctApp": {
+    "NVButtonState": {
+      "null": "",
+      "ON": "ON",
+      "OFF": "OFF",
+      "UNKNOW": "UNKNOW"
+    }
+  }
+}

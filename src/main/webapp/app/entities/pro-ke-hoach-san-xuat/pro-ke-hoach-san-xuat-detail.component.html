@@ -1,0 +1,59 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="proKeHoachSanXuat">
+            <h2><span jhiTranslate="ctApp.proKeHoachSanXuat.detail.title">Pro Ke Hoach San Xuat</span> {{proKeHoachSanXuat.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="ctApp.proKeHoachSanXuat.ngaySanXuat">Ngay San Xuat</span></dt>
+                <dd>
+                    <span>{{proKeHoachSanXuat.ngaySanXuat}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proKeHoachSanXuat.soLuongYeuCau">So Luong Yeu Cau</span></dt>
+                <dd>
+                    <span>{{proKeHoachSanXuat.soLuongYeuCau}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proKeHoachSanXuat.tinhTrang">Tinh Trang</span></dt>
+                <dd>
+                    <span>{{proKeHoachSanXuat.tinhTrang}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proKeHoachSanXuat.ghiChu">Ghi Chu</span></dt>
+                <dd>
+                    <span>{{proKeHoachSanXuat.ghiChu}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proKeHoachSanXuat.sam">Sam</span></dt>
+                <dd>
+                    <span>{{proKeHoachSanXuat.sam}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proKeHoachSanXuat.lotNo">Lot No</span></dt>
+                <dd>
+                    <span>{{proKeHoachSanXuat.lotNo}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proKeHoachSanXuat.proChuyen">Pro Chuyen</span></dt>
+                <dd>
+                    <div *ngIf="proKeHoachSanXuat.proChuyenId">
+                        <a [routerLink]="['/sys/pro-chuyen', proKeHoachSanXuat.proChuyenId, 'view']">{{proKeHoachSanXuat.proChuyenTen}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proKeHoachSanXuat.proSanPham">Pro San Pham</span></dt>
+                <dd>
+                    <div *ngIf="proKeHoachSanXuat.proSanPhamId">
+                        <a [routerLink]="['/sys/pro-san-pham', proKeHoachSanXuat.proSanPhamId, 'view']">{{proKeHoachSanXuat.proSanPhamMaSanPham}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/sys/pro-ke-hoach-san-xuat', proKeHoachSanXuat.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

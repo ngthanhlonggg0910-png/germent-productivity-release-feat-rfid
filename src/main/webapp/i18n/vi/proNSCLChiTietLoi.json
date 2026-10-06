@@ -1,0 +1,30 @@
+{
+  "ctApp": {
+    "proNSCLChiTietLoi": {
+      "home": {
+        "title": "Pro NSCL Chi Tiet Lois",
+        "createLabel": "Thêm mới một Pro NSCL Chi Tiet Loi",
+        "createOrEditLabel": "Thêm mới hoặc cập nhật Pro NSCL Chi Tiet Loi",
+        "notFound": "No Pro NSCL Chi Tiet Lois found"
+      },
+      "created": "Một Pro NSCL Chi Tiet Loi mới được tạo với định danh {{ param }}",
+      "updated": "Một Pro NSCL Chi Tiet Loi cập nhật với định danh {{ param }}",
+      "deleted": "Một Pro NSCL Chi Tiet Loi đã xóa với định danh {{ param }}",
+      "delete": {
+        "question": "Bạn có chắc là muốn xóa Pro NSCL Chi Tiet Loi {{ id }}?"
+      },
+      "detail": {
+        "title": "Pro NSCL Chi Tiet Loi"
+      },
+      "maLoi": "Ma Loi",
+      "thoiGian": "Thoi Gian",
+      "gioLam": "Gio Lam",
+      "dx": "Dx",
+      "dy": "Dy",
+      "isFront": "Is Front",
+      "isInside": "Is Inside",
+      "proNSCL": "Pro NSCL",
+      "proLoi": "Pro Loi"
+    }
+  }
+}

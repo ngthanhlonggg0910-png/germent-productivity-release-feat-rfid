@@ -1,0 +1,30 @@
+{
+  "ctApp": {
+    "proNSCLChiTietLoi": {
+      "home": {
+        "title": "Pro NSCL Chi Tiet Lois",
+        "createLabel": "Create a new Pro NSCL Chi Tiet Loi",
+        "createOrEditLabel": "Create or edit a Pro NSCL Chi Tiet Loi",
+        "notFound": "No Pro NSCL Chi Tiet Lois found"
+      },
+      "created": "A new Pro NSCL Chi Tiet Loi is created with identifier {{ param }}",
+      "updated": "A Pro NSCL Chi Tiet Loi is updated with identifier {{ param }}",
+      "deleted": "A Pro NSCL Chi Tiet Loi is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Pro NSCL Chi Tiet Loi {{ id }}?"
+      },
+      "detail": {
+        "title": "Pro NSCL Chi Tiet Loi"
+      },
+      "maLoi": "Ma Loi",
+      "thoiGian": "Thoi Gian",
+      "gioLam": "Gio Lam",
+      "dx": "Dx",
+      "dy": "Dy",
+      "isFront": "Is Front",
+      "isInside": "Is Inside",
+      "proNSCL": "Pro NSCL",
+      "proLoi": "Pro Loi"
+    }
+  }
+}

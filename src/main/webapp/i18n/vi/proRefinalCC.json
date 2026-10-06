@@ -1,0 +1,37 @@
+{
+  "ctApp": {
+    "proRefinalCC": {
+      "home": {
+        "title": "Pro Refinal CCS",
+        "createLabel": "Thêm mới một Pro Refinal CC",
+        "createOrEditLabel": "Thêm mới hoặc cập nhật Pro Refinal CC",
+        "notFound": "No Pro Refinal CCS found"
+      },
+      "created": "Một Pro Refinal CC mới được tạo với định danh {{ param }}",
+      "updated": "Một Pro Refinal CC cập nhật với định danh {{ param }}",
+      "deleted": "Một Pro Refinal CC đã xóa với định danh {{ param }}",
+      "delete": {
+        "question": "Bạn có chắc là muốn xóa Pro Refinal CC {{ id }}?"
+      },
+      "detail": {
+        "title": "Pro Refinal CC"
+      },
+      "khxhId": "Khxh Id",
+      "maHang": "Ma Hang",
+      "poNo": "Po No",
+      "ngayKiemFinal": "Ngay Kiem Final",
+      "tenChuyen": "Ten Chuyen",
+      "ngayGioKiem": "Ngay Gio Kiem",
+      "soLuongKiemAql": "So Luong Kiem Aql",
+      "soLuong": "So Luong",
+      "doAm": "Do Am",
+      "tongSoLoi": "Tong So Loi",
+      "soThuTuThung": "So Thu Tu Thung",
+      "doKimMd": "Do Kim Md",
+      "aql": "Aql",
+      "maxLoiChoPhep": "Max Loi Cho Phep",
+      "completed": "Completed",
+      "nguoiKiem": "Nguoi Kiem"
+    }
+  }
+}

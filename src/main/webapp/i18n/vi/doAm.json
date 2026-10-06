@@ -1,0 +1,23 @@
+{
+  "ctApp": {
+    "doAm": {
+      "home": {
+        "title": "Do Ams",
+        "createLabel": "Thêm mới một Do Am",
+        "createOrEditLabel": "Thêm mới hoặc cập nhật Do Am",
+        "notFound": "No Do Ams found"
+      },
+      "created": "Một Do Am mới được tạo với định danh {{ param }}",
+      "updated": "Một Do Am cập nhật với định danh {{ param }}",
+      "deleted": "Một Do Am đã xóa với định danh {{ param }}",
+      "delete": {
+        "question": "Bạn có chắc là muốn xóa Do Am {{ id }}?"
+      },
+      "detail": {
+        "title": "Do Am"
+      },
+      "value": "Value",
+      "display": "Display"
+    }
+  }
+}

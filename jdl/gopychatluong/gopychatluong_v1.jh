@@ -1,0 +1,82 @@
+
+
+// Lib
+entity KhacPhucLoi {
+	maKP String
+    tenKP String
+    nguoiTao String
+    ngayTao String
+    userId Integer
+}
+entity ThuVienLoi {
+	maLoi String
+    tenLoi String
+    nguoiTao String
+    ngayTao Instant
+    userId Integer
+}
+entity QuyCachNPL{
+	tenNPL String
+    maNPL String
+    nguoiTao String
+    ngayTao String
+    userId Integer
+}
+//-----------------------------------------------
+// PRO_GopYChatLuong
+entity GopYChatLuong {
+	cusId Integer
+    cusName String
+    chuyenId Integer
+    chuyenName String
+    maHang String
+    po String
+    poId Integer
+    color String
+    size String
+    firstCut Boolean
+    inline Boolean
+    lanBanHanh Integer
+    ngayBaoCao Instant
+    nguoiTao String
+    userId Instant
+    ngayTao Instant
+    //---------------
+    tenQuanLyXuong String
+    tenKiThuat String
+    tenQanLyCat String
+    tenQA String
+}
+
+// PRO_GopYChatLuong_QuyCachNPL
+entity GYCLQuyCachNPL {
+	tenNPL String
+    nguoiTao String
+    ngayTao Instant
+    userId Integer
+    yesNo Boolean
+    nA String
+}
+
+// PRO_GopYChatLuong_KhacPhuc
+entity GYCLKhacPhuc {
+	cumId Integer
+    tenCum String
+    gopY String
+    ketQua String
+    nguoiTao String
+    userId Instant
+    ngayTao Instant
+}
+
+relationship ManyToOne {
+	GYCLQuyCachNPL{proGopYChatLuong(id)} to GopYChatLuong
+	GYCLKhacPhuc{proGopYChatLuong(id)} to GopYChatLuong
+    
+    GYCLKhacPhuc{thuVienLoi(id)} to ThuVienLoi
+    GYCLKhacPhuc{khacPhucLoi(id)} to KhacPhucLoi
+}
+
+dto * with mapstruct
+service all with serviceImpl
+paginate all with pagination

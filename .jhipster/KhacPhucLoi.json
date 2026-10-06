@@ -1,0 +1,36 @@
+{
+    "name": "KhacPhucLoi",
+    "fields": [
+        {
+            "fieldName": "maKP",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "tenKP",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "nguoiTao",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "ngayTao",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "userId",
+            "fieldType": "Integer"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20191120132959",
+    "entityTableName": "khac_phuc_loi",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

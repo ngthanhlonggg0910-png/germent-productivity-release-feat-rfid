@@ -1,0 +1,88 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="ctApp.device.home.title">Devices</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-device" [routerLink]="['/sys/device/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="ctApp.device.home.createLabel">
+            Create a new Device
+            </span>
+        </button>
+    </h2>
+    <jhi-alert-error></jhi-alert-error>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="devices?.length === 0">
+        <span jhiTranslate="ctApp.device.home.notFound">No devices found</span>
+    </div>
+    <div class="table-responsive" *ngIf="devices?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="name"><span jhiTranslate="ctApp.device.name">Name</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="devIds"><span jhiTranslate="ctApp.device.devIds">Dev Ids</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="stateTopic"><span jhiTranslate="ctApp.device.stateTopic">State Topic</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="lwtTopic"><span jhiTranslate="ctApp.device.lwtTopic">Lwt Topic</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="sw"><span jhiTranslate="ctApp.device.sw">Sw</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="module"><span jhiTranslate="ctApp.device.module">Module</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="restartReason"><span jhiTranslate="ctApp.device.restartReason">Restart Reason</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="time"><span jhiTranslate="ctApp.device.time">Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="uptime"><span jhiTranslate="ctApp.device.uptime">Uptime</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="hostName"><span jhiTranslate="ctApp.device.hostName">Host Name</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="ipAddress"><span jhiTranslate="ctApp.device.ipAddress">Ip Address</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="lwt"><span jhiTranslate="ctApp.device.lwt">Lwt</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let device of devices ;trackBy: trackId">
+                <td><a [routerLink]="['/sys/device', device.id, 'view' ]">{{device.id}}</a></td>
+                <td>{{device.name}}</td>
+                <td>{{device.devIds}}</td>
+                <td>{{device.stateTopic}}</td>
+                <td>{{device.lwtTopic}}</td>
+                <td>{{device.sw}}</td>
+                <td>{{device.module}}</td>
+                <td>{{device.restartReason}}</td>
+                <td>{{device.time | date:'medium'}}</td>
+                <td>{{device.uptime}}</td>
+                <td>{{device.hostName}}</td>
+                <td>{{device.ipAddress}}</td>
+                <td jhiTranslate="{{'ctApp.LWT.' + device.lwt}}">{{device.lwt}}</td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/sys/device', device.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/sys/device', device.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/sys/device', { outlets: { popup: device.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div [hidden]="devices?.length === 0">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="totalItems" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

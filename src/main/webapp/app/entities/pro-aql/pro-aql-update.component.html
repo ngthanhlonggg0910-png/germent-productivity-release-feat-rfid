@@ -1,0 +1,54 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-pro-aql-heading" jhiTranslate="ctApp.proAql.home.createOrEditLabel">Create or edit a Pro Aql</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id').value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proAql.aql" for="field_aql">Aql</label>
+                    <input type="text" class="form-control" name="aql" id="field_aql"
+                           formControlName="aql"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proAql.soLuongDonHangTu" for="field_soLuongDonHangTu">So Luong Don Hang Tu</label>
+                    <input type="number" class="form-control" name="soLuongDonHangTu" id="field_soLuongDonHangTu"
+                           formControlName="soLuongDonHangTu"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proAql.soLuongDonHangDen" for="field_soLuongDonHangDen">So Luong Don Hang Den</label>
+                    <input type="number" class="form-control" name="soLuongDonHangDen" id="field_soLuongDonHangDen"
+                           formControlName="soLuongDonHangDen"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proAql.soLuongKiem" for="field_soLuongKiem">So Luong Kiem</label>
+                    <input type="number" class="form-control" name="soLuongKiem" id="field_soLuongKiem"
+                           formControlName="soLuongKiem"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proAql.soLuongSeFail" for="field_soLuongSeFail">So Luong Se Fail</label>
+                    <input type="number" class="form-control" name="soLuongSeFail" id="field_soLuongSeFail"
+                           formControlName="soLuongSeFail"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proAql.soLuongSePass" for="field_soLuongSePass">So Luong Se Pass</label>
+                    <input type="number" class="form-control" name="soLuongSePass" id="field_soLuongSePass"
+                           formControlName="soLuongSePass"/>
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

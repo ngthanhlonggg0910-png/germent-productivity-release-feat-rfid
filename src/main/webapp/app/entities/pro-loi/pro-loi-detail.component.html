@@ -1,0 +1,73 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="proLoi">
+            <h2><span jhiTranslate="ctApp.proLoi.detail.title">Pro Loi</span> {{proLoi.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="ctApp.proLoi.maLoi">Ma Loi</span></dt>
+                <dd>
+                    <span>{{proLoi.maLoi}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proLoi.cusCode">Cus Code</span></dt>
+                <dd>
+                    <span>{{proLoi.cusCode}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proLoi.tenLoi">Ten Loi</span></dt>
+                <dd>
+                    <span>{{proLoi.tenLoi}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proLoi.tenTiengAnh">Ten Tieng Anh</span></dt>
+                <dd>
+                    <span>{{proLoi.tenTiengAnh}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proLoi.label">Label</span></dt>
+                <dd>
+                    <span>{{proLoi.label}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proLoi.stt">Stt</span></dt>
+                <dd>
+                    <span>{{proLoi.stt}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proLoi.mauSac">Mau Sac</span></dt>
+                <dd>
+                    <span>{{proLoi.mauSac}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proLoi.qc">Qc</span></dt>
+                <dd>
+                    <span>{{proLoi.qc}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proLoi.qa">Qa</span></dt>
+                <dd>
+                    <span>{{proLoi.qa}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proLoi.checked">Checked</span></dt>
+                <dd>
+                    <span>{{proLoi.checked}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proLoi.ghiChu">Ghi Chu</span></dt>
+                <dd>
+                    <span>{{proLoi.ghiChu}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proLoi.proCumLoi">Pro Cum Loi</span></dt>
+                <dd>
+                    <div *ngIf="proLoi.proCumLoiId">
+                        <a [routerLink]="['/sys/pro-cum-loi', proLoi.proCumLoiId, 'view']">{{proLoi.proCumLoiTen}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/sys/pro-loi', proLoi.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

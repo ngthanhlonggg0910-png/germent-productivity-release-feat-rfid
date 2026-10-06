@@ -1,0 +1,636 @@
+h4 {
+  font-size: 1rem;
+}
+.content.border.border-secondary {
+  border: none !important;
+}
+.item-1 {
+  .noborder {
+    border: none !important;
+  }
+  .noborder th,
+  .noborder td {
+    border: solid 1px black;
+  }
+
+  .row-dinh-muc-ndsx .caption {
+    font-size: 1.2rem;
+    background-color: #08113a;
+    color: white;
+    line-height: 25px;
+    border: solid 1px white;
+  }
+  .row-order .caption,
+  .row-chart .caption {
+    font-size: 1rem;
+    background-color: #08113a;
+    color: white;
+    line-height: 25px;
+  }
+  .row-chart-detail .caption {
+    color: #00a54d;
+    font-size: 3rem;
+  }
+  .row-dinh-muc-ndsx .caption span {
+    font-size: 1rem;
+  }
+  .row-dinh-muc-ndsx .value {
+    font-size: 5rem;
+    color: #ee1c15;
+  }
+
+  .row-dinh-muc-ndsx .value span {
+    font-size: 4.5rem;
+    line-height: 10px;
+  }
+  .row-dinh-muc-ndsx .value_dat {
+    font-size: 4rem;
+    color: #00a54d;
+  }
+  .row-chi-tiet-muc-tieu .caption {
+    font-size: 1.2rem;
+    background-color: #08113a;
+    color: white;
+    line-height: 20px;
+    border: solid 1px white;
+  }
+  .row-chi-tiet-muc-tieu .caption span {
+    font-size: 1rem;
+  }
+  .row-chi-tiet-muc-tieu-time .caption,
+  .row-chi-tiet-muc-tieu-refinal .caption {
+    font-size: 0.8rem;
+    background-color: #08113a;
+    color: white;
+    line-height: 20px;
+  }
+  .row-chi-tiet-muc-tieu-dinhmuc td {
+    font-size: 2.5rem;
+    color: #ee1c15;
+  }
+  .row-chi-tiet-muc-tieu-dinhmuc td span {
+    font-size: 3rem;
+    line-height: 10px;
+  }
+  .row-chi-tiet-muc-tieu-thuchien td.dat {
+    font-size: 2rem;
+    background-color: #00a54d;
+    color: white;
+  }
+  .row-chi-tiet-muc-tieu-thuchien td.khongdat {
+    font-size: 2.5rem;
+    background-color: #ee1c15;
+    color: white;
+  }
+  .row-chi-tiet-muc-tieu-thuchien td.dat span,
+  .row-chi-tiet-muc-tieu-thuchien td.khongdat span {
+    font-size: 3rem;
+    line-height: 10px;
+  }
+
+  .row-chi-tiet-muc-tieu-thuchien-2 td.dat {
+    font-size: 2.5rem;
+    background-color: #00a54d;
+    color: white;
+  }
+  .row-chi-tiet-muc-tieu-thuchien-2 td.khongdat {
+    font-size: 2.5rem;
+    background-color: #ee1c15;
+    color: white;
+  }
+}
+.item-2 {
+  .refinalTheoGio {
+    overflow: hidden;
+    border: none !important;
+    border-right: solid 1px black !important;
+  }
+  .triangle-green {
+    width: 0;
+    height: 0;
+    border-style: solid !important;
+    border-width: 40px 0 0 150px !important;
+    border-color: transparent transparent transparent #00a54d !important;
+  }
+  .triangle-red {
+    width: 0;
+    height: 0;
+    border-style: solid !important;
+    border-width: 40px 0 0 150px !important;
+    border-color: transparent transparent transparent #ee1c15 !important;
+  }
+  .triangle-white {
+    background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' version='1.1' preserveAspectRatio='none' viewBox='0 0 100 100'><line x1='0' y1='0' x2='100' y2='100' stroke='black' vector-effect='non-scaling-stroke'/></svg>");
+    border: none !important;
+    width: 100%;
+    height: 100%;
+  }
+  .noborder {
+    border: none !important;
+  }
+  .noborder th,
+  .noborder td {
+    border: solid 1px black;
+  }
+
+  .row-dinh-muc-ndsx .caption {
+    font-size: 0.8rem;
+    background-color: #08113a;
+    color: white;
+    padding: 5px 10px;
+    line-height: 20px;
+  }
+  .row-order .caption,
+  .row-chart .caption {
+    font-size: 1.5rem;
+    background-color: #08113a;
+    color: white;
+    line-height: 20px;
+  }
+  .row-chart-detail .caption {
+    color: #00a54d;
+    font-size: 3rem;
+  }
+  .row-dinh-muc-ndsx .caption span {
+    font-size: 0.8rem;
+  }
+  .row-dinh-muc-ndsx .value {
+    font-size: 3rem;
+    color: #ee1c15;
+  }
+  .row-dinh-muc-ndsx .value_dat {
+    font-size: 2rem;
+    color: #00a54d;
+  }
+  .row-chi-tiet-muc-tieu .caption {
+    font-size: 0.8rem;
+    background-color: #08113a;
+    color: white;
+    padding: 5px 10px;
+    line-height: 20px;
+  }
+  .row-chi-tiet-muc-tieu-time .caption {
+    font-size: 1.2rem;
+    background-color: #08113a;
+    color: white;
+    padding: 5px;
+    line-height: 15px;
+  }
+  .row-chi-tiet-muc-tieu-refinal .caption {
+    font-size: 1.2rem;
+    background-color: #08113a;
+    color: white;
+    padding: 5px;
+    line-height: 15px;
+  }
+  .row-chi-tiet-muc-tieu-thuchien-2 td.dat {
+    font-size: 1.5rem;
+    background-color: #00a54d;
+    color: white;
+  }
+  .row-chi-tiet-muc-tieu-thuchien-2 td.khongdat {
+    font-size: 1.5rem;
+    background-color: #ee1c15;
+    color: white;
+  }
+}
+.calendar {
+  padding-top: 0px;
+  width: 100%;
+  background: #ededef;
+  background: -webkit-gradient(linear, left top, left bottom, from(#ededef), to(#ccc));
+  background: -moz-linear-gradient(top, #ededef, #ccc);
+  font: bold 50px/60px 'Lucida Sans Unicode', Arial Black, Arial, Helvetica, sans-serif;
+  text-align: center;
+  color: #000;
+
+  text-shadow: #fff 0 1px 0;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  position: absolute;
+  -moz-box-shadow: 0 2px 2px #888;
+  -webkit-box-shadow: 0 2px 2px #888;
+  box-shadow: 0 2px 2px #888;
+}
+.calendar_start {
+  width: 60px;
+  position: initial;
+  font: bold 14px 'Lucida Sans Unicode', Arial Black, Arial, Helvetica, sans-serif;
+  margin: 0px;
+  display: inline-block;
+}
+.icon-calendar {
+  padding-top: 0px;
+  width: 100%;
+  height: 100%;
+  background: #ededef;
+  background: -webkit-gradient(linear, left top, left bottom, from(#ededef), to(#ccc));
+  background: -moz-linear-gradient(top, #ededef, #ccc);
+  font: bold 15px/20px 'Lucida Sans Unicode', Arial Black, Arial, Helvetica, sans-serif;
+  text-align: center;
+  color: #000;
+
+  text-shadow: #fff 0 1px 0;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  border-radius: 3px;
+  -moz-box-shadow: 0 2px 2px #888;
+  -webkit-box-shadow: 0 2px 2px #888;
+  box-shadow: 0 2px 2px #888;
+}
+.thuchien_green {
+  color: #00a54d;
+}
+.calendar em {
+  display: block;
+  font: 14px 'Lucida Sans Unicode', Arial, Helvetica, sans-serif;
+  color: #fff;
+  text-shadow: #a70404 0 -1px 0;
+  background: #e92525;
+  background: -webkit-gradient(linear, left top, left bottom, from(#e25c0f), to(#f10303));
+  background: -moz-linear-gradient(top, #e25c0f, #f10303);
+  -moz-border-radius-bottomright: 3px;
+  -webkit-border-bottom-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  -moz-border-radius-bottomleft: 3px;
+  -webkit-border-bottom-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+  border-top: 1px solid #570202;
+}
+
+.icon-calendar em {
+  display: block;
+  font: 10px/20px 'Lucida Sans Unicode', Arial, Helvetica, sans-serif;
+  color: #fff;
+  text-shadow: #a70404 0 -1px 0;
+  background: #e92525;
+  background: -webkit-gradient(linear, left top, left bottom, from(#e25c0f), to(#f10303));
+  background: -moz-linear-gradient(top, #e25c0f, #f10303);
+  -moz-border-radius-bottomright: 3px;
+  -webkit-border-bottom-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  -moz-border-radius-bottomleft: 3px;
+  -webkit-border-bottom-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+  border-top: 1px solid #570202;
+}
+
+.calendar:before,
+.calendar:after {
+  display: none;
+  content: '';
+  float: left;
+  position: absolute;
+  top: 5px;
+  width: 8px;
+  height: 8px;
+  background: #111;
+  z-index: 1;
+  -moz-border-radius: 10px;
+  -webkit-border-radius: 10px;
+  border-radius: 10px;
+  -moz-box-shadow: 0 1px 1px #fff;
+  -webkit-box-shadow: 0 1px 1px #fff;
+  box-shadow: 0 1px 1px #fff;
+}
+.calendar:before,
+.icon-calendar:before {
+  left: 11px;
+  display: none;
+}
+.calendar:after,
+.icon-calendar:after {
+  right: 11px;
+  display: none;
+}
+
+.calendar em:before,
+.calendar em:after {
+  content: '';
+  display: none;
+  float: left;
+  position: absolute;
+  top: -5px;
+  width: 4px;
+  height: 14px;
+  background: #dadada;
+  background: -webkit-gradient(linear, left top, left bottom, from(#f1f1f1), to(#aaa));
+  background: -moz-linear-gradient(top, #f1f1f1, #aaa);
+  z-index: 2;
+  -moz-border-radius: 2px;
+  -webkit-border-radius: 2px;
+  border-radius: 2px;
+}
+.calendar em:before,
+.icon-calendar em:before {
+  display: none;
+  left: 13px;
+}
+.calendar em:after,
+.icon-calendar em:after {
+  display: none;
+  right: 13px;
+}
+
+.column {
+  float: left;
+  width: 33.33%;
+}
+
+/* Clear floats after the columns */
+.row {
+  margin-right: 0px;
+  margin-left: 0px;
+}
+
+.arrow-ct {
+  font-weight: 700;
+  font-size: 2rem;
+}
+
+.row:after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.thumbnail {
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+  padding-left: 5px;
+}
+.card {
+  height: 100vh;
+  width: 100vw;
+}
+.content {
+  overflow: hidden;
+  height: 98vh;
+  margin-top: 1vh;
+}
+.padding {
+  padding-left: 0;
+  padding-right: 0;
+}
+.padding-left {
+  padding-left: 15px;
+  padding-right: 0;
+}
+.dateUpdate {
+  padding-top: 0%;
+}
+.tab3-right-body {
+  width: 100%;
+}
+.tab3-right-top {
+  height: auto;
+  padding-top: 10px;
+}
+.tab3-right-body {
+  height: 80%;
+}
+.tab3-right-bottom {
+  height: auto;
+}
+.tab3-left-top {
+  max-height: 25%;
+}
+.tab3-left-bottom {
+  max-height: 75%;
+}
+.height100 {
+  height: 100px;
+}
+table {
+  font-size: 16px;
+  font-weight: 700;
+}
+.table td,
+.table th {
+  padding: 0rem;
+  vertical-align: middle;
+}
+.custom-text {
+  font-size: 1.8rem;
+  color: red;
+}
+.custom-text-without-color {
+  font-size: 1.8rem;
+}
+// ========================
+.custom-background {
+  vertical-align: middle;
+  background-color: #406dbf;
+  color: #fff;
+}
+// ========================
+@media (min-width: 1300px) {
+  .content {
+    height: 90vh;
+    margin-top: 1vh;
+  }
+  .chart {
+    width: 100%;
+  }
+  #divChart {
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .Chuyen > h2 {
+    font-weight: 600;
+    font-size: 3.2rem;
+  }
+  .Chuyen01 > h2 {
+    font-weight: 600;
+    font-size: 4rem;
+    color: red;
+    font-family: auto;
+  }
+  .dateUpdate > h2 {
+    font-weight: 700;
+    font-size: 2rem;
+  }
+  .dateUpdate > h4 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1dca44;
+  }
+  .dateUpdate .h4 {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #1dca44;
+  }
+  .dateUpdate > h3 {
+    font-size: 2.2rem;
+    font-weight: 700;
+  }
+  .tab3-right-top > h5 {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+  .tab3-right-top > h4 {
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: #1dca44;
+  }
+  .tab3-right-bottom h4 {
+    font-weight: 700;
+    color: #2c13b3;
+    font-size: 1.5rem;
+    padding-top: 10px;
+  }
+}
+@media (max-width: 1299.98px) {
+  .chart {
+    width: 100%;
+  }
+  .tab3-right-bottom h4 {
+    font-weight: 700;
+    color: #2c13b3;
+    font-size: 1.2rem;
+    padding-top: 10px;
+  }
+  #divChart {
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .Chuyen > h2 {
+    font-weight: 600;
+    font-size: 3rem;
+  }
+  .Chuyen01 > h2 {
+    font-weight: 600;
+    font-size: 3rem;
+    color: red;
+  }
+  .dateUpdate {
+    padding-top: 0%;
+  }
+  .dateUpdate > h2 {
+    font-weight: 700;
+    font-size: 2.5rem;
+  }
+  .dateUpdate > h4 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1dca44;
+  }
+  .dateUpdate .h4 {
+    font-size: 3.2rem;
+    font-weight: 700;
+    color: #1dca44;
+  }
+  .tab3-right-top > h4 {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #1dca44;
+  }
+  .dateUpdate > h3 {
+    font-size: 2.5rem;
+    font-weight: 700;
+  }
+}
+@media (max-width: 768px) {
+  .custom-text {
+    font-size: 1.8rem;
+    color: red;
+  }
+  .custom-text-without-color {
+    font-size: 1.8rem;
+  }
+  .table td,
+  .table th {
+    padding: 0rem;
+    vertical-align: middle;
+  }
+  table {
+    font-size: 0.85rem;
+  }
+  .chart {
+    width: 100%;
+  }
+  .tab3-right-bottom h4 {
+    font-weight: 700;
+    color: #2c13b3;
+    font-size: 1rem;
+    padding-top: 10px;
+  }
+  .tab3-right-top > h5 {
+    font-size: 1rem;
+    font-weight: 600;
+  }
+  .tab3-right-top > h4 {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #1dca44;
+  }
+  .dateUpdate {
+    padding-top: 0px;
+  }
+  .content {
+    height: 90vh;
+    margin-top: 5vh;
+  }
+  #divChart {
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+  }
+  .Chuyen {
+    padding-top: 2%;
+  }
+  .dateUpdate {
+    padding-top: 0px;
+  }
+  .Chuyen > h2 {
+    font-weight: 600;
+    font-size: 1.3rem;
+  }
+  .Chuyen01 > h2 {
+    font-weight: 600;
+    font-size: 30px;
+    color: red;
+  }
+  .dateUpdate > h2 {
+    font-weight: 700;
+    font-size: 1rem;
+  }
+  .dateUpdate > h4 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #1dca44;
+  }
+  .dateUpdate .h4 {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #1dca44;
+  }
+  .dateUpdate > h3 {
+    font-size: 0.85rem;
+    font-weight: 700;
+  }
+}
+
+table {
+  width: 100%;
+  table-layout: fixed;
+}
+.bigcolumn {
+  width: 40%;
+}
+.midiumclomn {
+  width: 30%;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  width: 8%;
+}
+
+.middle {
+  vertical-align: middle;
+}

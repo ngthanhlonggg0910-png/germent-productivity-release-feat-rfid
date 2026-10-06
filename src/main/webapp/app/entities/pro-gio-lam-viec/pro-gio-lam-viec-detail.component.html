@@ -1,0 +1,43 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="proGioLamViec">
+            <h2><span jhiTranslate="ctApp.proGioLamViec.detail.title">Pro Gio Lam Viec</span> {{proGioLamViec.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="ctApp.proGioLamViec.gioBatDau">Gio Bat Dau</span></dt>
+                <dd>
+                    <span>{{proGioLamViec.gioBatDau}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proGioLamViec.gioKetThuc">Gio Ket Thuc</span></dt>
+                <dd>
+                    <span>{{proGioLamViec.gioKetThuc}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proGioLamViec.gioLam">Gio Lam</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'ctApp.GioLam.' + proGioLamViec.gioLam}}">{{proGioLamViec.gioLam}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proGioLamViec.thoiGian">Thoi Gian</span></dt>
+                <dd>
+                    <span>{{proGioLamViec.thoiGian}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proGioLamViec.captionTV">Caption TV</span></dt>
+                <dd>
+                    <span>{{proGioLamViec.captionTV}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/sys/pro-gio-lam-viec', proGioLamViec.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

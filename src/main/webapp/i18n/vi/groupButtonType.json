@@ -1,0 +1,9 @@
+{
+  "ctApp": {
+    "GroupButtonType": {
+      "null": "",
+      "LIGHT": "LIGHT",
+      "SEWING": "SEWING"
+    }
+  }
+}

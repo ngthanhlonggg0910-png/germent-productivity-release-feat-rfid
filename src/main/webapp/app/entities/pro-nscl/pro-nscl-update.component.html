@@ -1,0 +1,1003 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-pro-nscl-heading" jhiTranslate="ctApp.proNSCL.home.createOrEditLabel">Create or edit a Pro NSCL</h2>
+
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+
+                <div class="form-group" [hidden]="!editForm.get('id')!.value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id" readonly />
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proNSCL.taiKhoan" for="field_taiKhoan">Tai Khoan</label>
+                    <input type="text" class="form-control" name="taiKhoan" id="field_taiKhoan"
+                           formControlName="taiKhoan"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proNSCL.ngaySanXuat" for="field_ngaySanXuat">Ngay San Xuat</label>
+                    <div class="d-flex">
+                        <input id="field_ngaySanXuat" type="datetime-local" class="form-control" name="ngaySanXuat" formControlName="ngaySanXuat" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proNSCL.stt" for="field_stt">Stt</label>
+                    <input type="number" class="form-control" name="stt" id="field_stt"
+                           formControlName="stt"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proNSCL.mucTieuNgay" for="field_mucTieuNgay">Muc Tieu Ngay</label>
+                    <input type="number" class="form-control" name="mucTieuNgay" id="field_mucTieuNgay"
+                           formControlName="mucTieuNgay"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proNSCL.thucHienNgay" for="field_thucHienNgay">Thuc Hien Ngay</label>
+                    <input type="number" class="form-control" name="thucHienNgay" id="field_thucHienNgay"
+                           formControlName="thucHienNgay"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proNSCL.loiNgay" for="field_loiNgay">Loi Ngay</label>
+                    <input type="number" class="form-control" name="loiNgay" id="field_loiNgay"
+                           formControlName="loiNgay"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proNSCL.suaNgay" for="field_suaNgay">Sua Ngay</label>
+                    <input type="number" class="form-control" name="suaNgay" id="field_suaNgay"
+                           formControlName="suaNgay"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proNSCL.btpCap" for="field_btpCap">Btp Cap</label>
+                    <input type="number" class="form-control" name="btpCap" id="field_btpCap"
+                           formControlName="btpCap"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proNSCL.qty1h" for="field_qty1h">Qty 1 H</label>
+                    <input type="number" class="form-control" name="qty1h" id="field_qty1h"
+                           formControlName="qty1h"/>
+                    <div *ngIf="editForm.get('qty1h')!.invalid && (editForm.get('qty1h')!.dirty || editForm.get('qty1h')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('qty1h')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('qty1h')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proNSCL.qty2h" for="field_qty2h">Qty 2 H</label>
+                    <input type="number" class="form-control" name="qty2h" id="field_qty2h"
+                           formControlName="qty2h"/>
+                    <div *ngIf="editForm.get('qty2h')!.invalid && (editForm.get('qty2h')!.dirty || editForm.get('qty2h')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('qty2h')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('qty2h')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proNSCL.qty3h" for="field_qty3h">Qty 3 H</label>
+                    <input type="number" class="form-control" name="qty3h" id="field_qty3h"
+                           formControlName="qty3h"/>
+                    <div *ngIf="editForm.get('qty3h')!.invalid && (editForm.get('qty3h')!.dirty || editForm.get('qty3h')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('qty3h')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('qty3h')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proNSCL.qty4h" for="field_qty4h">Qty 4 H</label>
+                    <input type="number" class="form-control" name="qty4h" id="field_qty4h"
+                           formControlName="qty4h"/>
+                    <div *ngIf="editForm.get('qty4h')!.invalid && (editForm.get('qty4h')!.dirty || editForm.get('qty4h')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('qty4h')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('qty4h')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proNSCL.qty5h" for="field_qty5h">Qty 5 H</label>
+                    <input type="number" class="form-control" name="qty5h" id="field_qty5h"
+                           formControlName="qty5h"/>
+                    <div *ngIf="editForm.get('qty5h')!.invalid && (editForm.get('qty5h')!.dirty || editForm.get('qty5h')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('qty5h')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('qty5h')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proNSCL.qty6h" for="field_qty6h">Qty 6 H</label>
+                    <input type="number" class="form-control" name="qty6h" id="field_qty6h"
+                           formControlName="qty6h"/>
+                    <div *ngIf="editForm.get('qty6h')!.invalid && (editForm.get('qty6h')!.dirty || editForm.get('qty6h')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('qty6h')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('qty6h')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proNSCL.qty7h" for="field_qty7h">Qty 7 H</label>
+                    <input type="number" class="form-control" name="qty7h" id="field_qty7h"
+                           formControlName="qty7h"/>
+                    <div *ngIf="editForm.get('qty7h')!.invalid && (editForm.get('qty7h')!.dirty || editForm.get('qty7h')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('qty7h')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('qty7h')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proNSCL.qty8h" for="field_qty8h">Qty 8 H</label>
+                    <input type="number" class="form-control" name="qty8h" id="field_qty8h"
+                           formControlName="qty8h"/>
+                    <div *ngIf="editForm.get('qty8h')!.invalid && (editForm.get('qty8h')!.dirty || editForm.get('qty8h')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('qty8h')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('qty8h')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proNSCL.qty9h" for="field_qty9h">Qty 9 H</label>
+                    <input type="number" class="form-control" name="qty9h" id="field_qty9h"
+                           formControlName="qty9h"/>
+                    <div *ngIf="editForm.get('qty9h')!.invalid && (editForm.get('qty9h')!.dirty || editForm.get('qty9h')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('qty9h')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('qty9h')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proNSCL.qty10h" for="field_qty10h">Qty 10 H</label>
+                    <input type="number" class="form-control" name="qty10h" id="field_qty10h"
+                           formControlName="qty10h"/>
+                    <div *ngIf="editForm.get('qty10h')!.invalid && (editForm.get('qty10h')!.dirty || editForm.get('qty10h')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('qty10h')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('qty10h')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proNSCL.qty11h" for="field_qty11h">Qty 11 H</label>
+                    <input type="number" class="form-control" name="qty11h" id="field_qty11h"
+                           formControlName="qty11h"/>
+                    <div *ngIf="editForm.get('qty11h')!.invalid && (editForm.get('qty11h')!.dirty || editForm.get('qty11h')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('qty11h')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('qty11h')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proNSCL.qty12h" for="field_qty12h">Qty 12 H</label>
+                    <input type="number" class="form-control" name="qty12h" id="field_qty12h"
+                           formControlName="qty12h"/>
+                    <div *ngIf="editForm.get('qty12h')!.invalid && (editForm.get('qty12h')!.dirty || editForm.get('qty12h')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('qty12h')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('qty12h')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proNSCL.qty13h" for="field_qty13h">Qty 13 H</label>
+                    <input type="number" class="form-control" name="qty13h" id="field_qty13h"
+                           formControlName="qty13h"/>
+                    <div *ngIf="editForm.get('qty13h')!.invalid && (editForm.get('qty13h')!.dirty || editForm.get('qty13h')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('qty13h')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('qty13h')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proNSCL.qty14h" for="field_qty14h">Qty 14 H</label>
+                    <input type="number" class="form-control" name="qty14h" id="field_qty14h"
+                           formControlName="qty14h"/>
+                    <div *ngIf="editForm.get('qty14h')!.invalid && (editForm.get('qty14h')!.dirty || editForm.get('qty14h')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('qty14h')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('qty14h')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proNSCL.reject1h" for="field_reject1h">Reject 1 H</label>
+                    <input type="number" class="form-control" name="reject1h" id="field_reject1h"
+                           formControlName="reject1h"/>
+                    <div *ngIf="editForm.get('reject1h')!.invalid && (editForm.get('reject1h')!.dirty || editForm.get('reject1h')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('reject1h')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('reject1h')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proNSCL.reject2h" for="field_reject2h">Reject 2 H</label>
+                    <input type="number" class="form-control" name="reject2h" id="field_reject2h"
+                           formControlName="reject2h"/>
+                    <div *ngIf="editForm.get('reject2h')!.invalid && (editForm.get('reject2h')!.dirty || editForm.get('reject2h')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('reject2h')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('reject2h')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proNSCL.reject3h" for="field_reject3h">Reject 3 H</label>
+                    <input type="number" class="form-control" name="reject3h" id="field_reject3h"
+                           formControlName="reject3h"/>
+                    <div *ngIf="editForm.get('reject3h')!.invalid && (editForm.get('reject3h')!.dirty || editForm.get('reject3h')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('reject3h')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('reject3h')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proNSCL.reject4h" for="field_reject4h">Reject 4 H</label>
+                    <input type="number" class="form-control" name="reject4h" id="field_reject4h"
+                           formControlName="reject4h"/>
+                    <div *ngIf="editForm.get('reject4h')!.invalid && (editForm.get('reject4h')!.dirty || editForm.get('reject4h')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('reject4h')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('reject4h')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proNSCL.reject5h" for="field_reject5h">Reject 5 H</label>
+                    <input type="number" class="form-control" name="reject5h" id="field_reject5h"
+                           formControlName="reject5h"/>
+                    <div *ngIf="editForm.get('reject5h')!.invalid && (editForm.get('reject5h')!.dirty || editForm.get('reject5h')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('reject5h')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('reject5h')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proNSCL.reject6h" for="field_reject6h">Reject 6 H</label>
+                    <input type="number" class="form-control" name="reject6h" id="field_reject6h"
+                           formControlName="reject6h"/>
+                    <div *ngIf="editForm.get('reject6h')!.invalid && (editForm.get('reject6h')!.dirty || editForm.get('reject6h')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('reject6h')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('reject6h')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proNSCL.reject7h" for="field_reject7h">Reject 7 H</label>
+                    <input type="number" class="form-control" name="reject7h" id="field_reject7h"
+                           formControlName="reject7h"/>
+                    <div *ngIf="editForm.get('reject7h')!.invalid && (editForm.get('reject7h')!.dirty || editForm.get('reject7h')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('reject7h')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('reject7h')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proNSCL.reject8h" for="field_reject8h">Reject 8 H</label>
+                    <input type="number" class="form-control" name="reject8h" id="field_reject8h"
+                           formControlName="reject8h"/>
+                    <div *ngIf="editForm.get('reject8h')!.invalid && (editForm.get('reject8h')!.dirty || editForm.get('reject8h')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('reject8h')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('reject8h')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proNSCL.reject9h" for="field_reject9h">Reject 9 H</label>
+                    <input type="number" class="form-control" name="reject9h" id="field_reject9h"
+                           formControlName="reject9h"/>
+                    <div *ngIf="editForm.get('reject9h')!.invalid && (editForm.get('reject9h')!.dirty || editForm.get('reject9h')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('reject9h')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('reject9h')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proNSCL.reject10h" for="field_reject10h">Reject 10 H</label>
+                    <input type="number" class="form-control" name="reject10h" id="field_reject10h"
+                           formControlName="reject10h"/>
+                    <div *ngIf="editForm.get('reject10h')!.invalid && (editForm.get('reject10h')!.dirty || editForm.get('reject10h')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('reject10h')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('reject10h')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proNSCL.reject11h" for="field_reject11h">Reject 11 H</label>
+                    <input type="number" class="form-control" name="reject11h" id="field_reject11h"
+                           formControlName="reject11h"/>
+                    <div *ngIf="editForm.get('reject11h')!.invalid && (editForm.get('reject11h')!.dirty || editForm.get('reject11h')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('reject11h')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('reject11h')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proNSCL.reject12h" for="field_reject12h">Reject 12 H</label>
+                    <input type="number" class="form-control" name="reject12h" id="field_reject12h"
+                           formControlName="reject12h"/>
+                    <div *ngIf="editForm.get('reject12h')!.invalid && (editForm.get('reject12h')!.dirty || editForm.get('reject12h')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('reject12h')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('reject12h')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proNSCL.reject13h" for="field_reject13h">Reject 13 H</label>
+                    <input type="number" class="form-control" name="reject13h" id="field_reject13h"
+                           formControlName="reject13h"/>
+                    <div *ngIf="editForm.get('reject13h')!.invalid && (editForm.get('reject13h')!.dirty || editForm.get('reject13h')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('reject13h')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('reject13h')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proNSCL.reject14h" for="field_reject14h">Reject 14 H</label>
+                    <input type="number" class="form-control" name="reject14h" id="field_reject14h"
+                           formControlName="reject14h"/>
+                    <div *ngIf="editForm.get('reject14h')!.invalid && (editForm.get('reject14h')!.dirty || editForm.get('reject14h')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('reject14h')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('reject14h')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proNSCL.man1h" for="field_man1h">Man 1 H</label>
+                    <input type="number" class="form-control" name="man1h" id="field_man1h"
+                           formControlName="man1h"/>
+                    <div *ngIf="editForm.get('man1h')!.invalid && (editForm.get('man1h')!.dirty || editForm.get('man1h')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('man1h')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('man1h')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proNSCL.man2h" for="field_man2h">Man 2 H</label>
+                    <input type="number" class="form-control" name="man2h" id="field_man2h"
+                           formControlName="man2h"/>
+                    <div *ngIf="editForm.get('man2h')!.invalid && (editForm.get('man2h')!.dirty || editForm.get('man2h')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('man2h')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('man2h')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proNSCL.man3h" for="field_man3h">Man 3 H</label>
+                    <input type="number" class="form-control" name="man3h" id="field_man3h"
+                           formControlName="man3h"/>
+                    <div *ngIf="editForm.get('man3h')!.invalid && (editForm.get('man3h')!.dirty || editForm.get('man3h')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('man3h')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('man3h')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proNSCL.man4h" for="field_man4h">Man 4 H</label>
+                    <input type="number" class="form-control" name="man4h" id="field_man4h"
+                           formControlName="man4h"/>
+                    <div *ngIf="editForm.get('man4h')!.invalid && (editForm.get('man4h')!.dirty || editForm.get('man4h')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('man4h')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('man4h')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proNSCL.man5h" for="field_man5h">Man 5 H</label>
+                    <input type="number" class="form-control" name="man5h" id="field_man5h"
+                           formControlName="man5h"/>
+                    <div *ngIf="editForm.get('man5h')!.invalid && (editForm.get('man5h')!.dirty || editForm.get('man5h')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('man5h')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('man5h')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proNSCL.man6h" for="field_man6h">Man 6 H</label>
+                    <input type="number" class="form-control" name="man6h" id="field_man6h"
+                           formControlName="man6h"/>
+                    <div *ngIf="editForm.get('man6h')!.invalid && (editForm.get('man6h')!.dirty || editForm.get('man6h')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('man6h')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('man6h')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proNSCL.man7h" for="field_man7h">Man 7 H</label>
+                    <input type="number" class="form-control" name="man7h" id="field_man7h"
+                           formControlName="man7h"/>
+                    <div *ngIf="editForm.get('man7h')!.invalid && (editForm.get('man7h')!.dirty || editForm.get('man7h')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('man7h')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('man7h')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proNSCL.man8h" for="field_man8h">Man 8 H</label>
+                    <input type="number" class="form-control" name="man8h" id="field_man8h"
+                           formControlName="man8h"/>
+                    <div *ngIf="editForm.get('man8h')!.invalid && (editForm.get('man8h')!.dirty || editForm.get('man8h')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('man8h')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('man8h')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proNSCL.man9h" for="field_man9h">Man 9 H</label>
+                    <input type="number" class="form-control" name="man9h" id="field_man9h"
+                           formControlName="man9h"/>
+                    <div *ngIf="editForm.get('man9h')!.invalid && (editForm.get('man9h')!.dirty || editForm.get('man9h')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('man9h')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('man9h')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proNSCL.man10h" for="field_man10h">Man 10 H</label>
+                    <input type="number" class="form-control" name="man10h" id="field_man10h"
+                           formControlName="man10h"/>
+                    <div *ngIf="editForm.get('man10h')!.invalid && (editForm.get('man10h')!.dirty || editForm.get('man10h')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('man10h')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('man10h')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proNSCL.man11h" for="field_man11h">Man 11 H</label>
+                    <input type="number" class="form-control" name="man11h" id="field_man11h"
+                           formControlName="man11h"/>
+                    <div *ngIf="editForm.get('man11h')!.invalid && (editForm.get('man11h')!.dirty || editForm.get('man11h')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('man11h')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('man11h')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proNSCL.man12h" for="field_man12h">Man 12 H</label>
+                    <input type="number" class="form-control" name="man12h" id="field_man12h"
+                           formControlName="man12h"/>
+                    <div *ngIf="editForm.get('man12h')!.invalid && (editForm.get('man12h')!.dirty || editForm.get('man12h')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('man12h')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('man12h')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proNSCL.man13h" for="field_man13h">Man 13 H</label>
+                    <input type="number" class="form-control" name="man13h" id="field_man13h"
+                           formControlName="man13h"/>
+                    <div *ngIf="editForm.get('man13h')!.invalid && (editForm.get('man13h')!.dirty || editForm.get('man13h')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('man13h')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('man13h')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proNSCL.man14h" for="field_man14h">Man 14 H</label>
+                    <input type="number" class="form-control" name="man14h" id="field_man14h"
+                           formControlName="man14h"/>
+                    <div *ngIf="editForm.get('man14h')!.invalid && (editForm.get('man14h')!.dirty || editForm.get('man14h')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('man14h')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('man14h')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proNSCL.manOnly7Hours" for="field_manOnly7Hours">Man Only 7 Hours</label>
+                    <input type="number" class="form-control" name="manOnly7Hours" id="field_manOnly7Hours"
+                           formControlName="manOnly7Hours"/>
+                    <div *ngIf="editForm.get('manOnly7Hours')!.invalid && (editForm.get('manOnly7Hours')!.dirty || editForm.get('manOnly7Hours')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('manOnly7Hours')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('manOnly7Hours')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proNSCL.fix1h" for="field_fix1h">Fix 1 H</label>
+                    <input type="number" class="form-control" name="fix1h" id="field_fix1h"
+                           formControlName="fix1h"/>
+                    <div *ngIf="editForm.get('fix1h')!.invalid && (editForm.get('fix1h')!.dirty || editForm.get('fix1h')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('fix1h')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('fix1h')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proNSCL.fix2h" for="field_fix2h">Fix 2 H</label>
+                    <input type="number" class="form-control" name="fix2h" id="field_fix2h"
+                           formControlName="fix2h"/>
+                    <div *ngIf="editForm.get('fix2h')!.invalid && (editForm.get('fix2h')!.dirty || editForm.get('fix2h')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('fix2h')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('fix2h')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proNSCL.fix3h" for="field_fix3h">Fix 3 H</label>
+                    <input type="number" class="form-control" name="fix3h" id="field_fix3h"
+                           formControlName="fix3h"/>
+                    <div *ngIf="editForm.get('fix3h')!.invalid && (editForm.get('fix3h')!.dirty || editForm.get('fix3h')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('fix3h')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('fix3h')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proNSCL.fix4h" for="field_fix4h">Fix 4 H</label>
+                    <input type="number" class="form-control" name="fix4h" id="field_fix4h"
+                           formControlName="fix4h"/>
+                    <div *ngIf="editForm.get('fix4h')!.invalid && (editForm.get('fix4h')!.dirty || editForm.get('fix4h')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('fix4h')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('fix4h')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proNSCL.fix5h" for="field_fix5h">Fix 5 H</label>
+                    <input type="number" class="form-control" name="fix5h" id="field_fix5h"
+                           formControlName="fix5h"/>
+                    <div *ngIf="editForm.get('fix5h')!.invalid && (editForm.get('fix5h')!.dirty || editForm.get('fix5h')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('fix5h')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('fix5h')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proNSCL.fix6h" for="field_fix6h">Fix 6 H</label>
+                    <input type="number" class="form-control" name="fix6h" id="field_fix6h"
+                           formControlName="fix6h"/>
+                    <div *ngIf="editForm.get('fix6h')!.invalid && (editForm.get('fix6h')!.dirty || editForm.get('fix6h')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('fix6h')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('fix6h')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proNSCL.fix7h" for="field_fix7h">Fix 7 H</label>
+                    <input type="number" class="form-control" name="fix7h" id="field_fix7h"
+                           formControlName="fix7h"/>
+                    <div *ngIf="editForm.get('fix7h')!.invalid && (editForm.get('fix7h')!.dirty || editForm.get('fix7h')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('fix7h')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('fix7h')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proNSCL.fix8h" for="field_fix8h">Fix 8 H</label>
+                    <input type="number" class="form-control" name="fix8h" id="field_fix8h"
+                           formControlName="fix8h"/>
+                    <div *ngIf="editForm.get('fix8h')!.invalid && (editForm.get('fix8h')!.dirty || editForm.get('fix8h')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('fix8h')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('fix8h')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proNSCL.fix9h" for="field_fix9h">Fix 9 H</label>
+                    <input type="number" class="form-control" name="fix9h" id="field_fix9h"
+                           formControlName="fix9h"/>
+                    <div *ngIf="editForm.get('fix9h')!.invalid && (editForm.get('fix9h')!.dirty || editForm.get('fix9h')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('fix9h')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('fix9h')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proNSCL.fix10h" for="field_fix10h">Fix 10 H</label>
+                    <input type="number" class="form-control" name="fix10h" id="field_fix10h"
+                           formControlName="fix10h"/>
+                    <div *ngIf="editForm.get('fix10h')!.invalid && (editForm.get('fix10h')!.dirty || editForm.get('fix10h')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('fix10h')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('fix10h')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proNSCL.fix11h" for="field_fix11h">Fix 11 H</label>
+                    <input type="number" class="form-control" name="fix11h" id="field_fix11h"
+                           formControlName="fix11h"/>
+                    <div *ngIf="editForm.get('fix11h')!.invalid && (editForm.get('fix11h')!.dirty || editForm.get('fix11h')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('fix11h')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('fix11h')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proNSCL.fix12h" for="field_fix12h">Fix 12 H</label>
+                    <input type="number" class="form-control" name="fix12h" id="field_fix12h"
+                           formControlName="fix12h"/>
+                    <div *ngIf="editForm.get('fix12h')!.invalid && (editForm.get('fix12h')!.dirty || editForm.get('fix12h')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('fix12h')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('fix12h')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proNSCL.fix13h" for="field_fix13h">Fix 13 H</label>
+                    <input type="number" class="form-control" name="fix13h" id="field_fix13h"
+                           formControlName="fix13h"/>
+                    <div *ngIf="editForm.get('fix13h')!.invalid && (editForm.get('fix13h')!.dirty || editForm.get('fix13h')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('fix13h')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('fix13h')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proNSCL.fix14h" for="field_fix14h">Fix 14 H</label>
+                    <input type="number" class="form-control" name="fix14h" id="field_fix14h"
+                           formControlName="fix14h"/>
+                    <div *ngIf="editForm.get('fix14h')!.invalid && (editForm.get('fix14h')!.dirty || editForm.get('fix14h')!.touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('fix14h')?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('fix14h')?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proNSCL.proKeHoachSanXuat" for="field_proKeHoachSanXuat">Pro Ke Hoach San Xuat</label>
+                    <select class="form-control" id="field_proKeHoachSanXuat" name="proKeHoachSanXuat" formControlName="proKeHoachSanXuatId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="proKeHoachSanXuatOption.id" *ngFor="let proKeHoachSanXuatOption of prokehoachsanxuats; trackBy: trackById">{{ proKeHoachSanXuatOption.id }}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proNSCL.proCheckPoint" for="field_proCheckPoint">Pro Check Point</label>
+                    <select class="form-control" id="field_proCheckPoint" name="proCheckPoint" formControlName="proCheckPointId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="proCheckPointOption.id" *ngFor="let proCheckPointOption of procheckpoints; trackBy: trackById">{{ proCheckPointOption.ten }}</option>
+                    </select>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary" (click)="previousState()">
+                    <fa-icon icon="ban"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon icon="save"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

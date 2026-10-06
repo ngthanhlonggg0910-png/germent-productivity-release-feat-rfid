@@ -1,0 +1,29 @@
+{
+  "ctApp": {
+    "tracking": {
+      "home": {
+        "title": "Trackings",
+        "createLabel": "Thêm mới một Tracking",
+        "createOrEditLabel": "Thêm mới hoặc cập nhật Tracking",
+        "notFound": "No Trackings found"
+      },
+      "created": "Một Tracking mới được tạo với định danh {{ param }}",
+      "updated": "Một Tracking cập nhật với định danh {{ param }}",
+      "deleted": "Một Tracking đã xóa với định danh {{ param }}",
+      "delete": {
+        "question": "Bạn có chắc là muốn xóa Tracking {{ id }}?"
+      },
+      "detail": {
+        "title": "Tracking"
+      },
+      "nvButtonId": "Nv Button Id",
+      "state1Time": "State 1 Time",
+      "state2Time": "State 2 Time",
+      "state3Time": "State 3 Time",
+      "state4Time": "State 4 Time",
+      "state5Time": "State 5 Time",
+      "state6Time": "State 6 Time",
+      "trackingType": "Tracking Type"
+    }
+  }
+}

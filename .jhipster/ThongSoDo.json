@@ -1,0 +1,35 @@
+{
+    "name": "ThongSoDo",
+    "fields": [
+        {
+            "fieldName": "code",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "unique"
+            ]
+        },
+        {
+            "fieldName": "ten",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "dungSai",
+            "otherEntityRelationshipName": "thongSoDo",
+            "relationshipName": "dungSai",
+            "otherEntityField": "inchLabel"
+        }
+    ],
+    "changelogDate": "20200425101317",
+    "entityTableName": "thong_so_do",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

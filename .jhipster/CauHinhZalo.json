@@ -1,0 +1,39 @@
+{
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "accessToken",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "refreshToken",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "zaloOA",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "secretKey",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "appId",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "expireTime",
+            "fieldType": "LocalDate"
+        }
+    ],
+    "changelogDate": "20221008065632",
+    "dto": "mapstruct",
+    "searchEngine": false,
+    "service": "serviceImpl",
+    "entityTableName": "cau_hinh_zalo",
+    "databaseType": "sql",
+    "jpaMetamodelFiltering": false,
+    "pagination": "no"
+}

@@ -1,0 +1,71 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="device">
+            <h2><span jhiTranslate="ctApp.device.detail.title">Device</span> {{device.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="ctApp.device.name">Name</span></dt>
+                <dd>
+                    <span>{{device.name}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.device.devIds">Dev Ids</span></dt>
+                <dd>
+                    <span>{{device.devIds}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.device.stateTopic">State Topic</span></dt>
+                <dd>
+                    <span>{{device.stateTopic}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.device.lwtTopic">Lwt Topic</span></dt>
+                <dd>
+                    <span>{{device.lwtTopic}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.device.sw">Sw</span></dt>
+                <dd>
+                    <span>{{device.sw}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.device.module">Module</span></dt>
+                <dd>
+                    <span>{{device.module}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.device.restartReason">Restart Reason</span></dt>
+                <dd>
+                    <span>{{device.restartReason}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.device.time">Time</span></dt>
+                <dd>
+                    <span>{{device.time}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.device.uptime">Uptime</span></dt>
+                <dd>
+                    <span>{{device.uptime}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.device.hostName">Host Name</span></dt>
+                <dd>
+                    <span>{{device.hostName}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.device.ipAddress">Ip Address</span></dt>
+                <dd>
+                    <span>{{device.ipAddress}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.device.lwt">Lwt</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'ctApp.LWT.' + device.lwt}}">{{device.lwt}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/sys/device', device.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

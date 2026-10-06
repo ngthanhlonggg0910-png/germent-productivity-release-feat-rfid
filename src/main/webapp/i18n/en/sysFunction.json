@@ -1,0 +1,29 @@
+{
+  "ctApp": {
+    "sysFunction": {
+      "home": {
+        "title": "Sys Functions",
+        "createLabel": "Create a new Sys Function",
+        "createOrEditLabel": "Create or edit a Sys Function",
+        "notFound": "No Sys Functions found"
+      },
+      "created": "A new Sys Function is created with identifier {{ param }}",
+      "updated": "A Sys Function is updated with identifier {{ param }}",
+      "deleted": "A Sys Function is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Sys Function {{ id }}?"
+      },
+      "detail": {
+        "title": "Sys Function"
+      },
+      "name": "Name",
+      "caption": "Caption",
+      "level": "Level",
+      "imageUri": "Image Uri",
+      "eventName": "Event Name",
+      "hotkey": "Hotkey",
+      "sysPermission": "Sys Permission",
+      "sysModule": "Sys Module"
+    }
+  }
+}

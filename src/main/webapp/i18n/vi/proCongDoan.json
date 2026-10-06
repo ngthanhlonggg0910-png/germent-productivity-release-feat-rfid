@@ -1,0 +1,24 @@
+{
+  "ctApp": {
+    "proCongDoan": {
+      "home": {
+        "title": "Pro Cong Doans",
+        "createLabel": "Thêm mới một Pro Cong Doan",
+        "createOrEditLabel": "Thêm mới hoặc cập nhật Pro Cong Doan",
+        "notFound": "No Pro Cong Doans found"
+      },
+      "created": "Một Pro Cong Doan mới được tạo với định danh {{ param }}",
+      "updated": "Một Pro Cong Doan cập nhật với định danh {{ param }}",
+      "deleted": "Một Pro Cong Doan đã xóa với định danh {{ param }}",
+      "delete": {
+        "question": "Bạn có chắc là muốn xóa Pro Cong Doan {{ id }}?"
+      },
+      "detail": {
+        "title": "Pro Cong Doan"
+      },
+      "ten": "Ten",
+      "nhomCongDoan": "Nhom Cong Doan",
+      "proNhomCongDoan": "Pro Nhom Cong Doan"
+    }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "ctApp": {
+    "proCheckPoint": {
+      "home": {
+        "title": "Pro Check Points",
+        "createLabel": "Create a new Pro Check Point",
+        "createOrEditLabel": "Create or edit a Pro Check Point",
+        "notFound": "No Pro Check Points found"
+      },
+      "created": "A new Pro Check Point is created with identifier {{ param }}",
+      "updated": "A Pro Check Point is updated with identifier {{ param }}",
+      "deleted": "A Pro Check Point is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Pro Check Point {{ id }}?"
+      },
+      "detail": {
+        "title": "Pro Check Point"
+      },
+      "ten": "Ten",
+      "proChuyen": "Pro Chuyen",
+      "proCongDoan": "Pro Cong Doan"
+    }
+  }
+}

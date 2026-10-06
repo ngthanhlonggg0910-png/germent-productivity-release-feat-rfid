@@ -1,0 +1,33 @@
+{
+    "name": "MapButtonAction",
+    "fields": [
+        {
+            "fieldName": "sourceAliasState",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "targetState",
+            "fieldType": "NVButtonState",
+            "fieldValues": "ON,OFF,UNKNOW"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "nVButtonTrackingType",
+            "otherEntityRelationshipName": "mapButtonAction",
+            "relationshipName": "trackingType",
+            "otherEntityField": "name"
+        }
+    ],
+    "changelogDate": "20200822033712",
+    "entityTableName": "map_button_action",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

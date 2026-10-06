@@ -1,0 +1,26 @@
+{
+  "ctApp": {
+    "proGioLamViec": {
+      "home": {
+        "title": "Pro Gio Lam Viecs",
+        "createLabel": "Create a new Pro Gio Lam Viec",
+        "createOrEditLabel": "Create or edit a Pro Gio Lam Viec",
+        "notFound": "No Pro Gio Lam Viecs found"
+      },
+      "created": "A new Pro Gio Lam Viec is created with identifier {{ param }}",
+      "updated": "A Pro Gio Lam Viec is updated with identifier {{ param }}",
+      "deleted": "A Pro Gio Lam Viec is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Pro Gio Lam Viec {{ id }}?"
+      },
+      "detail": {
+        "title": "Pro Gio Lam Viec"
+      },
+      "gioBatDau": "Gio Bat Dau",
+      "gioKetThuc": "Gio Ket Thuc",
+      "gioLam": "Gio Lam",
+      "thoiGian": "Thoi Gian",
+      "captionTV": "Caption TV"
+    }
+  }
+}

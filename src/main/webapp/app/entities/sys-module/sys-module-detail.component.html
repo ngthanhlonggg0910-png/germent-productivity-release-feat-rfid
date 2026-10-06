@@ -1,0 +1,41 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="sysModule">
+            <h2><span jhiTranslate="ctApp.sysModule.detail.title">Sys Module</span> {{sysModule.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="ctApp.sysModule.name">Name</span></dt>
+                <dd>
+                    <span>{{sysModule.name}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.sysModule.caption">Caption</span></dt>
+                <dd>
+                    <span>{{sysModule.caption}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.sysModule.imageUri">Image Uri</span></dt>
+                <dd>
+                    <span>{{sysModule.imageUri}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.sysModule.sysGroupModule">Sys Group Module</span></dt>
+                <dd>
+                    <div *ngIf="sysModule.sysGroupModuleId">
+                        <a [routerLink]="['/sys/sys-group-module', sysModule.sysGroupModuleId, 'view']">{{sysModule.sysGroupModuleId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/sys/sys-module', sysModule.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

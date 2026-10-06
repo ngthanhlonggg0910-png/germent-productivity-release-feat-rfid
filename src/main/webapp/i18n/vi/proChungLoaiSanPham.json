@@ -1,0 +1,22 @@
+{
+  "ctApp": {
+    "proChungLoaiSanPham": {
+      "home": {
+        "title": "Pro Chung Loai San Phams",
+        "createLabel": "Thêm mới một Pro Chung Loai San Pham",
+        "createOrEditLabel": "Thêm mới hoặc cập nhật Pro Chung Loai San Pham",
+        "notFound": "No Pro Chung Loai San Phams found"
+      },
+      "created": "Một Pro Chung Loai San Pham mới được tạo với định danh {{ param }}",
+      "updated": "Một Pro Chung Loai San Pham cập nhật với định danh {{ param }}",
+      "deleted": "Một Pro Chung Loai San Pham đã xóa với định danh {{ param }}",
+      "delete": {
+        "question": "Bạn có chắc là muốn xóa Pro Chung Loai San Pham {{ id }}?"
+      },
+      "detail": {
+        "title": "Pro Chung Loai San Pham"
+      },
+      "tenChungLoai": "Ten Chung Loai"
+    }
+  }
+}

@@ -1,0 +1,109 @@
+{
+    "name": "NVButton",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "discoveredOnTopic",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "cmndTopic",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "unique"
+            ]
+        },
+        {
+            "fieldName": "plOff",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "plOn",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "uniqId",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "devIds",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "teleTopic",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "statTopic",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "avtyTopic",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "plAvail",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "plNotAvail",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "state",
+            "fieldType": "NVButtonState",
+            "fieldValues": "ON,OFF,UNKNOW"
+        },
+        {
+            "fieldName": "lwt",
+            "fieldType": "LWT",
+            "fieldValues": "ON_LINE,OFF_LINE"
+        },
+        {
+            "fieldName": "lastUpdateState",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "groupType",
+            "fieldType": "GroupButtonType",
+            "fieldValues": "LIGHT,SEWING"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "buttonTracking",
+            "otherEntityRelationshipName": "nVButton",
+            "relationshipName": "buttonTracking",
+            "otherEntityField": "id",
+            "ownerSide": true
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "device",
+            "otherEntityRelationshipName": "nVButton",
+            "relationshipName": "device",
+            "otherEntityField": "name"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "nVButtonTrackingType",
+            "otherEntityRelationshipName": "nVButton",
+            "relationshipName": "trackingType",
+            "otherEntityField": "name"
+        }
+    ],
+    "changelogDate": "20200822033707",
+    "entityTableName": "nv_button",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

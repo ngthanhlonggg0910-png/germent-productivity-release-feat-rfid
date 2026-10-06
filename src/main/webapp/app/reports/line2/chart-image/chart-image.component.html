@@ -1,0 +1,12 @@
+<div class="row h-100">
+  <div class="col-sm-6">
+    <div class="marginCenter" #frontContain (resized)="onFrontResized($event)">
+      <canvas class="canvasF" #canvasFront ></canvas>
+    </div>
+  </div>
+  <div class="col-sm-6" >
+    <div class="marginCenter" #backContain (resized)="onBackResized($event)">
+      <canvas class="canvasB" #canvasBack ></canvas>
+    </div>
+  </div>
+</div>

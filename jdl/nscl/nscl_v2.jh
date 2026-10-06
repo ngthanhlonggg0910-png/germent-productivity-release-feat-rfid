@@ -1,0 +1,229 @@
+
+
+entity ProKhachHang {
+	ten String,
+    nhom String,
+    diaChi String
+}
+
+entity ProSanPham {
+	maSanPham String,
+    maDonHang String,
+    po String,
+    soLuongSanXuat Integer,
+    thongSoValue1 String,
+    thongSoCaption1 String,
+    thongSoCheck1 Boolean,
+    thongSoValue2 String,
+    thongSoCaption2 String,
+    thongSoCheck2 Boolean,
+    thongSoValue3 String,
+    thongSoCaption3 String,
+    thongSoCheck3 Boolean,
+    thongSoValue4 String,
+    thongSoCaption4 String,
+    thongSoCheck4 Boolean,
+    thongSoValue5 String,
+    thongSoCaption5 String,
+    thongSoCheck5 Boolean,
+    thongSoValue6 String,
+    thongSoCaption6 String,
+    thongSoCheck6 Boolean,
+    thongSoValue7 String,
+    thongSoCaption7 String,
+    thongSoCheck7 Boolean,
+    thongSoValue8 String,
+    thongSoCaption8 String,
+    thongSoCheck8 Boolean,
+    thongSoValue9 String,
+    thongSoCaption9 String,
+    thongSoCheck9 Boolean,
+    thongSoValue10 String,
+    thongSoCaption10 String,
+    thongSoCheck10 Boolean
+}
+
+entity ProChungLoaiSanPham {
+	tenChungLoai String
+}
+
+entity ProTenMua {
+	tenMua String
+}
+
+entity ProKeHoachSanXuat {
+	ngaySanXuat Instant,
+    soLuongYeuCau Integer,
+    tinhTrang Integer,
+    ghiChu String,
+    sam Integer,
+    lotNo Integer
+}
+
+entity ProLoaiChuyen {
+	ten String
+}
+
+entity ProChuyen {
+	ten String,
+    stt Integer,
+    tenLoaiChuyen String
+}
+
+entity ProNhaMay {
+	ten String,
+    stt Integer,
+}
+
+entity ProCongTy {
+	ten String,
+    diaChi String,
+    mst String
+}
+
+entity ProCheckPoint {
+	ten String
+}
+
+entity ProTaiKhoanCheckPoint {
+	taiKhoan String,
+    checked Boolean
+}
+
+entity ProCongDoan {
+	ten String,
+    nhomCongDoan String
+}
+
+entity ProNhomCongDoan {
+	ten String,
+    checkNangSuat Boolean
+}
+
+entity ProCumLoi {
+	ten String
+}
+
+entity ProLoi {
+	maLoi String,
+    cusCode String,
+    tenLoi String,
+    tenTiengAnh String,
+    label String,
+    stt Integer,
+    mauSac String,
+    qc Boolean,
+    qa Boolean,
+    checked Boolean,
+    ghiChu String
+}
+
+entity ProGioLamViec {
+	beginTime Instant,
+    endTime Instant,
+    captionProductivity String,
+    captionQC String,
+    captionFix String,
+    thoiGian Integer,
+    captionCutting String,
+    captionTV String
+}
+
+entity ProNSCL {
+	taiKhoan String,
+    ngaySanXuat Instant,
+    stt Integer,
+    mucTieuNgay Integer,
+    thucHienNgay Integer,
+    loiNgay Integer,
+    suaNgay Integer,
+    btpCap Integer,
+    qty1h Integer required,
+    qty2h Integer required,
+    qty3h Integer required,
+    qty4h Integer required,
+    qty5h Integer required,
+    qty6h Integer required,
+    qty7h Integer required,
+    qty8h Integer required,
+    qty9h Integer required,
+    qty10h Integer required,
+    qty11h Integer required,
+    qty12h Integer required,
+    qty13h Integer required,
+    qty14h Integer required,
+    reject1h Integer required,
+    reject2h Integer required,
+    reject3h Integer required,
+    reject4h Integer required,
+    reject5h Integer required,
+    reject6h Integer required,
+    reject7h Integer required,
+    reject8h Integer required,
+    reject9h Integer required,
+    reject10h Integer required,
+    reject11h Integer required,
+    reject12h Integer required,
+    reject13h Integer required,
+    reject14h Integer required,
+    man1h Integer required,
+    man2h Integer required,
+    man3h Integer required,
+    man4h Integer required,
+    man5h Integer required,
+    man6h Integer required,
+    man7h Integer required,
+    man8h Integer required,
+    man9h Integer required,
+    man10h Integer required,
+    man11h Integer required,
+    man12h Integer required,
+    man13h Integer required,
+    man14h Integer required,
+    manOnly7Hours Integer required,
+    fix1h Integer required,
+    fix2h Integer required,
+    fix3h Integer required,
+    fix4h Integer required,
+    fix5h Integer required,
+    fix6h Integer required,
+    fix7h Integer required,
+    fix8h Integer required,
+    fix9h Integer required,
+    fix10h Integer required
+    fix11h Integer required,
+    fix12h Integer required,
+    fix13h Integer required,
+    fix14h Integer required
+}
+
+entity ProNSCLChiTietLoi {
+	maLoi String required,
+    thoiGian Instant required
+}
+relationship ManyToOne {
+	ProSanPham{proKhachHang(ten)} to ProKhachHang,
+    ProSanPham{proChungLoaiSanPham(tenChungLoai)} to ProChungLoaiSanPham,
+    ProSanPham{proKeHoachSanXuat(lotNo)} to ProKeHoachSanXuat,
+    ProSanPham{proTenMua(tenMua)} to ProTenMua,
+    ProKeHoachSanXuat{proChuyen(ten)} to ProChuyen,
+    ProChuyen{proLoaiChuyen(ten)} to ProLoaiChuyen,
+    ProChuyen{proNhaMay(ten)} to ProNhaMay,
+    ProNhaMay{proCongTy(ten)} to ProCongTy,
+    ProCheckPoint{proChuyen(ten)} to ProChuyen,
+    ProCheckPoint{proCongDoan(ten)} to ProCongDoan,
+    ProCongDoan{proNhomCongDoan(ten)} to ProNhomCongDoan,
+    ProLoi{proCumLoi(ten)} to ProCumLoi,
+    ProTaiKhoanCheckPoint{proCheckPoint(ten)} to ProCheckPoint,
+    ProNSCLChiTietLoi{proNSCL} to ProNSCL,
+    ProNSCL{proKeHoachSanXuat} to ProKeHoachSanXuat,
+    ProNSCL{proCheckPoint(ten)} to ProCheckPoint,
+}
+
+dto * with mapstruct
+service all with serviceImpl
+paginate all with pagination
+filter ProKhachHang
+filter ProSanPham
+filter ProKeHoachSanXuat
+filter ProLoi

@@ -1,0 +1,76 @@
+{
+    "name": "ProIssue",
+    "fields": [
+        {
+            "fieldName": "maHang",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "pono",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "tenChuyen",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "ngayGioBatDau",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "ngayGioKetThuc",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "maLoi",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "moTaLoi",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "maMay",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "soTram",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "proChuyenId",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "proSanPhamId",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "nguoiTao",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "checkPointType",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "checkPointId",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "checkPointName",
+            "fieldType": "String"
+        }
+        
+    ],
+    "changelogDate": "20200223154300",
+    "entityTableName": "pro_issue",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

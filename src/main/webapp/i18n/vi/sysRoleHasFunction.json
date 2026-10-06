@@ -1,0 +1,24 @@
+{
+  "ctApp": {
+    "sysRoleHasFunction": {
+      "home": {
+        "title": "Sys Role Has Functions",
+        "createLabel": "Thêm mới một Sys Role Has Function",
+        "createOrEditLabel": "Thêm mới hoặc cập nhật Sys Role Has Function",
+        "notFound": "No Sys Role Has Functions found"
+      },
+      "created": "Một Sys Role Has Function mới được tạo với định danh {{ param }}",
+      "updated": "Một Sys Role Has Function cập nhật với định danh {{ param }}",
+      "deleted": "Một Sys Role Has Function đã xóa với định danh {{ param }}",
+      "delete": {
+        "question": "Bạn có chắc là muốn xóa Sys Role Has Function {{ id }}?"
+      },
+      "detail": {
+        "title": "Sys Role Has Function"
+      },
+      "activated": "Activated",
+      "sysFunction": "Sys Function",
+      "authority": "Authority"
+    }
+  }
+}

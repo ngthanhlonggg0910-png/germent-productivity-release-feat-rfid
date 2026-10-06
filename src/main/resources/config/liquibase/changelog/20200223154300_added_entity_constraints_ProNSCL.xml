@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <!--
+        Added the constraints for entity ProNSCL.
+    -->
+    <changeSet id="20200223154300-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="pro_ke_hoach_san_xuat_id"
+                                 baseTableName="pro_nscl"
+                                 constraintName="fk_pro_nscl_pro_ke_hoach_san_xuat_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="pro_ke_hoach_san_xuat"/>
+
+        <addForeignKeyConstraint baseColumnNames="pro_check_point_id"
+                                 baseTableName="pro_nscl"
+                                 constraintName="fk_pro_nscl_pro_check_point_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="pro_check_point"/>
+
+    </changeSet>
+</databaseChangeLog>

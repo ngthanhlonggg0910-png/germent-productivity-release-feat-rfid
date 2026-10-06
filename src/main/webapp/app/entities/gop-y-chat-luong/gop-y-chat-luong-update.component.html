@@ -1,0 +1,127 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-gop-y-chat-luong-heading" jhiTranslate="ctApp.gopYChatLuong.home.createOrEditLabel">Create or edit a Gop Y Chat Luong</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id').value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.gopYChatLuong.cusId" for="field_cusId">Cus Id</label>
+                    <input type="number" class="form-control" name="cusId" id="field_cusId"
+                           formControlName="cusId"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.gopYChatLuong.cusName" for="field_cusName">Cus Name</label>
+                    <input type="text" class="form-control" name="cusName" id="field_cusName"
+                           formControlName="cusName"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.gopYChatLuong.chuyenId" for="field_chuyenId">Chuyen Id</label>
+                    <input type="number" class="form-control" name="chuyenId" id="field_chuyenId"
+                           formControlName="chuyenId"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.gopYChatLuong.chuyenName" for="field_chuyenName">Chuyen Name</label>
+                    <input type="text" class="form-control" name="chuyenName" id="field_chuyenName"
+                           formControlName="chuyenName"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.gopYChatLuong.maHang" for="field_maHang">Ma Hang</label>
+                    <input type="text" class="form-control" name="maHang" id="field_maHang"
+                           formControlName="maHang"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.gopYChatLuong.po" for="field_po">Po</label>
+                    <input type="text" class="form-control" name="po" id="field_po"
+                           formControlName="po"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.gopYChatLuong.poId" for="field_poId">Po Id</label>
+                    <input type="number" class="form-control" name="poId" id="field_poId"
+                           formControlName="poId"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.gopYChatLuong.color" for="field_color">Color</label>
+                    <input type="text" class="form-control" name="color" id="field_color"
+                           formControlName="color"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.gopYChatLuong.size" for="field_size">Size</label>
+                    <input type="text" class="form-control" name="size" id="field_size"
+                           formControlName="size"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.gopYChatLuong.firstCut" for="field_firstCut">First Cut</label>
+                    <input type="checkbox" class="form-control" name="firstCut" id="field_firstCut"
+                           formControlName="firstCut"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.gopYChatLuong.inline" for="field_inline">Inline</label>
+                    <input type="checkbox" class="form-control" name="inline" id="field_inline"
+                           formControlName="inline"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.gopYChatLuong.lanBanHanh" for="field_lanBanHanh">Lan Ban Hanh</label>
+                    <input type="number" class="form-control" name="lanBanHanh" id="field_lanBanHanh"
+                           formControlName="lanBanHanh"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.gopYChatLuong.ngayBaoCao" for="field_ngayBaoCao">Ngay Bao Cao</label>
+                    <div class="d-flex">
+                        <input id="field_ngayBaoCao" type="datetime-local" class="form-control" name="ngayBaoCao" formControlName="ngayBaoCao" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.gopYChatLuong.nguoiTao" for="field_nguoiTao">Nguoi Tao</label>
+                    <input type="text" class="form-control" name="nguoiTao" id="field_nguoiTao"
+                           formControlName="nguoiTao"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.gopYChatLuong.userId" for="field_userId">User Id</label>
+                    <div class="d-flex">
+                        <input id="field_userId" type="datetime-local" class="form-control" name="userId" formControlName="userId" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.gopYChatLuong.ngayTao" for="field_ngayTao">Ngay Tao</label>
+                    <div class="d-flex">
+                        <input id="field_ngayTao" type="datetime-local" class="form-control" name="ngayTao" formControlName="ngayTao" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.gopYChatLuong.tenQuanLyXuong" for="field_tenQuanLyXuong">Ten Quan Ly Xuong</label>
+                    <input type="text" class="form-control" name="tenQuanLyXuong" id="field_tenQuanLyXuong"
+                           formControlName="tenQuanLyXuong"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.gopYChatLuong.tenKiThuat" for="field_tenKiThuat">Ten Ki Thuat</label>
+                    <input type="text" class="form-control" name="tenKiThuat" id="field_tenKiThuat"
+                           formControlName="tenKiThuat"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.gopYChatLuong.tenQanLyCat" for="field_tenQanLyCat">Ten Qan Ly Cat</label>
+                    <input type="text" class="form-control" name="tenQanLyCat" id="field_tenQanLyCat"
+                           formControlName="tenQanLyCat"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.gopYChatLuong.tenQA" for="field_tenQA">Ten QA</label>
+                    <input type="text" class="form-control" name="tenQA" id="field_tenQA"
+                           formControlName="tenQA"/>
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

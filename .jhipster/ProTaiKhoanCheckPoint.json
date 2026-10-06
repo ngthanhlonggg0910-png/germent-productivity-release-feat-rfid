@@ -1,0 +1,32 @@
+{
+    "name": "ProTaiKhoanCheckPoint",
+    "fields": [
+        {
+            "fieldName": "taiKhoan",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "checked",
+            "fieldType": "Boolean"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "proCheckPoint",
+            "otherEntityRelationshipName": "proTaiKhoanCheckPoint",
+            "relationshipName": "proCheckPoint",
+            "otherEntityField": "ten"
+        }
+    ],
+    "changelogDate": "20200212162857",
+    "entityTableName": "pro_tai_khoan_check_point",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

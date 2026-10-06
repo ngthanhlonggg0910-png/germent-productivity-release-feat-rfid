@@ -1,0 +1,44 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-map-button-action-heading" jhiTranslate="ctApp.mapButtonAction.home.createOrEditLabel">Create or edit a Map Button Action</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id').value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.mapButtonAction.sourceAliasState" for="field_sourceAliasState">Source Alias State</label>
+                    <input type="number" class="form-control" name="sourceAliasState" id="field_sourceAliasState"
+                           formControlName="sourceAliasState"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.mapButtonAction.targetState" for="field_targetState">Target State</label>
+                    <select class="form-control" name="targetState" formControlName="targetState" id="field_targetState">
+                        <option value="ON">{{'ctApp.NVButtonState.ON' | translate}}</option>
+                        <option value="OFF">{{'ctApp.NVButtonState.OFF' | translate}}</option>
+                        <option value="UNKNOW">{{'ctApp.NVButtonState.UNKNOW' | translate}}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.mapButtonAction.trackingType" for="field_trackingType">Tracking Type</label>
+                    <select class="form-control" id="field_trackingType" name="trackingType" formControlName="trackingTypeId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="nVButtonTrackingTypeOption.id" *ngFor="let nVButtonTrackingTypeOption of nvbuttontrackingtypes; trackBy: trackNVButtonTrackingTypeById">{{nVButtonTrackingTypeOption.name}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

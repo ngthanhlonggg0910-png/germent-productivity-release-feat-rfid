@@ -1,0 +1,43 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="proIssueCumLoi">
+            <h2><span jhiTranslate="ctApp.proIssueCumLoi.detail.title">Pro Issue Cum Loi</span> {{proIssueCumLoi.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="ctApp.proIssueCumLoi.ten">Ten</span></dt>
+                <dd>
+                    <span>{{proIssueCumLoi.ten}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proIssueCumLoi.mau">Mau</span></dt>
+                <dd>
+                    <span>{{proIssueCumLoi.mau}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proIssueCumLoi.toTruong">To Truong</span></dt>
+                <dd>
+                    <span>{{proIssueCumLoi.toTruong}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proIssueCumLoi.kyThuat">Ky Thuat</span></dt>
+                <dd>
+                    <span>{{proIssueCumLoi.kyThuat}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proIssueCumLoi.qa">Qa</span></dt>
+                <dd>
+                    <span>{{proIssueCumLoi.qa}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/sys/pro-issue-cum-loi', proIssueCumLoi.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

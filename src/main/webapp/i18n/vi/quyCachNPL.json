@@ -1,0 +1,26 @@
+{
+  "ctApp": {
+    "quyCachNPL": {
+      "home": {
+        "title": "Quy Cach NPLS",
+        "createLabel": "Thêm mới một Quy Cach NPL",
+        "createOrEditLabel": "Thêm mới hoặc cập nhật Quy Cach NPL",
+        "notFound": "No Quy Cach NPLS found"
+      },
+      "created": "Một Quy Cach NPL mới được tạo với định danh {{ param }}",
+      "updated": "Một Quy Cach NPL cập nhật với định danh {{ param }}",
+      "deleted": "Một Quy Cach NPL đã xóa với định danh {{ param }}",
+      "delete": {
+        "question": "Bạn có chắc là muốn xóa Quy Cach NPL {{ id }}?"
+      },
+      "detail": {
+        "title": "Quy Cach NPL"
+      },
+      "tenNPL": "Ten NPL",
+      "maNPL": "Ma NPL",
+      "nguoiTao": "Nguoi Tao",
+      "ngayTao": "Ngay Tao",
+      "userId": "User Id"
+    }
+  }
+}

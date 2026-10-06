@@ -1,0 +1,29 @@
+{
+  "ctApp": {
+    "proKeHoachSanXuat": {
+      "home": {
+        "title": "Pro Ke Hoach San Xuats",
+        "createLabel": "Create a new Pro Ke Hoach San Xuat",
+        "createOrEditLabel": "Create or edit a Pro Ke Hoach San Xuat",
+        "notFound": "No Pro Ke Hoach San Xuats found"
+      },
+      "created": "A new Pro Ke Hoach San Xuat is created with identifier {{ param }}",
+      "updated": "A Pro Ke Hoach San Xuat is updated with identifier {{ param }}",
+      "deleted": "A Pro Ke Hoach San Xuat is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Pro Ke Hoach San Xuat {{ id }}?"
+      },
+      "detail": {
+        "title": "Pro Ke Hoach San Xuat"
+      },
+      "ngaySanXuat": "Ngay San Xuat",
+      "soLuongYeuCau": "So Luong Yeu Cau",
+      "tinhTrang": "Tinh Trang",
+      "ghiChu": "Ghi Chu",
+      "sam": "Sam",
+      "lotNo": "Lot No",
+      "proChuyen": "Pro Chuyen",
+      "proSanPham": "Pro San Pham"
+    }
+  }
+}

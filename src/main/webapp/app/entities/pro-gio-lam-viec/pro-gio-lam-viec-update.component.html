@@ -1,0 +1,85 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-pro-gio-lam-viec-heading" jhiTranslate="ctApp.proGioLamViec.home.createOrEditLabel">Create or edit a Pro Gio Lam Viec</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id').value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proGioLamViec.gioBatDau" for="field_gioBatDau">Gio Bat Dau</label>
+                    <div class="d-flex">
+                        <input id="field_gioBatDau" type="datetime-local" class="form-control" name="gioBatDau" formControlName="gioBatDau" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                    <div *ngIf="editForm.get('gioBatDau').invalid && (editForm.get('gioBatDau').dirty || editForm.get('gioBatDau').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('gioBatDau').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('gioBatDau').errors?.ZonedDateTimelocal" jhiTranslate="entity.validation.ZonedDateTimelocal">
+                            This field should be a date and time.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proGioLamViec.gioKetThuc" for="field_gioKetThuc">Gio Ket Thuc</label>
+                    <div class="d-flex">
+                        <input id="field_gioKetThuc" type="datetime-local" class="form-control" name="gioKetThuc" formControlName="gioKetThuc" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                    <div *ngIf="editForm.get('gioKetThuc').invalid && (editForm.get('gioKetThuc').dirty || editForm.get('gioKetThuc').touched)">
+                        <small class="form-text text-danger"
+                               *ngIf="editForm.get('gioKetThuc').errors.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.get('gioKetThuc').errors?.ZonedDateTimelocal" jhiTranslate="entity.validation.ZonedDateTimelocal">
+                            This field should be a date and time.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proGioLamViec.gioLam" for="field_gioLam">Gio Lam</label>
+                    <select class="form-control" name="gioLam" formControlName="gioLam" id="field_gioLam">
+                        <option value="C_1H">{{'ctApp.GioLam.C_1H' | translate}}</option>
+                        <option value="C_2H">{{'ctApp.GioLam.C_2H' | translate}}</option>
+                        <option value="C_3H">{{'ctApp.GioLam.C_3H' | translate}}</option>
+                        <option value="C_4H">{{'ctApp.GioLam.C_4H' | translate}}</option>
+                        <option value="C_5H">{{'ctApp.GioLam.C_5H' | translate}}</option>
+                        <option value="C_6H">{{'ctApp.GioLam.C_6H' | translate}}</option>
+                        <option value="C_7H">{{'ctApp.GioLam.C_7H' | translate}}</option>
+                        <option value="C_8H">{{'ctApp.GioLam.C_8H' | translate}}</option>
+                        <option value="C_9H">{{'ctApp.GioLam.C_9H' | translate}}</option>
+                        <option value="C_10H">{{'ctApp.GioLam.C_10H' | translate}}</option>
+                        <option value="C_11H">{{'ctApp.GioLam.C_11H' | translate}}</option>
+                        <option value="C_12H">{{'ctApp.GioLam.C_12H' | translate}}</option>
+                        <option value="C_13H">{{'ctApp.GioLam.C_13H' | translate}}</option>
+                        <option value="C_14H">{{'ctApp.GioLam.C_14H' | translate}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proGioLamViec.thoiGian" for="field_thoiGian">Thoi Gian</label>
+                    <input type="number" class="form-control" name="thoiGian" id="field_thoiGian"
+                           formControlName="thoiGian"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proGioLamViec.captionTV" for="field_captionTV">Caption TV</label>
+                    <input type="text" class="form-control" name="captionTV" id="field_captionTV"
+                           formControlName="captionTV"/>
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

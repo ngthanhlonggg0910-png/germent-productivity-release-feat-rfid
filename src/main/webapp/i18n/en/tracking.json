@@ -1,0 +1,29 @@
+{
+  "ctApp": {
+    "tracking": {
+      "home": {
+        "title": "Trackings",
+        "createLabel": "Create a new Tracking",
+        "createOrEditLabel": "Create or edit a Tracking",
+        "notFound": "No Trackings found"
+      },
+      "created": "A new Tracking is created with identifier {{ param }}",
+      "updated": "A Tracking is updated with identifier {{ param }}",
+      "deleted": "A Tracking is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Tracking {{ id }}?"
+      },
+      "detail": {
+        "title": "Tracking"
+      },
+      "nvButtonId": "Nv Button Id",
+      "state1Time": "State 1 Time",
+      "state2Time": "State 2 Time",
+      "state3Time": "State 3 Time",
+      "state4Time": "State 4 Time",
+      "state5Time": "State 5 Time",
+      "state6Time": "State 6 Time",
+      "trackingType": "Tracking Type"
+    }
+  }
+}

@@ -1,0 +1,50 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-thu-vien-loi-heading" jhiTranslate="ctApp.thuVienLoi.home.createOrEditLabel">Create or edit a Thu Vien Loi</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id').value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.thuVienLoi.maLoi" for="field_maLoi">Ma Loi</label>
+                    <input type="text" class="form-control" name="maLoi" id="field_maLoi"
+                           formControlName="maLoi"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.thuVienLoi.tenLoi" for="field_tenLoi">Ten Loi</label>
+                    <input type="text" class="form-control" name="tenLoi" id="field_tenLoi"
+                           formControlName="tenLoi"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.thuVienLoi.nguoiTao" for="field_nguoiTao">Nguoi Tao</label>
+                    <input type="text" class="form-control" name="nguoiTao" id="field_nguoiTao"
+                           formControlName="nguoiTao"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.thuVienLoi.ngayTao" for="field_ngayTao">Ngay Tao</label>
+                    <div class="d-flex">
+                        <input id="field_ngayTao" type="datetime-local" class="form-control" name="ngayTao" formControlName="ngayTao" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.thuVienLoi.userId" for="field_userId">User Id</label>
+                    <input type="number" class="form-control" name="userId" id="field_userId"
+                           formControlName="userId"/>
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,87 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="proRefinalCC">
+            <h2><span jhiTranslate="ctApp.proRefinalCC.detail.title">Pro Refinal CC</span> {{proRefinalCC.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="ctApp.proRefinalCC.khxhId">Khxh Id</span></dt>
+                <dd>
+                    <span>{{proRefinalCC.khxhId}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proRefinalCC.maHang">Ma Hang</span></dt>
+                <dd>
+                    <span>{{proRefinalCC.maHang}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proRefinalCC.poNo">Po No</span></dt>
+                <dd>
+                    <span>{{proRefinalCC.poNo}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proRefinalCC.ngayKiemFinal">Ngay Kiem Final</span></dt>
+                <dd>
+                    <span>{{proRefinalCC.ngayKiemFinal}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proRefinalCC.tenChuyen">Ten Chuyen</span></dt>
+                <dd>
+                    <span>{{proRefinalCC.tenChuyen}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proRefinalCC.ngayGioKiem">Ngay Gio Kiem</span></dt>
+                <dd>
+                    <span>{{proRefinalCC.ngayGioKiem}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proRefinalCC.soLuongKiemAql">So Luong Kiem Aql</span></dt>
+                <dd>
+                    <span>{{proRefinalCC.soLuongKiemAql}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proRefinalCC.soLuong">So Luong</span></dt>
+                <dd>
+                    <span>{{proRefinalCC.soLuong}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proRefinalCC.doAm">Do Am</span></dt>
+                <dd>
+                    <span>{{proRefinalCC.doAm}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proRefinalCC.tongSoLoi">Tong So Loi</span></dt>
+                <dd>
+                    <span>{{proRefinalCC.tongSoLoi}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proRefinalCC.soThuTuThung">So Thu Tu Thung</span></dt>
+                <dd>
+                    <span>{{proRefinalCC.soThuTuThung}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proRefinalCC.doKimMd">Do Kim Md</span></dt>
+                <dd>
+                    <span>{{proRefinalCC.doKimMd}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proRefinalCC.aql">Aql</span></dt>
+                <dd>
+                    <span>{{proRefinalCC.aql}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proRefinalCC.maxLoiChoPhep">Max Loi Cho Phep</span></dt>
+                <dd>
+                    <span>{{proRefinalCC.maxLoiChoPhep}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proRefinalCC.completed">Completed</span></dt>
+                <dd>
+                    <span>{{proRefinalCC.completed}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proRefinalCC.nguoiKiem">Nguoi Kiem</span></dt>
+                <dd>
+                    <span>{{proRefinalCC.nguoiKiem}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/sys/pro-refinal-cc', proRefinalCC.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

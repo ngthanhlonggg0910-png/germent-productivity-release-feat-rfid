@@ -1,0 +1,92 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="ctApp.proFinal.home.title">Pro Finals</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-pro-final" [routerLink]="['/pro-final/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="ctApp.proFinal.home.createLabel">
+            Create a new Pro Final
+            </span>
+        </button>
+    </h2>
+    <jhi-alert-error></jhi-alert-error>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="proFinals?.length === 0">
+        <span jhiTranslate="ctApp.proFinal.home.notFound">No proFinals found</span>
+    </div>
+    <div class="table-responsive" *ngIf="proFinals?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+            <tr>
+            <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+            <th scope="col" ><span jhiTranslate="ctApp.proFinal.khxhId">Khxh Id</span></th>
+            <th scope="col" ><span jhiTranslate="ctApp.proFinal.maHang">Ma Hang</span></th>
+            <th scope="col" ><span jhiTranslate="ctApp.proFinal.poNo">Po No</span></th>
+            <th scope="col" ><span jhiTranslate="ctApp.proFinal.ngayKiemFinal">Ngay Kiem Final</span></th>
+            <th scope="col" ><span jhiTranslate="ctApp.proFinal.tenChuyen">Ten Chuyen</span></th>
+            <th scope="col" ><span jhiTranslate="ctApp.proFinal.ngayGioKiem">Ngay Gio Kiem</span></th>
+            <th scope="col" ><span jhiTranslate="ctApp.proFinal.soLuongKiemAql">So Luong Kiem Aql</span></th>
+            <th scope="col" ><span jhiTranslate="ctApp.proFinal.soLuong">So Luong</span></th>
+            <th scope="col" ><span jhiTranslate="ctApp.proFinal.doAm">Do Am</span></th>
+            <th scope="col" ><span jhiTranslate="ctApp.proFinal.tongSoLoi">Tong So Loi</span></th>
+            <th scope="col" ><span jhiTranslate="ctApp.proFinal.soThuTuThung">So Thu Tu Thung</span></th>
+            <th scope="col" ><span jhiTranslate="ctApp.proFinal.doKimMd">Do Kim Md</span></th>
+            <th scope="col" ><span jhiTranslate="ctApp.proFinal.aql">Aql</span></th>
+            <th scope="col" ><span jhiTranslate="ctApp.proFinal.maxLoiChoPhep">Max Loi Cho Phep</span></th>
+            <th scope="col" ><span jhiTranslate="ctApp.proFinal.completed">Completed</span></th>
+            <th scope="col" ><span jhiTranslate="ctApp.proFinal.soLuongPoKiem">So Luong Po Kiem</span></th>
+            <th scope="col" ><span jhiTranslate="ctApp.proFinal.pass">Pass</span></th>
+            <th scope="col" ><span jhiTranslate="ctApp.proFinal.nguoiKiem">Nguoi Kiem</span></th>
+            <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let proFinal of proFinals ;trackBy: trackId">
+                <td><a [routerLink]="['/sys/pro-final', proFinal.id, 'view' ]">{{proFinal.id}}</a></td>
+                <td>{{proFinal.khxhId}}</td>
+                <td>{{proFinal.maHang}}</td>
+                <td>{{proFinal.poNo}}</td>
+                <td>{{proFinal.ngayKiemFinal | date:'medium'}}</td>
+                <td>{{proFinal.tenChuyen}}</td>
+                <td>{{proFinal.ngayGioKiem | date:'medium'}}</td>
+                <td>{{proFinal.soLuongKiemAql}}</td>
+                <td>{{proFinal.soLuong}}</td>
+                <td>{{proFinal.doAm}}</td>
+                <td>{{proFinal.tongSoLoi}}</td>
+                <td>{{proFinal.soThuTuThung}}</td>
+                <td>{{proFinal.doKimMd}}</td>
+                <td>{{proFinal.aql}}</td>
+                <td>{{proFinal.maxLoiChoPhep}}</td>
+                <td>{{proFinal.completed}}</td>
+                <td>{{proFinal.soLuongPoKiem}}</td>
+                <td>{{proFinal.pass}}</td>
+                <td>{{proFinal.nguoiKiem}}</td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/sys/pro-final', proFinal.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/sys/pro-final', proFinal.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/sys/pro-final', { outlets: { popup: proFinal.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

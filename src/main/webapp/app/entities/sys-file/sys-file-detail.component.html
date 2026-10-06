@@ -1,0 +1,43 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="sysFile">
+            <h2><span jhiTranslate="ctApp.sysFile.detail.title">Sys File</span> {{sysFile.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="ctApp.sysFile.fileName">File Name</span></dt>
+                <dd>
+                    <span>{{sysFile.fileName}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.sysFile.fileUri">File Uri</span></dt>
+                <dd>
+                    <span>{{sysFile.fileUri}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.sysFile.fileExtension">File Extension</span></dt>
+                <dd>
+                    <span>{{sysFile.fileExtension}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.sysFile.size">Size</span></dt>
+                <dd>
+                    <span>{{sysFile.size}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.sysFile.uploadedAt">Uploaded At</span></dt>
+                <dd>
+                    <span>{{sysFile.uploadedAt}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/sys/sys-file', sysFile.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

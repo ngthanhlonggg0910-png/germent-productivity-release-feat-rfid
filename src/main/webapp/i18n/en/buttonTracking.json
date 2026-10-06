@@ -1,0 +1,25 @@
+{
+  "ctApp": {
+    "buttonTracking": {
+      "home": {
+        "title": "Button Trackings",
+        "createLabel": "Create a new Button Tracking",
+        "createOrEditLabel": "Create or edit a Button Tracking",
+        "notFound": "No Button Trackings found"
+      },
+      "created": "A new Button Tracking is created with identifier {{ param }}",
+      "updated": "A Button Tracking is updated with identifier {{ param }}",
+      "deleted": "A Button Tracking is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Button Tracking {{ id }}?"
+      },
+      "detail": {
+        "title": "Button Tracking"
+      },
+      "updateDate": "Update Date",
+      "currentAliasState": "Current Alias State",
+      "trackingId": "Tracking Id",
+      "nVButton": "N V Button"
+    }
+  }
+}

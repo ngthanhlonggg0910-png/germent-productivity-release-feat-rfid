@@ -1,0 +1,26 @@
+{
+  "ctApp": {
+    "proIssueCumLoi": {
+      "home": {
+        "title": "Pro Issue Cum Lois",
+        "createLabel": "Thêm mới một Pro Issue Cum Loi",
+        "createOrEditLabel": "Thêm mới hoặc cập nhật Pro Issue Cum Loi",
+        "notFound": "No Pro Issue Cum Lois found"
+      },
+      "created": "Một Pro Issue Cum Loi mới được tạo với định danh {{ param }}",
+      "updated": "Một Pro Issue Cum Loi cập nhật với định danh {{ param }}",
+      "deleted": "Một Pro Issue Cum Loi đã xóa với định danh {{ param }}",
+      "delete": {
+        "question": "Bạn có chắc là muốn xóa Pro Issue Cum Loi {{ id }}?"
+      },
+      "detail": {
+        "title": "Pro Issue Cum Loi"
+      },
+      "ten": "Ten",
+      "mau": "Mau",
+      "toTruong": "To Truong",
+      "kyThuat": "Ky Thuat",
+      "qa": "Qa"
+    }
+  }
+}

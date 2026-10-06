@@ -1,0 +1,36 @@
+{
+  "ctApp": {
+    "proIssue": {
+      "home": {
+        "title": "Pro Issues",
+        "createLabel": "Thêm mới một Pro Issue",
+        "createOrEditLabel": "Thêm mới hoặc cập nhật Pro Issue",
+        "notFound": "No Pro Issues found"
+      },
+      "created": "Một Pro Issue mới được tạo với định danh {{ param }}",
+      "updated": "Một Pro Issue cập nhật với định danh {{ param }}",
+      "deleted": "Một Pro Issue đã xóa với định danh {{ param }}",
+      "delete": {
+        "question": "Bạn có chắc là muốn xóa Pro Issue {{ id }}?"
+      },
+      "detail": {
+        "title": "Pro Issue"
+      },
+      "maHang": "Ma Hang",
+      "pono": "Pono",
+      "tenChuyen": "Ten Chuyen",
+      "ngayGioBatDau": "Ngay Gio Bat Dau",
+      "ngayGioKetThuc": "Ngay Gio Ket Thuc",
+      "maLoi": "Ma Loi",
+      "moTaLoi": "Mo Ta Loi",
+      "maMay": "Ma May",
+      "soTram": "So Tram",
+      "proChuyenId": "Pro Chuyen Id",
+      "proSanPhamId": "Pro San Pham Id",
+      "nguoiTao": "Nguoi Tao",
+      "checkPointType": "Check Point Type",
+      "checkPointId": "Check Point Id",
+      "checkPointName": "Check Point Name"
+    }
+  }
+}

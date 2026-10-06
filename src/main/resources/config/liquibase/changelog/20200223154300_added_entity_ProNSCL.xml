@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+
+    <!--
+        Added the entity ProNSCL.
+    -->
+    <changeSet id="20200223154300-1" author="jhipster">
+        <createTable tableName="pro_nscl">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="tai_khoan" type="nvarchar(255)">
+                <constraints nullable="true"/>
+            </column>
+            <column name="ngay_san_xuat" type="datetime">
+                <constraints nullable="true"/>
+            </column>
+            <column name="stt" type="integer">
+                <constraints nullable="true"/>
+            </column>
+            <column name="muc_tieu_ngay" type="integer" defaultValueNumeric="0">
+                <constraints nullable="true"/>
+            </column>
+            <column name="thuc_hien_ngay" type="integer"
+                    valueComputed="qty_1_h + qty_2_h + qty_3_h + qty_4_h + qty_5_h + qty_6_h + qty_7_h + qty_8_h + qty_9_h + qty_10_h + qty_11_h + qty_12_h + qty_13_h + qty_14_h">
+                <constraints nullable="true"/>
+            </column>
+            <column name="loi_ngay" type="integer" defaultValueNumeric="0">
+                <constraints nullable="true"/>
+            </column>
+            <column name="sua_ngay" type="integer" defaultValueNumeric="0">
+                <constraints nullable="true"/>
+            </column>
+            <column name="btp_cap" type="integer" defaultValueNumeric="0">
+                <constraints nullable="true"/>
+            </column>
+            <column name="qty_1_h" type="integer" defaultValueNumeric="0">
+                <constraints nullable="false"/>
+            </column>
+            <column name="qty_2_h" type="integer" defaultValueNumeric="0">
+                <constraints nullable="false"/>
+            </column>
+            <column name="qty_3_h" type="integer" defaultValueNumeric="0">
+                <constraints nullable="false"/>
+            </column>
+            <column name="qty_4_h" type="integer" defaultValueNumeric="0">
+                <constraints nullable="false"/>
+            </column>
+            <column name="qty_5_h" type="integer" defaultValueNumeric="0">
+                <constraints nullable="false"/>
+            </column>
+            <column name="qty_6_h" type="integer" defaultValueNumeric="0">
+                <constraints nullable="false"/>
+            </column>
+            <column name="qty_7_h" type="integer" defaultValueNumeric="0">
+                <constraints nullable="false"/>
+            </column>
+            <column name="qty_8_h" type="integer" defaultValueNumeric="0">
+                <constraints nullable="false"/>
+            </column>
+            <column name="qty_9_h" type="integer" defaultValueNumeric="0">
+                <constraints nullable="false"/>
+            </column>
+            <column name="qty_10_h" type="integer" defaultValueNumeric="0">
+                <constraints nullable="false"/>
+            </column>
+            <column name="qty_11_h" type="integer" defaultValueNumeric="0">
+                <constraints nullable="false"/>
+            </column>
+            <column name="qty_12_h" type="integer" defaultValueNumeric="0">
+                <constraints nullable="false"/>
+            </column>
+            <column name="qty_13_h" type="integer" defaultValueNumeric="0">
+                <constraints nullable="false"/>
+            </column>
+            <column name="qty_14_h" type="integer" defaultValueNumeric="0">
+                <constraints nullable="false"/>
+            </column>
+            <column name="reject_1_h" type="integer" defaultValueNumeric="0">
+                <constraints nullable="false"/>
+            </column>
+            <column name="reject_2_h" type="integer" defaultValueNumeric="0">
+                <constraints nullable="false"/>
+            </column>
+            <column name="reject_3_h" type="integer" defaultValueNumeric="0">
+                <constraints nullable="false"/>
+            </column>
+            <column name="reject_4_h" type="integer" defaultValueNumeric="0">
+                <constraints nullable="false"/>
+            </column>
+            <column name="reject_5_h" type="integer" defaultValueNumeric="0">
+                <constraints nullable="false"/>
+            </column>
+            <column name="reject_6_h" type="integer" defaultValueNumeric="0">
+                <constraints nullable="false"/>
+            </column>
+            <column name="reject_7_h" type="integer" defaultValueNumeric="0">
+                <constraints nullable="false"/>
+            </column>
+            <column name="reject_8_h" type="integer" defaultValueNumeric="0">
+                <constraints nullable="false"/>
+            </column>
+            <column name="reject_9_h" type="integer" defaultValueNumeric="0">
+                <constraints nullable="false"/>
+            </column>
+            <column name="reject_10_h" type="integer" defaultValueNumeric="0">
+                <constraints nullable="false"/>
+            </column>
+            <column name="reject_11_h" type="integer" defaultValueNumeric="0">
+                <constraints nullable="false"/>
+            </column>
+            <column name="reject_12_h" type="integer" defaultValueNumeric="0">
+                <constraints nullable="false"/>
+            </column>
+            <column name="reject_13_h" type="integer" defaultValueNumeric="0">
+                <constraints nullable="false"/>
+            </column>
+            <column name="reject_14_h" type="integer" defaultValueNumeric="0">
+                <constraints nullable="false"/>
+            </column>
+            <column name="man_1_h" type="integer" defaultValueNumeric="0">
+                <constraints nullable="false"/>
+            </column>
+            <column name="man_2_h" type="integer" defaultValueNumeric="0">
+                <constraints nullable="false"/>
+            </column>
+            <column name="man_3_h" type="integer" defaultValueNumeric="0">
+                <constraints nullable="false"/>
+            </column>
+            <column name="man_4_h" type="integer" defaultValueNumeric="0">
+                <constraints nullable="false"/>
+            </column>
+            <column name="man_5_h" type="integer" defaultValueNumeric="0">
+                <constraints nullable="false"/>
+            </column>
+            <column name="man_6_h" type="integer" defaultValueNumeric="0">
+                <constraints nullable="false"/>
+            </column>
+            <column name="man_7_h" type="integer" defaultValueNumeric="0">
+                <constraints nullable="false"/>
+            </column>
+            <column name="man_8_h" type="integer" defaultValueNumeric="0">
+                <constraints nullable="false"/>
+            </column>
+            <column name="man_9_h" type="integer" defaultValueNumeric="0">
+                <constraints nullable="false"/>
+            </column>
+            <column name="man_10_h" type="integer" defaultValueNumeric="0">
+                <constraints nullable="false"/>
+            </column>
+            <column name="man_11_h" type="integer" defaultValueNumeric="0">
+                <constraints nullable="false"/>
+            </column>
+            <column name="man_12_h" type="integer" defaultValueNumeric="0">
+                <constraints nullable="false"/>
+            </column>
+            <column name="man_13_h" type="integer" defaultValueNumeric="0">
+                <constraints nullable="false"/>
+            </column>
+            <column name="man_14_h" type="integer" defaultValueNumeric="0">
+                <constraints nullable="false"/>
+            </column>
+            <column name="man_only_7_hours" type="integer" defaultValueNumeric="0">
+                <constraints nullable="false"/>
+            </column>
+            <column name="fix_1_h" type="integer" defaultValueNumeric="0">
+                <constraints nullable="false"/>
+            </column>
+            <column name="fix_2_h" type="integer" defaultValueNumeric="0">
+                <constraints nullable="false"/>
+            </column>
+            <column name="fix_3_h" type="integer" defaultValueNumeric="0">
+                <constraints nullable="false"/>
+            </column>
+            <column name="fix_4_h" type="integer" defaultValueNumeric="0">
+                <constraints nullable="false"/>
+            </column>
+            <column name="fix_5_h" type="integer" defaultValueNumeric="0">
+                <constraints nullable="false"/>
+            </column>
+            <column name="fix_6_h" type="integer" defaultValueNumeric="0">
+                <constraints nullable="false"/>
+            </column>
+            <column name="fix_7_h" type="integer" defaultValueNumeric="0">
+                <constraints nullable="false"/>
+            </column>
+            <column name="fix_8_h" type="integer" defaultValueNumeric="0">
+                <constraints nullable="false"/>
+            </column>
+            <column name="fix_9_h" type="integer" defaultValueNumeric="0">
+                <constraints nullable="false"/>
+            </column>
+            <column name="fix_10_h" type="integer" defaultValueNumeric="0">
+                <constraints nullable="false"/>
+            </column>
+            <column name="fix_11_h" type="integer" defaultValueNumeric="0">
+                <constraints nullable="false"/>
+            </column>
+            <column name="fix_12_h" type="integer" defaultValueNumeric="0">
+                <constraints nullable="false"/>
+            </column>
+            <column name="fix_13_h" type="integer" defaultValueNumeric="0">
+                <constraints nullable="false"/>
+            </column>
+            <column name="fix_14_h" type="integer" defaultValueNumeric="0">
+                <constraints nullable="false"/>
+            </column>
+            <column name="pro_ke_hoach_san_xuat_id" type="bigint">
+                <constraints nullable="true"/>
+            </column>
+            <column name="pro_check_point_id" type="bigint">
+                <constraints nullable="true"/>
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
+        </createTable>
+        <dropDefaultValue tableName="pro_nscl" columnName="ngay_san_xuat" columnDataType="datetime"/>
+    </changeSet>
+
+    <changeSet id="20200223154300-1-relations" author="jhipster">
+
+    </changeSet>
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here, do not remove-->
+
+    <!--
+        Load sample data generated with Faker.js
+        - This data can be easily edited using a CSV editor (or even MS Excel) and
+          is located in the 'src/main/resources/config/liquibase/fake-data' directory
+        - By default this data is applied when running with the JHipster 'dev' profile.
+          This can be customized by adding or removing 'faker' in the 'spring.liquibase.contexts'
+          Spring Boot configuration key.
+    -->
+    <changeSet id="20200223154300-1-data" author="jhipster" context="faker">
+        <loadData
+            file="config/liquibase/fake-data/pro_nscl.csv"
+            separator=";"
+            tableName="pro_nscl">
+            <column name="id" type="numeric"/>
+            <column name="tai_khoan" type="string"/>
+            <column name="ngay_san_xuat" type="datetime"/>
+            <column name="stt" type="numeric"/>
+            <column name="muc_tieu_ngay" type="numeric"/>
+            <column name="thuc_hien_ngay" type="numeric"/>
+            <column name="loi_ngay" type="numeric"/>
+            <column name="sua_ngay" type="numeric"/>
+            <column name="btp_cap" type="numeric"/>
+            <column name="qty_1_h" type="numeric"/>
+            <column name="qty_2_h" type="numeric"/>
+            <column name="qty_3_h" type="numeric"/>
+            <column name="qty_4_h" type="numeric"/>
+            <column name="qty_5_h" type="numeric"/>
+            <column name="qty_6_h" type="numeric"/>
+            <column name="qty_7_h" type="numeric"/>
+            <column name="qty_8_h" type="numeric"/>
+            <column name="qty_9_h" type="numeric"/>
+            <column name="qty_10_h" type="numeric"/>
+            <column name="qty_11_h" type="numeric"/>
+            <column name="qty_12_h" type="numeric"/>
+            <column name="qty_13_h" type="numeric"/>
+            <column name="qty_14_h" type="numeric"/>
+            <column name="reject_1_h" type="numeric"/>
+            <column name="reject_2_h" type="numeric"/>
+            <column name="reject_3_h" type="numeric"/>
+            <column name="reject_4_h" type="numeric"/>
+            <column name="reject_5_h" type="numeric"/>
+            <column name="reject_6_h" type="numeric"/>
+            <column name="reject_7_h" type="numeric"/>
+            <column name="reject_8_h" type="numeric"/>
+            <column name="reject_9_h" type="numeric"/>
+            <column name="reject_10_h" type="numeric"/>
+            <column name="reject_11_h" type="numeric"/>
+            <column name="reject_12_h" type="numeric"/>
+            <column name="reject_13_h" type="numeric"/>
+            <column name="reject_14_h" type="numeric"/>
+            <column name="man_1_h" type="numeric"/>
+            <column name="man_2_h" type="numeric"/>
+            <column name="man_3_h" type="numeric"/>
+            <column name="man_4_h" type="numeric"/>
+            <column name="man_5_h" type="numeric"/>
+            <column name="man_6_h" type="numeric"/>
+            <column name="man_7_h" type="numeric"/>
+            <column name="man_8_h" type="numeric"/>
+            <column name="man_9_h" type="numeric"/>
+            <column name="man_10_h" type="numeric"/>
+            <column name="man_11_h" type="numeric"/>
+            <column name="man_12_h" type="numeric"/>
+            <column name="man_13_h" type="numeric"/>
+            <column name="man_14_h" type="numeric"/>
+            <column name="man_only_7_hours" type="numeric"/>
+            <column name="fix_1_h" type="numeric"/>
+            <column name="fix_2_h" type="numeric"/>
+            <column name="fix_3_h" type="numeric"/>
+            <column name="fix_4_h" type="numeric"/>
+            <column name="fix_5_h" type="numeric"/>
+            <column name="fix_6_h" type="numeric"/>
+            <column name="fix_7_h" type="numeric"/>
+            <column name="fix_8_h" type="numeric"/>
+            <column name="fix_9_h" type="numeric"/>
+            <column name="fix_10_h" type="numeric"/>
+            <column name="fix_11_h" type="numeric"/>
+            <column name="fix_12_h" type="numeric"/>
+            <column name="fix_13_h" type="numeric"/>
+            <column name="fix_14_h" type="numeric"/>
+            <column name="PRO_KE_HOACH_SAN_XUAT_ID" type="numeric"/>
+            <column name="PRO_CHECK_POINT_ID" type="numeric"/>
+            <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here, do not remove-->
+        </loadData>
+    </changeSet>
+
+<!--    <changeSet id="20200223154300-2-data" author="jhipster" context="faker">-->
+<!--        <loadData-->
+<!--            file="config/liquibase/fake-data/pro_nscl.csv"-->
+<!--            separator=";"-->
+<!--            tableName="pro_nscl">-->
+<!--            <column name="PRO_KE_HOACH_SAN_XUAT_ID" type="numeric"/>-->
+<!--            <column name="PRO_CHECK_POINT_ID" type="numeric"/>-->
+<!--        </loadData>-->
+<!--    </changeSet>-->
+
+</databaseChangeLog>

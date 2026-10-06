@@ -1,0 +1,10 @@
+id;source_alias_state;target_state;tracking_type_id
+1;1;ON;1
+2;2;ON;1
+3;3;OFF;1
+4;1;ON;2
+5;2;ON;2
+6;3;OFF;2
+7;1;ON;3
+8;2;ON;3
+9;3;OFF;3

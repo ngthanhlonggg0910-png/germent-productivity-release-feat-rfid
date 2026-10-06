@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <!--
+        Added the constraints for entity ProCheckPoint.
+    -->
+    <changeSet id="20200212162856-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="pro_chuyen_id"
+                                 baseTableName="pro_check_point"
+                                 constraintName="fk_pro_check_point_pro_chuyen_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="pro_chuyen"/>
+
+        <addForeignKeyConstraint baseColumnNames="pro_cong_doan_id"
+                                 baseTableName="pro_check_point"
+                                 constraintName="fk_pro_check_point_pro_cong_doan_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="pro_cong_doan"/>
+
+    </changeSet>
+</databaseChangeLog>

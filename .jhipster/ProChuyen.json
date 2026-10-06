@@ -1,0 +1,43 @@
+{
+    "name": "ProChuyen",
+    "fields": [
+        {
+            "fieldName": "ten",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "stt",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "tenLoaiChuyen",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "proLoaiChuyen",
+            "otherEntityRelationshipName": "proChuyen",
+            "relationshipName": "proLoaiChuyen",
+            "otherEntityField": "ten"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "proNhaMay",
+            "otherEntityRelationshipName": "proChuyen",
+            "relationshipName": "proNhaMay",
+            "otherEntityField": "ten"
+        }
+    ],
+    "changelogDate": "20200212162853",
+    "entityTableName": "pro_chuyen",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <!--
+        Added the constraints for entity MapControlButton.
+    -->
+    <changeSet id="20200822033711-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="source_button_id"
+                                 baseTableName="map_control_button"
+                                 constraintName="fk_map_control_button_source_button_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="nv_button"/>
+
+        <addForeignKeyConstraint baseColumnNames="target_button_id"
+                                 baseTableName="map_control_button"
+                                 constraintName="fk_map_control_button_target_button_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="nv_button"/>
+
+    </changeSet>
+</databaseChangeLog>

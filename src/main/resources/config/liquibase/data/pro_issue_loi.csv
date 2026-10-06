@@ -1,0 +1,27 @@
+id;ma_loi;cus_code;ten_loi;ten_tieng_anh;label;stt;mau_sac;ghi_chu;pro_issue_cum_loi_id
+1;MMD00001;;Đứt chỉ;;MMD00001;1;green;;1
+2;MMD00002;;Bỏ mũi;;MMD00002;2;green;;1
+3;MMD00003;;Dán chân vịt;;MMD00003;3;green;;1
+4;MMD00004;;Chỉnh máy theo chuẩn loại vải;;MMD00004;4;green;;1
+5;MMD00005;;Thay dao;;MMD00005;5;green;;1
+6;KTD00001;;Chưa nghiên cứu mẫu;;KTD00001;6;yellow;;2
+7;KTD00002;;Chuẩn bị chưa đạt;;KTD00002;7;yellow;;2
+8;KTD00003;;KT máy chưa đạt;;KTD00003;8;yellow;;2
+9;KTD00004;;Chưa xác định công đoạn then chốt;;KTD00004;9;yellow;;2
+10;KTD00005;;HD công đoạn chưa đạt;;KTD00005;10;yellow;;2
+11;KTD00006;;Thử cử,cốt chưa đạt;;KTD00006;11;yellow;;2
+12;KTD00007;;Chưa nghiên cứa kỹ thuật hướng đi SP;;KTD00007;12;yellow;;2
+13;KTD00008;;Chưa nắm rõ yêu cầu chất lượng;;KTD00008;13;yellow;;2
+14;KTD00009;;Sai cấu trúc;;KTD00009;14;yellow;;2
+15;CND00001;;Thao tác chậm;;CND00001;15;blue;;3
+16;CND00002;;Không hiểu công đoạn;;CND00002;16;blue;;3
+17;CND00003;;Tay nghề không phù hợp;;CND00003;17;blue;;3
+18;QLD00001;;Đổi lao Động;;QLD00001;18;red;;4
+19;QLD00002;;Điều tiết LĐ không hợp lý;;QLD00002;19;red;;4
+20;QLD00003;;Cung cấp NPL không đầy đủ;;QLD00003;20;red;;4
+21;QLD00004;;Cung cấp Công Cụ không đầy đủ;;QLD00004;21;red;;4
+22;NPL00001;;BTP hụt rập;;NPL00001;22;yellow;;5
+23;NPL00002;;BTP thiếu dấu bấm;;NPL00002;23;yellow;;5
+24;NPL00003;;BTP lộn số;;NPL00003;24;yellow;;5
+25;NPL00004;;Sai PL;;NPL00004;25;yellow;;5
+

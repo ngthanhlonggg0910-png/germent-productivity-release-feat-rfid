@@ -1,0 +1,22 @@
+{
+  "ctApp": {
+    "proLoaiChuyen": {
+      "home": {
+        "title": "Pro Loai Chuyens",
+        "createLabel": "Thêm mới một Pro Loai Chuyen",
+        "createOrEditLabel": "Thêm mới hoặc cập nhật Pro Loai Chuyen",
+        "notFound": "No Pro Loai Chuyens found"
+      },
+      "created": "Một Pro Loai Chuyen mới được tạo với định danh {{ param }}",
+      "updated": "Một Pro Loai Chuyen cập nhật với định danh {{ param }}",
+      "deleted": "Một Pro Loai Chuyen đã xóa với định danh {{ param }}",
+      "delete": {
+        "question": "Bạn có chắc là muốn xóa Pro Loai Chuyen {{ id }}?"
+      },
+      "detail": {
+        "title": "Pro Loai Chuyen"
+      },
+      "ten": "Ten"
+    }
+  }
+}

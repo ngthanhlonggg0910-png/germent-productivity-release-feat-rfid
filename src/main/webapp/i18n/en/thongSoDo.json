@@ -1,0 +1,24 @@
+{
+  "ctApp": {
+    "thongSoDo": {
+      "home": {
+        "title": "Thong So Dos",
+        "createLabel": "Create a new Thong So Do",
+        "createOrEditLabel": "Create or edit a Thong So Do",
+        "notFound": "No Thong So Dos found"
+      },
+      "created": "A new Thong So Do is created with identifier {{ param }}",
+      "updated": "A Thong So Do is updated with identifier {{ param }}",
+      "deleted": "A Thong So Do is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Thong So Do {{ id }}?"
+      },
+      "detail": {
+        "title": "Thong So Do"
+      },
+      "code": "Code",
+      "ten": "Ten",
+      "dungSai": "Dung Sai"
+    }
+  }
+}

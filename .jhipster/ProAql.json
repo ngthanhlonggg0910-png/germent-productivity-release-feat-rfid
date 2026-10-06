@@ -1,0 +1,40 @@
+{
+    "name": "ProAql",
+    "fields": [
+        {
+            "fieldName": "aql",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "soLuongDonHangTu",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "soLuongDonHangDen",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "soLuongKiem",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "soLuongSeFail",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "soLuongSePass",
+            "fieldType": "Integer"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20210328095743",
+    "entityTableName": "pro_aql",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

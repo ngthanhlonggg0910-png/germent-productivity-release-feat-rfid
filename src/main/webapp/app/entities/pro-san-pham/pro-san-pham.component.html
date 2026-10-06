@@ -1,0 +1,156 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="ctApp.proSanPham.home.title">Pro San Phams</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-pro-san-pham" [routerLink]="['/sys/pro-san-pham/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="ctApp.proSanPham.home.createLabel">
+            Create a new Pro San Pham
+            </span>
+        </button>
+    </h2>
+    <jhi-alert-error></jhi-alert-error>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="proSanPhams?.length === 0">
+        <span jhiTranslate="ctApp.proSanPham.home.notFound">No proSanPhams found</span>
+    </div>
+    <div class="table-responsive" *ngIf="proSanPhams?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="maSanPham"><span jhiTranslate="ctApp.proSanPham.maSanPham">Ma San Pham</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="maDonHang"><span jhiTranslate="ctApp.proSanPham.maDonHang">Ma Don Hang</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="po"><span jhiTranslate="ctApp.proSanPham.po">Po</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="soLuongSanXuat"><span jhiTranslate="ctApp.proSanPham.soLuongSanXuat">So Luong San Xuat</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="thongSoValue1"><span jhiTranslate="ctApp.proSanPham.thongSoValue1">Thong So Value 1</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="thongSoCaption1"><span jhiTranslate="ctApp.proSanPham.thongSoCaption1">Thong So Caption 1</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="thongSoCheck1"><span jhiTranslate="ctApp.proSanPham.thongSoCheck1">Thong So Check 1</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="thongSoValue2"><span jhiTranslate="ctApp.proSanPham.thongSoValue2">Thong So Value 2</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="thongSoCaption2"><span jhiTranslate="ctApp.proSanPham.thongSoCaption2">Thong So Caption 2</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="thongSoCheck2"><span jhiTranslate="ctApp.proSanPham.thongSoCheck2">Thong So Check 2</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="thongSoValue3"><span jhiTranslate="ctApp.proSanPham.thongSoValue3">Thong So Value 3</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="thongSoCaption3"><span jhiTranslate="ctApp.proSanPham.thongSoCaption3">Thong So Caption 3</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="thongSoCheck3"><span jhiTranslate="ctApp.proSanPham.thongSoCheck3">Thong So Check 3</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="thongSoValue4"><span jhiTranslate="ctApp.proSanPham.thongSoValue4">Thong So Value 4</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="thongSoCaption4"><span jhiTranslate="ctApp.proSanPham.thongSoCaption4">Thong So Caption 4</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="thongSoCheck4"><span jhiTranslate="ctApp.proSanPham.thongSoCheck4">Thong So Check 4</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="thongSoValue5"><span jhiTranslate="ctApp.proSanPham.thongSoValue5">Thong So Value 5</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="thongSoCaption5"><span jhiTranslate="ctApp.proSanPham.thongSoCaption5">Thong So Caption 5</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="thongSoCheck5"><span jhiTranslate="ctApp.proSanPham.thongSoCheck5">Thong So Check 5</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="thongSoValue6"><span jhiTranslate="ctApp.proSanPham.thongSoValue6">Thong So Value 6</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="thongSoCaption6"><span jhiTranslate="ctApp.proSanPham.thongSoCaption6">Thong So Caption 6</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="thongSoCheck6"><span jhiTranslate="ctApp.proSanPham.thongSoCheck6">Thong So Check 6</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="thongSoValue7"><span jhiTranslate="ctApp.proSanPham.thongSoValue7">Thong So Value 7</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="thongSoCaption7"><span jhiTranslate="ctApp.proSanPham.thongSoCaption7">Thong So Caption 7</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="thongSoCheck7"><span jhiTranslate="ctApp.proSanPham.thongSoCheck7">Thong So Check 7</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="thongSoValue8"><span jhiTranslate="ctApp.proSanPham.thongSoValue8">Thong So Value 8</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="thongSoCaption8"><span jhiTranslate="ctApp.proSanPham.thongSoCaption8">Thong So Caption 8</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="thongSoCheck8"><span jhiTranslate="ctApp.proSanPham.thongSoCheck8">Thong So Check 8</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="thongSoValue9"><span jhiTranslate="ctApp.proSanPham.thongSoValue9">Thong So Value 9</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="thongSoCaption9"><span jhiTranslate="ctApp.proSanPham.thongSoCaption9">Thong So Caption 9</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="thongSoCheck9"><span jhiTranslate="ctApp.proSanPham.thongSoCheck9">Thong So Check 9</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="thongSoValue10"><span jhiTranslate="ctApp.proSanPham.thongSoValue10">Thong So Value 10</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="thongSoCaption10"><span jhiTranslate="ctApp.proSanPham.thongSoCaption10">Thong So Caption 10</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="thongSoCheck10"><span jhiTranslate="ctApp.proSanPham.thongSoCheck10">Thong So Check 10</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="color"><span jhiTranslate="ctApp.proSanPham.color">Color</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="hinhMatTruocURL"><span jhiTranslate="ctApp.proSanPham.hinhMatTruocURL">Hinh Mat Truoc URL</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="hinhMatSauURL"><span jhiTranslate="ctApp.proSanPham.hinhMatSauURL">Hinh Mat Sau URL</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="proKhachHangTen"><span jhiTranslate="ctApp.proSanPham.proKhachHang">Pro Khach Hang</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="proChungLoaiSanPhamTenChungLoai"><span jhiTranslate="ctApp.proSanPham.proChungLoaiSanPham">Pro Chung Loai San Pham</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="proTenMuaTenMua"><span jhiTranslate="ctApp.proSanPham.proTenMua">Pro Ten Mua</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let proSanPham of proSanPhams ;trackBy: trackId">
+                <td><a [routerLink]="['/sys/pro-san-pham', proSanPham.id, 'view' ]">{{proSanPham.id}}</a></td>
+                <td>{{proSanPham.maSanPham}}</td>
+                <td>{{proSanPham.maDonHang}}</td>
+                <td>{{proSanPham.po}}</td>
+                <td>{{proSanPham.soLuongSanXuat}}</td>
+                <td>{{proSanPham.thongSoValue1}}</td>
+                <td>{{proSanPham.thongSoCaption1}}</td>
+                <td>{{proSanPham.thongSoCheck1}}</td>
+                <td>{{proSanPham.thongSoValue2}}</td>
+                <td>{{proSanPham.thongSoCaption2}}</td>
+                <td>{{proSanPham.thongSoCheck2}}</td>
+                <td>{{proSanPham.thongSoValue3}}</td>
+                <td>{{proSanPham.thongSoCaption3}}</td>
+                <td>{{proSanPham.thongSoCheck3}}</td>
+                <td>{{proSanPham.thongSoValue4}}</td>
+                <td>{{proSanPham.thongSoCaption4}}</td>
+                <td>{{proSanPham.thongSoCheck4}}</td>
+                <td>{{proSanPham.thongSoValue5}}</td>
+                <td>{{proSanPham.thongSoCaption5}}</td>
+                <td>{{proSanPham.thongSoCheck5}}</td>
+                <td>{{proSanPham.thongSoValue6}}</td>
+                <td>{{proSanPham.thongSoCaption6}}</td>
+                <td>{{proSanPham.thongSoCheck6}}</td>
+                <td>{{proSanPham.thongSoValue7}}</td>
+                <td>{{proSanPham.thongSoCaption7}}</td>
+                <td>{{proSanPham.thongSoCheck7}}</td>
+                <td>{{proSanPham.thongSoValue8}}</td>
+                <td>{{proSanPham.thongSoCaption8}}</td>
+                <td>{{proSanPham.thongSoCheck8}}</td>
+                <td>{{proSanPham.thongSoValue9}}</td>
+                <td>{{proSanPham.thongSoCaption9}}</td>
+                <td>{{proSanPham.thongSoCheck9}}</td>
+                <td>{{proSanPham.thongSoValue10}}</td>
+                <td>{{proSanPham.thongSoCaption10}}</td>
+                <td>{{proSanPham.thongSoCheck10}}</td>
+                <td>{{proSanPham.color}}</td>
+                <td>{{proSanPham.hinhMatTruocURL}}</td>
+                <td>{{proSanPham.hinhMatSauURL}}</td>
+                <td>
+                    <div *ngIf="proSanPham.proKhachHangId">
+                        <a [routerLink]="['/sys/pro-khach-hang', proSanPham.proKhachHangId , 'view' ]" >{{proSanPham.proKhachHangTen}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="proSanPham.proChungLoaiSanPhamId">
+                        <a [routerLink]="['/sys/pro-chung-loai-san-pham', proSanPham.proChungLoaiSanPhamId , 'view' ]" >{{proSanPham.proChungLoaiSanPhamTenChungLoai}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="proSanPham.proTenMuaId">
+                        <a [routerLink]="['/sys/pro-ten-mua', proSanPham.proTenMuaId , 'view' ]" >{{proSanPham.proTenMuaTenMua}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/sys/pro-san-pham', proSanPham.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/sys/pro-san-pham', proSanPham.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/sys/pro-san-pham', { outlets: { popup: proSanPham.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div [hidden]="proSanPhams?.length === 0">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="totalItems" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,116 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-pro-final-heading" jhiTranslate="ctApp.proFinal.home.createOrEditLabel">Create or edit a Pro Final</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id').value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proFinal.khxhId" for="field_khxhId">Khxh Id</label>
+                    <input type="number" class="form-control" name="khxhId" id="field_khxhId"
+                           formControlName="khxhId"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proFinal.maHang" for="field_maHang">Ma Hang</label>
+                    <input type="text" class="form-control" name="maHang" id="field_maHang"
+                           formControlName="maHang"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proFinal.poNo" for="field_poNo">Po No</label>
+                    <input type="text" class="form-control" name="poNo" id="field_poNo"
+                           formControlName="poNo"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proFinal.ngayKiemFinal" for="field_ngayKiemFinal">Ngay Kiem Final</label>
+                    <div class="d-flex">
+                        <input id="field_ngayKiemFinal" type="datetime-local" class="form-control" name="ngayKiemFinal" formControlName="ngayKiemFinal" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proFinal.tenChuyen" for="field_tenChuyen">Ten Chuyen</label>
+                    <input type="text" class="form-control" name="tenChuyen" id="field_tenChuyen"
+                           formControlName="tenChuyen"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proFinal.ngayGioKiem" for="field_ngayGioKiem">Ngay Gio Kiem</label>
+                    <div class="d-flex">
+                        <input id="field_ngayGioKiem" type="datetime-local" class="form-control" name="ngayGioKiem" formControlName="ngayGioKiem" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proFinal.soLuongKiemAql" for="field_soLuongKiemAql">So Luong Kiem Aql</label>
+                    <input type="number" class="form-control" name="soLuongKiemAql" id="field_soLuongKiemAql"
+                           formControlName="soLuongKiemAql"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proFinal.soLuong" for="field_soLuong">So Luong</label>
+                    <input type="number" class="form-control" name="soLuong" id="field_soLuong"
+                           formControlName="soLuong"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proFinal.doAm" for="field_doAm">Do Am</label>
+                    <input type="number" class="form-control" name="doAm" id="field_doAm"
+                           formControlName="doAm"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proFinal.tongSoLoi" for="field_tongSoLoi">Tong So Loi</label>
+                    <input type="number" class="form-control" name="tongSoLoi" id="field_tongSoLoi"
+                           formControlName="tongSoLoi"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proFinal.soThuTuThung" for="field_soThuTuThung">So Thu Tu Thung</label>
+                    <input type="number" class="form-control" name="soThuTuThung" id="field_soThuTuThung"
+                           formControlName="soThuTuThung"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proFinal.doKimMd" for="field_doKimMd">Do Kim Md</label>
+                    <input type="text" class="form-control" name="doKimMd" id="field_doKimMd"
+                           formControlName="doKimMd"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proFinal.aql" for="field_aql">Aql</label>
+                    <input type="text" class="form-control" name="aql" id="field_aql"
+                           formControlName="aql"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proFinal.maxLoiChoPhep" for="field_maxLoiChoPhep">Max Loi Cho Phep</label>
+                    <input type="number" class="form-control" name="maxLoiChoPhep" id="field_maxLoiChoPhep"
+                           formControlName="maxLoiChoPhep"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proFinal.completed" for="field_completed">Completed</label>
+                    <input type="checkbox" class="form-control" name="completed" id="field_completed"
+                           formControlName="completed"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proFinal.soLuongPoKiem" for="field_soLuongPoKiem">So Luong Po Kiem</label>
+                    <input type="number" class="form-control" name="soLuongPoKiem" id="field_soLuongPoKiem"
+                           formControlName="soLuongPoKiem"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proFinal.pass" for="field_pass">Pass</label>
+                    <input type="checkbox" class="form-control" name="pass" id="field_pass"
+                           formControlName="pass"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proFinal.nguoiKiem" for="field_nguoiKiem">Nguoi Kiem</label>
+                    <input type="text" class="form-control" name="nguoiKiem" id="field_nguoiKiem"
+                           formControlName="nguoiKiem"/>
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

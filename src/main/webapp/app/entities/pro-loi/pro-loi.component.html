@@ -1,0 +1,92 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="ctApp.proLoi.home.title">Pro Lois</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-pro-loi" [routerLink]="['/sys/pro-loi/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="ctApp.proLoi.home.createLabel">
+            Create a new Pro Loi
+            </span>
+        </button>
+    </h2>
+    <jhi-alert-error></jhi-alert-error>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="proLois?.length === 0">
+        <span jhiTranslate="ctApp.proLoi.home.notFound">No proLois found</span>
+    </div>
+    <div class="table-responsive" *ngIf="proLois?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="maLoi"><span jhiTranslate="ctApp.proLoi.maLoi">Ma Loi</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="cusCode"><span jhiTranslate="ctApp.proLoi.cusCode">Cus Code</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="tenLoi"><span jhiTranslate="ctApp.proLoi.tenLoi">Ten Loi</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="tenTiengAnh"><span jhiTranslate="ctApp.proLoi.tenTiengAnh">Ten Tieng Anh</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="label"><span jhiTranslate="ctApp.proLoi.label">Label</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="stt"><span jhiTranslate="ctApp.proLoi.stt">Stt</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="mauSac"><span jhiTranslate="ctApp.proLoi.mauSac">Mau Sac</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="qc"><span jhiTranslate="ctApp.proLoi.qc">Qc</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="qa"><span jhiTranslate="ctApp.proLoi.qa">Qa</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="checked"><span jhiTranslate="ctApp.proLoi.checked">Checked</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="ghiChu"><span jhiTranslate="ctApp.proLoi.ghiChu">Ghi Chu</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="proCumLoiTen"><span jhiTranslate="ctApp.proLoi.proCumLoi">Pro Cum Loi</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let proLoi of proLois ;trackBy: trackId">
+                <td><a [routerLink]="['/sys/pro-loi', proLoi.id, 'view' ]">{{proLoi.id}}</a></td>
+                <td>{{proLoi.maLoi}}</td>
+                <td>{{proLoi.cusCode}}</td>
+                <td>{{proLoi.tenLoi}}</td>
+                <td>{{proLoi.tenTiengAnh}}</td>
+                <td>{{proLoi.label}}</td>
+                <td>{{proLoi.stt}}</td>
+                <td>{{proLoi.mauSac}}</td>
+                <td>{{proLoi.qc}}</td>
+                <td>{{proLoi.qa}}</td>
+                <td>{{proLoi.checked}}</td>
+                <td>{{proLoi.ghiChu}}</td>
+                <td>
+                    <div *ngIf="proLoi.proCumLoiId">
+                        <a [routerLink]="['/sys/pro-cum-loi', proLoi.proCumLoiId , 'view' ]" >{{proLoi.proCumLoiTen}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/sys/pro-loi', proLoi.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/sys/pro-loi', proLoi.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/sys/pro-loi', { outlets: { popup: proLoi.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div [hidden]="proLois?.length === 0">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="totalItems" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

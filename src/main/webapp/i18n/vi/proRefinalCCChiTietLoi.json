@@ -1,0 +1,31 @@
+{
+  "ctApp": {
+    "proRefinalCCChiTietLoi": {
+      "home": {
+        "title": "Pro Refinal CC Chi Tiet Lois",
+        "createLabel": "Thêm mới một Pro Refinal CC Chi Tiet Loi",
+        "createOrEditLabel": "Thêm mới hoặc cập nhật Pro Refinal CC Chi Tiet Loi",
+        "notFound": "No Pro Refinal CC Chi Tiet Lois found"
+      },
+      "created": "Một Pro Refinal CC Chi Tiet Loi mới được tạo với định danh {{ param }}",
+      "updated": "Một Pro Refinal CC Chi Tiet Loi cập nhật với định danh {{ param }}",
+      "deleted": "Một Pro Refinal CC Chi Tiet Loi đã xóa với định danh {{ param }}",
+      "delete": {
+        "question": "Bạn có chắc là muốn xóa Pro Refinal CC Chi Tiet Loi {{ id }}?"
+      },
+      "detail": {
+        "title": "Pro Refinal CC Chi Tiet Loi"
+      },
+      "maLoi": "Ma Loi",
+      "thoiGian": "Thoi Gian",
+      "dx": "Dx",
+      "dy": "Dy",
+      "isFront": "Is Front",
+      "isInside": "Is Inside",
+      "warning": "Warning",
+      "nguoiKiem": "Nguoi Kiem",
+      "proRefinalCC": "Pro Refinal CC",
+      "proLoi": "Pro Loi"
+    }
+  }
+}

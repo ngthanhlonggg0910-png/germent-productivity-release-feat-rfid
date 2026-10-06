@@ -1,0 +1,22 @@
+{
+  "ctApp": {
+    "proLoaiChuyen": {
+      "home": {
+        "title": "Pro Loai Chuyens",
+        "createLabel": "Create a new Pro Loai Chuyen",
+        "createOrEditLabel": "Create or edit a Pro Loai Chuyen",
+        "notFound": "No Pro Loai Chuyens found"
+      },
+      "created": "A new Pro Loai Chuyen is created with identifier {{ param }}",
+      "updated": "A Pro Loai Chuyen is updated with identifier {{ param }}",
+      "deleted": "A Pro Loai Chuyen is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Pro Loai Chuyen {{ id }}?"
+      },
+      "detail": {
+        "title": "Pro Loai Chuyen"
+      },
+      "ten": "Ten"
+    }
+  }
+}

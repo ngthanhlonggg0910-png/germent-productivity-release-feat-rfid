@@ -1,0 +1,26 @@
+{
+  "ctApp": {
+    "proChuyen": {
+      "home": {
+        "title": "Pro Chuyens",
+        "createLabel": "Create a new Pro Chuyen",
+        "createOrEditLabel": "Create or edit a Pro Chuyen",
+        "notFound": "No Pro Chuyens found"
+      },
+      "created": "A new Pro Chuyen is created with identifier {{ param }}",
+      "updated": "A Pro Chuyen is updated with identifier {{ param }}",
+      "deleted": "A Pro Chuyen is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Pro Chuyen {{ id }}?"
+      },
+      "detail": {
+        "title": "Pro Chuyen"
+      },
+      "ten": "Ten",
+      "stt": "Stt",
+      "tenLoaiChuyen": "Ten Loai Chuyen",
+      "proLoaiChuyen": "Pro Loai Chuyen",
+      "proNhaMay": "Pro Nha May"
+    }
+  }
+}

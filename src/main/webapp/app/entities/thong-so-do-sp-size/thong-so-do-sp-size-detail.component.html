@@ -1,0 +1,49 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="thongSoDoSPSize">
+            <h2><span jhiTranslate="ctApp.thongSoDoSPSize.detail.title">Thong So Do SP Size</span> {{thongSoDoSPSize.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="ctApp.thongSoDoSPSize.size">Size</span></dt>
+                <dd>
+                    <span>{{thongSoDoSPSize.size}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.thongSoDoSPSize.cmThongSoChuan">Cm Thong So Chuan</span></dt>
+                <dd>
+                    <span>{{thongSoDoSPSize.cmThongSoChuan}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.thongSoDoSPSize.inchThongSoChuan">Inch Thong So Chuan</span></dt>
+                <dd>
+                    <span>{{thongSoDoSPSize.inchThongSoChuan}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.thongSoDoSPSize.cmThongSoChuanValue">Cm Thong So Chuan Value</span></dt>
+                <dd>
+                    <span>{{thongSoDoSPSize.cmThongSoChuanValue}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.thongSoDoSPSize.inchThongSoChuanValue">Inch Thong So Chuan Value</span></dt>
+                <dd>
+                    <span>{{thongSoDoSPSize.inchThongSoChuanValue}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.thongSoDoSPSize.thongSoDoSP">Thong So Do SP</span></dt>
+                <dd>
+                    <div *ngIf="thongSoDoSPSize.thongSoDoSPId">
+                        <a [routerLink]="['/sys/thong-so-do-sp', thongSoDoSPSize.thongSoDoSPId, 'view']">{{thongSoDoSPSize.thongSoDoSPId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/sys/thong-so-do-sp-size', thongSoDoSPSize.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

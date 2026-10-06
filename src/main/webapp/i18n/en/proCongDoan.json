@@ -1,0 +1,24 @@
+{
+  "ctApp": {
+    "proCongDoan": {
+      "home": {
+        "title": "Pro Cong Doans",
+        "createLabel": "Create a new Pro Cong Doan",
+        "createOrEditLabel": "Create or edit a Pro Cong Doan",
+        "notFound": "No Pro Cong Doans found"
+      },
+      "created": "A new Pro Cong Doan is created with identifier {{ param }}",
+      "updated": "A Pro Cong Doan is updated with identifier {{ param }}",
+      "deleted": "A Pro Cong Doan is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Pro Cong Doan {{ id }}?"
+      },
+      "detail": {
+        "title": "Pro Cong Doan"
+      },
+      "ten": "Ten",
+      "nhomCongDoan": "Nhom Cong Doan",
+      "proNhomCongDoan": "Pro Nhom Cong Doan"
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "ctApp": {
+    "soLuongHangKiem": {
+      "home": {
+        "title": "So Luong Hang Kiems",
+        "createLabel": "Create a new So Luong Hang Kiem",
+        "createOrEditLabel": "Create or edit a So Luong Hang Kiem",
+        "notFound": "No So Luong Hang Kiems found"
+      },
+      "created": "A new So Luong Hang Kiem is created with identifier {{ param }}",
+      "updated": "A So Luong Hang Kiem is updated with identifier {{ param }}",
+      "deleted": "A So Luong Hang Kiem is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete So Luong Hang Kiem {{ id }}?"
+      },
+      "detail": {
+        "title": "So Luong Hang Kiem"
+      },
+      "soLuong": "So Luong"
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+    "name": "ButtonTracking",
+    "fields": [
+        {
+            "fieldName": "updateDate",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "currentAliasState",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "trackingId",
+            "fieldType": "Long"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-one",
+            "otherEntityName": "nVButton",
+            "otherEntityRelationshipName": "buttonTracking",
+            "relationshipName": "nVButton",
+            "ownerSide": false
+        }
+    ],
+    "changelogDate": "20200822033709",
+    "entityTableName": "button_tracking",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

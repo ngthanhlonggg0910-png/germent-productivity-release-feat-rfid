@@ -1,0 +1,28 @@
+{
+  "ctApp": {
+    "gYCLQuyCachNPL": {
+      "home": {
+        "title": "GYCL Quy Cach NPLS",
+        "createLabel": "Thêm mới một GYCL Quy Cach NPL",
+        "createOrEditLabel": "Thêm mới hoặc cập nhật GYCL Quy Cach NPL",
+        "notFound": "No GYCL Quy Cach NPLS found"
+      },
+      "created": "Một GYCL Quy Cach NPL mới được tạo với định danh {{ param }}",
+      "updated": "Một GYCL Quy Cach NPL cập nhật với định danh {{ param }}",
+      "deleted": "Một GYCL Quy Cach NPL đã xóa với định danh {{ param }}",
+      "delete": {
+        "question": "Bạn có chắc là muốn xóa GYCL Quy Cach NPL {{ id }}?"
+      },
+      "detail": {
+        "title": "GYCL Quy Cach NPL"
+      },
+      "tenNPL": "Ten NPL",
+      "nguoiTao": "Nguoi Tao",
+      "ngayTao": "Ngay Tao",
+      "userId": "User Id",
+      "yesNo": "Yes No",
+      "nA": "N A",
+      "proGopYChatLuong": "Pro Gop Y Chat Luong"
+    }
+  }
+}

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <!--
+        Added the constraints for entity ProSanPham.
+    -->
+    <changeSet id="20200212162848-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="pro_khach_hang_id"
+                                 baseTableName="pro_san_pham"
+                                 constraintName="fk_pro_san_pham_pro_khach_hang_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="pro_khach_hang"/>
+
+        <addForeignKeyConstraint baseColumnNames="pro_chung_loai_san_pham_id"
+                                 baseTableName="pro_san_pham"
+                                 constraintName="fk_pro_san_pham_pro_chung_loai_san_pham_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="pro_chung_loai_san_pham"/>
+
+        <addForeignKeyConstraint baseColumnNames="pro_ten_mua_id"
+                                 baseTableName="pro_san_pham"
+                                 constraintName="fk_pro_san_pham_pro_ten_mua_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="pro_ten_mua"/>
+
+    </changeSet>
+</databaseChangeLog>

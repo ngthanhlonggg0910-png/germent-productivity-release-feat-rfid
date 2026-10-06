@@ -1,0 +1,44 @@
+{
+    "name": "ThongSoThucThi",
+    "fields": [
+        {
+            "fieldName": "spIndex",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "thongSoDoSPSize",
+            "otherEntityRelationshipName": "thongSoThucThi",
+            "relationshipName": "thongSoDoSPSize",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "dungSai",
+            "otherEntityRelationshipName": "thongSoThucThi",
+            "relationshipName": "dungSai",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "proKeHoachSanXuat",
+            "otherEntityName": "proKeHoachSanXuat",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "id",
+            "otherEntityRelationshipName": "thongSoThucThi"
+        }
+    ],
+    "changelogDate": "20200425101320",
+    "entityTableName": "thong_so_thuc_thi",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*",
+    "searchEngine": false,
+    "databaseType": "sql"
+}

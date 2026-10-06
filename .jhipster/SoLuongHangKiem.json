@@ -1,0 +1,20 @@
+{
+    "name": "SoLuongHangKiem",
+    "fields": [
+        {
+            "fieldName": "soLuong",
+            "fieldType": "Integer"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20210328095745",
+    "entityTableName": "so_luong_hang_kiem",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

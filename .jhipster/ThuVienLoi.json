@@ -1,0 +1,36 @@
+{
+    "name": "ThuVienLoi",
+    "fields": [
+        {
+            "fieldName": "maLoi",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "tenLoi",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "nguoiTao",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "ngayTao",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "userId",
+            "fieldType": "Integer"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20191120133000",
+    "entityTableName": "thu_vien_loi",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

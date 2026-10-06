@@ -1,0 +1,27 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="proChungLoaiSanPham">
+            <h2><span jhiTranslate="ctApp.proChungLoaiSanPham.detail.title">Pro Chung Loai San Pham</span> {{proChungLoaiSanPham.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="ctApp.proChungLoaiSanPham.tenChungLoai">Ten Chung Loai</span></dt>
+                <dd>
+                    <span>{{proChungLoaiSanPham.tenChungLoai}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/sys/pro-chung-loai-san-pham', proChungLoaiSanPham.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

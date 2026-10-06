@@ -1,0 +1,86 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-pro-loi-heading" jhiTranslate="ctApp.proLoi.home.createOrEditLabel">Create or edit a Pro Loi</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id').value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proLoi.maLoi" for="field_maLoi">Ma Loi</label>
+                    <input type="text" class="form-control" name="maLoi" id="field_maLoi"
+                           formControlName="maLoi"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proLoi.cusCode" for="field_cusCode">Cus Code</label>
+                    <input type="text" class="form-control" name="cusCode" id="field_cusCode"
+                           formControlName="cusCode"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proLoi.tenLoi" for="field_tenLoi">Ten Loi</label>
+                    <input type="text" class="form-control" name="tenLoi" id="field_tenLoi"
+                           formControlName="tenLoi"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proLoi.tenTiengAnh" for="field_tenTiengAnh">Ten Tieng Anh</label>
+                    <input type="text" class="form-control" name="tenTiengAnh" id="field_tenTiengAnh"
+                           formControlName="tenTiengAnh"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proLoi.label" for="field_label">Label</label>
+                    <input type="text" class="form-control" name="label" id="field_label"
+                           formControlName="label"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proLoi.stt" for="field_stt">Stt</label>
+                    <input type="number" class="form-control" name="stt" id="field_stt"
+                           formControlName="stt"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proLoi.mauSac" for="field_mauSac">Mau Sac</label>
+                    <input type="text" class="form-control" name="mauSac" id="field_mauSac"
+                           formControlName="mauSac"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proLoi.qc" for="field_qc">Qc</label>
+                    <input type="checkbox" class="form-control" name="qc" id="field_qc"
+                           formControlName="qc"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proLoi.qa" for="field_qa">Qa</label>
+                    <input type="checkbox" class="form-control" name="qa" id="field_qa"
+                           formControlName="qa"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proLoi.checked" for="field_checked">Checked</label>
+                    <input type="checkbox" class="form-control" name="checked" id="field_checked"
+                           formControlName="checked"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proLoi.ghiChu" for="field_ghiChu">Ghi Chu</label>
+                    <input type="text" class="form-control" name="ghiChu" id="field_ghiChu"
+                           formControlName="ghiChu"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proLoi.proCumLoi" for="field_proCumLoi">Pro Cum Loi</label>
+                    <select class="form-control" id="field_proCumLoi" name="proCumLoi" formControlName="proCumLoiId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="proCumLoiOption.id" *ngFor="let proCumLoiOption of procumlois; trackBy: trackProCumLoiById">{{proCumLoiOption.ten}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

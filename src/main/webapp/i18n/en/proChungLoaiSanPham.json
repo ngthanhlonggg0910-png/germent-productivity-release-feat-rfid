@@ -1,0 +1,22 @@
+{
+  "ctApp": {
+    "proChungLoaiSanPham": {
+      "home": {
+        "title": "Pro Chung Loai San Phams",
+        "createLabel": "Create a new Pro Chung Loai San Pham",
+        "createOrEditLabel": "Create or edit a Pro Chung Loai San Pham",
+        "notFound": "No Pro Chung Loai San Phams found"
+      },
+      "created": "A new Pro Chung Loai San Pham is created with identifier {{ param }}",
+      "updated": "A Pro Chung Loai San Pham is updated with identifier {{ param }}",
+      "deleted": "A Pro Chung Loai San Pham is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Pro Chung Loai San Pham {{ id }}?"
+      },
+      "detail": {
+        "title": "Pro Chung Loai San Pham"
+      },
+      "tenChungLoai": "Ten Chung Loai"
+    }
+  }
+}

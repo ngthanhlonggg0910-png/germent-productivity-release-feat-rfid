@@ -1,0 +1,25 @@
+{
+  "ctApp": {
+    "thongSoThucThi": {
+      "home": {
+        "title": "Thong So Thuc This",
+        "createLabel": "Create a new Thong So Thuc Thi",
+        "createOrEditLabel": "Create or edit a Thong So Thuc Thi",
+        "notFound": "No Thong So Thuc This found"
+      },
+      "created": "A new Thong So Thuc Thi is created with identifier {{ param }}",
+      "updated": "A Thong So Thuc Thi is updated with identifier {{ param }}",
+      "deleted": "A Thong So Thuc Thi is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Thong So Thuc Thi {{ id }}?"
+      },
+      "detail": {
+        "title": "Thong So Thuc Thi"
+      },
+      "spIndex": "Sp Index",
+      "thongSoDoSPSize": "Thong So Do SP Size",
+      "dungSai": "Dung Sai",
+      "proKeHoachSanXuat": "Pro Ke Hoach San Xuat"
+    }
+  }
+}

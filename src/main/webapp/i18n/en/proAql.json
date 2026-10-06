@@ -1,0 +1,27 @@
+{
+  "ctApp": {
+    "proAql": {
+      "home": {
+        "title": "Pro Aqls",
+        "createLabel": "Create a new Pro Aql",
+        "createOrEditLabel": "Create or edit a Pro Aql",
+        "notFound": "No Pro Aqls found"
+      },
+      "created": "A new Pro Aql is created with identifier {{ param }}",
+      "updated": "A Pro Aql is updated with identifier {{ param }}",
+      "deleted": "A Pro Aql is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Pro Aql {{ id }}?"
+      },
+      "detail": {
+        "title": "Pro Aql"
+      },
+      "aql": "Aql",
+      "soLuongDonHangTu": "So Luong Don Hang Tu",
+      "soLuongDonHangDen": "So Luong Don Hang Den",
+      "soLuongKiem": "So Luong Kiem",
+      "soLuongSeFail": "So Luong Se Fail",
+      "soLuongSePass": "So Luong Se Pass"
+    }
+  }
+}

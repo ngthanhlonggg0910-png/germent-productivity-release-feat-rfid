@@ -1,0 +1,22 @@
+{
+  "ctApp": {
+    "libSoLuongPoKiem": {
+      "home": {
+        "title": "Lib So Luong Po Kiems",
+        "createLabel": "Create a new Lib So Luong Po Kiem",
+        "createOrEditLabel": "Create or edit a Lib So Luong Po Kiem",
+        "notFound": "No Lib So Luong Po Kiems found"
+      },
+      "created": "A new Lib So Luong Po Kiem is created with identifier {{ param }}",
+      "updated": "A Lib So Luong Po Kiem is updated with identifier {{ param }}",
+      "deleted": "A Lib So Luong Po Kiem is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Lib So Luong Po Kiem {{ id }}?"
+      },
+      "detail": {
+        "title": "Lib So Luong Po Kiem"
+      },
+      "value": "Value"
+    }
+  }
+}

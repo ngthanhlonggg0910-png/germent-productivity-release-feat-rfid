@@ -1,0 +1,142 @@
+
+
+entity ProKhachHang {
+	ten String,
+    nhom String,
+    diaChi String
+}
+
+entity ProSanPham {
+	maSanPham String,
+    maDonHang String,
+    po String,
+    soLuongSanXuat Integer,
+    thongSoValue1 String,
+    thongSoCaption1 String,
+    thongSoCheck1 Boolean,
+    thongSoValue2 String,
+    thongSoCaption2 String,
+    thongSoCheck2 Boolean,
+    thongSoValue3 String,
+    thongSoCaption3 String,
+    thongSoCheck3 Boolean,
+    thongSoValue4 String,
+    thongSoCaption4 String,
+    thongSoCheck4 Boolean,
+    thongSoValue5 String,
+    thongSoCaption5 String,
+    thongSoCheck5 Boolean,
+    thongSoValue6 String,
+    thongSoCaption6 String,
+    thongSoCheck6 Boolean,
+    thongSoValue7 String,
+    thongSoCaption7 String,
+    thongSoCheck7 Boolean,
+    thongSoValue8 String,
+    thongSoCaption8 String,
+    thongSoCheck8 Boolean,
+    thongSoValue9 String,
+    thongSoCaption9 String,
+    thongSoCheck9 Boolean,
+    thongSoValue10 String,
+    thongSoCaption10 String,
+    thongSoCheck10 Boolean
+}
+
+entity ProChungLoaiSanPham {
+	tenChungLoai String
+}
+
+entity ProTenMua {
+	tenMua String
+}
+
+entity ProKeHoachSanXuat {
+	ngaySanXuat Instant,
+    soLuongYeuCau Integer,
+    tinhTrang Integer,
+    ghiChu String,
+    sam Integer,
+    lotNo Integer
+}
+
+entity ProLoaiChuyen {
+	ten String
+}
+
+entity ProChuyen {
+	ten String,
+    stt Integer,
+    tenLoaiChuyen String
+}
+
+entity ProNhaMay {
+	ten String,
+    stt Integer,
+}
+
+entity ProCongTy {
+	ten String,
+    diaChi String,
+    mst String
+}
+
+entity ProCheckPoint {
+	ten String
+}
+
+entity ProTaiKhoanCheckPoint {
+	taiKhoan String,
+    checked Boolean
+}
+
+entity ProCongDoan {
+	ten String,
+    nhomCongDoan String
+}
+
+entity ProNhomCongDoan {
+	ten String,
+    checkNangSuat Boolean
+}
+
+entity ProCumLoi {
+	ten String
+}
+
+entity ProLoi {
+	maLoi String,
+    cusCode String,
+    tenLoi String,
+    tenTiengAnh String,
+    label String,
+    stt Integer,
+    mauSac String,
+    qc Boolean,
+    qa Boolean,
+    checked Boolean,
+    ghiChu String
+}
+relationship ManyToOne {
+	ProSanPham{proKhachHang(ten)} to ProKhachHang,
+    ProSanPham{proChungLoaiSanPham(tenChungLoai)} to ProChungLoaiSanPham,
+    ProSanPham{proKeHoachSanXuat(lotNo)} to ProKeHoachSanXuat,
+    ProSanPham{proTenMua(tenMua)} to ProTenMua,
+    ProKeHoachSanXuat{proChuyen(ten)} to ProChuyen,
+    ProChuyen{proLoaiChuyen(ten)} to ProLoaiChuyen,
+    ProChuyen{proNhaMay(ten)} to ProNhaMay,
+    ProNhaMay{proCongTy(ten)} to ProCongTy,
+    ProCheckPoint{proChuyen(ten)} to ProChuyen,
+    ProCheckPoint{proCongDoan(ten)} to ProCongDoan,
+    ProCongDoan{proNhomCongDoan(ten)} to ProNhomCongDoan,
+    ProLoi{proCumLoi(ten)} to ProCumLoi,
+    ProTaiKhoanCheckPoint{proCheckPoint(ten)} to ProCheckPoint
+}
+
+dto * with mapstruct
+service all with serviceImpl
+paginate all with pagination
+filter ProKhachHang
+filter ProSanPham
+filter ProKeHoachSanXuat
+filter ProLoi

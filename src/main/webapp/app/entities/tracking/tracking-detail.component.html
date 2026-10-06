@@ -1,0 +1,57 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="tracking">
+            <h2><span jhiTranslate="ctApp.tracking.detail.title">Tracking</span> {{tracking.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="ctApp.tracking.nvButtonId">Nv Button Id</span></dt>
+                <dd>
+                    <span>{{tracking.nvButtonId}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.tracking.state1Time">State 1 Time</span></dt>
+                <dd>
+                    <span>{{tracking.state1Time}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.tracking.state2Time">State 2 Time</span></dt>
+                <dd>
+                    <span>{{tracking.state2Time}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.tracking.state3Time">State 3 Time</span></dt>
+                <dd>
+                    <span>{{tracking.state3Time}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.tracking.state4Time">State 4 Time</span></dt>
+                <dd>
+                    <span>{{tracking.state4Time}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.tracking.state5Time">State 5 Time</span></dt>
+                <dd>
+                    <span>{{tracking.state5Time}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.tracking.state6Time">State 6 Time</span></dt>
+                <dd>
+                    <span>{{tracking.state6Time}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.tracking.trackingType">Tracking Type</span></dt>
+                <dd>
+                    <div *ngIf="tracking.trackingTypeId">
+                        <a [routerLink]="['/sys/nv-button-tracking-type', tracking.trackingTypeId, 'view']">{{tracking.trackingTypeName}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/sys/tracking', tracking.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

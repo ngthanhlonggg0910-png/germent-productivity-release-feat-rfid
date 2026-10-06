@@ -1,0 +1,30 @@
+{
+    "name": "MapControlButton",
+    "fields": [],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "nVButton",
+            "otherEntityRelationshipName": "mapControlButton",
+            "relationshipName": "sourceButton",
+            "otherEntityField": "cmndTopic"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "nVButton",
+            "otherEntityRelationshipName": "mapControlButton",
+            "relationshipName": "targetButton",
+            "otherEntityField": "cmndTopic"
+        }
+    ],
+    "changelogDate": "20200822033711",
+    "entityTableName": "map_control_button",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

@@ -1,0 +1,103 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="gopYChatLuong">
+            <h2><span jhiTranslate="ctApp.gopYChatLuong.detail.title">Gop Y Chat Luong</span> {{gopYChatLuong.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="ctApp.gopYChatLuong.cusId">Cus Id</span></dt>
+                <dd>
+                    <span>{{gopYChatLuong.cusId}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.gopYChatLuong.cusName">Cus Name</span></dt>
+                <dd>
+                    <span>{{gopYChatLuong.cusName}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.gopYChatLuong.chuyenId">Chuyen Id</span></dt>
+                <dd>
+                    <span>{{gopYChatLuong.chuyenId}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.gopYChatLuong.chuyenName">Chuyen Name</span></dt>
+                <dd>
+                    <span>{{gopYChatLuong.chuyenName}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.gopYChatLuong.maHang">Ma Hang</span></dt>
+                <dd>
+                    <span>{{gopYChatLuong.maHang}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.gopYChatLuong.po">Po</span></dt>
+                <dd>
+                    <span>{{gopYChatLuong.po}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.gopYChatLuong.poId">Po Id</span></dt>
+                <dd>
+                    <span>{{gopYChatLuong.poId}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.gopYChatLuong.color">Color</span></dt>
+                <dd>
+                    <span>{{gopYChatLuong.color}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.gopYChatLuong.size">Size</span></dt>
+                <dd>
+                    <span>{{gopYChatLuong.size}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.gopYChatLuong.firstCut">First Cut</span></dt>
+                <dd>
+                    <span>{{gopYChatLuong.firstCut}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.gopYChatLuong.inline">Inline</span></dt>
+                <dd>
+                    <span>{{gopYChatLuong.inline}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.gopYChatLuong.lanBanHanh">Lan Ban Hanh</span></dt>
+                <dd>
+                    <span>{{gopYChatLuong.lanBanHanh}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.gopYChatLuong.ngayBaoCao">Ngay Bao Cao</span></dt>
+                <dd>
+                    <span>{{gopYChatLuong.ngayBaoCao}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.gopYChatLuong.nguoiTao">Nguoi Tao</span></dt>
+                <dd>
+                    <span>{{gopYChatLuong.nguoiTao}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.gopYChatLuong.userId">User Id</span></dt>
+                <dd>
+                    <span>{{gopYChatLuong.userId}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.gopYChatLuong.ngayTao">Ngay Tao</span></dt>
+                <dd>
+                    <span>{{gopYChatLuong.ngayTao}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.gopYChatLuong.tenQuanLyXuong">Ten Quan Ly Xuong</span></dt>
+                <dd>
+                    <span>{{gopYChatLuong.tenQuanLyXuong}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.gopYChatLuong.tenKiThuat">Ten Ki Thuat</span></dt>
+                <dd>
+                    <span>{{gopYChatLuong.tenKiThuat}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.gopYChatLuong.tenQanLyCat">Ten Qan Ly Cat</span></dt>
+                <dd>
+                    <span>{{gopYChatLuong.tenQanLyCat}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.gopYChatLuong.tenQA">Ten QA</span></dt>
+                <dd>
+                    <span>{{gopYChatLuong.tenQA}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/sys/gop-y-chat-luong', gopYChatLuong.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

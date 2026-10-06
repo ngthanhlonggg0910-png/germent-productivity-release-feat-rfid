@@ -1,0 +1,26 @@
+{
+  "ctApp": {
+    "thongSoDoSP": {
+      "home": {
+        "title": "Thong So Do SPS",
+        "createLabel": "Thêm mới một Thong So Do SP",
+        "createOrEditLabel": "Thêm mới hoặc cập nhật Thong So Do SP",
+        "notFound": "No Thong So Do SPS found"
+      },
+      "created": "Một Thong So Do SP mới được tạo với định danh {{ param }}",
+      "updated": "Một Thong So Do SP cập nhật với định danh {{ param }}",
+      "deleted": "Một Thong So Do SP đã xóa với định danh {{ param }}",
+      "delete": {
+        "question": "Bạn có chắc là muốn xóa Thong So Do SP {{ id }}?"
+      },
+      "detail": {
+        "title": "Thong So Do SP"
+      },
+      "note": "Note",
+      "thongSoDoSPSize": "Thong So Do SP Size",
+      "thongSoDo": "Thong So Do",
+      "dungSai": "Dung Sai",
+      "proSanPham": "Pro San Pham"
+    }
+  }
+}

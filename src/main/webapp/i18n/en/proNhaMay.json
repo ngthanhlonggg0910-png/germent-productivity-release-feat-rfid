@@ -1,0 +1,24 @@
+{
+  "ctApp": {
+    "proNhaMay": {
+      "home": {
+        "title": "Pro Nha Mays",
+        "createLabel": "Create a new Pro Nha May",
+        "createOrEditLabel": "Create or edit a Pro Nha May",
+        "notFound": "No Pro Nha Mays found"
+      },
+      "created": "A new Pro Nha May is created with identifier {{ param }}",
+      "updated": "A Pro Nha May is updated with identifier {{ param }}",
+      "deleted": "A Pro Nha May is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Pro Nha May {{ id }}?"
+      },
+      "detail": {
+        "title": "Pro Nha May"
+      },
+      "ten": "Ten",
+      "stt": "Stt",
+      "proCongTy": "Pro Cong Ty"
+    }
+  }
+}

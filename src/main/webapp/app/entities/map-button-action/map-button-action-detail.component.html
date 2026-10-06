@@ -1,0 +1,37 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="mapButtonAction">
+            <h2><span jhiTranslate="ctApp.mapButtonAction.detail.title">Map Button Action</span> {{mapButtonAction.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="ctApp.mapButtonAction.sourceAliasState">Source Alias State</span></dt>
+                <dd>
+                    <span>{{mapButtonAction.sourceAliasState}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.mapButtonAction.targetState">Target State</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'ctApp.NVButtonState.' + mapButtonAction.targetState}}">{{mapButtonAction.targetState}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.mapButtonAction.trackingType">Tracking Type</span></dt>
+                <dd>
+                    <div *ngIf="mapButtonAction.trackingTypeId">
+                        <a [routerLink]="['/sys/nv-button-tracking-type', mapButtonAction.trackingTypeId, 'view']">{{mapButtonAction.trackingTypeName}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/sys/map-button-action', mapButtonAction.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

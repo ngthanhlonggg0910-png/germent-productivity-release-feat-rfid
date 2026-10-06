@@ -1,0 +1,26 @@
+{
+  "ctApp": {
+    "quyCachNPL": {
+      "home": {
+        "title": "Quy Cach NPLS",
+        "createLabel": "Create a new Quy Cach NPL",
+        "createOrEditLabel": "Create or edit a Quy Cach NPL",
+        "notFound": "No Quy Cach NPLS found"
+      },
+      "created": "A new Quy Cach NPL is created with identifier {{ param }}",
+      "updated": "A Quy Cach NPL is updated with identifier {{ param }}",
+      "deleted": "A Quy Cach NPL is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Quy Cach NPL {{ id }}?"
+      },
+      "detail": {
+        "title": "Quy Cach NPL"
+      },
+      "tenNPL": "Ten NPL",
+      "maNPL": "Ma NPL",
+      "nguoiTao": "Nguoi Tao",
+      "ngayTao": "Ngay Tao",
+      "userId": "User Id"
+    }
+  }
+}

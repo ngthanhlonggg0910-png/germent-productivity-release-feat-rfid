@@ -1,0 +1,189 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="proSanPham">
+            <h2><span jhiTranslate="ctApp.proSanPham.detail.title">Pro San Pham</span> {{proSanPham.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="ctApp.proSanPham.maSanPham">Ma San Pham</span></dt>
+                <dd>
+                    <span>{{proSanPham.maSanPham}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proSanPham.maDonHang">Ma Don Hang</span></dt>
+                <dd>
+                    <span>{{proSanPham.maDonHang}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proSanPham.po">Po</span></dt>
+                <dd>
+                    <span>{{proSanPham.po}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proSanPham.soLuongSanXuat">So Luong San Xuat</span></dt>
+                <dd>
+                    <span>{{proSanPham.soLuongSanXuat}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proSanPham.thongSoValue1">Thong So Value 1</span></dt>
+                <dd>
+                    <span>{{proSanPham.thongSoValue1}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proSanPham.thongSoCaption1">Thong So Caption 1</span></dt>
+                <dd>
+                    <span>{{proSanPham.thongSoCaption1}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proSanPham.thongSoCheck1">Thong So Check 1</span></dt>
+                <dd>
+                    <span>{{proSanPham.thongSoCheck1}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proSanPham.thongSoValue2">Thong So Value 2</span></dt>
+                <dd>
+                    <span>{{proSanPham.thongSoValue2}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proSanPham.thongSoCaption2">Thong So Caption 2</span></dt>
+                <dd>
+                    <span>{{proSanPham.thongSoCaption2}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proSanPham.thongSoCheck2">Thong So Check 2</span></dt>
+                <dd>
+                    <span>{{proSanPham.thongSoCheck2}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proSanPham.thongSoValue3">Thong So Value 3</span></dt>
+                <dd>
+                    <span>{{proSanPham.thongSoValue3}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proSanPham.thongSoCaption3">Thong So Caption 3</span></dt>
+                <dd>
+                    <span>{{proSanPham.thongSoCaption3}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proSanPham.thongSoCheck3">Thong So Check 3</span></dt>
+                <dd>
+                    <span>{{proSanPham.thongSoCheck3}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proSanPham.thongSoValue4">Thong So Value 4</span></dt>
+                <dd>
+                    <span>{{proSanPham.thongSoValue4}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proSanPham.thongSoCaption4">Thong So Caption 4</span></dt>
+                <dd>
+                    <span>{{proSanPham.thongSoCaption4}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proSanPham.thongSoCheck4">Thong So Check 4</span></dt>
+                <dd>
+                    <span>{{proSanPham.thongSoCheck4}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proSanPham.thongSoValue5">Thong So Value 5</span></dt>
+                <dd>
+                    <span>{{proSanPham.thongSoValue5}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proSanPham.thongSoCaption5">Thong So Caption 5</span></dt>
+                <dd>
+                    <span>{{proSanPham.thongSoCaption5}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proSanPham.thongSoCheck5">Thong So Check 5</span></dt>
+                <dd>
+                    <span>{{proSanPham.thongSoCheck5}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proSanPham.thongSoValue6">Thong So Value 6</span></dt>
+                <dd>
+                    <span>{{proSanPham.thongSoValue6}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proSanPham.thongSoCaption6">Thong So Caption 6</span></dt>
+                <dd>
+                    <span>{{proSanPham.thongSoCaption6}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proSanPham.thongSoCheck6">Thong So Check 6</span></dt>
+                <dd>
+                    <span>{{proSanPham.thongSoCheck6}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proSanPham.thongSoValue7">Thong So Value 7</span></dt>
+                <dd>
+                    <span>{{proSanPham.thongSoValue7}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proSanPham.thongSoCaption7">Thong So Caption 7</span></dt>
+                <dd>
+                    <span>{{proSanPham.thongSoCaption7}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proSanPham.thongSoCheck7">Thong So Check 7</span></dt>
+                <dd>
+                    <span>{{proSanPham.thongSoCheck7}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proSanPham.thongSoValue8">Thong So Value 8</span></dt>
+                <dd>
+                    <span>{{proSanPham.thongSoValue8}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proSanPham.thongSoCaption8">Thong So Caption 8</span></dt>
+                <dd>
+                    <span>{{proSanPham.thongSoCaption8}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proSanPham.thongSoCheck8">Thong So Check 8</span></dt>
+                <dd>
+                    <span>{{proSanPham.thongSoCheck8}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proSanPham.thongSoValue9">Thong So Value 9</span></dt>
+                <dd>
+                    <span>{{proSanPham.thongSoValue9}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proSanPham.thongSoCaption9">Thong So Caption 9</span></dt>
+                <dd>
+                    <span>{{proSanPham.thongSoCaption9}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proSanPham.thongSoCheck9">Thong So Check 9</span></dt>
+                <dd>
+                    <span>{{proSanPham.thongSoCheck9}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proSanPham.thongSoValue10">Thong So Value 10</span></dt>
+                <dd>
+                    <span>{{proSanPham.thongSoValue10}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proSanPham.thongSoCaption10">Thong So Caption 10</span></dt>
+                <dd>
+                    <span>{{proSanPham.thongSoCaption10}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proSanPham.thongSoCheck10">Thong So Check 10</span></dt>
+                <dd>
+                    <span>{{proSanPham.thongSoCheck10}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proSanPham.color">Color</span></dt>
+                <dd>
+                    <span>{{proSanPham.color}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proSanPham.hinhMatTruocURL">Hinh Mat Truoc URL</span></dt>
+                <dd>
+                    <span>{{proSanPham.hinhMatTruocURL}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proSanPham.hinhMatSauURL">Hinh Mat Sau URL</span></dt>
+                <dd>
+                    <span>{{proSanPham.hinhMatSauURL}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proSanPham.proKhachHang">Pro Khach Hang</span></dt>
+                <dd>
+                    <div *ngIf="proSanPham.proKhachHangId">
+                        <a [routerLink]="['/sys/pro-khach-hang', proSanPham.proKhachHangId, 'view']">{{proSanPham.proKhachHangTen}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proSanPham.proChungLoaiSanPham">Pro Chung Loai San Pham</span></dt>
+                <dd>
+                    <div *ngIf="proSanPham.proChungLoaiSanPhamId">
+                        <a [routerLink]="['/sys/pro-chung-loai-san-pham', proSanPham.proChungLoaiSanPhamId, 'view']">{{proSanPham.proChungLoaiSanPhamTenChungLoai}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proSanPham.proTenMua">Pro Ten Mua</span></dt>
+                <dd>
+                    <div *ngIf="proSanPham.proTenMuaId">
+                        <a [routerLink]="['/sys/pro-ten-mua', proSanPham.proTenMuaId, 'view']">{{proSanPham.proTenMuaTenMua}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/sys/pro-san-pham', proSanPham.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

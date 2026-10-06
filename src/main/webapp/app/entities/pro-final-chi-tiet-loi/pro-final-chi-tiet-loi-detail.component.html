@@ -1,0 +1,67 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="proFinalChiTietLoi">
+            <h2><span jhiTranslate="ctApp.proFinalChiTietLoi.detail.title">Pro Final Chi Tiet Loi</span> {{proFinalChiTietLoi.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="ctApp.proFinalChiTietLoi.maLoi">Ma Loi</span></dt>
+                <dd>
+                    <span>{{proFinalChiTietLoi.maLoi}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proFinalChiTietLoi.thoiGian">Thoi Gian</span></dt>
+                <dd>
+                    <span>{{proFinalChiTietLoi.thoiGian}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proFinalChiTietLoi.dx">Dx</span></dt>
+                <dd>
+                    <span>{{proFinalChiTietLoi.dx}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proFinalChiTietLoi.dy">Dy</span></dt>
+                <dd>
+                    <span>{{proFinalChiTietLoi.dy}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proFinalChiTietLoi.isFront">Is Front</span></dt>
+                <dd>
+                    <span>{{proFinalChiTietLoi.isFront}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proFinalChiTietLoi.isInside">Is Inside</span></dt>
+                <dd>
+                    <span>{{proFinalChiTietLoi.isInside}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proFinalChiTietLoi.warning">Warning</span></dt>
+                <dd>
+                    <span>{{proFinalChiTietLoi.warning}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proFinalChiTietLoi.nguoiKiem">Nguoi Kiem</span></dt>
+                <dd>
+                    <span>{{proFinalChiTietLoi.nguoiKiem}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proFinalChiTietLoi.proFinal">Pro Final</span></dt>
+                <dd>
+                    <div *ngIf="proFinalChiTietLoi.proFinalId">
+                        <a [routerLink]="['/sys/pro-final', proFinalChiTietLoi.proFinalId, 'view']">{{proFinalChiTietLoi.proFinalId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proFinalChiTietLoi.proLoi">Pro Loi</span></dt>
+                <dd>
+                    <div *ngIf="proFinalChiTietLoi.proLoiId">
+                        <a [routerLink]="['/sys/pro-loi', proFinalChiTietLoi.proLoiId, 'view']">{{proFinalChiTietLoi.proLoiId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/sys/pro-final-chi-tiet-loi', proFinalChiTietLoi.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

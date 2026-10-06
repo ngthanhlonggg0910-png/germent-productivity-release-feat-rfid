@@ -1,0 +1,95 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="proFinal">
+            <h2><span jhiTranslate="ctApp.proFinal.detail.title">Pro Final</span> {{proFinal.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="ctApp.proFinal.khxhId">Khxh Id</span></dt>
+                <dd>
+                    <span>{{proFinal.khxhId}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proFinal.maHang">Ma Hang</span></dt>
+                <dd>
+                    <span>{{proFinal.maHang}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proFinal.poNo">Po No</span></dt>
+                <dd>
+                    <span>{{proFinal.poNo}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proFinal.ngayKiemFinal">Ngay Kiem Final</span></dt>
+                <dd>
+                    <span>{{proFinal.ngayKiemFinal}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proFinal.tenChuyen">Ten Chuyen</span></dt>
+                <dd>
+                    <span>{{proFinal.tenChuyen}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proFinal.ngayGioKiem">Ngay Gio Kiem</span></dt>
+                <dd>
+                    <span>{{proFinal.ngayGioKiem}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proFinal.soLuongKiemAql">So Luong Kiem Aql</span></dt>
+                <dd>
+                    <span>{{proFinal.soLuongKiemAql}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proFinal.soLuong">So Luong</span></dt>
+                <dd>
+                    <span>{{proFinal.soLuong}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proFinal.doAm">Do Am</span></dt>
+                <dd>
+                    <span>{{proFinal.doAm}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proFinal.tongSoLoi">Tong So Loi</span></dt>
+                <dd>
+                    <span>{{proFinal.tongSoLoi}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proFinal.soThuTuThung">So Thu Tu Thung</span></dt>
+                <dd>
+                    <span>{{proFinal.soThuTuThung}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proFinal.doKimMd">Do Kim Md</span></dt>
+                <dd>
+                    <span>{{proFinal.doKimMd}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proFinal.aql">Aql</span></dt>
+                <dd>
+                    <span>{{proFinal.aql}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proFinal.maxLoiChoPhep">Max Loi Cho Phep</span></dt>
+                <dd>
+                    <span>{{proFinal.maxLoiChoPhep}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proFinal.completed">Completed</span></dt>
+                <dd>
+                    <span>{{proFinal.completed}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proFinal.soLuongPoKiem">So Luong Po Kiem</span></dt>
+                <dd>
+                    <span>{{proFinal.soLuongPoKiem}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proFinal.pass">Pass</span></dt>
+                <dd>
+                    <span>{{proFinal.pass}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proFinal.nguoiKiem">Nguoi Kiem</span></dt>
+                <dd>
+                    <span>{{proFinal.nguoiKiem}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/sys/pro-final', proFinal.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,58 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="ctApp.libSoLuongPoKiem.home.title">Lib So Luong Po Kiems</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-lib-so-luong-po-kiem" [routerLink]="['/sys/lib-so-luong-po-kiem/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="ctApp.libSoLuongPoKiem.home.createLabel">
+            Create a new Lib So Luong Po Kiem
+            </span>
+        </button>
+    </h2>
+    <jhi-alert-error></jhi-alert-error>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="libSoLuongPoKiems?.length === 0">
+        <span jhiTranslate="ctApp.libSoLuongPoKiem.home.notFound">No libSoLuongPoKiems found</span>
+    </div>
+    <div class="table-responsive" *ngIf="libSoLuongPoKiems?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+            <tr>
+            <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+            <th scope="col" ><span jhiTranslate="ctApp.libSoLuongPoKiem.value">Value</span></th>
+            <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let libSoLuongPoKiem of libSoLuongPoKiems ;trackBy: trackId">
+                <td><a [routerLink]="['/sys/lib-so-luong-po-kiem', libSoLuongPoKiem.id, 'view' ]">{{libSoLuongPoKiem.id}}</a></td>
+                <td>{{libSoLuongPoKiem.value}}</td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/sys/lib-so-luong-po-kiem', libSoLuongPoKiem.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/sys/lib-so-luong-po-kiem', libSoLuongPoKiem.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/sys/lib-so-luong-po-kiem', { outlets: { popup: libSoLuongPoKiem.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

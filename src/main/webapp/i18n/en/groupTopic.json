@@ -1,0 +1,24 @@
+{
+  "ctApp": {
+    "groupTopic": {
+      "home": {
+        "title": "Group Topics",
+        "createLabel": "Create a new Group Topic",
+        "createOrEditLabel": "Create or edit a Group Topic",
+        "notFound": "No Group Topics found"
+      },
+      "created": "A new Group Topic is created with identifier {{ param }}",
+      "updated": "A Group Topic is updated with identifier {{ param }}",
+      "deleted": "A Group Topic is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Group Topic {{ id }}?"
+      },
+      "detail": {
+        "title": "Group Topic"
+      },
+      "name": "Name",
+      "topicType": "Topic Type",
+      "type": "Type"
+    }
+  }
+}

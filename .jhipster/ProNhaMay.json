@@ -1,0 +1,32 @@
+{
+    "name": "ProNhaMay",
+    "fields": [
+        {
+            "fieldName": "ten",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "stt",
+            "fieldType": "Integer"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "proCongTy",
+            "otherEntityRelationshipName": "proNhaMay",
+            "relationshipName": "proCongTy",
+            "otherEntityField": "ten"
+        }
+    ],
+    "changelogDate": "20200212162854",
+    "entityTableName": "pro_nha_may",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

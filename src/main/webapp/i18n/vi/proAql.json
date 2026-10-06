@@ -1,0 +1,27 @@
+{
+  "ctApp": {
+    "proAql": {
+      "home": {
+        "title": "Pro Aqls",
+        "createLabel": "Thêm mới một Pro Aql",
+        "createOrEditLabel": "Thêm mới hoặc cập nhật Pro Aql",
+        "notFound": "No Pro Aqls found"
+      },
+      "created": "Một Pro Aql mới được tạo với định danh {{ param }}",
+      "updated": "Một Pro Aql cập nhật với định danh {{ param }}",
+      "deleted": "Một Pro Aql đã xóa với định danh {{ param }}",
+      "delete": {
+        "question": "Bạn có chắc là muốn xóa Pro Aql {{ id }}?"
+      },
+      "detail": {
+        "title": "Pro Aql"
+      },
+      "aql": "Aql",
+      "soLuongDonHangTu": "So Luong Don Hang Tu",
+      "soLuongDonHangDen": "So Luong Don Hang Den",
+      "soLuongKiem": "So Luong Kiem",
+      "soLuongSeFail": "So Luong Se Fail",
+      "soLuongSePass": "So Luong Se Pass"
+    }
+  }
+}

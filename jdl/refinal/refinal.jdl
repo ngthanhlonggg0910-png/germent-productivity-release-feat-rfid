@@ -1,0 +1,42 @@
+
+
+entity ProRefinal {
+    proKHSXId Long,
+    checkPointID Long,
+    proNSCLId Long,
+    ngayGioKiem Instant,
+    soLuongKiem Integer,
+    hangDatHienTai Integer,
+    doAm Float,
+}
+
+entity ProRefinalChiTietLoi {
+	maLoi String,
+    thoiGian Instant,
+    dx Double,
+    dy Double,
+    isFront Boolean,
+    isInside Boolean,
+    warning Boolean
+}
+
+entity SoLuongHangKiem {
+	soLuong Integer
+}
+
+entity DoAm {
+	value Float,
+    display String
+}
+
+entity ProLoi {
+
+}
+relationship ManyToOne {
+    ProRefinalChiTietLoi{proRefinal} to ProRefinal,
+    ProRefinalChiTietLoi{proLoi} to ProLoi,
+
+}
+
+dto * with mapstruct
+service all with serviceImpl

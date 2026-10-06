@@ -1,0 +1,24 @@
+{
+  "ctApp": {
+    "sysRoleHasFunction": {
+      "home": {
+        "title": "Sys Role Has Functions",
+        "createLabel": "Create a new Sys Role Has Function",
+        "createOrEditLabel": "Create or edit a Sys Role Has Function",
+        "notFound": "No Sys Role Has Functions found"
+      },
+      "created": "A new Sys Role Has Function is created with identifier {{ param }}",
+      "updated": "A Sys Role Has Function is updated with identifier {{ param }}",
+      "deleted": "A Sys Role Has Function is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Sys Role Has Function {{ id }}?"
+      },
+      "detail": {
+        "title": "Sys Role Has Function"
+      },
+      "activated": "Activated",
+      "sysFunction": "Sys Function",
+      "authority": "Authority"
+    }
+  }
+}

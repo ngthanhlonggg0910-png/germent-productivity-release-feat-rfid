@@ -1,0 +1,29 @@
+{
+  "ctApp": {
+    "sysFunction": {
+      "home": {
+        "title": "Sys Functions",
+        "createLabel": "Thêm mới một Sys Function",
+        "createOrEditLabel": "Thêm mới hoặc cập nhật Sys Function",
+        "notFound": "No Sys Functions found"
+      },
+      "created": "Một Sys Function mới được tạo với định danh {{ param }}",
+      "updated": "Một Sys Function cập nhật với định danh {{ param }}",
+      "deleted": "Một Sys Function đã xóa với định danh {{ param }}",
+      "delete": {
+        "question": "Bạn có chắc là muốn xóa Sys Function {{ id }}?"
+      },
+      "detail": {
+        "title": "Sys Function"
+      },
+      "name": "Name",
+      "caption": "Caption",
+      "level": "Level",
+      "imageUri": "Image Uri",
+      "eventName": "Event Name",
+      "hotkey": "Hotkey",
+      "sysPermission": "Sys Permission",
+      "sysModule": "Sys Module"
+    }
+  }
+}

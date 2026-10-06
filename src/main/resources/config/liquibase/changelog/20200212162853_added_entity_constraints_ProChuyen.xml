@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <!--
+        Added the constraints for entity ProChuyen.
+    -->
+    <changeSet id="20200212162853-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="pro_loai_chuyen_id"
+                                 baseTableName="pro_chuyen"
+                                 constraintName="fk_pro_chuyen_pro_loai_chuyen_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="pro_loai_chuyen"/>
+
+        <addForeignKeyConstraint baseColumnNames="pro_nha_may_id"
+                                 baseTableName="pro_chuyen"
+                                 constraintName="fk_pro_chuyen_pro_nha_may_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="pro_nha_may"/>
+
+    </changeSet>
+</databaseChangeLog>

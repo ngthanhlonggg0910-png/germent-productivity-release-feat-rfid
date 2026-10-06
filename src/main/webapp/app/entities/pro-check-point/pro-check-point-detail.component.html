@@ -1,0 +1,39 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="proCheckPoint">
+            <h2><span jhiTranslate="ctApp.proCheckPoint.detail.title">Pro Check Point</span> {{proCheckPoint.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="ctApp.proCheckPoint.ten">Ten</span></dt>
+                <dd>
+                    <span>{{proCheckPoint.ten}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proCheckPoint.proChuyen">Pro Chuyen</span></dt>
+                <dd>
+                    <div *ngIf="proCheckPoint.proChuyenId">
+                        <a [routerLink]="['/sys/pro-chuyen', proCheckPoint.proChuyenId, 'view']">{{proCheckPoint.proChuyenTen}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proCheckPoint.proCongDoan">Pro Cong Doan</span></dt>
+                <dd>
+                    <div *ngIf="proCheckPoint.proCongDoanId">
+                        <a [routerLink]="['/sys/pro-cong-doan', proCheckPoint.proCongDoanId, 'view']">{{proCheckPoint.proCongDoanTen}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/sys/pro-check-point', proCheckPoint.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

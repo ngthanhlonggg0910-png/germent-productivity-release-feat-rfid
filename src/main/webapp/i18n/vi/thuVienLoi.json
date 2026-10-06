@@ -1,0 +1,26 @@
+{
+  "ctApp": {
+    "thuVienLoi": {
+      "home": {
+        "title": "Thu Vien Lois",
+        "createLabel": "Thêm mới một Thu Vien Loi",
+        "createOrEditLabel": "Thêm mới hoặc cập nhật Thu Vien Loi",
+        "notFound": "No Thu Vien Lois found"
+      },
+      "created": "Một Thu Vien Loi mới được tạo với định danh {{ param }}",
+      "updated": "Một Thu Vien Loi cập nhật với định danh {{ param }}",
+      "deleted": "Một Thu Vien Loi đã xóa với định danh {{ param }}",
+      "delete": {
+        "question": "Bạn có chắc là muốn xóa Thu Vien Loi {{ id }}?"
+      },
+      "detail": {
+        "title": "Thu Vien Loi"
+      },
+      "maLoi": "Ma Loi",
+      "tenLoi": "Ten Loi",
+      "nguoiTao": "Nguoi Tao",
+      "ngayTao": "Ngay Tao",
+      "userId": "User Id"
+    }
+  }
+}

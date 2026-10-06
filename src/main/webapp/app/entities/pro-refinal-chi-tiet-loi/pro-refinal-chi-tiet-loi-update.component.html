@@ -1,0 +1,74 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-pro-refinal-chi-tiet-loi-heading" jhiTranslate="ctApp.proRefinalChiTietLoi.home.createOrEditLabel">Create or edit a Pro Refinal Chi Tiet Loi</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id').value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proRefinalChiTietLoi.maLoi" for="field_maLoi">Ma Loi</label>
+                    <input type="text" class="form-control" name="maLoi" id="field_maLoi"
+                           formControlName="maLoi"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proRefinalChiTietLoi.thoiGian" for="field_thoiGian">Thoi Gian</label>
+                    <div class="d-flex">
+                        <input id="field_thoiGian" type="datetime-local" class="form-control" name="thoiGian" formControlName="thoiGian" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proRefinalChiTietLoi.dx" for="field_dx">Dx</label>
+                    <input type="number" class="form-control" name="dx" id="field_dx"
+                           formControlName="dx"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proRefinalChiTietLoi.dy" for="field_dy">Dy</label>
+                    <input type="number" class="form-control" name="dy" id="field_dy"
+                           formControlName="dy"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proRefinalChiTietLoi.isFront" for="field_isFront">Is Front</label>
+                    <input type="checkbox" class="form-control" name="isFront" id="field_isFront"
+                           formControlName="isFront"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proRefinalChiTietLoi.isInside" for="field_isInside">Is Inside</label>
+                    <input type="checkbox" class="form-control" name="isInside" id="field_isInside"
+                           formControlName="isInside"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proRefinalChiTietLoi.warning" for="field_warning">Warning</label>
+                    <input type="checkbox" class="form-control" name="warning" id="field_warning"
+                           formControlName="warning"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proRefinalChiTietLoi.proRefinal" for="field_proRefinal">Pro Refinal</label>
+                    <select class="form-control" id="field_proRefinal" name="proRefinal" formControlName="proRefinalId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="proRefinalOption.id" *ngFor="let proRefinalOption of prorefinals; trackBy: trackProRefinalById">{{proRefinalOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proRefinalChiTietLoi.proLoi" for="field_proLoi">Pro Loi</label>
+                    <select class="form-control" id="field_proLoi" name="proLoi" formControlName="proLoiId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="proLoiOption.id" *ngFor="let proLoiOption of prolois; trackBy: trackProLoiById">{{proLoiOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

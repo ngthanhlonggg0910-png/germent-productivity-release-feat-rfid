@@ -1,0 +1,31 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="doKimMd">
+            <h2><span jhiTranslate="ctApp.doKimMd.detail.title">Do Kim Md</span> {{doKimMd.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="ctApp.doKimMd.value">Value</span></dt>
+                <dd>
+                    <span>{{doKimMd.value}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.doKimMd.display">Display</span></dt>
+                <dd>
+                    <span>{{doKimMd.display}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/sys/do-kim-md', doKimMd.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

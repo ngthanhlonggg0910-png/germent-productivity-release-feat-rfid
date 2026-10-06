@@ -1,0 +1,56 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-thong-so-do-sp-size-heading" jhiTranslate="ctApp.thongSoDoSPSize.home.createOrEditLabel">Create or edit a Thong So Do SP Size</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id').value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.thongSoDoSPSize.size" for="field_size">Size</label>
+                    <input type="text" class="form-control" name="size" id="field_size"
+                           formControlName="size"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.thongSoDoSPSize.cmThongSoChuan" for="field_cmThongSoChuan">Cm Thong So Chuan</label>
+                    <input type="text" class="form-control" name="cmThongSoChuan" id="field_cmThongSoChuan"
+                           formControlName="cmThongSoChuan"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.thongSoDoSPSize.inchThongSoChuan" for="field_inchThongSoChuan">Inch Thong So Chuan</label>
+                    <input type="text" class="form-control" name="inchThongSoChuan" id="field_inchThongSoChuan"
+                           formControlName="inchThongSoChuan"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.thongSoDoSPSize.cmThongSoChuanValue" for="field_cmThongSoChuanValue">Cm Thong So Chuan Value</label>
+                    <input type="number" class="form-control" name="cmThongSoChuanValue" id="field_cmThongSoChuanValue"
+                           formControlName="cmThongSoChuanValue"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.thongSoDoSPSize.inchThongSoChuanValue" for="field_inchThongSoChuanValue">Inch Thong So Chuan Value</label>
+                    <input type="number" class="form-control" name="inchThongSoChuanValue" id="field_inchThongSoChuanValue"
+                           formControlName="inchThongSoChuanValue"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.thongSoDoSPSize.thongSoDoSP" for="field_thongSoDoSP">Thong So Do SP</label>
+                    <select class="form-control" id="field_thongSoDoSP" name="thongSoDoSP" formControlName="thongSoDoSPId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="thongSoDoSPOption.id" *ngFor="let thongSoDoSPOption of thongsodosps; trackBy: trackThongSoDoSPById">{{thongSoDoSPOption.id}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

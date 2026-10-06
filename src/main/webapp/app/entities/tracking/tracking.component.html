@@ -1,0 +1,84 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="ctApp.tracking.home.title">Trackings</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-tracking" [routerLink]="['/sys/tracking/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="ctApp.tracking.home.createLabel">
+            Create a new Tracking
+            </span>
+        </button>
+    </h2>
+    <jhi-alert-error></jhi-alert-error>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="trackings?.length === 0">
+        <span jhiTranslate="ctApp.tracking.home.notFound">No trackings found</span>
+    </div>
+    <div class="table-responsive" *ngIf="trackings?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="nvButtonId"><span jhiTranslate="ctApp.tracking.nvButtonId">Nv Button Id</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="state1Time"><span jhiTranslate="ctApp.tracking.state1Time">State 1 Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="state2Time"><span jhiTranslate="ctApp.tracking.state2Time">State 2 Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="state3Time"><span jhiTranslate="ctApp.tracking.state3Time">State 3 Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="state4Time"><span jhiTranslate="ctApp.tracking.state4Time">State 4 Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="state5Time"><span jhiTranslate="ctApp.tracking.state5Time">State 5 Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="state6Time"><span jhiTranslate="ctApp.tracking.state6Time">State 6 Time</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="trackingTypeName"><span jhiTranslate="ctApp.tracking.trackingType">Tracking Type</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let tracking of trackings ;trackBy: trackId">
+                <td><a [routerLink]="['/sys/tracking', tracking.id, 'view' ]">{{tracking.id}}</a></td>
+                <td>{{tracking.nvButtonId}}</td>
+                <td>{{tracking.state1Time | date:'medium'}}</td>
+                <td>{{tracking.state2Time | date:'medium'}}</td>
+                <td>{{tracking.state3Time | date:'medium'}}</td>
+                <td>{{tracking.state4Time | date:'medium'}}</td>
+                <td>{{tracking.state5Time | date:'medium'}}</td>
+                <td>{{tracking.state6Time | date:'medium'}}</td>
+                <td>
+                    <div *ngIf="tracking.trackingTypeId">
+                        <a [routerLink]="['/sys/nv-button-tracking-type', tracking.trackingTypeId , 'view' ]" >{{tracking.trackingTypeName}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/sys/tracking', tracking.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/sys/tracking', tracking.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/sys/tracking', { outlets: { popup: tracking.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div [hidden]="trackings?.length === 0">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="totalItems" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

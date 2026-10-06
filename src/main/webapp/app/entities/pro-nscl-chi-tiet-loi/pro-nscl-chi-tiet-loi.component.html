@@ -1,0 +1,90 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="ctApp.proNSCLChiTietLoi.home.title">Pro NSCL Chi Tiet Lois</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-pro-nscl-chi-tiet-loi" [routerLink]="['/sys/pro-nscl-chi-tiet-loi/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="ctApp.proNSCLChiTietLoi.home.createLabel">
+            Create a new Pro NSCL Chi Tiet Loi
+            </span>
+        </button>
+    </h2>
+    <jhi-alert-error></jhi-alert-error>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="proNSCLChiTietLois?.length === 0">
+        <span jhiTranslate="ctApp.proNSCLChiTietLoi.home.notFound">No proNSCLChiTietLois found</span>
+    </div>
+    <div class="table-responsive" *ngIf="proNSCLChiTietLois?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="maLoi"><span jhiTranslate="ctApp.proNSCLChiTietLoi.maLoi">Ma Loi</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="thoiGian"><span jhiTranslate="ctApp.proNSCLChiTietLoi.thoiGian">Thoi Gian</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="gioLam"><span jhiTranslate="ctApp.proNSCLChiTietLoi.gioLam">Gio Lam</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="dx"><span jhiTranslate="ctApp.proNSCLChiTietLoi.dx">Dx</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="dy"><span jhiTranslate="ctApp.proNSCLChiTietLoi.dy">Dy</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="isFront"><span jhiTranslate="ctApp.proNSCLChiTietLoi.isFront">Is Front</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="isInside"><span jhiTranslate="ctApp.proNSCLChiTietLoi.isInside">Is Inside</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="proNSCLId"><span jhiTranslate="ctApp.proNSCLChiTietLoi.proNSCL">Pro NSCL</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="proLoiMaLoi"><span jhiTranslate="ctApp.proNSCLChiTietLoi.proLoi">Pro Loi</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let proNSCLChiTietLoi of proNSCLChiTietLois ;trackBy: trackId">
+                <td><a [routerLink]="['/sys/pro-nscl-chi-tiet-loi', proNSCLChiTietLoi.id, 'view' ]">{{proNSCLChiTietLoi.id}}</a></td>
+                <td>{{proNSCLChiTietLoi.maLoi}}</td>
+                <td>{{proNSCLChiTietLoi.thoiGian | date:'medium'}}</td>
+                <td jhiTranslate="{{'ctApp.GioLam.' + proNSCLChiTietLoi.gioLam}}">{{proNSCLChiTietLoi.gioLam}}</td>
+                <td>{{proNSCLChiTietLoi.dx}}</td>
+                <td>{{proNSCLChiTietLoi.dy}}</td>
+                <td>{{proNSCLChiTietLoi.isFront}}</td>
+                <td>{{proNSCLChiTietLoi.isInside}}</td>
+                <td>
+                    <div *ngIf="proNSCLChiTietLoi.proNSCLId">
+                        <a [routerLink]="['/sys/pro-nscl', proNSCLChiTietLoi.proNSCLId , 'view' ]" >{{proNSCLChiTietLoi.proNSCLId}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="proNSCLChiTietLoi.proLoiId">
+                        <a [routerLink]="['/sys/pro-loi', proNSCLChiTietLoi.proLoiId , 'view' ]" >{{proNSCLChiTietLoi.proLoiMaLoi}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/sys/pro-nscl-chi-tiet-loi', proNSCLChiTietLoi.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/sys/pro-nscl-chi-tiet-loi', proNSCLChiTietLoi.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/sys/pro-nscl-chi-tiet-loi', { outlets: { popup: proNSCLChiTietLoi.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div [hidden]="proNSCLChiTietLois?.length === 0">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="totalItems" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

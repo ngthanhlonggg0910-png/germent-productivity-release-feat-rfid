@@ -1,0 +1,30 @@
+{
+    "name": "GroupTopic",
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "topicType",
+            "fieldType": "TopicType",
+            "fieldValues": "CMND,TELE,STAT,DISCOVERY"
+        },
+        {
+            "fieldName": "type",
+            "fieldType": "GroupButtonType",
+            "fieldValues": "LIGHT,SEWING"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20200822033705",
+    "entityTableName": "group_topic",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

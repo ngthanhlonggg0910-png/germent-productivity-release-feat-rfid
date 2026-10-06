@@ -1,0 +1,7 @@
+id;ten;mau;to_truong;ky_thuat;qa
+1;Máy móc;green;false;true;false
+2;Kĩ thuật;yellow;false;true;false
+3;Con người;blue;true;false;false
+4;Quản lý;red;true;false;false
+5;Nguyên phụ liệu;yellow;false;false;true
+

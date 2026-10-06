@@ -1,0 +1,44 @@
+{
+    "name": "ProRefinal",
+    "fields": [
+        {
+            "fieldName": "proKHSXId",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "checkPointID",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "proNSCLId",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "ngayGioKiem",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "soLuongKiem",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "hangDatHienTai",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "doAm",
+            "fieldType": "Float"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20210328095743",
+    "entityTableName": "pro_refinal",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

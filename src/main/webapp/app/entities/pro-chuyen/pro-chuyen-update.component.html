@@ -1,0 +1,53 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-pro-chuyen-heading" jhiTranslate="ctApp.proChuyen.home.createOrEditLabel">Create or edit a Pro Chuyen</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id').value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proChuyen.ten" for="field_ten">Ten</label>
+                    <input type="text" class="form-control" name="ten" id="field_ten"
+                           formControlName="ten"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proChuyen.stt" for="field_stt">Stt</label>
+                    <input type="number" class="form-control" name="stt" id="field_stt"
+                           formControlName="stt"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proChuyen.tenLoaiChuyen" for="field_tenLoaiChuyen">Ten Loai Chuyen</label>
+                    <input type="text" class="form-control" name="tenLoaiChuyen" id="field_tenLoaiChuyen"
+                           formControlName="tenLoaiChuyen"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proChuyen.proLoaiChuyen" for="field_proLoaiChuyen">Pro Loai Chuyen</label>
+                    <select class="form-control" id="field_proLoaiChuyen" name="proLoaiChuyen" formControlName="proLoaiChuyenId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="proLoaiChuyenOption.id" *ngFor="let proLoaiChuyenOption of proloaichuyens; trackBy: trackProLoaiChuyenById">{{proLoaiChuyenOption.ten}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proChuyen.proNhaMay" for="field_proNhaMay">Pro Nha May</label>
+                    <select class="form-control" id="field_proNhaMay" name="proNhaMay" formControlName="proNhaMayId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="proNhaMayOption.id" *ngFor="let proNhaMayOption of pronhamays; trackBy: trackProNhaMayById">{{proNhaMayOption.ten}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+    <!--
+        Added the constraints for entity GYCLKhacPhuc.
+    -->
+    <changeSet id="20191120133004-2" author="jhipster">
+        
+        <addForeignKeyConstraint baseColumnNames="pro_gopychat_luong_id"
+                                 baseTableName="gycl_khac_phuc"
+                                 constraintName="fk_gycl_khac_phuc_pro_gopychat_luong_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="gop_y_chat_luong"/>
+
+        <addForeignKeyConstraint baseColumnNames="thu_vien_loi_id"
+                                 baseTableName="gycl_khac_phuc"
+                                 constraintName="fk_gycl_khac_phuc_thu_vien_loi_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="thu_vien_loi"/>
+
+        <addForeignKeyConstraint baseColumnNames="khac_phuc_loi_id"
+                                 baseTableName="gycl_khac_phuc"
+                                 constraintName="fk_gycl_khac_phuc_khac_phuc_loi_id"
+                                 referencedColumnNames="id"
+                                 referencedTableName="khac_phuc_loi"/>
+
+    </changeSet>
+</databaseChangeLog>

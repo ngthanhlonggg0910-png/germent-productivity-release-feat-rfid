@@ -1,0 +1,15 @@
+version: '3.4'
+services:
+  ct-app:
+    image: registry.gitlab.com/nvsoft/germent-productivity
+    restart: always
+    depends_on:
+      - ct-postgresql
+
+  ct-postgresql:
+    image: postgres:11.5
+    restart: always
+
+  ct-elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:6.4.3
+    restart: always

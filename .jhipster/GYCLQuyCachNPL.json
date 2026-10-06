@@ -1,0 +1,48 @@
+{
+    "name": "GYCLQuyCachNPL",
+    "fields": [
+        {
+            "fieldName": "tenNPL",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "nguoiTao",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "ngayTao",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "userId",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "yesNo",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "nA",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "gopYChatLuong",
+            "otherEntityRelationshipName": "gYCLQuyCachNPL",
+            "relationshipName": "proGopYChatLuong",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20191120133003",
+    "entityTableName": "gycl_quy_cach_npl",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

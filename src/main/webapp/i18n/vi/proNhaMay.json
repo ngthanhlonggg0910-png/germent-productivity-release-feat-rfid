@@ -1,0 +1,24 @@
+{
+  "ctApp": {
+    "proNhaMay": {
+      "home": {
+        "title": "Pro Nha Mays",
+        "createLabel": "Thêm mới một Pro Nha May",
+        "createOrEditLabel": "Thêm mới hoặc cập nhật Pro Nha May",
+        "notFound": "No Pro Nha Mays found"
+      },
+      "created": "Một Pro Nha May mới được tạo với định danh {{ param }}",
+      "updated": "Một Pro Nha May cập nhật với định danh {{ param }}",
+      "deleted": "Một Pro Nha May đã xóa với định danh {{ param }}",
+      "delete": {
+        "question": "Bạn có chắc là muốn xóa Pro Nha May {{ id }}?"
+      },
+      "detail": {
+        "title": "Pro Nha May"
+      },
+      "ten": "Ten",
+      "stt": "Stt",
+      "proCongTy": "Pro Cong Ty"
+    }
+  }
+}

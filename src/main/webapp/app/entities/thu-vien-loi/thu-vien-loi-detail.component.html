@@ -1,0 +1,43 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="thuVienLoi">
+            <h2><span jhiTranslate="ctApp.thuVienLoi.detail.title">Thu Vien Loi</span> {{thuVienLoi.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="ctApp.thuVienLoi.maLoi">Ma Loi</span></dt>
+                <dd>
+                    <span>{{thuVienLoi.maLoi}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.thuVienLoi.tenLoi">Ten Loi</span></dt>
+                <dd>
+                    <span>{{thuVienLoi.tenLoi}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.thuVienLoi.nguoiTao">Nguoi Tao</span></dt>
+                <dd>
+                    <span>{{thuVienLoi.nguoiTao}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.thuVienLoi.ngayTao">Ngay Tao</span></dt>
+                <dd>
+                    <span>{{thuVienLoi.ngayTao}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.thuVienLoi.userId">User Id</span></dt>
+                <dd>
+                    <span>{{thuVienLoi.userId}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/sys/thu-vien-loi', thuVienLoi.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

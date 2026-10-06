@@ -1,0 +1,23 @@
+{
+  "ctApp": {
+    "proCumLoi": {
+      "home": {
+        "title": "Pro Cum Lois",
+        "createLabel": "Thêm mới một Pro Cum Loi",
+        "createOrEditLabel": "Thêm mới hoặc cập nhật Pro Cum Loi",
+        "notFound": "No Pro Cum Lois found"
+      },
+      "created": "Một Pro Cum Loi mới được tạo với định danh {{ param }}",
+      "updated": "Một Pro Cum Loi cập nhật với định danh {{ param }}",
+      "deleted": "Một Pro Cum Loi đã xóa với định danh {{ param }}",
+      "delete": {
+        "question": "Bạn có chắc là muốn xóa Pro Cum Loi {{ id }}?"
+      },
+      "detail": {
+        "title": "Pro Cum Loi"
+      },
+      "ten": "Ten",
+      "mau": "Mau"
+    }
+  }
+}

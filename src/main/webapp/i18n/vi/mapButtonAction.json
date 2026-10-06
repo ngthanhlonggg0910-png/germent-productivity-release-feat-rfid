@@ -1,0 +1,24 @@
+{
+  "ctApp": {
+    "mapButtonAction": {
+      "home": {
+        "title": "Map Button Actions",
+        "createLabel": "Thêm mới một Map Button Action",
+        "createOrEditLabel": "Thêm mới hoặc cập nhật Map Button Action",
+        "notFound": "No Map Button Actions found"
+      },
+      "created": "Một Map Button Action mới được tạo với định danh {{ param }}",
+      "updated": "Một Map Button Action cập nhật với định danh {{ param }}",
+      "deleted": "Một Map Button Action đã xóa với định danh {{ param }}",
+      "delete": {
+        "question": "Bạn có chắc là muốn xóa Map Button Action {{ id }}?"
+      },
+      "detail": {
+        "title": "Map Button Action"
+      },
+      "sourceAliasState": "Source Alias State",
+      "targetState": "Target State",
+      "trackingType": "Tracking Type"
+    }
+  }
+}

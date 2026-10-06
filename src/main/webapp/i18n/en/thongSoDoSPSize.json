@@ -1,0 +1,28 @@
+{
+  "ctApp": {
+    "thongSoDoSPSize": {
+      "home": {
+        "title": "Thong So Do SP Sizes",
+        "createLabel": "Create a new Thong So Do SP Size",
+        "createOrEditLabel": "Create or edit a Thong So Do SP Size",
+        "notFound": "No Thong So Do SP Sizes found"
+      },
+      "created": "A new Thong So Do SP Size is created with identifier {{ param }}",
+      "updated": "A Thong So Do SP Size is updated with identifier {{ param }}",
+      "deleted": "A Thong So Do SP Size is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Thong So Do SP Size {{ id }}?"
+      },
+      "detail": {
+        "title": "Thong So Do SP Size"
+      },
+      "size": "Size",
+      "cmThongSoChuan": "Cm Thong So Chuan",
+      "inchThongSoChuan": "Inch Thong So Chuan",
+      "cmThongSoChuanValue": "Cm Thong So Chuan Value",
+      "inchThongSoChuanValue": "Inch Thong So Chuan Value",
+      "thongSoThucThi": "Thong So Thuc Thi",
+      "thongSoDoSP": "Thong So Do SP"
+    }
+  }
+}

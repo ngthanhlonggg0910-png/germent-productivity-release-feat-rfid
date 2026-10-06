@@ -1,0 +1,27 @@
+{
+  "ctApp": {
+    "cauHinhZalo": {
+      "home": {
+        "title": "Cau Hinh Zalos",
+        "createLabel": "Thêm mới một Cau Hinh Zalo",
+        "createOrEditLabel": "Thêm mới hoặc cập nhật Cau Hinh Zalo",
+        "notFound": "No Cau Hinh Zalos found"
+      },
+      "created": "Một Cau Hinh Zalo mới được tạo với định danh {{ param }}",
+      "updated": "Một Cau Hinh Zalo cập nhật với định danh {{ param }}",
+      "deleted": "Một Cau Hinh Zalo đã xóa với định danh {{ param }}",
+      "delete": {
+        "question": "Bạn có chắc là muốn xóa Cau Hinh Zalo {{ id }}?"
+      },
+      "detail": {
+        "title": "Cau Hinh Zalo"
+      },
+      "accessToken": "Access Token",
+      "refreshToken": "Refresh Token",
+      "zaloOA": "Zalo OA",
+      "secretKey": "Secret Key",
+      "appId": "App Id",
+      "expireTime": "Expire Time"
+    }
+  }
+}

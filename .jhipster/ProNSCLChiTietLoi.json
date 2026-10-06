@@ -1,0 +1,69 @@
+{
+    "name": "ProNSCLChiTietLoi",
+    "fields": [
+        {
+            "fieldName": "maLoi",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "thoiGian",
+            "fieldType": "Instant",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "gioLam",
+            "fieldType": "GioLam",
+            "fieldValues": "C_1H,C_2H,C_3H,C_4H,C_5H,C_6H,C_7H,C_8H,C_9H,C_10H,C_11H,C_12H,C_13H,C_14H"
+        },
+        {
+            "fieldName": "dx",
+            "fieldType": "Double",
+            "fieldValidateRules": []
+        },
+        {
+            "fieldName": "dy",
+            "fieldType": "Double"
+        },
+        {
+            "fieldName": "isFront",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "isInside",
+            "fieldType": "Boolean"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "proNSCL",
+            "otherEntityRelationshipName": "proNSCLChiTietLoi",
+            "relationshipName": "proNSCL",
+            "otherEntityField": "id"
+        },
+        {
+            "relationshipName": "proLoi",
+            "otherEntityName": "proLoi",
+            "relationshipType": "many-to-one",
+            "otherEntityField": "maLoi",
+            "otherEntityRelationshipName": "proNSCLChiTietLoi"
+        }
+    ],
+    "changelogDate": "20200223154400",
+    "entityTableName": "pro_nscl_chi_tiet_loi",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*",
+    "searchEngine": false,
+    "databaseType": "sql"
+}

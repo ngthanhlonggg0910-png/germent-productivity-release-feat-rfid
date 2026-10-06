@@ -1,0 +1,84 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="ctApp.proFinalChiTietLoi.home.title">Pro Final Chi Tiet Lois</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-pro-final-chi-tiet-loi" [routerLink]="['/pro-final-chi-tiet-loi/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="ctApp.proFinalChiTietLoi.home.createLabel">
+            Create a new Pro Final Chi Tiet Loi
+            </span>
+        </button>
+    </h2>
+    <jhi-alert-error></jhi-alert-error>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="proFinalChiTietLois?.length === 0">
+        <span jhiTranslate="ctApp.proFinalChiTietLoi.home.notFound">No proFinalChiTietLois found</span>
+    </div>
+    <div class="table-responsive" *ngIf="proFinalChiTietLois?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+            <tr>
+            <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+            <th scope="col" ><span jhiTranslate="ctApp.proFinalChiTietLoi.maLoi">Ma Loi</span></th>
+            <th scope="col" ><span jhiTranslate="ctApp.proFinalChiTietLoi.thoiGian">Thoi Gian</span></th>
+            <th scope="col" ><span jhiTranslate="ctApp.proFinalChiTietLoi.dx">Dx</span></th>
+            <th scope="col" ><span jhiTranslate="ctApp.proFinalChiTietLoi.dy">Dy</span></th>
+            <th scope="col" ><span jhiTranslate="ctApp.proFinalChiTietLoi.isFront">Is Front</span></th>
+            <th scope="col" ><span jhiTranslate="ctApp.proFinalChiTietLoi.isInside">Is Inside</span></th>
+            <th scope="col" ><span jhiTranslate="ctApp.proFinalChiTietLoi.warning">Warning</span></th>
+            <th scope="col" ><span jhiTranslate="ctApp.proFinalChiTietLoi.nguoiKiem">Nguoi Kiem</span></th>
+            <th scope="col" ><span jhiTranslate="ctApp.proFinalChiTietLoi.proFinal">Pro Final</span></th>
+            <th scope="col" ><span jhiTranslate="ctApp.proFinalChiTietLoi.proLoi">Pro Loi</span></th>
+            <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let proFinalChiTietLoi of proFinalChiTietLois ;trackBy: trackId">
+                <td><a [routerLink]="['/sys/pro-final-chi-tiet-loi', proFinalChiTietLoi.id, 'view' ]">{{proFinalChiTietLoi.id}}</a></td>
+                <td>{{proFinalChiTietLoi.maLoi}}</td>
+                <td>{{proFinalChiTietLoi.thoiGian | date:'medium'}}</td>
+                <td>{{proFinalChiTietLoi.dx}}</td>
+                <td>{{proFinalChiTietLoi.dy}}</td>
+                <td>{{proFinalChiTietLoi.isFront}}</td>
+                <td>{{proFinalChiTietLoi.isInside}}</td>
+                <td>{{proFinalChiTietLoi.warning}}</td>
+                <td>{{proFinalChiTietLoi.nguoiKiem}}</td>
+                <td>
+                    <div *ngIf="proFinalChiTietLoi.proFinalId">
+                        <a [routerLink]="['/sys/pro-final', proFinalChiTietLoi.proFinalId , 'view' ]" >{{proFinalChiTietLoi.proFinalId}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="proFinalChiTietLoi.proLoiId">
+                        <a [routerLink]="['/sys/pro-loi', proFinalChiTietLoi.proLoiId , 'view' ]" >{{proFinalChiTietLoi.proLoiId}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/sys/pro-final-chi-tiet-loi', proFinalChiTietLoi.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/sys/pro-final-chi-tiet-loi', proFinalChiTietLoi.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/sys/pro-final-chi-tiet-loi', { outlets: { popup: proFinalChiTietLoi.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

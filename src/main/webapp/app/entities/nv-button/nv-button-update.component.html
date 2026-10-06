@@ -1,0 +1,135 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-nv-button-heading" jhiTranslate="ctApp.nVButton.home.createOrEditLabel">Create or edit a NV Button</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id').value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.nVButton.name" for="field_name">Name</label>
+                    <input type="text" class="form-control" name="name" id="field_name"
+                           formControlName="name"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.nVButton.discoveredOnTopic" for="field_discoveredOnTopic">Discovered On Topic</label>
+                    <input type="text" class="form-control" name="discoveredOnTopic" id="field_discoveredOnTopic"
+                           formControlName="discoveredOnTopic"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.nVButton.cmndTopic" for="field_cmndTopic">Cmnd Topic</label>
+                    <input type="text" class="form-control" name="cmndTopic" id="field_cmndTopic"
+                           formControlName="cmndTopic"/>
+                    <div *ngIf="editForm.get('cmndTopic').invalid && (editForm.get('cmndTopic').dirty || editForm.get('cmndTopic').touched)">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.nVButton.plOff" for="field_plOff">Pl Off</label>
+                    <input type="text" class="form-control" name="plOff" id="field_plOff"
+                           formControlName="plOff"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.nVButton.plOn" for="field_plOn">Pl On</label>
+                    <input type="text" class="form-control" name="plOn" id="field_plOn"
+                           formControlName="plOn"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.nVButton.uniqId" for="field_uniqId">Uniq Id</label>
+                    <input type="text" class="form-control" name="uniqId" id="field_uniqId"
+                           formControlName="uniqId"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.nVButton.devIds" for="field_devIds">Dev Ids</label>
+                    <input type="text" class="form-control" name="devIds" id="field_devIds"
+                           formControlName="devIds"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.nVButton.teleTopic" for="field_teleTopic">Tele Topic</label>
+                    <input type="text" class="form-control" name="teleTopic" id="field_teleTopic"
+                           formControlName="teleTopic"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.nVButton.statTopic" for="field_statTopic">Stat Topic</label>
+                    <input type="text" class="form-control" name="statTopic" id="field_statTopic"
+                           formControlName="statTopic"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.nVButton.avtyTopic" for="field_avtyTopic">Avty Topic</label>
+                    <input type="text" class="form-control" name="avtyTopic" id="field_avtyTopic"
+                           formControlName="avtyTopic"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.nVButton.plAvail" for="field_plAvail">Pl Avail</label>
+                    <input type="text" class="form-control" name="plAvail" id="field_plAvail"
+                           formControlName="plAvail"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.nVButton.plNotAvail" for="field_plNotAvail">Pl Not Avail</label>
+                    <input type="text" class="form-control" name="plNotAvail" id="field_plNotAvail"
+                           formControlName="plNotAvail"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.nVButton.state" for="field_state">State</label>
+                    <select class="form-control" name="state" formControlName="state" id="field_state">
+                        <option value="ON">{{'ctApp.NVButtonState.ON' | translate}}</option>
+                        <option value="OFF">{{'ctApp.NVButtonState.OFF' | translate}}</option>
+                        <option value="UNKNOW">{{'ctApp.NVButtonState.UNKNOW' | translate}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.nVButton.lwt" for="field_lwt">Lwt</label>
+                    <select class="form-control" name="lwt" formControlName="lwt" id="field_lwt">
+                        <option value="ON_LINE">{{'ctApp.LWT.ON_LINE' | translate}}</option>
+                        <option value="OFF_LINE">{{'ctApp.LWT.OFF_LINE' | translate}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.nVButton.lastUpdateState" for="field_lastUpdateState">Last Update State</label>
+                    <div class="d-flex">
+                        <input id="field_lastUpdateState" type="datetime-local" class="form-control" name="lastUpdateState" formControlName="lastUpdateState" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.nVButton.groupType" for="field_groupType">Group Type</label>
+                    <select class="form-control" name="groupType" formControlName="groupType" id="field_groupType">
+                        <option value="LIGHT">{{'ctApp.GroupButtonType.LIGHT' | translate}}</option>
+                        <option value="SEWING">{{'ctApp.GroupButtonType.SEWING' | translate}}</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.nVButton.buttonTracking" for="field_buttonTracking">Button Tracking</label>
+                    <select class="form-control" id="field_buttonTracking" name="buttonTracking" formControlName="buttonTrackingId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="buttonTrackingOption.id" *ngFor="let buttonTrackingOption of buttontrackings; trackBy: trackButtonTrackingById">{{buttonTrackingOption.id}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.nVButton.device" for="field_device">Device</label>
+                    <select class="form-control" id="field_device" name="device" formControlName="deviceId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="deviceOption.id" *ngFor="let deviceOption of devices; trackBy: trackDeviceById">{{deviceOption.name}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.nVButton.trackingType" for="field_trackingType">Tracking Type</label>
+                    <select class="form-control" id="field_trackingType" name="trackingType" formControlName="trackingTypeId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="nVButtonTrackingTypeOption.id" *ngFor="let nVButtonTrackingTypeOption of nvbuttontrackingtypes; trackBy: trackNVButtonTrackingTypeById">{{nVButtonTrackingTypeOption.name}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

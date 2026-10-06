@@ -1,0 +1,36 @@
+{
+    "name": "QuyCachNPL",
+    "fields": [
+        {
+            "fieldName": "tenNPL",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "maNPL",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "nguoiTao",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "ngayTao",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "userId",
+            "fieldType": "Integer"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20191120133001",
+    "entityTableName": "quy_cach_npl",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

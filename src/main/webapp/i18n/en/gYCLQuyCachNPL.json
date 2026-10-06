@@ -1,0 +1,28 @@
+{
+  "ctApp": {
+    "gYCLQuyCachNPL": {
+      "home": {
+        "title": "GYCL Quy Cach NPLS",
+        "createLabel": "Create a new GYCL Quy Cach NPL",
+        "createOrEditLabel": "Create or edit a GYCL Quy Cach NPL",
+        "notFound": "No GYCL Quy Cach NPLS found"
+      },
+      "created": "A new GYCL Quy Cach NPL is created with identifier {{ param }}",
+      "updated": "A GYCL Quy Cach NPL is updated with identifier {{ param }}",
+      "deleted": "A GYCL Quy Cach NPL is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete GYCL Quy Cach NPL {{ id }}?"
+      },
+      "detail": {
+        "title": "GYCL Quy Cach NPL"
+      },
+      "tenNPL": "Ten NPL",
+      "nguoiTao": "Nguoi Tao",
+      "ngayTao": "Ngay Tao",
+      "userId": "User Id",
+      "yesNo": "Yes No",
+      "nA": "N A",
+      "proGopYChatLuong": "Pro Gop Y Chat Luong"
+    }
+  }
+}

@@ -1,0 +1,76 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="ctApp.mapControlButton.home.title">Map Control Buttons</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-map-control-button" [routerLink]="['/sys/map-control-button/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="ctApp.mapControlButton.home.createLabel">
+            Create a new Map Control Button
+            </span>
+        </button>
+    </h2>
+    <jhi-alert-error></jhi-alert-error>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="mapControlButtons?.length === 0">
+        <span jhiTranslate="ctApp.mapControlButton.home.notFound">No mapControlButtons found</span>
+    </div>
+    <div class="table-responsive" *ngIf="mapControlButtons?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="sourceButtonCmndTopic"><span jhiTranslate="ctApp.mapControlButton.sourceButton">Source Button</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"  jhiSortBy="targetButtonCmndTopic"><span jhiTranslate="ctApp.mapControlButton.targetButton">Target Button</span> <fa-icon [icon]="'sort'"></fa-icon></th>
+            <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let mapControlButton of mapControlButtons ;trackBy: trackId">
+                <td><a [routerLink]="['/sys/map-control-button', mapControlButton.id, 'view' ]">{{mapControlButton.id}}</a></td>
+                <td>
+                    <div *ngIf="mapControlButton.sourceButtonId">
+                        <a [routerLink]="['/sys/nv-button', mapControlButton.sourceButtonId , 'view' ]" >{{mapControlButton.sourceButtonCmndTopic}}</a>
+                    </div>
+                </td>
+                <td>
+                    <div *ngIf="mapControlButton.targetButtonId">
+                        <a [routerLink]="['/sys/nv-button', mapControlButton.targetButtonId , 'view' ]" >{{mapControlButton.targetButtonCmndTopic}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/sys/map-control-button', mapControlButton.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/sys/map-control-button', mapControlButton.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/sys/map-control-button', { outlets: { popup: mapControlButton.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <div [hidden]="mapControlButtons?.length === 0">
+        <div class="row justify-content-center">
+            <jhi-item-count [page]="page" [total]="totalItems" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+        </div>
+        <div class="row justify-content-center">
+            <ngb-pagination [collectionSize]="totalItems" [(page)]="page" [pageSize]="itemsPerPage" [maxSize]="5" [rotate]="true" [boundaryLinks]="true" (pageChange)="loadPage(page)"></ngb-pagination>
+        </div>
+    </div>
+</div>

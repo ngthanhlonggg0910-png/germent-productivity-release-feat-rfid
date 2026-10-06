@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+
+    <!--
+        Added the entity ProLoi.
+    -->
+    <changeSet id="20200212162901-1" author="jhipster">
+        <createTable tableName="pro_loi">
+            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="ma_loi" type="nvarchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="cus_code" type="nvarchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="ten_loi" type="nvarchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="ten_tieng_anh" type="nvarchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="label" type="nvarchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="stt" type="integer">
+                <constraints nullable="true" />
+            </column>
+            <column name="mau_sac" type="nvarchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="qc" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="qa" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="checked" type="boolean">
+                <constraints nullable="true" />
+            </column>
+            <column name="ghi_chu" type="nvarchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="pro_cum_loi_id" type="bigint">
+                <constraints nullable="true" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here, do not remove-->
+        </createTable>
+    </changeSet>
+
+    <changeSet id="20200212162901-1-relations" author="jhipster">
+
+    </changeSet>
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here, do not remove-->
+
+    <!--
+        Load sample data generated with Faker.js
+        - This data can be easily edited using a CSV editor (or even MS Excel) and
+          is located in the 'src/main/resources/config/liquibase/fake-data' directory
+        - By default this data is applied when running with the JHipster 'dev' profile.
+          This can be customized by adding or removing 'faker' in the 'spring.liquibase.contexts'
+          Spring Boot configuration key.
+    -->
+<!--    <changeSet id="20200212162901-2-data" author="jhipster" context="faker">-->
+<!--        <loadData-->
+<!--                  file="config/liquibase/fake-data/pro_loi.csv"-->
+<!--                  separator=";"-->
+<!--                  tableName="pro_loi">-->
+<!--            <column name="id" type="numeric"/>-->
+<!--            <column name="ma_loi" type="string"/>-->
+<!--            <column name="cus_code" type="string"/>-->
+<!--            <column name="ten_loi" type="string"/>-->
+<!--            <column name="ten_tieng_anh" type="string"/>-->
+<!--            <column name="label" type="string"/>-->
+<!--            <column name="stt" type="numeric"/>-->
+<!--            <column name="mau_sac" type="string"/>-->
+<!--            <column name="qc" type="boolean"/>-->
+<!--            <column name="qa" type="boolean"/>-->
+<!--            <column name="checked" type="boolean"/>-->
+<!--            <column name="ghi_chu" type="string"/>-->
+<!--            <column name="pro_cum_loi_id" type="numeric"/>-->
+<!--            &lt;!&ndash; jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here, do not remove&ndash;&gt;-->
+<!--        </loadData>-->
+<!--    </changeSet>-->
+
+    <changeSet id="20200212162901-3-data" author="jhipster">
+        <loadData
+            file="config/liquibase/data/pro_loi.csv"
+            separator=";"
+            tableName="pro_loi">
+            <column name="id" type="numeric"/>
+            <column name="ma_loi" type="string"/>
+            <column name="cus_code" type="string"/>
+            <column name="ten_loi" type="string"/>
+            <column name="ten_tieng_anh" type="string"/>
+            <column name="label" type="string"/>
+            <column name="stt" type="numeric"/>
+            <column name="mau_sac" type="string"/>
+            <column name="qc" type="boolean"/>
+            <column name="qa" type="boolean"/>
+            <column name="checked" type="boolean"/>
+            <column name="ghi_chu" type="string"/>
+            <column name="pro_cum_loi_id" type="numeric"/>
+            <!-- jhipster-needle-liquibase-add-loadcolumn - JHipster (and/or extensions) can add load columns here, do not remove-->
+        </loadData>
+    </changeSet>
+
+</databaseChangeLog>

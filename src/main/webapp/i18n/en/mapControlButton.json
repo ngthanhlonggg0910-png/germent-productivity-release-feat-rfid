@@ -1,0 +1,23 @@
+{
+  "ctApp": {
+    "mapControlButton": {
+      "home": {
+        "title": "Map Control Buttons",
+        "createLabel": "Create a new Map Control Button",
+        "createOrEditLabel": "Create or edit a Map Control Button",
+        "notFound": "No Map Control Buttons found"
+      },
+      "created": "A new Map Control Button is created with identifier {{ param }}",
+      "updated": "A Map Control Button is updated with identifier {{ param }}",
+      "deleted": "A Map Control Button is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Map Control Button {{ id }}?"
+      },
+      "detail": {
+        "title": "Map Control Button"
+      },
+      "sourceButton": "Source Button",
+      "targetButton": "Target Button"
+    }
+  }
+}

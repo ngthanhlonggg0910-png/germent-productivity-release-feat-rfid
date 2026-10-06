@@ -1,0 +1,43 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="khacPhucLoi">
+            <h2><span jhiTranslate="ctApp.khacPhucLoi.detail.title">Khac Phuc Loi</span> {{khacPhucLoi.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="ctApp.khacPhucLoi.maKP">Ma KP</span></dt>
+                <dd>
+                    <span>{{khacPhucLoi.maKP}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.khacPhucLoi.tenKP">Ten KP</span></dt>
+                <dd>
+                    <span>{{khacPhucLoi.tenKP}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.khacPhucLoi.nguoiTao">Nguoi Tao</span></dt>
+                <dd>
+                    <span>{{khacPhucLoi.nguoiTao}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.khacPhucLoi.ngayTao">Ngay Tao</span></dt>
+                <dd>
+                    <span>{{khacPhucLoi.ngayTao}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.khacPhucLoi.userId">User Id</span></dt>
+                <dd>
+                    <span>{{khacPhucLoi.userId}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/sys/khac-phuc-loi', khacPhucLoi.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

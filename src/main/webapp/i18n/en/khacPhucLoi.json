@@ -1,0 +1,26 @@
+{
+  "ctApp": {
+    "khacPhucLoi": {
+      "home": {
+        "title": "Khac Phuc Lois",
+        "createLabel": "Create a new Khac Phuc Loi",
+        "createOrEditLabel": "Create or edit a Khac Phuc Loi",
+        "notFound": "No Khac Phuc Lois found"
+      },
+      "created": "A new Khac Phuc Loi is created with identifier {{ param }}",
+      "updated": "A Khac Phuc Loi is updated with identifier {{ param }}",
+      "deleted": "A Khac Phuc Loi is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Khac Phuc Loi {{ id }}?"
+      },
+      "detail": {
+        "title": "Khac Phuc Loi"
+      },
+      "maKP": "Ma KP",
+      "tenKP": "Ten KP",
+      "nguoiTao": "Nguoi Tao",
+      "ngayTao": "Ngay Tao",
+      "userId": "User Id"
+    }
+  }
+}

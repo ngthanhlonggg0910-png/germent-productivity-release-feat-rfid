@@ -1,0 +1,7 @@
+{
+  "*": {
+    "target": "http://113.161.224.131:8885/",
+    "secure": false,
+    "loglevel": "debug"
+  }
+}

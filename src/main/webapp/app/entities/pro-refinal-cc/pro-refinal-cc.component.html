@@ -1,0 +1,88 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="ctApp.proRefinalCC.home.title">Pro Refinal CCS</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-pro-refinal-cc" [routerLink]="['/pro-refinal-cc/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="ctApp.proRefinalCC.home.createLabel">
+            Create a new Pro Refinal CC
+            </span>
+        </button>
+    </h2>
+    <jhi-alert-error></jhi-alert-error>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="proRefinalCCS?.length === 0">
+        <span jhiTranslate="ctApp.proRefinalCC.home.notFound">No proRefinalCCS found</span>
+    </div>
+    <div class="table-responsive" *ngIf="proRefinalCCS?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+            <tr>
+            <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+            <th scope="col" ><span jhiTranslate="ctApp.proRefinalCC.khxhId">Khxh Id</span></th>
+            <th scope="col" ><span jhiTranslate="ctApp.proRefinalCC.maHang">Ma Hang</span></th>
+            <th scope="col" ><span jhiTranslate="ctApp.proRefinalCC.poNo">Po No</span></th>
+            <th scope="col" ><span jhiTranslate="ctApp.proRefinalCC.ngayKiemFinal">Ngay Kiem Final</span></th>
+            <th scope="col" ><span jhiTranslate="ctApp.proRefinalCC.tenChuyen">Ten Chuyen</span></th>
+            <th scope="col" ><span jhiTranslate="ctApp.proRefinalCC.ngayGioKiem">Ngay Gio Kiem</span></th>
+            <th scope="col" ><span jhiTranslate="ctApp.proRefinalCC.soLuongKiemAql">So Luong Kiem Aql</span></th>
+            <th scope="col" ><span jhiTranslate="ctApp.proRefinalCC.soLuong">So Luong</span></th>
+            <th scope="col" ><span jhiTranslate="ctApp.proRefinalCC.doAm">Do Am</span></th>
+            <th scope="col" ><span jhiTranslate="ctApp.proRefinalCC.tongSoLoi">Tong So Loi</span></th>
+            <th scope="col" ><span jhiTranslate="ctApp.proRefinalCC.soThuTuThung">So Thu Tu Thung</span></th>
+            <th scope="col" ><span jhiTranslate="ctApp.proRefinalCC.doKimMd">Do Kim Md</span></th>
+            <th scope="col" ><span jhiTranslate="ctApp.proRefinalCC.aql">Aql</span></th>
+            <th scope="col" ><span jhiTranslate="ctApp.proRefinalCC.maxLoiChoPhep">Max Loi Cho Phep</span></th>
+            <th scope="col" ><span jhiTranslate="ctApp.proRefinalCC.completed">Completed</span></th>
+            <th scope="col" ><span jhiTranslate="ctApp.proRefinalCC.nguoiKiem">Nguoi Kiem</span></th>
+            <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let proRefinalCC of proRefinalCCS ;trackBy: trackId">
+                <td><a [routerLink]="['/sys/pro-refinal-cc', proRefinalCC.id, 'view' ]">{{proRefinalCC.id}}</a></td>
+                <td>{{proRefinalCC.khxhId}}</td>
+                <td>{{proRefinalCC.maHang}}</td>
+                <td>{{proRefinalCC.poNo}}</td>
+                <td>{{proRefinalCC.ngayKiemFinal | date:'medium'}}</td>
+                <td>{{proRefinalCC.tenChuyen}}</td>
+                <td>{{proRefinalCC.ngayGioKiem | date:'medium'}}</td>
+                <td>{{proRefinalCC.soLuongKiemAql}}</td>
+                <td>{{proRefinalCC.soLuong}}</td>
+                <td>{{proRefinalCC.doAm}}</td>
+                <td>{{proRefinalCC.tongSoLoi}}</td>
+                <td>{{proRefinalCC.soThuTuThung}}</td>
+                <td>{{proRefinalCC.doKimMd}}</td>
+                <td>{{proRefinalCC.aql}}</td>
+                <td>{{proRefinalCC.maxLoiChoPhep}}</td>
+                <td>{{proRefinalCC.completed}}</td>
+                <td>{{proRefinalCC.nguoiKiem}}</td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/sys/pro-refinal-cc', proRefinalCC.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/sys/pro-refinal-cc', proRefinalCC.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/sys/pro-refinal-cc', { outlets: { popup: proRefinalCC.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

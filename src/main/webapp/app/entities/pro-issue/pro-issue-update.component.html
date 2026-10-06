@@ -1,0 +1,101 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-pro-issue-heading" jhiTranslate="ctApp.proIssue.home.createOrEditLabel">Create or edit a Pro Issue</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id').value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proIssue.maHang" for="field_maHang">Ma Hang</label>
+                    <input type="text" class="form-control" name="maHang" id="field_maHang"
+                           formControlName="maHang"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proIssue.pono" for="field_pono">Pono</label>
+                    <input type="text" class="form-control" name="pono" id="field_pono"
+                           formControlName="pono"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proIssue.tenChuyen" for="field_tenChuyen">Ten Chuyen</label>
+                    <input type="text" class="form-control" name="tenChuyen" id="field_tenChuyen"
+                           formControlName="tenChuyen"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proIssue.ngayGioBatDau" for="field_ngayGioBatDau">Ngay Gio Bat Dau</label>
+                    <div class="d-flex">
+                        <input id="field_ngayGioBatDau" type="datetime-local" class="form-control" name="ngayGioBatDau" formControlName="ngayGioBatDau" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proIssue.ngayGioKetThuc" for="field_ngayGioKetThuc">Ngay Gio Ket Thuc</label>
+                    <div class="d-flex">
+                        <input id="field_ngayGioKetThuc" type="datetime-local" class="form-control" name="ngayGioKetThuc" formControlName="ngayGioKetThuc" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proIssue.maLoi" for="field_maLoi">Ma Loi</label>
+                    <input type="text" class="form-control" name="maLoi" id="field_maLoi"
+                           formControlName="maLoi"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proIssue.moTaLoi" for="field_moTaLoi">Mo Ta Loi</label>
+                    <input type="text" class="form-control" name="moTaLoi" id="field_moTaLoi"
+                           formControlName="moTaLoi"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proIssue.maMay" for="field_maMay">Ma May</label>
+                    <input type="text" class="form-control" name="maMay" id="field_maMay"
+                           formControlName="maMay"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proIssue.soTram" for="field_soTram">So Tram</label>
+                    <input type="text" class="form-control" name="soTram" id="field_soTram"
+                           formControlName="soTram"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proIssue.proChuyenId" for="field_proChuyenId">Pro Chuyen Id</label>
+                    <input type="number" class="form-control" name="proChuyenId" id="field_proChuyenId"
+                           formControlName="proChuyenId"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proIssue.proSanPhamId" for="field_proSanPhamId">Pro San Pham Id</label>
+                    <input type="number" class="form-control" name="proSanPhamId" id="field_proSanPhamId"
+                           formControlName="proSanPhamId"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proIssue.nguoiTao" for="field_nguoiTao">Nguoi Tao</label>
+                    <input type="text" class="form-control" name="nguoiTao" id="field_nguoiTao"
+                           formControlName="nguoiTao"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proIssue.checkPointType" for="field_checkPointType">Check Point Type</label>
+                    <input type="text" class="form-control" name="checkPointType" id="field_checkPointType"
+                           formControlName="checkPointType"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proIssue.checkPointId" for="field_checkPointId">Check Point Id</label>
+                    <input type="number" class="form-control" name="checkPointId" id="field_checkPointId"
+                           formControlName="checkPointId"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proIssue.checkPointName" for="field_checkPointName">Check Point Name</label>
+                    <input type="text" class="form-control" name="checkPointName" id="field_checkPointName"
+                           formControlName="checkPointName"/>
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

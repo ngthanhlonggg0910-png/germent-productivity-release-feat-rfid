@@ -1,0 +1,56 @@
+{
+    "name": "ProIssueLoi",
+    "fields": [
+        {
+            "fieldName": "maLoi",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "cusCode",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "tenLoi",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "tenTiengAnh",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "label",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "stt",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "mauSac",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "ghiChu",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "proIssueCumLoi",
+            "otherEntityRelationshipName": "proIssueLoi",
+            "relationshipName": "proIssueCumLoi",
+            "otherEntityField": "ten"
+        }
+    ],
+    "changelogDate": "20200212162901",
+    "entityTableName": "pro_issue_loi",
+    "dto": "mapstruct",
+    "pagination": "no",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

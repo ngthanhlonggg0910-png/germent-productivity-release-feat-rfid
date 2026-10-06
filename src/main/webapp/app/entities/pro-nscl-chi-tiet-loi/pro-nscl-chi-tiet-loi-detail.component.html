@@ -1,0 +1,63 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="proNSCLChiTietLoi">
+            <h2><span jhiTranslate="ctApp.proNSCLChiTietLoi.detail.title">Pro NSCL Chi Tiet Loi</span> {{proNSCLChiTietLoi.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="ctApp.proNSCLChiTietLoi.maLoi">Ma Loi</span></dt>
+                <dd>
+                    <span>{{proNSCLChiTietLoi.maLoi}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proNSCLChiTietLoi.thoiGian">Thoi Gian</span></dt>
+                <dd>
+                    <span>{{proNSCLChiTietLoi.thoiGian}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proNSCLChiTietLoi.gioLam">Gio Lam</span></dt>
+                <dd>
+                    <span jhiTranslate="{{'ctApp.GioLam.' + proNSCLChiTietLoi.gioLam}}">{{proNSCLChiTietLoi.gioLam}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proNSCLChiTietLoi.dx">Dx</span></dt>
+                <dd>
+                    <span>{{proNSCLChiTietLoi.dx}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proNSCLChiTietLoi.dy">Dy</span></dt>
+                <dd>
+                    <span>{{proNSCLChiTietLoi.dy}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proNSCLChiTietLoi.isFront">Is Front</span></dt>
+                <dd>
+                    <span>{{proNSCLChiTietLoi.isFront}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proNSCLChiTietLoi.isInside">Is Inside</span></dt>
+                <dd>
+                    <span>{{proNSCLChiTietLoi.isInside}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proNSCLChiTietLoi.proNSCL">Pro NSCL</span></dt>
+                <dd>
+                    <div *ngIf="proNSCLChiTietLoi.proNSCLId">
+                        <a [routerLink]="['/sys/pro-nscl', proNSCLChiTietLoi.proNSCLId, 'view']">{{proNSCLChiTietLoi.proNSCLId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proNSCLChiTietLoi.proLoi">Pro Loi</span></dt>
+                <dd>
+                    <div *ngIf="proNSCLChiTietLoi.proLoiId">
+                        <a [routerLink]="['/sys/pro-loi', proNSCLChiTietLoi.proLoiId, 'view']">{{proNSCLChiTietLoi.proLoiMaLoi}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/sys/pro-nscl-chi-tiet-loi', proNSCLChiTietLoi.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

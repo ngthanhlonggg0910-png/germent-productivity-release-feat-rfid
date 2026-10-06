@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.6.xsd">
+
+    <property name="now" value="now()" dbms="h2"/>
+    <property name="now" value="current_timestamp" dbms="postgresql"/>
+
+    <property name="floatType" value="float4" dbms="postgresql, h2"/>
+    <property name="floatType" value="float" dbms="mysql, oracle, mssql, mariadb"/>
+    <property name="clobType" value="longvarchar" dbms="h2"/>
+    <property name="clobType" value="clob" dbms="mysql, oracle, mssql, mariadb, postgresql"/>
+    <property name="uuidType" value="uuid" dbms="h2, postgresql"/>
+
+    <include file="config/liquibase/changelog/00000000000000_initial_schema.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191112105554_added_entity_SysRoleHasFunction.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191112105555_added_entity_SysFunction.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191112105556_added_entity_SysModule.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191112105557_added_entity_SysPermission.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191112105558_added_entity_SysGroupModule.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191120132959_added_entity_KhacPhucLoi.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191120133000_added_entity_ThuVienLoi.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191120133001_added_entity_QuyCachNPL.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191120133002_added_entity_GopYChatLuong.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191120133003_added_entity_GYCLQuyCachNPL.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191120133004_added_entity_GYCLKhacPhuc.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200212162847_added_entity_ProKhachHang.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200212162848_added_entity_ProSanPham.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200212162849_added_entity_ProChungLoaiSanPham.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200212162850_added_entity_ProTenMua.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200212162851_added_entity_ProKeHoachSanXuat.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200212162852_added_entity_ProLoaiChuyen.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200212162853_added_entity_ProChuyen.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200212162854_added_entity_ProNhaMay.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200212162855_added_entity_ProCongTy.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200212162856_added_entity_ProCheckPoint.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200212162857_added_entity_ProTaiKhoanCheckPoint.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200212162858_added_entity_ProCongDoan.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200212162859_added_entity_ProNhomCongDoan.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200212162900_added_entity_ProCumLoi.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200212162901_added_entity_ProLoi.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200223154300_added_entity_ProNSCL.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200223154400_added_entity_ProNSCLChiTietLoi.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200410135657_added_entity_ProGioLamViec.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200425101316_added_entity_DungSai.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200425101317_added_entity_ThongSoDo.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200425101318_added_entity_ThongSoDoSP.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200425101319_added_entity_ThongSoDoSPSize.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200425101320_added_entity_ThongSoThucThi.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200502144841_added_entity_SysFile.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200822033705_added_entity_GroupTopic.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200822033706_added_entity_NVButtonTrackingType.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200822033707_added_entity_NVButton.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200822033708_added_entity_Device.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200822033709_added_entity_ButtonTracking.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200822033710_added_entity_Tracking.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200822033711_added_entity_MapControlButton.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200822033712_added_entity_MapButtonAction.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210120164550_added_entity_DeviceToken.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210328095743_added_entity_ProRefinal.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210328095744_added_entity_ProRefinalChiTietLoi.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210328095745_added_entity_SoLuongHangKiem.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210328095746_added_entity_DoAm.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20211102144847_added_entity_Video.xml" relativeToChangelogFile="false"/>
+    <!--include file="config/liquibase/changelog/20210328095743_added_entity_ProRefinalCC.xml" relativeToChangelogFile="false"/-->
+    <!--include file="config/liquibase/changelog/20210328095744_added_entity_ProRefinalCCChiTietLoi.xml" relativeToChangelogFile="false"/-->
+    <!--include file="config/liquibase/changelog/20210328095743_added_entity_ProFinal.xml" relativeToChangelogFile="false"/-->
+    <!--include file="config/liquibase/changelog/20210328095744_added_entity_ProFinalChiTietLoi.xml" relativeToChangelogFile="false"/-->
+    <!--include file="config/liquibase/changelog/20210328095743_added_entity_ProAql.xml" relativeToChangelogFile="false"/-->
+    <include file="config/liquibase/changelog/20210328095746_added_entity_DoKimMd.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210328095746_added_entity_LibSoLuongPoKiem.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210328095743_added_entity_ProIssueCumLoi.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200212162901_added_entity_ProIssueLoi.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200223154300_added_entity_ProIssue.xml" relativeToChangelogFile="false"/>
+    <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="config/liquibase/changelog/20191112105554_added_entity_constraints_SysRoleHasFunction.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191112105555_added_entity_constraints_SysFunction.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191112105556_added_entity_constraints_SysModule.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191120133003_added_entity_constraints_GYCLQuyCachNPL.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20191120133004_added_entity_constraints_GYCLKhacPhuc.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200212162848_added_entity_constraints_ProSanPham.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200212162851_added_entity_constraints_ProKeHoachSanXuat.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200212162853_added_entity_constraints_ProChuyen.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200212162854_added_entity_constraints_ProNhaMay.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200212162856_added_entity_constraints_ProCheckPoint.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200212162857_added_entity_constraints_ProTaiKhoanCheckPoint.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200212162858_added_entity_constraints_ProCongDoan.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200212162901_added_entity_constraints_ProLoi.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200223154300_added_entity_constraints_ProNSCL.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200223154400_added_entity_constraints_ProNSCLChiTietLoi.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200425101317_added_entity_constraints_ThongSoDo.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200425101318_added_entity_constraints_ThongSoDoSP.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200425101319_added_entity_constraints_ThongSoDoSPSize.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200425101320_added_entity_constraints_ThongSoThucThi.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200822033707_added_entity_constraints_NVButton.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200822033710_added_entity_constraints_Tracking.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200822033711_added_entity_constraints_MapControlButton.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20200822033712_added_entity_constraints_MapButtonAction.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210219164550_added_user_chuyen.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210328095744_added_entity_constraints_ProRefinalChiTietLoi.xml" relativeToChangelogFile="false"/>
+    <!--include file="config/liquibase/changelog/20210328095744_added_entity_constraints_ProRefinalCCChiTietLoi.xml" relativeToChangelogFile="false"/-->
+    <!--include file="config/liquibase/changelog/20210328095744_added_entity_constraints_ProFinalChiTietLoi.xml" relativeToChangelogFile="false"/-->
+    <include file="config/liquibase/changelog/20200212162901_added_entity_constraints_ProIssueLoi.xml" relativeToChangelogFile="false"/>
+    <!-- Pro KHSX: cột DB chuẩn là isActived — không include changelog add/rename cột (tránh Liquibase đổi tên schema). -->
+    <!--include file="config/liquibase/changelog/20260514103000_added_columns_ProKeHoachSanXuat_activation.xml" relativeToChangelogFile="false"/-->
+    <!--include file="config/liquibase/changelog/20260514104500_rename_ProKeHoachSanXuat_isActived_to_is_actived.xml" relativeToChangelogFile="false"/-->
+    <include file="config/liquibase/changelog/20260521120000_added_column_ProNSCL_sua_po_luy_ke.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20260604120000_added_entity_ProNsclLog.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20260706120000_added_entity_ProKiemtrong.xml" relativeToChangelogFile="false"/>
+    <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
+</databaseChangeLog>

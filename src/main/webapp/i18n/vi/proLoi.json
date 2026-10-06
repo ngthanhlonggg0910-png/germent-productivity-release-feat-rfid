@@ -1,0 +1,33 @@
+{
+  "ctApp": {
+    "proLoi": {
+      "home": {
+        "title": "Pro Lois",
+        "createLabel": "Thêm mới một Pro Loi",
+        "createOrEditLabel": "Thêm mới hoặc cập nhật Pro Loi",
+        "notFound": "No Pro Lois found"
+      },
+      "created": "Một Pro Loi mới được tạo với định danh {{ param }}",
+      "updated": "Một Pro Loi cập nhật với định danh {{ param }}",
+      "deleted": "Một Pro Loi đã xóa với định danh {{ param }}",
+      "delete": {
+        "question": "Bạn có chắc là muốn xóa Pro Loi {{ id }}?"
+      },
+      "detail": {
+        "title": "Pro Loi"
+      },
+      "maLoi": "Ma Loi",
+      "cusCode": "Cus Code",
+      "tenLoi": "Ten Loi",
+      "tenTiengAnh": "Ten Tieng Anh",
+      "label": "Label",
+      "stt": "Stt",
+      "mauSac": "Mau Sac",
+      "qc": "Qc",
+      "qa": "Qa",
+      "checked": "Checked",
+      "ghiChu": "Ghi Chu",
+      "proCumLoi": "Pro Cum Loi"
+    }
+  }
+}

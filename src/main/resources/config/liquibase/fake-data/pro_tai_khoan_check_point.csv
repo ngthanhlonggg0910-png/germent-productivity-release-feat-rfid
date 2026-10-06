@@ -1,0 +1,11 @@
+id;tai_khoan;checked; pro_check_point_id
+1;user;true;2
+2;nlbtoan;true;3
+3;nktrong;false;3
+4;user2;false;5
+5;ndq;false;6
+6;anonymoususer;false;7
+7;admin;false;7
+8;admin;true;8
+9;admin;false;9
+10;user;true;10

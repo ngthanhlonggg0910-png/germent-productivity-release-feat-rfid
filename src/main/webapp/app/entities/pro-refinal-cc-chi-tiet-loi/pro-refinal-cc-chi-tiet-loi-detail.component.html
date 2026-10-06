@@ -1,0 +1,67 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="proRefinalCCChiTietLoi">
+            <h2><span jhiTranslate="ctApp.proRefinalCCChiTietLoi.detail.title">Pro Refinal CC Chi Tiet Loi</span> {{proRefinalCCChiTietLoi.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="ctApp.proRefinalCCChiTietLoi.maLoi">Ma Loi</span></dt>
+                <dd>
+                    <span>{{proRefinalCCChiTietLoi.maLoi}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proRefinalCCChiTietLoi.thoiGian">Thoi Gian</span></dt>
+                <dd>
+                    <span>{{proRefinalCCChiTietLoi.thoiGian}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proRefinalCCChiTietLoi.dx">Dx</span></dt>
+                <dd>
+                    <span>{{proRefinalCCChiTietLoi.dx}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proRefinalCCChiTietLoi.dy">Dy</span></dt>
+                <dd>
+                    <span>{{proRefinalCCChiTietLoi.dy}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proRefinalCCChiTietLoi.isFront">Is Front</span></dt>
+                <dd>
+                    <span>{{proRefinalCCChiTietLoi.isFront}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proRefinalCCChiTietLoi.isInside">Is Inside</span></dt>
+                <dd>
+                    <span>{{proRefinalCCChiTietLoi.isInside}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proRefinalCCChiTietLoi.warning">Warning</span></dt>
+                <dd>
+                    <span>{{proRefinalCCChiTietLoi.warning}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proRefinalCCChiTietLoi.nguoiKiem">Nguoi Kiem</span></dt>
+                <dd>
+                    <span>{{proRefinalCCChiTietLoi.nguoiKiem}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proRefinalCCChiTietLoi.proRefinalCC">Pro Refinal CC</span></dt>
+                <dd>
+                    <div *ngIf="proRefinalCCChiTietLoi.proRefinalCCId">
+                        <a [routerLink]="['/sys/pro-refinal-cc', proRefinalCCChiTietLoi.proRefinalCCId, 'view']">{{proRefinalCCChiTietLoi.proRefinalCCId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proRefinalCCChiTietLoi.proLoi">Pro Loi</span></dt>
+                <dd>
+                    <div *ngIf="proRefinalCCChiTietLoi.proLoiId">
+                        <a [routerLink]="['/sys/pro-loi', proRefinalCCChiTietLoi.proLoiId, 'view']">{{proRefinalCCChiTietLoi.proLoiId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/sys/pro-refinal-cc-chi-tiet-loi', proRefinalCCChiTietLoi.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

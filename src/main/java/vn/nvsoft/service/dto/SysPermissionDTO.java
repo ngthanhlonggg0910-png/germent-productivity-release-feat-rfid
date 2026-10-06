@@ -1,0 +1,120 @@
+package vn.nvsoft.service.dto;
+import javax.validation.constraints.*;
+import java.io.Serializable;
+import java.util.Objects;
+
+/**
+ * A DTO for the {@link vn.nvsoft.domain.SysPermission} entity.
+ */
+public class SysPermissionDTO implements Serializable {
+
+    private Long id;
+
+    @NotNull
+    @Size(max = 100)
+    private String name;
+
+    @Size(max = 255)
+    private String caption;
+
+    private Integer level;
+
+    private String imageUri;
+
+    @Size(max = 50)
+    private String eventName;
+
+    @Size(max = 5)
+    private String hotkey;
+
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getCaption() {
+        return caption;
+    }
+
+    public void setCaption(String caption) {
+        this.caption = caption;
+    }
+
+    public Integer getLevel() {
+        return level;
+    }
+
+    public void setLevel(Integer level) {
+        this.level = level;
+    }
+
+    public String getImageUri() {
+        return imageUri;
+    }
+
+    public void setImageUri(String imageUri) {
+        this.imageUri = imageUri;
+    }
+
+    public String getEventName() {
+        return eventName;
+    }
+
+    public void setEventName(String eventName) {
+        this.eventName = eventName;
+    }
+
+    public String getHotkey() {
+        return hotkey;
+    }
+
+    public void setHotkey(String hotkey) {
+        this.hotkey = hotkey;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) {
+            return true;
+        }
+        if (o == null || getClass() != o.getClass()) {
+            return false;
+        }
+
+        SysPermissionDTO sysPermissionDTO = (SysPermissionDTO) o;
+        if (sysPermissionDTO.getId() == null || getId() == null) {
+            return false;
+        }
+        return Objects.equals(getId(), sysPermissionDTO.getId());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hashCode(getId());
+    }
+
+    @Override
+    public String toString() {
+        return "SysPermissionDTO{" +
+            "id=" + getId() +
+            ", name='" + getName() + "'" +
+            ", caption='" + getCaption() + "'" +
+            ", level=" + getLevel() +
+            ", imageUri='" + getImageUri() + "'" +
+            ", eventName='" + getEventName() + "'" +
+            ", hotkey='" + getHotkey() + "'" +
+            "}";
+    }
+}

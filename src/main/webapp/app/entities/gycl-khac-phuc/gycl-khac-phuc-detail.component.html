@@ -1,0 +1,69 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="gYCLKhacPhuc">
+            <h2><span jhiTranslate="ctApp.gYCLKhacPhuc.detail.title">GYCL Khac Phuc</span> {{gYCLKhacPhuc.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="ctApp.gYCLKhacPhuc.cumId">Cum Id</span></dt>
+                <dd>
+                    <span>{{gYCLKhacPhuc.cumId}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.gYCLKhacPhuc.tenCum">Ten Cum</span></dt>
+                <dd>
+                    <span>{{gYCLKhacPhuc.tenCum}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.gYCLKhacPhuc.gopY">Gop Y</span></dt>
+                <dd>
+                    <span>{{gYCLKhacPhuc.gopY}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.gYCLKhacPhuc.ketQua">Ket Qua</span></dt>
+                <dd>
+                    <span>{{gYCLKhacPhuc.ketQua}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.gYCLKhacPhuc.nguoiTao">Nguoi Tao</span></dt>
+                <dd>
+                    <span>{{gYCLKhacPhuc.nguoiTao}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.gYCLKhacPhuc.userId">User Id</span></dt>
+                <dd>
+                    <span>{{gYCLKhacPhuc.userId}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.gYCLKhacPhuc.ngayTao">Ngay Tao</span></dt>
+                <dd>
+                    <span>{{gYCLKhacPhuc.ngayTao}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.gYCLKhacPhuc.proGopYChatLuong">Pro Gop Y Chat Luong</span></dt>
+                <dd>
+                    <div *ngIf="gYCLKhacPhuc.proGopYChatLuongId">
+                        <a [routerLink]="['/sys/gop-y-chat-luong', gYCLKhacPhuc.proGopYChatLuongId, 'view']">{{gYCLKhacPhuc.proGopYChatLuongId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="ctApp.gYCLKhacPhuc.thuVienLoi">Thu Vien Loi</span></dt>
+                <dd>
+                    <div *ngIf="gYCLKhacPhuc.thuVienLoiId">
+                        <a [routerLink]="['/sys/thu-vien-loi', gYCLKhacPhuc.thuVienLoiId, 'view']">{{gYCLKhacPhuc.thuVienLoiId}}</a>
+                    </div>
+                </dd>
+                <dt><span jhiTranslate="ctApp.gYCLKhacPhuc.khacPhucLoi">Khac Phuc Loi</span></dt>
+                <dd>
+                    <div *ngIf="gYCLKhacPhuc.khacPhucLoiId">
+                        <a [routerLink]="['/sys/khac-phuc-loi', gYCLKhacPhuc.khacPhucLoiId, 'view']">{{gYCLKhacPhuc.khacPhucLoiId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/sys/gycl-khac-phuc', gYCLKhacPhuc.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

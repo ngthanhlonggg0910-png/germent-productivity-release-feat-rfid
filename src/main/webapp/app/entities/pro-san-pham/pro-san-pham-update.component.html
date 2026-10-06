@@ -1,0 +1,230 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-pro-san-pham-heading" jhiTranslate="ctApp.proSanPham.home.createOrEditLabel">Create or edit a Pro San Pham</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id').value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proSanPham.maSanPham" for="field_maSanPham">Ma San Pham</label>
+                    <input type="text" class="form-control" name="maSanPham" id="field_maSanPham"
+                           formControlName="maSanPham"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proSanPham.maDonHang" for="field_maDonHang">Ma Don Hang</label>
+                    <input type="text" class="form-control" name="maDonHang" id="field_maDonHang"
+                           formControlName="maDonHang"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proSanPham.po" for="field_po">Po</label>
+                    <input type="text" class="form-control" name="po" id="field_po"
+                           formControlName="po"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proSanPham.soLuongSanXuat" for="field_soLuongSanXuat">So Luong San Xuat</label>
+                    <input type="number" class="form-control" name="soLuongSanXuat" id="field_soLuongSanXuat"
+                           formControlName="soLuongSanXuat"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proSanPham.thongSoValue1" for="field_thongSoValue1">Thong So Value 1</label>
+                    <input type="text" class="form-control" name="thongSoValue1" id="field_thongSoValue1"
+                           formControlName="thongSoValue1"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proSanPham.thongSoCaption1" for="field_thongSoCaption1">Thong So Caption 1</label>
+                    <input type="text" class="form-control" name="thongSoCaption1" id="field_thongSoCaption1"
+                           formControlName="thongSoCaption1"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proSanPham.thongSoCheck1" for="field_thongSoCheck1">Thong So Check 1</label>
+                    <input type="checkbox" class="form-control" name="thongSoCheck1" id="field_thongSoCheck1"
+                           formControlName="thongSoCheck1"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proSanPham.thongSoValue2" for="field_thongSoValue2">Thong So Value 2</label>
+                    <input type="text" class="form-control" name="thongSoValue2" id="field_thongSoValue2"
+                           formControlName="thongSoValue2"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proSanPham.thongSoCaption2" for="field_thongSoCaption2">Thong So Caption 2</label>
+                    <input type="text" class="form-control" name="thongSoCaption2" id="field_thongSoCaption2"
+                           formControlName="thongSoCaption2"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proSanPham.thongSoCheck2" for="field_thongSoCheck2">Thong So Check 2</label>
+                    <input type="checkbox" class="form-control" name="thongSoCheck2" id="field_thongSoCheck2"
+                           formControlName="thongSoCheck2"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proSanPham.thongSoValue3" for="field_thongSoValue3">Thong So Value 3</label>
+                    <input type="text" class="form-control" name="thongSoValue3" id="field_thongSoValue3"
+                           formControlName="thongSoValue3"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proSanPham.thongSoCaption3" for="field_thongSoCaption3">Thong So Caption 3</label>
+                    <input type="text" class="form-control" name="thongSoCaption3" id="field_thongSoCaption3"
+                           formControlName="thongSoCaption3"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proSanPham.thongSoCheck3" for="field_thongSoCheck3">Thong So Check 3</label>
+                    <input type="checkbox" class="form-control" name="thongSoCheck3" id="field_thongSoCheck3"
+                           formControlName="thongSoCheck3"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proSanPham.thongSoValue4" for="field_thongSoValue4">Thong So Value 4</label>
+                    <input type="text" class="form-control" name="thongSoValue4" id="field_thongSoValue4"
+                           formControlName="thongSoValue4"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proSanPham.thongSoCaption4" for="field_thongSoCaption4">Thong So Caption 4</label>
+                    <input type="text" class="form-control" name="thongSoCaption4" id="field_thongSoCaption4"
+                           formControlName="thongSoCaption4"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proSanPham.thongSoCheck4" for="field_thongSoCheck4">Thong So Check 4</label>
+                    <input type="checkbox" class="form-control" name="thongSoCheck4" id="field_thongSoCheck4"
+                           formControlName="thongSoCheck4"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proSanPham.thongSoValue5" for="field_thongSoValue5">Thong So Value 5</label>
+                    <input type="text" class="form-control" name="thongSoValue5" id="field_thongSoValue5"
+                           formControlName="thongSoValue5"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proSanPham.thongSoCaption5" for="field_thongSoCaption5">Thong So Caption 5</label>
+                    <input type="text" class="form-control" name="thongSoCaption5" id="field_thongSoCaption5"
+                           formControlName="thongSoCaption5"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proSanPham.thongSoCheck5" for="field_thongSoCheck5">Thong So Check 5</label>
+                    <input type="checkbox" class="form-control" name="thongSoCheck5" id="field_thongSoCheck5"
+                           formControlName="thongSoCheck5"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proSanPham.thongSoValue6" for="field_thongSoValue6">Thong So Value 6</label>
+                    <input type="text" class="form-control" name="thongSoValue6" id="field_thongSoValue6"
+                           formControlName="thongSoValue6"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proSanPham.thongSoCaption6" for="field_thongSoCaption6">Thong So Caption 6</label>
+                    <input type="text" class="form-control" name="thongSoCaption6" id="field_thongSoCaption6"
+                           formControlName="thongSoCaption6"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proSanPham.thongSoCheck6" for="field_thongSoCheck6">Thong So Check 6</label>
+                    <input type="checkbox" class="form-control" name="thongSoCheck6" id="field_thongSoCheck6"
+                           formControlName="thongSoCheck6"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proSanPham.thongSoValue7" for="field_thongSoValue7">Thong So Value 7</label>
+                    <input type="text" class="form-control" name="thongSoValue7" id="field_thongSoValue7"
+                           formControlName="thongSoValue7"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proSanPham.thongSoCaption7" for="field_thongSoCaption7">Thong So Caption 7</label>
+                    <input type="text" class="form-control" name="thongSoCaption7" id="field_thongSoCaption7"
+                           formControlName="thongSoCaption7"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proSanPham.thongSoCheck7" for="field_thongSoCheck7">Thong So Check 7</label>
+                    <input type="checkbox" class="form-control" name="thongSoCheck7" id="field_thongSoCheck7"
+                           formControlName="thongSoCheck7"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proSanPham.thongSoValue8" for="field_thongSoValue8">Thong So Value 8</label>
+                    <input type="text" class="form-control" name="thongSoValue8" id="field_thongSoValue8"
+                           formControlName="thongSoValue8"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proSanPham.thongSoCaption8" for="field_thongSoCaption8">Thong So Caption 8</label>
+                    <input type="text" class="form-control" name="thongSoCaption8" id="field_thongSoCaption8"
+                           formControlName="thongSoCaption8"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proSanPham.thongSoCheck8" for="field_thongSoCheck8">Thong So Check 8</label>
+                    <input type="checkbox" class="form-control" name="thongSoCheck8" id="field_thongSoCheck8"
+                           formControlName="thongSoCheck8"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proSanPham.thongSoValue9" for="field_thongSoValue9">Thong So Value 9</label>
+                    <input type="text" class="form-control" name="thongSoValue9" id="field_thongSoValue9"
+                           formControlName="thongSoValue9"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proSanPham.thongSoCaption9" for="field_thongSoCaption9">Thong So Caption 9</label>
+                    <input type="text" class="form-control" name="thongSoCaption9" id="field_thongSoCaption9"
+                           formControlName="thongSoCaption9"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proSanPham.thongSoCheck9" for="field_thongSoCheck9">Thong So Check 9</label>
+                    <input type="checkbox" class="form-control" name="thongSoCheck9" id="field_thongSoCheck9"
+                           formControlName="thongSoCheck9"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proSanPham.thongSoValue10" for="field_thongSoValue10">Thong So Value 10</label>
+                    <input type="text" class="form-control" name="thongSoValue10" id="field_thongSoValue10"
+                           formControlName="thongSoValue10"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proSanPham.thongSoCaption10" for="field_thongSoCaption10">Thong So Caption 10</label>
+                    <input type="text" class="form-control" name="thongSoCaption10" id="field_thongSoCaption10"
+                           formControlName="thongSoCaption10"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proSanPham.thongSoCheck10" for="field_thongSoCheck10">Thong So Check 10</label>
+                    <input type="checkbox" class="form-control" name="thongSoCheck10" id="field_thongSoCheck10"
+                           formControlName="thongSoCheck10"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proSanPham.color" for="field_color">Color</label>
+                    <input type="text" class="form-control" name="color" id="field_color"
+                           formControlName="color"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proSanPham.hinhMatTruocURL" for="field_hinhMatTruocURL">Hinh Mat Truoc URL</label>
+                    <input type="text" class="form-control" name="hinhMatTruocURL" id="field_hinhMatTruocURL"
+                           formControlName="hinhMatTruocURL"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proSanPham.hinhMatSauURL" for="field_hinhMatSauURL">Hinh Mat Sau URL</label>
+                    <input type="text" class="form-control" name="hinhMatSauURL" id="field_hinhMatSauURL"
+                           formControlName="hinhMatSauURL"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proSanPham.proKhachHang" for="field_proKhachHang">Pro Khach Hang</label>
+                    <select class="form-control" id="field_proKhachHang" name="proKhachHang" formControlName="proKhachHangId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="proKhachHangOption.id" *ngFor="let proKhachHangOption of prokhachhangs; trackBy: trackProKhachHangById">{{proKhachHangOption.ten}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proSanPham.proChungLoaiSanPham" for="field_proChungLoaiSanPham">Pro Chung Loai San Pham</label>
+                    <select class="form-control" id="field_proChungLoaiSanPham" name="proChungLoaiSanPham" formControlName="proChungLoaiSanPhamId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="proChungLoaiSanPhamOption.id" *ngFor="let proChungLoaiSanPhamOption of prochungloaisanphams; trackBy: trackProChungLoaiSanPhamById">{{proChungLoaiSanPhamOption.tenChungLoai}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.proSanPham.proTenMua" for="field_proTenMua">Pro Ten Mua</label>
+                    <select class="form-control" id="field_proTenMua" name="proTenMua" formControlName="proTenMuaId">
+                        <option [ngValue]="null"></option>
+                        <option [ngValue]="proTenMuaOption.id" *ngFor="let proTenMuaOption of protenmuas; trackBy: trackProTenMuaById">{{proTenMuaOption.tenMua}}</option>
+                    </select>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

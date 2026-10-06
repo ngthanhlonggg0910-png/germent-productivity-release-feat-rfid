@@ -1,0 +1,43 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="quyCachNPL">
+            <h2><span jhiTranslate="ctApp.quyCachNPL.detail.title">Quy Cach NPL</span> {{quyCachNPL.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="ctApp.quyCachNPL.tenNPL">Ten NPL</span></dt>
+                <dd>
+                    <span>{{quyCachNPL.tenNPL}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.quyCachNPL.maNPL">Ma NPL</span></dt>
+                <dd>
+                    <span>{{quyCachNPL.maNPL}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.quyCachNPL.nguoiTao">Nguoi Tao</span></dt>
+                <dd>
+                    <span>{{quyCachNPL.nguoiTao}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.quyCachNPL.ngayTao">Ngay Tao</span></dt>
+                <dd>
+                    <span>{{quyCachNPL.ngayTao}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.quyCachNPL.userId">User Id</span></dt>
+                <dd>
+                    <span>{{quyCachNPL.userId}}</span>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/sys/quy-cach-npl', quyCachNPL.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

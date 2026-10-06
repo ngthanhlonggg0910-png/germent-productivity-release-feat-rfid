@@ -1,0 +1,22 @@
+{
+  "ctApp": {
+    "proTenMua": {
+      "home": {
+        "title": "Pro Ten Muas",
+        "createLabel": "Create a new Pro Ten Mua",
+        "createOrEditLabel": "Create or edit a Pro Ten Mua",
+        "notFound": "No Pro Ten Muas found"
+      },
+      "created": "A new Pro Ten Mua is created with identifier {{ param }}",
+      "updated": "A Pro Ten Mua is updated with identifier {{ param }}",
+      "deleted": "A Pro Ten Mua is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Pro Ten Mua {{ id }}?"
+      },
+      "detail": {
+        "title": "Pro Ten Mua"
+      },
+      "tenMua": "Ten Mua"
+    }
+  }
+}

@@ -1,0 +1,96 @@
+{
+    "name": "GopYChatLuong",
+    "fields": [
+        {
+            "fieldName": "cusId",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "cusName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "chuyenId",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "chuyenName",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "maHang",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "po",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "poId",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "color",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "size",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "firstCut",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "inline",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "lanBanHanh",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "ngayBaoCao",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "nguoiTao",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "userId",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "ngayTao",
+            "fieldType": "Instant"
+        },
+        {
+            "fieldName": "tenQuanLyXuong",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "tenKiThuat",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "tenQanLyCat",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "tenQA",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [],
+    "changelogDate": "20191120133002",
+    "entityTableName": "gop_y_chat_luong",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

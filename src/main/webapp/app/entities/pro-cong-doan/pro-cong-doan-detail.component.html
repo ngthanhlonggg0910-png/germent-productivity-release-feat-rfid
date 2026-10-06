@@ -1,0 +1,37 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="proCongDoan">
+            <h2><span jhiTranslate="ctApp.proCongDoan.detail.title">Pro Cong Doan</span> {{proCongDoan.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="ctApp.proCongDoan.ten">Ten</span></dt>
+                <dd>
+                    <span>{{proCongDoan.ten}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proCongDoan.nhomCongDoan">Nhom Cong Doan</span></dt>
+                <dd>
+                    <span>{{proCongDoan.nhomCongDoan}}</span>
+                </dd>
+                <dt><span jhiTranslate="ctApp.proCongDoan.proNhomCongDoan">Pro Nhom Cong Doan</span></dt>
+                <dd>
+                    <div *ngIf="proCongDoan.proNhomCongDoanId">
+                        <a [routerLink]="['/sys/pro-nhom-cong-doan', proCongDoan.proNhomCongDoanId, 'view']">{{proCongDoan.proNhomCongDoanTen}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/sys/pro-cong-doan', proCongDoan.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

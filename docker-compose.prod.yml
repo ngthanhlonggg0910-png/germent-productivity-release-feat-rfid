@@ -1,0 +1,41 @@
+version: '3.4'
+services:
+  ct-app:
+    depends_on:
+      - ct-postgresql
+    environment:
+      - _JAVA_OPTIONS=-Xmx512m -Xms256m
+      - SPRING_PROFILES_ACTIVE=prod,swagger
+      - MANAGEMENT_METRICS_EXPORT_PROMETHEUS_ENABLED=true
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://ct-postgresql:5432/ct
+      - SPRING_DATA_JEST_URI=http://ct-elasticsearch:9200
+      - SPRING_ELASTICSEARCH_REST_URIS=http://ct-elasticsearch:9200
+      - DOMAIN_SERVER=http://113.160.205.101:8084
+      - STORAGE_DIRECTORY=/app/uploads
+      - STORAGE_HOST-URL=http://113.160.205.101:4321
+      - LOG_PATH=/app/logs
+      - LOGGING_LEVEL_ROOT=INFO
+    ports:
+      - 8084:8080
+    volumes:
+      - /home/nvsoft/volumes/nvsoft/ct/uploads:/app/uploads
+      - /home/nvsoft/volumes/nvsoft/ct/logs:/app/logs
+
+  ct-postgresql:
+    volumes:
+      - ~/volumes/nvsoft/ct/postgresql/:/var/lib/postgresql/data/
+    environment:
+      - POSTGRES_USER=ct
+      - POSTGRES_PASSWORD=ctpostgresql
+    ports:
+      - 6432:5432
+
+  ct-elasticsearch:
+    volumes:
+      - ~/volumes/nvsoft/ct/elasticsearch/:/usr/share/elasticsearch/data/
+    ports:
+      - 7200:9200
+      - 7300:9300
+    environment:
+      - 'ES_JAVA_OPTS=-Xms1024m -Xmx1024m'
+      - 'discovery.type=single-node'

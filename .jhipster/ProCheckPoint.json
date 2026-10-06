@@ -1,0 +1,35 @@
+{
+    "name": "ProCheckPoint",
+    "fields": [
+        {
+            "fieldName": "ten",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "proChuyen",
+            "otherEntityRelationshipName": "proCheckPoint",
+            "relationshipName": "proChuyen",
+            "otherEntityField": "ten"
+        },
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "proCongDoan",
+            "otherEntityRelationshipName": "proCheckPoint",
+            "relationshipName": "proCongDoan",
+            "otherEntityField": "ten"
+        }
+    ],
+    "changelogDate": "20200212162856",
+    "entityTableName": "pro_check_point",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

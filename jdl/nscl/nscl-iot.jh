@@ -1,0 +1,104 @@
+
+enum TopicType {
+	CMND,TELE,STAT,DISCOVERY
+}
+
+enum GroupButtonType {
+	LIGHT, SEWING
+}
+
+entity GroupTopic {
+	name String,
+    topicType TopicType,
+    type GroupButtonType
+}
+
+entity NVButtonTrackingType {
+	name String unique,
+    numberOfState Integer
+}
+
+enum LWT {
+	ON_LINE,OFF_LINE
+}
+entity NVButton {
+	name String,
+    discoveredOnTopic String,
+    cmndTopic String unique,
+    plOff String,
+    plOn String,
+    uniqId String,
+    devIds String,
+    teleTopic String,
+    statTopic String,
+    avtyTopic String,
+    plAvail String,
+    plNotAvail String,
+    state NVButtonState,
+    lwt LWT,
+    lastUpdateState Instant,
+    groupType GroupButtonType,
+}
+
+enum NVButtonState {
+    ON, OFF, UNKNOW
+}
+
+entity Device {
+    name String,
+    devIds String,
+    stateTopic String unique,
+    lwtTopic String unique,
+    sw String,
+    module String,
+    restartReason String,
+    time Instant,
+    uptime String,
+    hostName String,
+    ipAddress String,
+    lwt LWT,
+}
+
+entity ButtonTracking {
+	 updateDate Instant,
+     currentAliasState Integer,
+     trackingId Long
+}
+
+entity Tracking {
+    nvButtonId Long,
+	state1Time Instant,
+	state2Time Instant,
+	state3Time Instant,
+    state4Time Instant,
+    state5Time Instant,
+    state6Time Instant,
+}
+
+entity MapControlButton {
+	
+}
+
+entity MapButtonAction {
+	sourceAliasState Integer,
+    targetState NVButtonState,
+}
+
+relationship OneToOne {
+	NVButton to ButtonTracking
+}
+relationship ManyToOne {
+	NVButton{device(name)} to Device,
+	NVButton{trackingType(name)} to NVButtonTrackingType,
+    Tracking{trackingType(name)} to NVButtonTrackingType,
+	MapControlButton{sourceButton(cmndTopic)} to NVButton,
+    MapControlButton{targetButton(cmndTopic)} to NVButton,
+    MapButtonAction{trackingType(name)} to NVButtonTrackingType,
+}
+
+
+
+dto * with mapstruct
+service all with serviceImpl
+paginate all with pagination
+

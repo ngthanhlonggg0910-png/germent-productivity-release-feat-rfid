@@ -1,0 +1,23 @@
+{
+  "ctApp": {
+    "doKimMd": {
+      "home": {
+        "title": "Do Kim Mds",
+        "createLabel": "Create a new Do Kim Md",
+        "createOrEditLabel": "Create or edit a Do Kim Md",
+        "notFound": "No Do Kim Mds found"
+      },
+      "created": "A new Do Kim Md is created with identifier {{ param }}",
+      "updated": "A Do Kim Md is updated with identifier {{ param }}",
+      "deleted": "A Do Kim Md is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Do Kim Md {{ id }}?"
+      },
+      "detail": {
+        "title": "Do Kim Md"
+      },
+      "value": "Value",
+      "display": "Display"
+    }
+  }
+}

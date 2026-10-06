@@ -1,0 +1,78 @@
+<div>
+    <h2 id="page-heading">
+        <span jhiTranslate="ctApp.proIssueLoi.home.title">Pro Issue Lois</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-pro-issue-loi" [routerLink]="['/sys/pro-issue-loi/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span  jhiTranslate="ctApp.proIssueLoi.home.createLabel">
+            Create a new Pro Issue Loi
+            </span>
+        </button>
+    </h2>
+    <jhi-alert-error></jhi-alert-error>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="proIssueLois?.length === 0">
+        <span jhiTranslate="ctApp.proIssueLoi.home.notFound">No proIssueLois found</span>
+    </div>
+    <div class="table-responsive" *ngIf="proIssueLois?.length > 0">
+        <table class="table table-striped" aria-describedby="page-heading">
+            <thead>
+            <tr>
+            <th scope="col" ><span jhiTranslate="global.field.id">ID</span></th>
+            <th scope="col" ><span jhiTranslate="ctApp.proIssueLoi.maLoi">Ma Loi</span></th>
+            <th scope="col" ><span jhiTranslate="ctApp.proIssueLoi.cusCode">Cus Code</span></th>
+            <th scope="col" ><span jhiTranslate="ctApp.proIssueLoi.tenLoi">Ten Loi</span></th>
+            <th scope="col" ><span jhiTranslate="ctApp.proIssueLoi.tenTiengAnh">Ten Tieng Anh</span></th>
+            <th scope="col" ><span jhiTranslate="ctApp.proIssueLoi.label">Label</span></th>
+            <th scope="col" ><span jhiTranslate="ctApp.proIssueLoi.stt">Stt</span></th>
+            <th scope="col" ><span jhiTranslate="ctApp.proIssueLoi.mauSac">Mau Sac</span></th>
+            <th scope="col" ><span jhiTranslate="ctApp.proIssueLoi.ghiChu">Ghi Chu</span></th>
+            <th scope="col" ><span jhiTranslate="ctApp.proIssueLoi.proIssueCumLoi">Pro Issue Cum Loi</span></th>
+            <th scope="col"></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let proIssueLoi of proIssueLois ;trackBy: trackId">
+                <td><a [routerLink]="['/sys/pro-issue-loi', proIssueLoi.id, 'view' ]">{{proIssueLoi.id}}</a></td>
+                <td>{{proIssueLoi.maLoi}}</td>
+                <td>{{proIssueLoi.cusCode}}</td>
+                <td>{{proIssueLoi.tenLoi}}</td>
+                <td>{{proIssueLoi.tenTiengAnh}}</td>
+                <td>{{proIssueLoi.label}}</td>
+                <td>{{proIssueLoi.stt}}</td>
+                <td>{{proIssueLoi.mauSac}}</td>
+                <td>{{proIssueLoi.ghiChu}}</td>
+                <td>
+                    <div *ngIf="proIssueLoi.proIssueCumLoiId">
+                        <a [routerLink]="['/sys/pro-issue-cum-loi', proIssueLoi.proIssueCumLoiId , 'view' ]" >{{proIssueLoi.proIssueCumLoiTen}}</a>
+                    </div>
+                </td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/sys/pro-issue-loi', proIssueLoi.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/sys/pro-issue-loi', proIssueLoi.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/sys/pro-issue-loi', { outlets: { popup: proIssueLoi.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

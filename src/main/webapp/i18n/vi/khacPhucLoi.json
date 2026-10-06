@@ -1,0 +1,26 @@
+{
+  "ctApp": {
+    "khacPhucLoi": {
+      "home": {
+        "title": "Khac Phuc Lois",
+        "createLabel": "Thêm mới một Khac Phuc Loi",
+        "createOrEditLabel": "Thêm mới hoặc cập nhật Khac Phuc Loi",
+        "notFound": "No Khac Phuc Lois found"
+      },
+      "created": "Một Khac Phuc Loi mới được tạo với định danh {{ param }}",
+      "updated": "Một Khac Phuc Loi cập nhật với định danh {{ param }}",
+      "deleted": "Một Khac Phuc Loi đã xóa với định danh {{ param }}",
+      "delete": {
+        "question": "Bạn có chắc là muốn xóa Khac Phuc Loi {{ id }}?"
+      },
+      "detail": {
+        "title": "Khac Phuc Loi"
+      },
+      "maKP": "Ma KP",
+      "tenKP": "Ten KP",
+      "nguoiTao": "Nguoi Tao",
+      "ngayTao": "Ngay Tao",
+      "userId": "User Id"
+    }
+  }
+}

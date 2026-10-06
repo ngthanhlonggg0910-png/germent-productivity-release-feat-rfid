@@ -1,0 +1,25 @@
+.marginCenter {
+  margin: 0 auto;
+  height: 100%;
+}
+.canvasF {
+  //width: 300px;
+  //height: 300px;
+  //background-image: url('http://113.190.233.36:9321/2020/AUGUST/8/NIKE_MAT_SAU.JPG');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: left top;
+  min-height: 180px !important;
+}
+.canvasB {
+  //width: 300px;
+  //height: 300px;
+  //background-image: url('http://113.190.233.36:9321/2020/AUGUST/8/NIKE_MAT_TRUOC.JPG');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: left top;
+  min-height: 180px !important;
+}
+canvas {
+  border: 1px solid red;
+}

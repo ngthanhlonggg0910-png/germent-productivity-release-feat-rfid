@@ -1,0 +1,43 @@
+entity DungSai {
+	cmLabel String,
+    inchLabel String,
+    cmValue Float,
+    inchValue Float
+}
+
+entity ThongSoDo {
+	code String unique,
+    ten String,
+}
+
+entity ThongSoDoSP {
+	note String
+}
+
+entity ThongSoDoSPSize {
+	size String,
+    cmThongSoChuan String,
+    inchThongSoChuan String,
+    cmThongSoChuanValue Float,
+    inchThongSoChuanValue Float
+}
+
+entity ThongSoThucThi {
+	spIndex String
+}
+
+relationship ManyToOne {
+	ThongSoDo{dungSai(inchLabel)} to DungSai,
+    ThongSoDoSP{thongSoDo(code)} to ThongSoDo,
+    ThongSoDoSP{dungSai(inchLabel)} to DungSai,
+}
+
+relationship OneToMany {
+	ThongSoDoSP to ThongSoDoSPSize,
+    ThongSoDoSPSize to ThongSoThucThi,
+    DungSai to ThongSoThucThi
+}
+
+dto * with mapstruct
+service all with serviceImpl
+paginate all with pagination

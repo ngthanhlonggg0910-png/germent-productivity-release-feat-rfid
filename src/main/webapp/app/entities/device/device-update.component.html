@@ -1,0 +1,91 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-device-heading" jhiTranslate="ctApp.device.home.createOrEditLabel">Create or edit a Device</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id').value">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.device.name" for="field_name">Name</label>
+                    <input type="text" class="form-control" name="name" id="field_name"
+                           formControlName="name"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.device.devIds" for="field_devIds">Dev Ids</label>
+                    <input type="text" class="form-control" name="devIds" id="field_devIds"
+                           formControlName="devIds"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.device.stateTopic" for="field_stateTopic">State Topic</label>
+                    <input type="text" class="form-control" name="stateTopic" id="field_stateTopic"
+                           formControlName="stateTopic"/>
+                    <div *ngIf="editForm.get('stateTopic').invalid && (editForm.get('stateTopic').dirty || editForm.get('stateTopic').touched)">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.device.lwtTopic" for="field_lwtTopic">Lwt Topic</label>
+                    <input type="text" class="form-control" name="lwtTopic" id="field_lwtTopic"
+                           formControlName="lwtTopic"/>
+                    <div *ngIf="editForm.get('lwtTopic').invalid && (editForm.get('lwtTopic').dirty || editForm.get('lwtTopic').touched)">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.device.sw" for="field_sw">Sw</label>
+                    <input type="text" class="form-control" name="sw" id="field_sw"
+                           formControlName="sw"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.device.module" for="field_module">Module</label>
+                    <input type="text" class="form-control" name="module" id="field_module"
+                           formControlName="module"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.device.restartReason" for="field_restartReason">Restart Reason</label>
+                    <input type="text" class="form-control" name="restartReason" id="field_restartReason"
+                           formControlName="restartReason"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.device.time" for="field_time">Time</label>
+                    <div class="d-flex">
+                        <input id="field_time" type="datetime-local" class="form-control" name="time" formControlName="time" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.device.uptime" for="field_uptime">Uptime</label>
+                    <input type="text" class="form-control" name="uptime" id="field_uptime"
+                           formControlName="uptime"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.device.hostName" for="field_hostName">Host Name</label>
+                    <input type="text" class="form-control" name="hostName" id="field_hostName"
+                           formControlName="hostName"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.device.ipAddress" for="field_ipAddress">Ip Address</label>
+                    <input type="text" class="form-control" name="ipAddress" id="field_ipAddress"
+                           formControlName="ipAddress"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="ctApp.device.lwt" for="field_lwt">Lwt</label>
+                    <select class="form-control" name="lwt" formControlName="lwt" id="field_lwt">
+                        <option value="ON_LINE">{{'ctApp.LWT.ON_LINE' | translate}}</option>
+                        <option value="OFF_LINE">{{'ctApp.LWT.OFF_LINE' | translate}}</option>
+                    </select>
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

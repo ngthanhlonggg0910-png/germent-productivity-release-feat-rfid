@@ -1,0 +1,401 @@
+<div class="card">
+    <div class="container-fluid p-0">
+        <div *ngIf="isShowVideoPlayer"class="w-100 h-100 middle">
+            <ng-image-slider [images]="imageObject"
+                [infinite]="true"
+                [autoSlide]=2
+                slideImage="1"
+                [imageSize]="{width: '100%', height: '100%'}"
+                [videoAutoPlay]="true"
+                #nav></ng-image-slider>
+            <!--video style="vertical-align: middle" id="myVideo" width="90%" height="95%" controls muted loop autoplay oncanplay="this.play()" onloadedmetadata="this.muted = true">
+                <source src="{{sourceVideo}}" type="video/mp4">
+                Your browser does not support HTML5 video.
+              </video-->
+        </div>
+        <div *ngIf="!isShowVideoPlayer" id="carouselExampleControls" class="carousel slide chart" data-ride="carousel" style="margin: 0 auto;">
+            <div class="carousel-inner">
+                <div class="carousel-item item-1 active" data-interval="45000">
+                    <div class="content border border-secondary ">
+                        <div class="chart-bar-top border-bottom border-secondary col-12 noborder">
+                            <div class="row">
+                                <table class="table table-bordered w-100 noborder"
+                                        style="text-align: center;vertical-align: middle;height: 100%;">
+                                    <tbody>
+                                        <tr class="row-line-header">
+                                            <td>
+                                                <h2  ng-if="dataKeHoachThucHien" class="text-center align-middle pt-2"
+                                                style="font-weight: 600;font-size: 2.5rem;">LINE <br>
+                                                <span style="color: #EE1C15;font-size: 3.5rem;font-weight: bold;">{{dataKeHoachThucHien.tenChuyen}}</span>
+                                                </h2>
+                                            </td>
+                                            <td colspan="7">
+                                                <table class="w-100 noborder" style="text-align: center;vertical-align: middle;height: 100%;">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td colspan="5">
+                                                                <h4 (click)="openCloseFullScreen()" id="toggle" ng-if="dataKeHoachThucHien" class="text-center align-middle pt-2"
+                                                                style="font-weight: 600;">MÃ HÀNG (Job No)
+                                                                </h4>
+                                                            </td>
+                                                            <td>
+                                                                <h4 ng-if="dataKeHoachThucHien" class="text-center align-middle pt-2"
+                                                                    style="font-weight: 600;">NGÀY (Date)
+                                                                </h4>
+                                                            </td>
+                                                            <td>
+                                                                <h4 ng-if="dataKeHoachThucHien" class="text-center align-middle pt-2"
+                                                                    style="font-weight: 600;">GIỜ (Time)
+                                                                </h4>
+                                                            </td>
+                                                        </tr>
+                                                        <tr style="color: #00A54D;font-size: 2.5rem;">
+                                                            <td colspan="5">
+                                                                <p style="margin: 0px;" ng-if="dataKeHoachThucHien" class="">{{dataKeHoachThucHien.mahang}}</p>
+                                                            </td>
+                                                            <td>{{dayNow}}/{{monthNowNum}}</td>
+                                                            <td>{{currentTime}}</td>
+                                                        </tr>
+                                                        <tr style="background-color: #08113A;color: white;font-size: 1rem;">
+                                                            <td colspan="7">
+                                                                <table class="w-100" style="color:white; text-align: center;vertical-align: middle;">
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td style="font-size: 1.8rem;border:solid 1px white;line-height: 20px;padding: 10px 0px;" colspan="2">KẾ HOẠCH 
+                                                                                <br><span style="font-size: 1.2rem;">(Plan)</span></td>
+                                                                            <td style="font-size: 1.8rem;border:solid 1px white;line-height: 20px;padding: 10px 0px;" colspan="2">THỰC HIỆN 
+                                                                                <br><span style="font-size: 1.2rem;">(Actual)</span></td>
+                                                                            <td style="font-size: 1.8rem;border:solid 1px white;line-height: 20px;padding: 10px 0px;">%</td>
+                                                                            <td style="font-size: 1.8rem;border:solid 1px white;line-height: 20px;padding: 10px 0px;" colspan="2">NHẬP KHO 
+                                                                                <br><span style="font-size: 1.2rem;">(Del to WH)</span></td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        <tr class="row-dinh-muc-ndsx">
+                                            <td colspan="6">
+                                                <table class="w-100 noborder" style="text-align: center;vertical-align: middle;height: 100%;">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td class="caption">ĐỊNH MỨC <br> <span>Daily target</span></td>
+                                                            <td class="value" colspan="2" ng-if="dataKeHoachThucHien">
+                                                                <span>{{dataKeHoachThucHien.kehoach}}</span></td>
+                                                            <td class="value" colspan="2" ng-if="dataKeHoachThucHien">
+                                                                <span>{{dataKeHoachThucHien.thuchien}}</span></td>
+                                                            <td class="value" ng-if="percentActual">
+                                                                <span>{{percentActual | number: '1.0-0'}}</span></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="caption">NĐSX <br> <span>Takt time</span></td>
+                                                            <td class="value" colspan="2" ng-if="dataKeHoachThucHien">
+                                                                <span>{{dataKeHoachThucHien.talktime_kehoach}}</span></td>
+                                                            <td class="value" colspan="2" ng-if="dataKeHoachThucHien">
+                                                                <span>{{dataKeHoachThucHien.talktime_thuchien}}</span>
+                                                            </td>
+                                                            <td class="value" ng-if="percentTakt">
+                                                                <span>{{percentTakt | number: '1.0-0'}}</span>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                            <td class="value" colspan="2" ng-if="dataKeHoachThucHien">
+                                                <span style="font-size: 7rem;">{{dataKeHoachThucHien.nhapkho}}</span>
+                                            </td>
+                                        </tr>
+                                        <tr class="row-chi-tiet-muc-tieu">
+                                            <td class="caption">THỜI GIAN <br> <span>Time</span></td>
+                                            <td colspan="7">
+                                                <table class="w-100 noborder" style="text-align: center;vertical-align: middle;height: 100%;">
+                                                    <tbody>
+                                                        <tr class="caption" style="font-size: 2.5rem;">
+                                                            <td *ngFor="let d of categories" style="border:solid 1px white;padding:20px 0px">{{d}}</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        <tr class="row-chi-tiet-muc-tieu">
+                                            <td class="caption">ĐỊNH MỨC <br> <span>Hourly target</span></td>
+                                            <td colspan="7">
+                                                <table class="w-100 noborder" style="text-align: center;vertical-align: middle;height: 100%;">
+                                                    <tbody>
+                                                        <tr class="row-chi-tiet-muc-tieu-dinhmuc" >
+                                                            <td *ngFor="let d of dat"><span>{{d}}</span></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        <tr class="row-chi-tiet-muc-tieu">
+                                            <td class="caption">THỰC HIỆN <br> <span>Actual</span></td>
+                                            <td colspan="7">
+                                                <table class="w-100 noborder" style="text-align: center;vertical-align: middle;height: 100%;">
+                                                    <tbody>
+                                                        <tr class="row-chi-tiet-muc-tieu-thuchien" >
+                                                            <td class="{{d.color}}" *ngFor="let d of mucTieu"><span>{{d.value}}</span></td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item item-2" data-interval="45000">
+                    <div class="content border border-secondary">
+                        <div class="chart-bar-top border-bottom border-secondary col-12 noborder">
+                            <div class="row">
+                                <table class="table table-bordered w-100 noborder"
+                                        style="text-align: center;vertical-align: middle;height: 100%;">
+                                    <tbody>
+                                        <tr class="row-line-header">
+                                            <td>
+                                                <h2 ng-if="dataKeHoachThucHien" class="text-center align-middle pt-2"
+                                                style="font-weight: 600;font-size: 2.5rem;    padding: 0px!important;margin:  0px;line-height: 50px;">LINE <br>
+                                                <span style="color: #EE1C15;font-size: 3.5rem;font-weight: bold;">{{dataKeHoachThucHien.tenChuyen}}</span>
+                                                </h2>
+                                            </td>
+                                            <td colspan="7">
+                                                <table class="w-100 noborder" style="text-align: center;vertical-align: middle;height: 100%;">
+                                                    <tbody>
+                                                        <tr>
+                                                            <td colspan="5">
+                                                                <h4 (click)="openCloseFullScreen()" id="toggle" ng-if="dataKeHoachThucHien" class="text-center align-middle pt-2"
+                                                                style="font-weight: 600;padding: 0px!important;;margin:  0px;">MÃ HÀNG (Job No)
+                                                                </h4>
+                                                            </td>
+                                                            <td>
+                                                                <h4 ng-if="dataKeHoachThucHien" class="text-center align-middle pt-2"
+                                                                    style="font-weight: 600;padding: 0px!important;;margin:  0px;">NGÀY (Date)
+                                                                </h4>
+                                                            </td>
+                                                            <td>
+                                                                <h4 ng-if="dataKeHoachThucHien" class="text-center align-middle pt-2"
+                                                                    style="font-weight: 600;padding: 0px!important;;margin:  0px;">GIỜ (Time)
+                                                                </h4>
+                                                            </td>
+                                                        </tr>
+                                                        <tr style="color: #00A54D;font-size: 2.2rem;">
+                                                            <td colspan="5">
+                                                                <p style="margin: 0px;" ng-if="dataKeHoachThucHien" class="">
+                                                                    {{dataKeHoachThucHien.mahang}}
+                                                                </p>
+                                                            </td>
+                                                            <td><span style="line-height: 10px;">{{dayNow}}/{{monthNowNum}}</span></td>
+                                                            <td><span style="line-height: 10px;">{{currentTime}}</span></td>
+                                                        </tr>
+                                                        <tr style="background-color: #08113A;color: white;font-size: 1.5rem;">
+                                                            <td colspan="7" style="border:none">
+                                                                <table class="w-100" style="color:white; text-align: center;vertical-align: middle;">
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td style="font-size: 1.5rem;border:solid 1px white;" colspan="2">KẾ HOẠCH (Plan)</td>
+                                                                            <td style="font-size: 1.5rem;border:solid 1px white;" colspan="2">THỰC HIỆN (Actual)</td>
+                                                                            <td style="font-size: 1.5rem;border:solid 1px white;" colspan="2">NHẬP KHO (Del to WH)</td>
+                                                                            <td style="font-size: 1.5rem;line-height: 15px;padding:5px;border:solid 1px white;" 
+                                                                                colspan="2">NGÀY SẢN XUẤT <br>
+                                                                                <span style="font-size: 1rem;">Production day</span></td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        <tr class="row-order">
+                                            <td class="caption" style="border:solid 1px white;">
+                                                ĐƠN HÀNG <br> <span style="font-size: 1.2rem;">Order</span>
+                                            </td>
+                                            <td colspan="7" style="border:none">
+                                                <table class="w-100 noborder" style="text-align: center;vertical-align: middle;height: 100%;">
+                                                    <tbody>
+                                                        <tr style="font-size: 1.5rem;">
+                                                            <td colspan="7" style="border:none">
+                                                                <table class="w-100" style="text-align: center;vertical-align: middle;">
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td ng-if="dataKeHoachThucHien" style="font-size: 3rem;" colspan="2">
+                                                                                <span style="font-size: 4rem;line-height: 10px;">{{dataKeHoachThucHien.soLuongPhanBo}}</span>
+                                                                            </td>
+                                                                            <td *ngIf="colorThucHienRed!=''"  style="font-size: 3rem;color: #EE1C15;" colspan="2">
+                                                                                <span style="font-size: 4rem;line-height: 10px;">{{dataKeHoachThucHien.soLuongMayRa}}</span>
+                                                                            </td>
+                                                                            <td *ngIf="colorThucHienGreen!=''" style="font-size: 3rem;color: #00A54D;" colspan="2">
+                                                                                <span style="font-size: 4rem;line-height: 10px;">{{dataKeHoachThucHien.soLuongMayRa}}</span>
+                                                                            </td>
+                                                                            <td ng-if="dataKeHoachThucHien" style="font-size: 3rem;color: #EE1C15;" colspan="2">
+                                                                                <span style="font-size: 4rem;line-height: 10px;">{{nsLdNgay.nsldNgayThucHien}}</span>
+                                                                            </td>
+                                                                            <td style="font-size: 1rem;line-height: 20px;padding:5px" colspan="2">
+                                                                                <span class="calendar calendar_start" id="toggle">
+                                                                                    <em>{{monthNgayXuatDau}}</em> {{dayNgayXuatDau}}
+                                                                                </span>
+                                                                                <span class="calendar calendar_start" id="toggle">
+                                                                                    <em>{{monthNow}}</em> {{dayNow}}
+                                                                                </span>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        <tr class="row-chart">
+                                            <td style="border:solid 1px white;padding:5px 0px" class="caption">
+                                                % HÀNG ĐẠT <br> <span style="font-size: 1rem;">% FTT</span>
+                                            </td>
+                                            <td colspan="7" style="border:none">
+                                                <table class="w-100 noborder" style="text-align: center;vertical-align: middle;height: 100%;">
+                                                    <tbody>
+                                                        <tr style="font-size: 1.5rem;">
+                                                            <td colspan="7" style="border:none">
+                                                                <table class="w-100" style="text-align: center;vertical-align: middle;">
+                                                                    <tbody>
+                                                                        <tr style="background-color: #08113A;color: white;font-size: 1.5rem;">
+                                                                            <td ng-if="dataKeHoachThucHien" style="font-size: 1rem;border:solid 1px white;" colspan="3">
+                                                                                3 DẠNG LỖI CAO NHẤT <br> <span style="font-size: 0.8rem;">Top 3 defects</span>
+                                                                            </td>
+                                                                            <td ng-if="dataKeHoachThucHien" style="font-size:  1rem;border:solid 1px white;" colspan="4">
+                                                                                HÌNH ẢNH VỊ TRÍ LỖI <br>  <span style="font-size: 0.8rem;">Defect location</span>
+                                                                            </td>
+
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        <tr class="row-chart-detail">
+                                            <td class="caption" style="font-size: 4rem;">
+                                                <span style="font-size: 5rem;">{{percentFTT | number: '1.0-0'}}</span>
+                                            </td>
+                                            <td colspan="7" style="border:none">
+                                                <table class="w-100 noborder" style="text-align: center;vertical-align: middle;height: 100%;">
+                                                    <tbody>
+                                                        <tr style="font-size: 1.5rem;">
+                                                            <td colspan="7" style="border:none">
+                                                                <table class="w-100" style="text-align: center;vertical-align: middle;">
+                                                                    <tbody>
+                                                                        <tr>
+                                                                            <td colspan="3">
+                                                                                <div ng-if="dataChiTietLoi" class="h-100">
+                                                                                    <jhi-tab3-chart [dataChiTietLoi]="dataChiTietLoi"></jhi-tab3-chart>
+                                                                                </div>
+                                                                            </td>
+                                                                            <td colspan="4">
+                                                                                <div class="h-100" >
+                                                                                    <jhi-chart-image></jhi-chart-image>
+                                                                                </div>
+                                                                            </td>
+                                                                        </tr>
+                                                                    </tbody>
+                                                                </table>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        <tr class="row-chi-tiet-muc-tieu-time">
+                                            <td style="border:solid 1px white;padding:10px 0px" class="caption">THỜI GIAN (<span style="font-size: 1.2rem;">Time</span>)</td>
+                                            <td colspan="7">
+                                                <table class="w-100 noborder" style="text-align: center;vertical-align: middle;height: 100%;">
+                                                    <tbody>
+                                                        <tr class="caption" style="padding:5px;font-size: 2rem;">
+                                                            <td *ngFor="let d of categories" style="padding:5px 0px;border:solid 1px white;">
+                                                                <span style="font-size: 1.8rem;line-height: 10px;">{{d}}</span>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        <tr class="row-chi-tiet-muc-tieu-time">
+                                            <td style="border:solid 1px white;" class="caption">THỰC HIỆN <br> <span style="font-size: 1rem;">Actual</span></td>
+                                            <td colspan="7">
+                                                <table class="w-100 noborder" style="text-align: center;vertical-align: middle;height: 100%;">
+                                                    <tbody>
+                                                        <tr class="row-chi-tiet-muc-tieu-thuchien-2" style="font-size: 2.2rem;">
+                                                            <td class="{{d.color}}" style="font-size: 2.2rem;" *ngFor="let d of mucTieu">
+                                                                <span class="{{d.color}}" style="font-size: 3rem;line-height: 10px;">{{d.value}}</span>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        <tr class="row-chi-tiet-muc-tieu-time">
+                                            <td style="border:solid 1px white;" class="caption">SP LỖI <br> <span style="font-size: 1rem;">Defect</span></td>
+                                            <td colspan="7">
+                                                <table class="w-100 noborder" style="text-align: center;vertical-align: middle;height: 100%;">
+                                                    <tbody>
+                                                        <tr class="row-chi-tiet-muc-tieu-thuchien-2" style="font-size: 2.2rem;">
+                                                            <td style="font-size: 2.2rem;" class="{{d.color}}" *ngFor="let d of chuaDat">
+                                                                <span style="font-size: 3rem;line-height: 10px;;">{{d.value}}</span>
+                                                            </td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                        <tr class="row-chi-tiet-muc-tieu-refinal">
+                                            <td style="border:solid 1px white;" class="caption">PRE-FINAL <br> <span style="font-size: 0.8rem;">Firewall Audit</span></td>
+                                            <td colspan="7">
+                                                <table class="w-100 noborder" style="text-align: center;vertical-align: middle;height: 100%;
+                                                border-collapse: initial!important;">
+                                                    <tbody>
+                                                        <tr class="row-chi-tiet-muc-tieu-thuchien-2" style="font-size: 1rem;">
+                                                            <td *ngFor="let d of refinalTheoGio" class="refinalTheoGio _{{d.color}}" >
+                                                                <div class="{{d.color}}"></div>
+                                                            </td>
+                                                            <!--
+                                                            <td><div class="triangle-white"></div></td>
+                                                            <td><div class="triangle-white"></div></td>
+                                                            <td><div class="triangle-white"></div></td>
+                                                            <td><div class="triangle-white"></div></td>
+                                                            <td><div class="triangle-white"></div></td>
+                                                            <td><div class="triangle-white"></div></td>
+                                                            <td><div class="triangle-white"></div></td>
+                                                            <td><div class="triangle-white"></div></td>
+                                                            <td><div class="triangle-white"></div></td>
+                                                            -->
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+</div>

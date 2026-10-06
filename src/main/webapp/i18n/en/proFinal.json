@@ -1,0 +1,39 @@
+{
+  "ctApp": {
+    "proFinal": {
+      "home": {
+        "title": "Pro Finals",
+        "createLabel": "Create a new Pro Final",
+        "createOrEditLabel": "Create or edit a Pro Final",
+        "notFound": "No Pro Finals found"
+      },
+      "created": "A new Pro Final is created with identifier {{ param }}",
+      "updated": "A Pro Final is updated with identifier {{ param }}",
+      "deleted": "A Pro Final is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Pro Final {{ id }}?"
+      },
+      "detail": {
+        "title": "Pro Final"
+      },
+      "khxhId": "Khxh Id",
+      "maHang": "Ma Hang",
+      "poNo": "Po No",
+      "ngayKiemFinal": "Ngay Kiem Final",
+      "tenChuyen": "Ten Chuyen",
+      "ngayGioKiem": "Ngay Gio Kiem",
+      "soLuongKiemAql": "So Luong Kiem Aql",
+      "soLuong": "So Luong",
+      "doAm": "Do Am",
+      "tongSoLoi": "Tong So Loi",
+      "soThuTuThung": "So Thu Tu Thung",
+      "doKimMd": "Do Kim Md",
+      "aql": "Aql",
+      "maxLoiChoPhep": "Max Loi Cho Phep",
+      "completed": "Completed",
+      "soLuongPoKiem": "So Luong Po Kiem",
+      "pass": "Pass",
+      "nguoiKiem": "Nguoi Kiem"
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+    "name": "ProCongDoan",
+    "fields": [
+        {
+            "fieldName": "ten",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "nhomCongDoan",
+            "fieldType": "String"
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "otherEntityName": "proNhomCongDoan",
+            "otherEntityRelationshipName": "proCongDoan",
+            "relationshipName": "proNhomCongDoan",
+            "otherEntityField": "ten"
+        }
+    ],
+    "changelogDate": "20200212162858",
+    "entityTableName": "pro_cong_doan",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "readOnly": false,
+    "clientRootFolder": "",
+    "applications": "*"
+}

@@ -1,0 +1,30 @@
+{
+  "ctApp": {
+    "proRefinalChiTietLoi": {
+      "home": {
+        "title": "Pro Refinal Chi Tiet Lois",
+        "createLabel": "Create a new Pro Refinal Chi Tiet Loi",
+        "createOrEditLabel": "Create or edit a Pro Refinal Chi Tiet Loi",
+        "notFound": "No Pro Refinal Chi Tiet Lois found"
+      },
+      "created": "A new Pro Refinal Chi Tiet Loi is created with identifier {{ param }}",
+      "updated": "A Pro Refinal Chi Tiet Loi is updated with identifier {{ param }}",
+      "deleted": "A Pro Refinal Chi Tiet Loi is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Pro Refinal Chi Tiet Loi {{ id }}?"
+      },
+      "detail": {
+        "title": "Pro Refinal Chi Tiet Loi"
+      },
+      "maLoi": "Ma Loi",
+      "thoiGian": "Thoi Gian",
+      "dx": "Dx",
+      "dy": "Dy",
+      "isFront": "Is Front",
+      "isInside": "Is Inside",
+      "warning": "Warning",
+      "proRefinal": "Pro Refinal",
+      "proLoi": "Pro Loi"
+    }
+  }
+}

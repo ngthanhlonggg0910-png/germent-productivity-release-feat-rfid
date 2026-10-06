@@ -1,0 +1,22 @@
+{
+  "ctApp": {
+    "soLuongHangKiem": {
+      "home": {
+        "title": "So Luong Hang Kiems",
+        "createLabel": "Thêm mới một So Luong Hang Kiem",
+        "createOrEditLabel": "Thêm mới hoặc cập nhật So Luong Hang Kiem",
+        "notFound": "No So Luong Hang Kiems found"
+      },
+      "created": "Một So Luong Hang Kiem mới được tạo với định danh {{ param }}",
+      "updated": "Một So Luong Hang Kiem cập nhật với định danh {{ param }}",
+      "deleted": "Một So Luong Hang Kiem đã xóa với định danh {{ param }}",
+      "delete": {
+        "question": "Bạn có chắc là muốn xóa So Luong Hang Kiem {{ id }}?"
+      },
+      "detail": {
+        "title": "So Luong Hang Kiem"
+      },
+      "soLuong": "So Luong"
+    }
+  }
+}

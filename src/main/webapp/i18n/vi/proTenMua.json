@@ -1,0 +1,22 @@
+{
+  "ctApp": {
+    "proTenMua": {
+      "home": {
+        "title": "Pro Ten Muas",
+        "createLabel": "Thêm mới một Pro Ten Mua",
+        "createOrEditLabel": "Thêm mới hoặc cập nhật Pro Ten Mua",
+        "notFound": "No Pro Ten Muas found"
+      },
+      "created": "Một Pro Ten Mua mới được tạo với định danh {{ param }}",
+      "updated": "Một Pro Ten Mua cập nhật với định danh {{ param }}",
+      "deleted": "Một Pro Ten Mua đã xóa với định danh {{ param }}",
+      "delete": {
+        "question": "Bạn có chắc là muốn xóa Pro Ten Mua {{ id }}?"
+      },
+      "detail": {
+        "title": "Pro Ten Mua"
+      },
+      "tenMua": "Ten Mua"
+    }
+  }
+}
